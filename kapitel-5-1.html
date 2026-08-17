@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapitel 5.1: Grundlagen der Kosten- und Terminüberwachung – Projektmanagement</title>
+<meta name="description" content="Kapitel 5.1 des Lernprogramms Projektmanagement: Grundlagen der Kosten- und Terminüberwachung – vollständig übersetzt und aufbereitet.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <p class="kicker">Lerneinheit 5 · Projektüberwachung und -steuerung</p>
+    <h1>Kapitel 5.1: Grundlagen der Kosten- und Terminüberwachung</h1>
+    <p class="sub">Warum Projekte ein Rückkopplungssystem brauchen, wie Fortschritt richtig gemessen wird – und wie der Earned-Value-Ansatz Kosten, Termine und Arbeitsleistung in vergleichbare Kennzahlen übersetzt.</p>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <a href="index.html">Startseite</a>
+    <a href="lehrplan.html">Lehrplan</a>
+    <a href="kursplan.html" class="active">Lernpfad</a>
+    <a href="vorlesungen.html">Vorlesungsskripte</a>
+    <a href="projekt.html">Semesterprojekt</a>
+    <a href="literatur.html">Literatur</a>
+  </div>
+</nav>
+
+<main>
+  <p class="breadcrumb"><a href="kursplan.html">Lernpfad</a> › <a href="kursplan.html#le5">Lerneinheit 5</a> › Kapitel 5.1</p>
+  <div class="kapitel-meta">
+    <span>📄 <a href="pdfs/vorlesung-13-kosten-terminueberwachung.pdf">Original-Foliensatz (PDF, englisch)</a></span>
+    <span>Vorlesung 13 von 18 · MIT 1.040, Frühjahr 2004</span>
+  </div>
+
+  <section class="card">
+    <div class="toc">
+      <span class="label">Inhalt dieses Kapitels</span>
+      <ol>
+        <li><a href="#abschnitt-1">Überwachung und Steuerung als Regelkreis</a></li>
+        <li><a href="#abschnitt-2">Verknüpfung mit Terminplanung und Kostenschätzung</a></li>
+        <li><a href="#abschnitt-3">Fortschritt messen: Meilensteine und Messbarkeit</a></li>
+        <li><a href="#abschnitt-4">Kostenkontenrahmen und Datenerfassung</a></li>
+        <li><a href="#abschnitt-5">Berichtswesen</a></li>
+        <li><a href="#abschnitt-6">Leistungskennzahlen</a></li>
+        <li><a href="#abschnitt-7">Der Earned-Value-Ansatz: Kennzahlen und Abweichungen</a></li>
+        <li><a href="#abschnitt-8">Durchgerechnetes Beispiel</a></li>
+      </ol>
+    </div>
+
+    <h2 id="abschnitt-1">Überwachung und Steuerung als Regelkreis</h2>
+    <p>Projektüberwachung (Monitoring) und Projektsteuerung (Control) bilden zusammen ein Rückkopplungssystem, dessen Ziel es ist, Abweichungen vom Soll zu erkennen und zu korrigieren – bei Budget, Terminen und Qualität. Die <strong>Erkennung</strong> ist Aufgabe der Überwachung, die <strong>Korrektur</strong> Aufgabe der Steuerung. Die Steuerung ist dabei deutlich schwieriger als die Überwachung: Idealerweise bringt sie die Projektleistung wieder mit den Plänen in Einklang – in der Praxis werden allerdings häufig eher die Pläne an die tatsächliche Leistung angepasst.</p>
+
+    <dl class="begriffe">
+      <dt>Projektüberwachung (Project Monitoring)</dt>
+      <dd>Die Gesamtheit der Verfahren und Managementpraktiken, mit denen Informationen über die erreichte oder prognostizierte Leistung eines Projekts und der ausführenden Organisation gesammelt werden – auf Basis eines Satzes von Leistungskennzahlen.</dd>
+      <dt>Leistungsanalyse (Performance Analysis)</dt>
+      <dd>Der Prozess, aus überwachter oder prognostizierter Leistung die Leistungsabweichungen (Varianzen) zu bestimmen.</dd>
+      <dt>Projektsteuerung (Project Control)</dt>
+      <dd>Der Zweck der Projektsteuerung ist es, das Projekt so anzupassen, dass es seine Ziele erreicht: Die Leistung wird bewertet, die Ursachen von Leistungsproblemen werden analysiert, Änderungen zur Behebung der Probleme werden entworfen und über Steuerungsmaßnahmen umgesetzt. Von der Projektplanung unterscheidet sich die Steuerung in zwei Punkten: (1) Sie liefert eine Menge von Entwürfen, Entscheidungen und Maßnahmen, während die Planung einen einzelnen Entwurf liefert. (2) Sie ist ein Echtzeitprozess während der Ausführung – nicht davor.</dd>
+    </dl>
+
+    <p>Ein Regelkreis ist unverzichtbar, weil vollkommen statische Planung eine (nützliche!) Fiktion ist. Viele Faktoren machen Abweichungen zum Normalfall:</p>
+    <ul>
+      <li>Physische Einflüsse: Wetter, abweichende Baugrundverhältnisse usw.</li>
+      <li>Verfrühte oder verspätete Lieferung beschaffter Komponenten</li>
+      <li>Änderungen der Anforderungen des Bauherrn</li>
+      <li>Produktivitätsunterschiede gegenüber den Annahmen</li>
+      <li>Widerstand aus der Nachbarschaft, Bedenken wegen angrenzender Gebäude</li>
+      <li>Fehler in der Planung selbst</li>
+    </ul>
+    <p>Selbst innerhalb vorhandener Pufferzeiten bestehen Ressourcenrestriktionen. Hinzu kommt: Die Arbeitsmoral hängt oft von guter Planung ab.</p>
+
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k51-abb1.jpg" alt="Diagramm: Einflussmöglichkeit sinkt über die Projektlaufzeit, während die kumulierten Ausgaben steigen; Phasen Engineering/Design, Beschaffung/Bau und Nutzung" loading="lazy">
+      <figcaption>Abb. 1: Wachsende Ausgaben, schwindende Einflussmöglichkeit („Growing Expenditures, Declining Control“): Zu Projektbeginn ist der Einfluss („Level of Influence“) hoch und die Ausgaben („Expenditures“) sind niedrig – im Verlauf von Planung („Engineering/Design“) über Beschaffung und Bau („Procure/Construct“) bis zur Nutzung („Utilization“) kehrt sich das Verhältnis um. Frühes Gegensteuern ist deshalb am wirksamsten. (Folie 5 des Originalskripts)</figcaption>
+    </figure>
+
+    <p>Eine Befragung von Projektleitern zeigt, welche Herausforderungen bei Überwachung und Steuerung als am drängendsten wahrgenommen werden:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Rang</th><th>Herausforderung</th><th>Nennungshäufigkeit</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Umgang mit endtermingetriebenen Terminplänen</td><td>85 %</td></tr>
+          <tr><td>2</td><td>Umgang mit Ressourcenknappheit</td><td>83 %</td></tr>
+          <tr><td>3</td><td>Wirksame Kommunikation zwischen Arbeitsgruppen</td><td>80 %</td></tr>
+          <tr><td>4</td><td>Verbindliches Engagement der Teammitglieder gewinnen</td><td>74 %</td></tr>
+          <tr><td>5</td><td>Messbare Meilensteine festlegen</td><td>70 %</td></tr>
+          <tr><td>6</td><td>Umgang mit Änderungen</td><td>60 %</td></tr>
+          <tr><td>7</td><td>Einigung über den Projektplan mit dem Team</td><td>57 %</td></tr>
+          <tr><td>8</td><td>Verbindliches Engagement des Managements gewinnen</td><td>45 %</td></tr>
+          <tr><td>9</td><td>Umgang mit Konflikten</td><td>42 %</td></tr>
+          <tr><td>10</td><td>Führung von Lieferanten und Nachunternehmern</td><td>38 %</td></tr>
+          <tr><td>11</td><td>Sonstige Herausforderungen</td><td>35 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="abschnitt-2">Verknüpfung mit Terminplanung und Kostenschätzung</h2>
+    <p>Der Terminplan liefert den <strong>Maßstab</strong>, an dem sich der Ist-Zustand messen lässt: Er sagt uns, welcher Arbeitsfortschritt und welche Ausgaben zu jedem Zeitpunkt zu erwarten sind. Ohne Terminplanung gäbe es nichts, womit sich der Fortschritt vergleichen ließe. Die Beziehung ist wechselseitig: Die Überwachung wirkt auf die Terminplanung zurück, denn der Plan muss umformuliert werden, um festgestellte Abweichungen abzubilden.</p>
+    <p>Aus der Überwachung ergeben sich Aktualisierungen des Terminplans:</p>
+    <ul>
+      <li>Neue Schätzungen für Kosten, Dauern und Ressourcenverfügbarkeit einzelner Vorgänge</li>
+      <li>Neuberechnung des kritischen Wegs – was wiederum die Überwachungsprioritäten verschieben kann</li>
+    </ul>
+    <div class="note">Ein Terminplan, der nicht an die Verhältnisse auf der Baustelle angepasst wird, wird erstens kaum genutzt – und ist zweitens gefährlich, wenn er doch genutzt wird.</div>
+    <p>Der Projektplan ist das Fundament wirksamer Überwachung. Fünf Grundsätze:</p>
+    <ul>
+      <li>Vorausschauend planen</li>
+      <li>Projektteammitglieder in die Planung einbeziehen</li>
+      <li>Konkrete Aufgabenverantwortung festlegen</li>
+      <li>Verbindliche Zusagen einholen</li>
+      <li>Messbarkeit sicherstellen</li>
+    </ul>
+    <p>Auch die <strong>Kostenschätzung</strong> ist Bezugsgröße der Überwachung: Sie macht die Kostenwirkung der Vorgänge verständlich (oft direkt in den Terminplan integriert) und dient häufig als Grundlage des Anfangsbudgets. Zwei typische Probleme dabei: Die Schätzung hat oft eine andere Detailtiefe als die Überwachung, und sie ist häufig auf die Berichterstattung nach außen ausgerichtet statt auf die interne Steuerung.</p>
+
+    <h2 id="abschnitt-3">Fortschritt messen: Meilensteine und Messbarkeit</h2>
+    <p>Zu einer wirksamen Überwachung gehören mehrere Bausteine:</p>
+    <ul>
+      <li>Repräsentative Leistungskennzahlen, bereits in der Planungsphase festgelegt</li>
+      <li>Klar definierte Kosten- und Terminmeilensteine, die eindeutig abgenommen oder abgelehnt werden können</li>
+      <li>Ein Berichtsrhythmus – gegebenenfalls mit variablen Intervallen je nach finanzieller Bedeutung, Kritikalität, Arbeitstempo und Schwierigkeit des Vorgangs</li>
+      <li>Eine Managementstruktur, die auf ehrliche und genaue Leistungserfassung ausgelegt ist</li>
+      <li>Einbindung verantwortlicher und sachkundiger Personen in das Berichtswesen</li>
+      <li>Projektreviews (Walkthroughs und Inspektionen) sowie Projektaudits</li>
+    </ul>
+    <p>Traditionell wird „Fortschritt“ über den <strong>Ressourcenverbrauch</strong> gemessen: aufgewendete Zeit und ausgegebenes Geld. Das Problem: Verbrauchte Inputs sagen nichts darüber aus, wie viel Ergebnis tatsächlich entstanden ist. Die wirksamsten Fortschrittsmessungen setzen deshalb nicht an den Projekt-<em>Inputs</em> (Geld, Arbeit, Zeit), sondern an den Projekt-<em>Outputs</em> an – dem Fortschritt in Richtung Fertigstellung. Inputs sind leicht zu messen; um Outputs messbar zu machen, sollte man:</p>
+    <ul>
+      <li>Vorgänge nach Möglichkeit in Stufen unterteilen,</li>
+      <li>eindeutige Meilensteine definieren,</li>
+      <li>Kosten, Arbeit und Zeit je Vorgang getrennt erfassen.</li>
+    </ul>
+    <dl class="begriffe">
+      <dt>Gut definierter Meilenstein</dt>
+      <dd>Ein klar abgegrenztes Ereignis mit überprüfbaren Parametern für jedes Lieferobjekt, einem eindeutigen Bezug zum Projektmanagementplan und einer klar benannten verantwortlichen Organisation oder Person.</dd>
+    </dl>
+    <p>Für die Fortschrittsmessung <em>innerhalb</em> eines Vorgangs gibt es mehrere Verfahren (absteigend nach Objektivität):</p>
+    <ul>
+      <li><strong>Fertiggestellte Einheiten:</strong> aufgabenspezifische Mengen, z. B. Meter verlegter Bewehrungsstahl, Anzahl gesetzter Stützen, Kubikmeter Erdaushub, montierte Paneele, Quadratmeter Trockenbau, Meter installierter Rohrleitungen</li>
+      <li><strong>Inkrementelle Teilmeilensteine:</strong> jeder steht für einen vereinbarten Anteil der Arbeit; bei parallelen Teilaufgaben ggf. gewichtet</li>
+      <li><strong>Subjektive Einschätzung des Poliers bzw. Vorarbeiters</strong></li>
+      <li><strong>Binär Start/Ende:</strong> Vorgang gilt erst mit Abschluss als fertig</li>
+      <li><strong>Input-Maß:</strong> angefallene Kosten im Verhältnis zu den geschätzten Gesamtkosten</li>
+    </ul>
+
+    <h2 id="abschnitt-4">Kostenkontenrahmen und Datenerfassung</h2>
+    <p>Ein Schlüsselelement ist die Verknüpfung von <strong>Vorgängen</strong> und <strong>Kostenkonten</strong>. Die Granularität der Erfassung ist kritisch – sie begrenzt, was sich aus den Daten später noch herauslesen lässt. Zwischen Kostenkategorien und Vorgängen besteht eine n:m-Beziehung; die traditionelle Betriebsbuchhaltung kennt dagegen nur einen Kostencode mit der Art des belasteten Postens. Abhilfe schaffen detailliertere Kostencodes (mit Vorgangsbezug) oder die anteilige Umlage mehrdeutiger Kosten anhand eindeutig zurechenbarer Kosten.</p>
+    <p>Bei der Wahl der Kostengranularität gibt es einen Zielkonflikt:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Feinere Gliederung</th><th>Gröbere Gliederung</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Erhält die Option späterer Detailanalysen; erlaubt schnellere Reaktion auf Abweichungen und schnellere Prüfung, ob Steuerungsmaßnahmen wirken</td>
+            <td>Weniger Aufwand für das Personal, schnellere Erfassung, geringere Wahrscheinlichkeit von Fehlern und Regelverstößen</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Die Datenerfassung läuft in der Praxis oft so: Poliere vermerken den Fortschritt auf Stundenzetteln (implizit: die Kolonne; Kostenkategorie des Postens; mit etwas Glück auch die Quadratmeter für die Fortschrittsschätzung). Ein Lohnbuchhalter erfasst die Stundenzettel im Büro. Für wichtige Vorgänge kann zusätzliche Aufmerksamkeit des Managements eingesetzt werden.</p>
+    <dl class="begriffe">
+      <dt>Kostenstrukturplan (Cost Breakdown Structure)</dt>
+      <dd>Die kanonische Art, Kosten im Projekt zu verbuchen: Er ordnet den verschiedenen Ausgabenarten Konten zu, sollte die Verfolgung der Ausgaben je Vorgang (Arbeitspaket) erlauben und enthält oft eine Gliederung auf Basis des Projektstrukturplans (Work Breakdown Structure, WBS), z. B. nach dem US-Standard CSI Masterformat.</dd>
+      <dt>Betriebsbuchhaltung vs. Finanzbuchhaltung</dt>
+      <dd>Die Betriebsbuchhaltung („Kostenrechnung“, Managerial Accounting) berichtet an das Management für strategische Planung und operative Nutzung. Die Finanzbuchhaltung richtet sich an Außenstehende (Eigentümer, Finanzbehörden, Aufsicht), arbeitet mit Hauptbuch und doppelter Buchführung, liefert die vertrauten Gewinn- und Verlustrechnungen und Bilanzen – und enthält viele „Buchhaltungsfiktionen“, um Zahlungsströme systematisch abzubilden.</dd>
+    </dl>
+    <p>Der <strong>Kostencode</strong> spiegelt die Kostenhierarchie und kombiniert üblicherweise standardisierte und projektspezifische Bestandteile:</p>
+    <ul>
+      <li><strong>Projektnummer</strong> (enthält oft nützliche Informationen, die Nachschlagen erspart; bei internen Referenzen häufig weggelassen)</li>
+      <li><strong>Bereichs-/Gebäudecode</strong> (bei geografisch verteilten Projekten oder projektspezifischen Gebäudebereichen)</li>
+      <li><strong>Arbeitsarten-Code:</strong> WBS-basiert; kann ein Standardcode wie CSI Masterformat sein, wenn projektübergreifend einheitlich</li>
+      <li><strong>Verteilungscode:</strong> Kostenart der Arbeit (z. B. Material, Geräte, Lohn, Nachunternehmer)</li>
+    </ul>
+
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k51-abb2.jpg" alt="Beispielhafter Projektkostencode 88NB04-11-03320-2 mit Erläuterung der Bestandteile Projekt, Bereichs-Code, Arbeitsarten-Code und Verteilungscode" loading="lazy">
+      <figcaption>Abb. 2: Beispiel eines Projektkostencodes: „88NB04 – 11 – 03320 – 2“ steht für Projekt 88NB04 (88 = Baubeginn 1988, N = verhandelter Vertrag, B = Gebäude, 04 = viertes Gebäude des Jahres), 11. Obergeschoss (Bereichscode), Arbeitsart 03320 = Beton/Leichtzuschlag und Verteilungscode 2 = Materialkosten. (Folie 33 des Originalskripts)</figcaption>
+    </figure>
+
+    <p>Ein illustrativer Ausschnitt aus einem Projektkontenrahmen für den Hochbau zeigt die hierarchische Gliederung:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Konto</th><th>Bezeichnung</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>201</td><td>Baufeldräumung und Baustelleneinrichtung</td></tr>
+          <tr><td>202</td><td>Gründung/Unterbau (202.1 Aushub und Verbau, 202.2 Pfahlgründung, 202.3 Betonarbeiten mit 202.31 Mischen und Einbringen, 202.32 Schalung, 202.33 Bewehrung)</td></tr>
+          <tr><td>203</td><td>Außenanlagen-Leitungen (Wasser, Gas, Abwasser usw.)</td></tr>
+          <tr><td>204</td><td>Tragwerk/Ausbau (u. a. 204.2 Stahlbau, 204.4 Fassaden, 204.6 Innenausbau mit Unterkonten 204.61–204.69, 204.7 Haustechnik mit 204.71 Elektro, 204.72 Heizung/Lüftung, 204.73 Sanitär, 204.74 Klima, 204.75 Brandmelde-/Telefon-/Sicherheitstechnik)</td></tr>
+          <tr><td>205</td><td>Beläge, Bordsteine, Gehwege</td></tr>
+          <tr><td>206</td><td>Fest installierte Ausstattung (Aufzüge, Drehtüren, Postrutschen usw.)</td></tr>
+          <tr><td>207</td><td>Einfriedung</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="abschnitt-5">Berichtswesen</h2>
+    <p>Berichte kommen oft verzögert – dabei ist die Minimierung der Verzögerung entscheidend für die Wirksamkeit des Regelkreises. Verbreitet ist <strong>selektives Berichten</strong>: Es wird nur über problematische Positionen berichtet. Häufigere Berichte empfehlen sich für Vorgänge, die wichtig (z. B. kostenintensiv), unsicher (unvertraute Verfahren), kritisch oder umfangsrelevant sind.</p>
+    <p>Zwei typische Berichtsformate aus der Praxis: Der <em>Job Status Report</em> stellt für jede Kostenart Budget, geschätzte Gesamtkosten, gebundene Kosten (Cost Committed), Kostenrisiko (Cost Exposure), bisher angefallene Kosten und Über-/Unterschreitung gegenüber. Der <em>Cash-Flow-Statusbericht</em> zeigt Kosten, Rechnungsstellung, Verbindlichkeiten, Forderungen und Kassenlage mit Vertragswert, Einbehalten (Retention) und prognostiziertem Gewinn.</p>
+
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k51-abb3.jpg" alt="Integrierte S-Kurve: Soll-Kosten, Ist-Kosten und vertraglich gebundene Kosten über der Zeit mit Kostenüberschreitung und Terminverzug zum Messzeitpunkt" loading="lazy">
+      <figcaption>Abb. 3: Integrierte S-Kurve (integriertes Kosten-/Terminsystem): Zum Messzeitpunkt („Measurement Time“) lassen sich Kostenüberschreitung gegenüber dem Budget („Cost Overrun to Date“) und aufgelaufener Terminverzug („Schedule Slippage-to-Date“) gleichzeitig ablesen; zusätzlich eingezeichnet sind Soll-Kosten („Target Cost, BCWS“), Ist-Werte („Actuals“), vertraglich gebundene Kosten („Contracted Costs“) und die Management-Reserve. (Folie 37 des Originalskripts)</figcaption>
+    </figure>
+
+    <p>Für die explorative Auswertung („Exploratory Breakdown“) wird Business-Intelligence-Software mit dynamischer Aufgliederung nach Kategorien genutzt – bei Führungskräften beliebt; gängige Excel-Beispiele sind PivotTable und PivotChart.</p>
+    <div class="note">Termin- und Kostenüberwachung unterscheiden sich grundsätzlich: Bei <strong>Terminen</strong> sind aggregierte Maße mit Vorsicht zu genießen – manche Vorgänge sind viel wichtiger als andere, und Rückstände bei unkritischen Vorgängen können den kritischen Weg verschieben. Bei <strong>Kosten</strong> dagegen kann jede Kostenquelle zur Überschreitung führen, und eine absolute Überschreitung wirkt bei jedem Vorgang ähnlich.</div>
+
+    <h2 id="abschnitt-6">Leistungskennzahlen</h2>
+    <p>Leistungskennzahlen (Performance Metrics) werden typischerweise vor Beginn der Projektsteuerung, in Vorbereitung der Überwachung, definiert. Sie müssen sowohl den Steuerungsprozess als auch die Berichtsfunktionen der Überwachung unterstützen. Die Hauptkategorien:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Kategorie</th><th>Gemessene Leistung</th><th>Zielgröße</th><th>Maßeinheiten</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Leistungsumfang (Scope)</td><td>Geleistete Arbeitsmenge</td><td>Zu leistende Arbeitsmenge</td><td>m, m², m³, Tonnen, $</td></tr>
+          <tr><td>Zeit</td><td>Fertigstellungstermine</td><td>Meilensteine, Endtermin</td><td>Tag, Woche, Monat</td></tr>
+          <tr><td>Geld</td><td>Kosten, Cashflow</td><td>Budget, Gewinn, Cashflow</td><td>$, Kapitalwert (NPV)</td></tr>
+          <tr><td>Qualität</td><td>Erreichte Qualität (Erscheinungsbild, Dauerhaftigkeit, Festigkeit, Eignung)</td><td>Angestrebtes Qualitätsniveau</td><td>Anzahl/Wert der Mängel, Anzahl Nachtragsanordnungen</td></tr>
+          <tr><td>Arbeitssicherheit</td><td>Tatsächliche Unfälle und Verletzungen, Verzögerungen und wirtschaftliche Schäden</td><td>Zielniveau für Unfälle und Verletzungen</td><td>Personen, $, Tag, Woche, Monat</td></tr>
+          <tr><td>Produktivität</td><td>Tatsächliche Produktivität</td><td>Geplante Produktivität</td><td>Arbeitseinheit je Arbeitskraft und Zeit</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="abschnitt-7">Der Earned-Value-Ansatz: Kennzahlen und Abweichungen</h2>
+    <p>Der <strong>Earned-Value-Ansatz</strong> (Fertigstellungswert-Methode) integriert Kosten, Termine und geleistete Arbeit, indem er allen drei Größen Geldwerte zuordnet. So werden Termin- und Kostenlage in derselben Einheit (Geld) vergleichbar. Die Grundgrößen und die daraus abgeleiteten Kennzahlen – in der Vorlesung in der klassischen C/SCSC-Notation (BCWS/BCWP/ACWP), daneben die heute gebräuchlichen Bezeichnungen PV/EV/AC:</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Kennzahl</th><th>Heutiger Name</th><th>Formel / Einheit</th><th>Bedeutung</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>BCWS</strong> – Budgeted Cost of Work Scheduled</td><td>PV (Planned Value, Planwert)</td><td>$</td><td>Der Wert der Arbeit, die in einem gegebenen Zeitraum planmäßig zu leisten war.</td></tr>
+          <tr><td><strong>BCWP</strong> – Budgeted Cost of Work Performed</td><td>EV (Earned Value, Fertigstellungswert)</td><td>$</td><td>Der (zu Budgetpreisen bewertete) Geldwert der im Kontrollzeitraum tatsächlich geleisteten Arbeit.</td></tr>
+          <tr><td><strong>ACWP</strong> – Actual Cost of Work Performed</td><td>AC (Actual Cost, Istkosten)</td><td>$</td><td>Die Kosten, die für die geleistete Arbeit im Kontrollzeitraum tatsächlich angefallen sind.</td></tr>
+          <tr><td><strong>STWP</strong> – Scheduled Time of Work Performed</td><td>–</td><td>Zeit</td><td>Die planmäßige Dauer für die tatsächlich geleistete Arbeit.</td></tr>
+          <tr><td><strong>ATWP</strong> – Actual Time of Work Performed</td><td>–</td><td>Zeit</td><td>Die tatsächlich aufgewendete Zeit für die geleistete Arbeit.</td></tr>
+          <tr><td><strong>CV</strong> – Cost Variance (Kostenabweichung)</td><td>CV</td><td>CV = BCWP − ACWP</td><td>„Gebe ich für die geleistete Arbeit mehr oder weniger aus als geplant?“ + = Unterschreitung, − = Überschreitung, 0 = im Budget.</td></tr>
+          <tr><td><strong>CI</strong> – Cost Index</td><td>CPI (Cost Performance Index)</td><td>CI = BCWP / ACWP</td><td>&gt; 1 Unterschreitung, &lt; 1 Überschreitung, = 1 im Budget.</td></tr>
+          <tr><td><strong>SV</strong> – Schedule Variance (Terminabweichung)</td><td>SV</td><td>SV = BCWP − BCWS</td><td>„Wie verhält sich der Wert der geleisteten Arbeit zum Wert der geplanten Arbeit?“ + = voraus, − = im Rückstand, 0 = im Plan. In $ gemessen – als Näherung für den Wert.</td></tr>
+          <tr><td><strong>SI</strong> – Schedule Index</td><td>SPI (Schedule Performance Index)</td><td>SI = BCWP / BCWS</td><td>&gt; 1 voraus, &lt; 1 im Rückstand, = 1 im Plan.</td></tr>
+          <tr><td><strong>TV</strong> – Time Variance (Zeitabweichung)</td><td>–</td><td>TV = STWP − ATWP</td><td>„Brauche ich für die geleistete Arbeit mehr oder weniger Zeit als geplant?“ In Zeiteinheiten. + = voraus, − = Verzug.</td></tr>
+          <tr><td><strong>TI</strong> – Time Index</td><td>–</td><td>TI = STWP / ATWP</td><td>&gt; 1 voraus, &lt; 1 Verzug, = 1 im Plan.</td></tr>
+          <tr><td><strong>RV</strong> – Resource Flow Variance (Mittelabfluss-Abweichung)</td><td>–</td><td>RV = BCWS − ACWP</td><td>Vergleicht geplante mit tatsächlichen Ausgaben des Zeitraums – unabhängig von der geleisteten Arbeit. + = Unterschreitung, − = Überschreitung.</td></tr>
+          <tr><td><strong>RI</strong> – Resource Flow Index</td><td>–</td><td>RI = BCWS / ACWP</td><td>&gt; 1 Unterschreitung, &lt; 1 Überschreitung, = 1 im Ziel.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="formel">CV = BCWP − ACWP&nbsp;&nbsp;&nbsp;&nbsp;CI = BCWP / ACWP&nbsp;&nbsp;&nbsp;&nbsp;SV = BCWP − BCWS&nbsp;&nbsp;&nbsp;&nbsp;SI = BCWP / BCWS</div>
+    <div class="formel">TV = STWP − ATWP&nbsp;&nbsp;&nbsp;&nbsp;TI = STWP / ATWP&nbsp;&nbsp;&nbsp;&nbsp;RV = BCWS − ACWP&nbsp;&nbsp;&nbsp;&nbsp;RI = BCWS / ACWP</div>
+
+    <p>Drei Feinheiten sind wichtig:</p>
+    <ul>
+      <li>Die Terminabweichung SV wird in Geld gemessen: Selbst ein zeitlich geringer Vorsprung oder Rückstand kann groß ausfallen, wenn gerade an einer sehr teuren Projektkomponente gearbeitet wird.</li>
+      <li>Die Zeitabweichung TV kann nahe null liegen, obwohl der Ressourcenverbrauch stark abweicht – sie misst nur Zeit.</li>
+      <li>Die Mittelabfluss-Abweichung RV sagt nichts über „gut“ oder „schlecht“: Sie kann null sein, wenn schneller, aber billiger als geplant gearbeitet wird – oder langsamer, aber teurer.</li>
+    </ul>
+
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k51-abb4.jpg" alt="Earned-Value-Diagramm: Kostenkurven für Plan (BCWS), Fertigstellungswert (BCWP) und Istkosten (ACWP) über der Zeit mit eingezeichneter Termin-, Kosten- und Zeitabweichung" loading="lazy">
+      <figcaption>Abb. 4: Das klassische Earned-Value-Diagramm: Über der Zeit werden die Plan-Kostenkurve („Cost Schedule Plan/Baseline“ = BCWS), die Istkosten („Actual Cost“ = ACWP) und der Fertigstellungswert („Value Completed“ = BCWP) aufgetragen. Der vertikale Abstand ACWP−BCWP ist die Kostenüberschreitung („Spending Variance“), BCWS−BCWP die Terminabweichung („Schedule Variance“), der horizontale Abstand STWP–ATWP die Zeitabweichung („Time Variance“, hier 10 Tage Verzug). (Folie 44 des Originalskripts)</figcaption>
+    </figure>
+
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k51-abb5.jpg" alt="Kontrollgrenzen-Diagramm: Ist-Kosten je Woche im Vergleich zu Periodenbudget sowie oberer und unterer Kontrollgrenze" loading="lazy">
+      <figcaption>Abb. 5: Kontrollgrenzen (Control Limits): Die wöchentlichen Istkosten („Actual Cost“) werden gegen das Periodenbudget („Periodic Budget“) sowie eine obere und untere Kontrollgrenze („Upper/Lower Control Limit“) aufgetragen. Erst das Verlassen des Toleranzbands löst eine Untersuchung aus – so wird nicht auf jede kleine Schwankung reagiert. (Folie 49 des Originalskripts)</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-8">Durchgerechnetes Beispiel</h2>
+    <p>Das Beispiel betrachtet ein Projekt mit den Vorgängen A bis G; nach vier Wochen sind die Vorgänge A, B und E angelaufen. Die Plandaten:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Vorgang</th><th>Dauer (Wochen)</th><th>Kosten ($)</th><th>Kosten je Woche ($)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>A</td><td>5</td><td>1.500</td><td>300</td></tr>
+          <tr><td>B</td><td>3</td><td>3.000</td><td>1.000</td></tr>
+          <tr><td>E</td><td>7</td><td>5.700</td><td>814</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Traditionelles Berichtswesen</strong> würde nur Status und Istkosten zeigen – nach vier Wochen: A abgeschlossen (1.500 $), B abgeschlossen (3.000 $), E in Arbeit (2.900 $). Ob das gut oder schlecht ist, bleibt unklar. Das <strong>Earned-Value-Berichtswesen</strong> ergänzt Budgetkosten und Fertigstellungsgrad: A ist zu 100 % fertig (Budget: 300 × 4 = 1.200 $), B zu 100 % (3.000 $), E aber erst zu 2/7 ≈ 28,6 % (Budget: 814 × 4 = 3.256 $).</p>
+    <p>Daraus ergeben sich die Grundgrößen je Vorgang: BCWP von E ist 28,6 % des Gesamtbudgets 5.700 $ ≈ 1.628 $, während planmäßig 3.256 $ an Wert hätten entstehen sollen (BCWS) und 2.900 $ tatsächlich ausgegeben wurden (ACWP).</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Vorgang</th><th>BCWP ($)</th><th>ACWP ($)</th><th>BCWS ($)</th><th>CV = BCWP−ACWP</th><th>SV = BCWP−BCWS</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>A</td><td>1.500</td><td>1.500</td><td>1.200</td><td>0</td><td>+300</td></tr>
+          <tr><td>B</td><td>3.000</td><td>3.000</td><td>3.000</td><td>0</td><td>0</td></tr>
+          <tr><td>E</td><td>1.628</td><td>2.900</td><td>3.256</td><td>−1.272</td><td>−1.628</td></tr>
+          <tr><td><strong>Summe</strong></td><td><strong>6.128</strong></td><td><strong>7.400</strong></td><td><strong>7.456</strong></td><td><strong>−1.272</strong></td><td><strong>−1.328</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Die Indizes je Vorgang: A liegt mit SI = 1.500/1.200 = 1,25 vor dem Plan bei Punktlandung im Budget (CI = 1); B ist exakt im Plan; E ist mit SI = 1.628/3.256 = 0,5 weit zurück und mit CI = 1.628/2.900 = 0,56 deutlich zu teuer. Auf Projektebene ergibt sich:</p>
+    <div class="formel">SI = (1.500 + 3.000 + 1.628) / (1.200 + 3.000 + 3.256) = 0,82&nbsp;&nbsp;&nbsp;&nbsp;CI = (1.500 + 3.000 + 1.628) / (1.500 + 3.000 + 2.900) = 0,83</div>
+    <p>Verfolgt man BCWS, BCWP und ACWP wochenweise, lassen sich SI und CI als Zeitreihen darstellen (Woche 1–4: SI = 0,85 / 0,88 / 0,79 / 0,82; CI = 0,78 / 0,82 / 0,79 / 0,83). Besonders anschaulich ist die gemeinsame Darstellung beider Indizes in einer Matrix:</p>
+
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k51-abb6.jpg" alt="Matrix aus Schedule Index (x-Achse) und Cost Index (y-Achse) mit vier Quadranten und den Wochenwerten des Beispiels im Quadranten Termin- und Budgetprobleme" loading="lazy">
+      <figcaption>Abb. 6: Integration von CI und SI: Trägt man den Cost Index über dem Schedule Index auf, entstehen vier Felder – rechts oben „im Plan und im Budget“, links oben „Terminprobleme, Budget OK“, rechts unten „Budgetprobleme, Termin OK“, links unten „Termin- <em>und</em> Budgetprobleme“. Die Wochenwerte des Beispiels (Woche 1–4) liegen alle im Problemquadranten links unten. (Folie 60 des Originalskripts)</figcaption>
+    </figure>
+  </section>
+
+  <nav class="prevnext">
+    <a href="kapitel-4-4.html">← Kapitel 4.4: Simulation und ressourcenbasierte Terminplanung</a>
+    <span class="spacer"></span>
+    <a href="kapitel-5-2.html">Kapitel 5.2: Earned-Value-Analyse (C/SCSC) und Grundlagen der Projektsteuerung →</a>
+  </nav>
+</main>
+
+<footer>
+  <div class="inner">
+    <p>Deutsche Übersetzung der Kursunterlagen von <a href="https://ocw.mit.edu/courses/1-040-project-management-spring-2004/" target="_blank" rel="noopener">MIT OpenCourseWare: 1.040 Project Management, Spring 2004</a> (Dr.&nbsp;Nathaniel Osgood).<br>
+    Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons BY-NC-SA 4.0</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

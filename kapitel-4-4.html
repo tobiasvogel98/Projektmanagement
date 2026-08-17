@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapitel 4.4: Simulation und ressourcenbasierte Terminplanung – Projektmanagement</title>
+<meta name="description" content="Kapitel 4.4 des Lernprogramms Projektmanagement: Simulation und ressourcenbasierte Terminplanung – vollständig übersetzt und aufbereitet.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <p class="kicker">Lerneinheit 4 · Projektplanung II: Terminplanung</p>
+    <h1>Kapitel 4.4: Simulation und ressourcenbasierte Terminplanung</h1>
+    <p class="sub">Von der ereignisdiskreten Simulation ganzer Bauprozesse (GERT, CYCLONE, STROBOSCOPE) zur Terminplanung unter Ressourcengrenzen: Ressourcenglättung, ressourcenbeschränkte Einplanung, Heuristiken und die Line-of-Balance-Methode.</p>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <a href="index.html">Startseite</a>
+    <a href="lehrplan.html">Lehrplan</a>
+    <a href="kursplan.html" class="active">Lernpfad</a>
+    <a href="vorlesungen.html">Vorlesungsskripte</a>
+    <a href="projekt.html">Semesterprojekt</a>
+    <a href="literatur.html">Literatur</a>
+  </div>
+</nav>
+
+<main>
+  <p class="breadcrumb"><a href="kursplan.html">Lernpfad</a> › <a href="kursplan.html#le4">Lerneinheit 4</a> › Kapitel 4.4</p>
+  <div class="kapitel-meta">
+    <span>📄 <a href="pdfs/vorlesung-12-simulation-ressourcenplanung.pdf">Original-Foliensatz (PDF, englisch)</a></span>
+    <span>Vorlesung 12 von 18 · MIT 1.040, Frühjahr 2004</span>
+  </div>
+
+  <section class="card">
+    <div class="toc">
+      <span class="label">Inhalt dieses Kapitels</span>
+      <ol>
+        <li><a href="#abschnitt-1">Statische vs. dynamische Terminplanung und die Frage der Granularität</a></li>
+        <li><a href="#abschnitt-2">GERT: probabilistische Netzpläne mit Verzweigungen und Schleifen</a></li>
+        <li><a href="#abschnitt-3">Aktivitätszyklusdiagramme und Process-Interaction-Sprachen</a></li>
+        <li><a href="#abschnitt-4">Activity Scanning: CYCLONE und das Maurer-Beispiel</a></li>
+        <li><a href="#abschnitt-5">Ressourcen im Netzplan: Glättung vs. beschränkte Einplanung</a></li>
+        <li><a href="#abschnitt-6">Optimale Verfahren und die kombinatorische Explosion</a></li>
+        <li><a href="#abschnitt-7">Heuristische Verfahren: Prioritätsregeln, Burgess und SPAR</a></li>
+        <li><a href="#abschnitt-8">Die Line-of-Balance-Methode für repetitive Projekte</a></li>
+      </ol>
+    </div>
+
+    <h2 id="abschnitt-1">Statische vs. dynamische Terminplanung und die Frage der Granularität</h2>
+    <p>Bevor es um Simulationswerkzeuge geht, lohnt eine Grundsatzfrage: Wie viel des Ablaufs legt man vorab fest, und wie viel entscheidet man erst auf der Baustelle?</p>
+    <dl class="begriffe">
+      <dt>Statische Terminplanung</dt>
+      <dd>Termine stehen im Voraus fest. Das erleichtert die Koordination mit Projektbeteiligten und Nachunternehmern, und die Abstimmung kann vorgeplant werden (z.&nbsp;B. über ein Reservierungssystem). Nachteil: Frühe Fertigstellungen oder frühe Anlieferungen lassen sich nicht ausnutzen.</dd>
+      <dt>Dynamische Terminplanung („Wait and See“)</dt>
+      <dd>Entschieden wird situativ. Die dynamische Abstimmung kostet allerdings Zeit (es entstehen Warteschlangen) – dafür wird unnötiges Warten vermieden, wenn etwas früher fertig wird.</dd>
+    </dl>
+    <p>In der Praxis kommt <strong>beides</strong> zum Einsatz. Eng damit verknüpft ist die <strong>Granularität</strong> der Planung: Eine feinkörnige Planung (bis hinunter zu einzelnen Kolonnen oder Personen) erlaubt Aussagen über Kolonnenproduktivität, Lastausgleich zwischen Kolonnen und zurückgelegte Wege – sie ist aber kombinatorisch erheblich anspruchsvoller und kann die Kreativität der dynamischen Disposition vor Ort einengen. Faustregel der Vorlesung: Faktoren, die man statisch nicht sinnvoll durchplanen kann, überlässt man der dynamischen (oder „quasi-dynamischen“) Steuerung.</p>
+
+    <h2 id="abschnitt-2">GERT: probabilistische Netzpläne mit Verzweigungen und Schleifen</h2>
+    <p>Im Zentrum dieses Kapitels steht die <strong>ereignisdiskrete Simulation (Discrete Event Simulation)</strong>. Ihr ältester Vertreter im Bauwesen ist <strong>GERT</strong> bzw. <strong>Q-GERT</strong> (Graphical Evaluation and Review Technique, entwickelt von Pritsker). Als gemeinsame Darstellungsform vieler Werkzeuge dienen Aktivitätszyklusdiagramme (Abschnitt 3); die Werkzeuge selbst zerfallen in zwei Familien: <strong>transaktionsbasierte („Process Interaction“)</strong> Ansätze wie SLAM und GPSS sowie <strong>Activity-Scanning</strong>-Ansätze wie CYCLONE und STROBOSCOPE. (Die Systemdynamik als weitere Simulationsgattung folgt erst in Lerneinheit 5.)</p>
+    <p>GERT baut auf Vorgangspfeil-Netzplänen (AOA) auf, gibt ihnen aber eine diskrete Ablaufsemantik:</p>
+    <ul>
+      <li><strong>„Transaktionen“ (Entitäten)</strong> fließen durch das System und können weitere Transaktionen auslösen.</li>
+      <li>Transaktionen müssen sich <strong>Ressourcen</strong> für ihre Bearbeitung sichern – und warten, bis die benötigten Ressourcen verfügbar sind.</li>
+      <li>Das Modell ist durchgehend <strong>probabilistisch</strong>: Nicht nur die Dauern, auch <strong>Verzweigungen und Schleifen</strong> können zufällig sein. Damit läuft die Zeit im Diagramm nicht mehr zwangsläufig linear nach rechts!</li>
+    </ul>
+    <p>Verzweigungen können deterministisch sein (wie in CPM/PERT) oder probabilistisch; das wichtigste Schleifenkonstrukt ist der <strong>Nacharbeitszyklus (Rework Cycle)</strong>:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k44-abb1.jpg" alt="GERT-Diagramm eines Triebwerksentwicklungsprojekts mit Nacharbeitsschleife und drei probabilistischen Ausgängen" loading="lazy">
+      <figcaption>Abb. 1: Probabilistisches Verzweigen und Schleifen in GERT – hierfür gibt es keinen äquivalenten klassischen Pfeil-Netzplan: Nach den anfänglichen Projektaktivitäten („Initial project activities“) folgt die Bewertung alternativer Triebwerksentwicklungen; von dort führt eine Nacharbeitsschleife („Rework/Recycle loop“) zurück, oder es wird probabilistisch verzweigt in „Projekt abbrechen“ („Drop project“), „Feststofftriebwerk entwickeln“ oder „Flüssigtriebwerk entwickeln“ (Folie 11 des Originalskripts).</figcaption>
+    </figure>
+    <p>Ein solches Netz lässt sich zwar in eine aggregierte CPM-Darstellung überführen – dabei gehen aber gerade die Schleifen und Wahrscheinlichkeiten verloren. <strong>Q-GERT</strong> ergänzt Warteschlangen: Ein Warteschlangenknoten reicht Entitäten an ausgehende Aktivitäten weiter (denen eine Anzahl paralleler „Bediener“ zugeordnet ist), staut Objekte bis zu einer Kapazitätsgrenze auf und weist Ankömmlinge ab („Balking“), wenn die Kapazität erreicht ist; Kombinationselemente führen Transaktionen zusammen. Aus dieser Linie entstanden später GASP und SLAM. Dokumentierte GERT-Anwendungen reichen von Offshore-Bohrinseln (Granli) über die Alaska-Pipeline bis zum Talsperrenbau (Peña-Mora).</p>
+    <div class="note">Alle Bausimulationssprachen sind formal gleich mächtig („Turing-äquivalent“ – jede kann jede andere nachbilden). Sie unterscheiden sich in <strong>Bedienbarkeit</strong>, <strong>Erweiterbarkeit</strong> und <strong>Ausdrucksstärke für die Baupraxis</strong>: Wie natürlich lassen sich Bauszenarien beschreiben?</div>
+
+    <h2 id="abschnitt-3">Aktivitätszyklusdiagramme und Process-Interaction-Sprachen</h2>
+    <p>Die verbreitetste visuelle Darstellung ereignisdiskreter Baumodelle ist das <strong>Aktivitätszyklusdiagramm (Activity Cycle Diagram, ACD)</strong>: Rechtecke stehen für Aktivitäten, Kreise für Warteschlangen – also Ressourcen in einem bestimmten Zustand. Das Standardbeispiel der Vorlesung ist ein Erdbaubetrieb mit Schürfkübelraupen (Scraper) und Schubraupen (Pusher):</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k44-abb2.jpg" alt="Aktivitätszyklusdiagramm des Scraper-Pusher-Betriebs mit farblich getrennten Kreisläufen für Schubraupe, Schürfkübelraupe und Boden" loading="lazy">
+      <figcaption>Abb. 2: ACD des Scraper-Pusher-Betriebs: Die Schubraupe (Pusher, braun) durchläuft den Zyklus Schubbeladen („Push Load“) – Zurücksetzen („Back Track“); die Schürfkübelraupe (Scraper, grün/blau) fährt nach dem Beladen zur Kippe („Haul“), kippt und verteilt den Boden („Dump and Spread“) und kehrt zurück („Return“); der ausgekippte Boden („Dumped Soil“, rot) verlässt den Kreislauf. Kreise wie „RdyToHaul“ (bereit zur Fahrt) sind Warteschlangen, in denen Ressourcen auf die nächste Aktivität warten (Folie 18 des Originalskripts).</figcaption>
+    </figure>
+    <p><strong>Process-Interaction-Sprachen</strong> (Beispiele: SLAM, GPSS, ProModel, SimScript, ModSim) beschreiben ein System als Fluss von Transaktionen, die Ressourcen („Maschinen“) belegen und wieder freigeben. Sie bewähren sich in „Werkstattfertigungs“-Situationen (Job Shops), in denen klar identifizierbare Objekte durch das System wandern und Ressourcen vorübergehend beanspruchen. Im Bauwesen zeigen sich jedoch Schwächen:</p>
+    <ul>
+      <li>Es ist oft <strong>knifflig zu entscheiden, was die „Transaktion“ ist</strong> – die übrigen Entitäten lassen sich dann nur umständlich abbilden.</li>
+      <li>Der <strong>Perspektivwechsel</strong> auf eine andere Entität ist schwierig.</li>
+      <li>Während der Simulation drohen <strong>Verklemmungen (Deadlocks)</strong>, wenn Transaktionen sich gegenseitig Ressourcen streitig machen.</li>
+    </ul>
+
+    <h2 id="abschnitt-4">Activity Scanning: CYCLONE und das Maurer-Beispiel</h2>
+    <p>Die zweite Familie, das <strong>Activity Scanning</strong>, orientiert sich direkt an den Aktivitätszyklusdiagrammen: Statt Transaktionen zu verfolgen, prüft die Simulation fortlaufend, welche Aktivitäten ihre Startbedingungen erfüllen. Neben Universalwerkzeugen gibt es bauspezifische Sprachen – vor allem <strong>CYCLONE</strong> und dessen Weiterentwicklung <strong>STROBOSCOPE</strong>. Die Modellbausteine von CYCLONE:</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Element</th><th>Funktion</th></tr></thead>
+      <tbody>
+        <tr><td>Kombinationsaktivität (COMBI)</td><td>Steht stets hinter Warteschlangenknoten. Sie kann erst beginnen, wenn in <em>jeder</em> vorgelagerten Warteschlange Einheiten verfügbar sind; dann werden diese kombiniert und verarbeitet. Fehlen Einheiten in einzelnen Warteschlangen, warten die übrigen, bis die Kombinationsbedingung erfüllt ist.</td></tr>
+        <tr><td>Normalaktivität (NORMAL)</td><td>Wie COMBI, jedoch ohne Wartebedingung: Eintreffende Einheiten werden sofort und ohne Verzögerung verarbeitet.</td></tr>
+        <tr><td>Warteschlangenknoten (QUEUE)</td><td>Steht vor jeder COMBI-Aktivität und ist der Ort, an dem Einheiten bis zur Kombination verweilen; hier werden die Wartezeitstatistiken erfasst.</td></tr>
+        <tr><td>Funktionsknoten (FUNCTION)</td><td>Übernimmt Sonderfunktionen wie Zählen, Konsolidieren, Markieren und Statistikerfassung.</td></tr>
+        <tr><td>Akkumulator (ACCUMULATOR)</td><td>Legt fest, wie oft das System seinen Zyklus durchläuft.</td></tr>
+        <tr><td>Pfeil (ARC)</td><td>Beschreibt die logische Struktur des Modells und die Flussrichtung der Entitäten.</td></tr>
+      </tbody>
+    </table></div>
+    <p>Das Lehrbeispiel: eine Maurerkolonne mit <strong>3 Maurern und 1 Bauhelfer</strong>; das Gerüst fasst <strong>3 Paletten zu je 10 Ziegeln</strong>. Der Bauhelfer füllt das Ziegellager auf, die Maurer entnehmen Pakete und vermauern die Ziegel:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k44-abb3.jpg" alt="CYCLONE-Modell des Maurer-Beispiels mit Warteschlangen für Bauhelfer, Palettenplätze und Maurer sowie den Aktivitäten Nachschub, Paket entnehmen und Ziegel vermauern" loading="lazy">
+      <figcaption>Abb. 3: Das CYCLONE-Modell des Maurer-Beispiels: Warteschlange 1 „Laborer idle“ (Bauhelfer wartet, Ressource L) speist die COMBI-Aktivität 2 „Resupply stack“ (Lager auffüllen); die Knoten 3/4 verwalten belegte und freie Palettenplätze (P); in COMBI 5 „Mason removes packet“ entnimmt ein Maurer ein Paket, in Normalaktivität 6 „Mason lays brick“ vermauert er es; Warteschlange 7 „Mason waits resupply“ hält wartende Maurer (M), und Funktionsknoten 8 zählt jeweils 10 vermauerte Ziegel (Folie 28 des Originalskripts).</figcaption>
+    </figure>
+    <p>Im zugehörigen CYCLONE-Programmtext wird jedes Element eine Codezeile; die Dauern der Aktivitäten „Auffüllen“ und „Vermauern“ sind als <strong>Beta-Verteilungen</strong> hinterlegt – die Verteilungsannahme aus der PERT-Welt (<a href="kapitel-4-2.html">Kapitel 4.2</a>) kehrt hier also auf Prozessebene wieder, während die Paketentnahme eine feste Dauer hat.</p>
+
+    <h2 id="abschnitt-5">Ressourcen im Netzplan: Glättung vs. beschränkte Einplanung</h2>
+    <p>Zurück zur Netzplantechnik. Deren Grundablauf (aus <a href="kapitel-4-1.html">Kapitel 4.1</a>) lautet: Vorgänge aus den Arbeitspaketen des Projektstrukturplans ableiten, Kosten, Zeit und Ressourcen je Vorgang schätzen, Anordnungsbeziehungen festlegen – und dann iterieren: CPM-Terminrechnung durchführen, Zeit-, Kosten- und Ressourcenverbrauch über die Projektlaufzeit abschätzen, bei Bedarf Abhängigkeiten oder Ressourcen anpassen. Der entscheidende Haken: <strong>Die CPM-Rechnung unterstellt implizit „unendliche Ressourcen“.</strong> Trägt man den Ressourcenbedarf des Terminplans über der Zeit auf (das sogenannte <strong>Resource Loading</strong>, dargestellt als Belastungshistogramm), zeigt sich schnell, ob der Plan die verfügbaren Kapazitäten sprengt.</p>
+    <p>Welche Ressourcen sind kritisch?</p>
+    <ul>
+      <li><strong>Personal</strong> ist am wichtigsten: Die Beschaffung braucht Zeit, Freisetzen ist schwierig, kurzfristiges Wiederholen ebenso – und jedes Gewerk ist als eigener Ressourcentyp zu behandeln.</li>
+      <li><strong>Geräte:</strong> Hochspezialisierte Geräte sind knapp; Standardgeräte lassen sich vergleichsweise leicht bedarfsgerecht beschaffen. Randbedingungen wie Genehmigungsfragen sind zu beachten.</li>
+    </ul>
+    <dl class="begriffe">
+      <dt>Ressourcenglättung (Resource Leveling)</dt>
+      <dd>Vorgänge werden <em>innerhalb ihrer Puffer</em> verschoben, um Schwankungen des Ressourceneinsatzes zu minimieren – die Projektdauer bleibt unverändert! Besonders wichtig für Personal. Achtung: Es gibt keine Garantie, dass der geglättete Bedarf innerhalb der tatsächlich verfügbaren Kapazität liegt.</dd>
+      <dt>Ressourcenbeschränkte Einplanung (Resource Scheduling, „Constrained-Resource Scheduling“, „Limited Resource Allocation“)</dt>
+      <dd>Die Vorgänge werden so eingeplant, dass die Kapazitätsgrenzen eingehalten werden – bei möglichst geringer Verlängerung der Projektdauer.</dd>
+    </dl>
+    <div class="note">Beiden Verfahren liegt dieselbe Kernannahme zugrunde: Die Ressourcenzuordnung und die Dauer jedes einzelnen Vorgangs bleiben konstant – verschoben wird nur die zeitliche Lage.</div>
+
+    <h2 id="abschnitt-6">Optimale Verfahren und die kombinatorische Explosion</h2>
+    <p>Ressourcenglättung und -einplanung optimal zu lösen ist ein kombinatorisches Problem und rechnerisch extrem teuer (NP-vollständig): Im Prinzip müsste man alle möglichen Reihenfolgen konkurrierender Vorgänge vergleichen. Die Intuition dahinter: Innerhalb der Randbedingungen gibt es sehr viele mögliche Start- und Endzeitpunkte – typischerweise zu viele, um sie aufzuzählen – und die <em>lokal</em> beste Entscheidung ist nicht unbedingt <em>global</em> die beste. Als exakte Ansätze kommen lineare Programmierung, vollständige Enumeration und „Branch and Bound“ (beschränkte Suche) infrage.</p>
+    <p>Wie tückisch lokale Entscheidungen sind, zeigt ein kleines Beispiel: sechs Vorgänge, von denen B, C, D und E um eine knappe Ressource konkurrieren.</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k44-abb4.jpg" alt="Netzplan mit den Vorgängen A bis F, je Vorgang sind benötigte Ressourcen und Dauer angegeben" loading="lazy">
+      <figcaption>Abb. 4: Beispiel für die kombinatorische Natur der ressourcenbeschränkten Einplanung: Pfad A–B–C–D–F mit parallelem Vorgang E. Über jedem Knoten steht der Ressourcenbedarf, darunter die Dauer („Required resources“ / „Duration“): B braucht 1 Einheit für 1 Zeiteinheit, C 2 Einheiten für 4, D 1 für 4, E 1 für 4; A und F sind Meilensteine ohne Bedarf (Folie 36 des Originalskripts).</figcaption>
+    </figure>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k44-abb5.jpg" alt="Sechs mögliche Ablaufpläne als Buchstabenfolgen mit Projektdauern zwischen 9 und 13 Zeiteinheiten" loading="lazy">
+      <figcaption>Abb. 5: Mögliche Ablaufpläne bei begrenzter Ressource (jede Zeile ein Belegungsplan, jeder Buchstabe eine Zeiteinheit des Vorgangs): Die als „bester lokaler Zug“ markierte Variante („Best local choice!“) erreicht Dauer 12, mehrere andere 13 – der optimale Plan (C und E überlappend, B vorgezogen) schafft es in 9 Zeiteinheiten (Folie 37 des Originalskripts).</figcaption>
+    </figure>
+    <p>Auch die <strong>Zuordnung von Kolonnen zu Vorgängen</strong> lässt sich exakt formulieren – etwa für elf Bauabschnitte (A–K mit Arbeitsdauern zwischen 5 und 9 Tagen), die auf mehrere Kolonnen zu verteilen sind, als ganzzahliges Programm (Integer Programming):</p>
+    <div class="formel">
+      <strong>Zuordnungsproblem Kolonnen ↔ Abschnitte:</strong> &nbsp;x<sub>ij</sub> = 1, wenn Abschnitt i der Kolonne j zugewiesen wird, sonst 0; t<sub>i</sub> = Dauer des Abschnitts i.<br>
+      Minimiere z unter den Nebenbedingungen:<br>
+      &nbsp;&nbsp;z ≥ Σ<sub>i = 1…n<sub>Abschnitte</sub></sub> t<sub>i</sub> · x<sub>ij</sub> &nbsp;für jede Kolonne j &nbsp;<em>(z deckt die Arbeitslast jeder Kolonne ab)</em><br>
+      &nbsp;&nbsp;Σ<sub>j = 1…n<sub>Kolonnen</sub></sub> x<sub>ij</sub> = 1 &nbsp;für jeden Abschnitt i &nbsp;<em>(jeder Abschnitt genau einer Kolonne zugewiesen)</em>
+    </div>
+
+    <h2 id="abschnitt-7">Heuristische Verfahren: Prioritätsregeln, Burgess und SPAR</h2>
+    <p>Weil die exakte Lösung praktisch meist unerreichbar ist, arbeitet man mit <strong>Heuristiken</strong> – Faustregeln, die in akzeptabler Zeit eine gute (aber typischerweise nur lokal optimale) Lösung liefern. „Gierige“ (greedy) Algorithmen tun in jedem Schritt das lokal Beste, das global nicht das Beste sein muss; beurteilt werden Heuristiken in der Regel empirisch. Manche sind hochgradig problemspezifisch (z.&nbsp;B. SPAR), andere sehr allgemein (Branch and Bound, Simulated Annealing, genetische Algorithmen). Zwei Grundstrategien:</p>
+    <ul>
+      <li><strong>Serielle Verfahren</strong> planen Vorgang für Vorgang: die priorisierten Vorgänge der Reihe nach so früh wie möglich einplanen. Seltener verwendet.</li>
+      <li><strong>Parallele Verfahren</strong> planen Zeitschritt für Zeitschritt: Ausgehend von einem Anfangsplan wird je Zeitschritt entschieden, welche Vorgänge verschoben werden – laufende Vorgänge werden dabei nicht mehr angetastet (lokale Optimierung), entschieden wird anhand der Eigenschaften der jeweils anstehenden Vorgänge. Am gebräuchlichsten.</li>
+    </ul>
+    <p>Typischer Ablauf einer heuristischen Ressourceneinplanung: Prioritäten vergeben – etwa nach den Regeln „kürzester Vorgang zuerst“, „größter Ressourcenbedarf zuerst“, „kleinster Puffer zuerst“ (Minimum Slack), „meiste kritische Nachfolger“ oder „meiste Nachfolger“ – und jeden Vorgang erst starten, wenn seine Vorgänger abgeschlossen sind <em>und</em> ausreichend Ressourcen verfügbar sind.</p>
+    <p>Die empirische Vergleichsstudie von Patterson und Davis (1975) testete zahlreiche Regeln in seriellem und parallelem Modus (u.&nbsp;a. frühester späterer Endtermin, Kombinationen aus EF und LS, größter Ressourcenbedarf, minimaler Ressourcenleerlauf, kürzeste Dauern, meiste Vorgänge, zufällige Auswahl, minimaler Puffer). Ergebnis:</p>
+    <ul>
+      <li>Am wirksamsten: <strong>minimaler Puffer</strong> (gleichbedeutend mit minimalem spätestem Start) und <strong>minimaler spätester Endtermin</strong>.</li>
+      <li>Selbst die besten Regeln verfehlen das Optimum in <strong>60 % der Fälle</strong>.</li>
+      <li>Die Wahl seriell vs. parallel kann wichtiger sein als die Prioritätsregel selbst.</li>
+    </ul>
+    <p><strong>Glättungsheuristik nach Burgess</strong> (für die Ressourcenglättung): Die Vorgänge werden entgegen der Anordnungsreihenfolge sortiert und zunächst auf ihre frühesten Starttermine gelegt. Dann wird iteriert, bis die Summe der Quadrate des Ressourceneinsatzes nicht mehr sinkt: Jeder Vorgang wird in Sortierreihenfolge auf den Zeitpunkt gelegt, der – unter Einhaltung der Anordnungsbeziehungen – die Quadratsumme minimiert. Bei stark kritischen Ressourcen wiederholt man das Verfahren mit anderer Anfangssortierung; zum Schluss werden ausgelassene Faktoren manuell nachjustiert.</p>
+    <p><strong>Beispielalgorithmus für die ressourcenbeschränkte Einplanung:</strong></p>
+    <ul>
+      <li>1. Alle Ressourcen von der wichtigsten zur unwichtigsten ordnen.</li>
+      <li>2. Den geplanten Start jedes Vorgangs auf seinen frühesten Starttermin setzen.</li>
+      <li>3. Ab t = 0 den Bedarf an Ressource i berechnen.</li>
+      <li>4. Übersteigt der Bedarf die Verfügbarkeit, den Vorgang mit dem größten spätesten Start auswählen und seinen Start auf t + 1 verschieben.</li>
+      <li>5. Schritt 4 wiederholen, bis die Ressourcenrestriktion für i zum Zeitpunkt t eingehalten ist.</li>
+      <li>6. Mit t = t + 1 fortfahren (zurück zu Schritt 4).</li>
+      <li>7. Das Ganze für die nächste Ressource i + 1 wiederholen (zurück zu Schritt 3).</li>
+    </ul>
+    <div class="note">Wird an bereits eingeplanten Vorgängen nichts mehr geändert, ist das Verschieben in der Reihenfolge des spätesten Starts dasselbe wie eine Priorisierung nach Puffer – und minimiert damit die Verlängerung der Gesamtprojektdauer. Genau diese Auswahl nach minimalem Puffer hat sich empirisch als überlegen erwiesen; die Auswahl nach spätestem Endtermin ist ebenfalls wirksam.</div>
+    <p>Der <strong>SPAR-Algorithmus</strong> geht über einfache Gier-Strategien hinaus: Er ordnet Aufträge probabilistisch zu (und findet so mehrere lokale Minima), überdenkt frühere Entscheidungen und darf sogar den kritischen Pfad verändern (Verzögern von Aufträgen oder Ressourcen zugunsten kritischer Vorgänge). Angenommen wird ein linearer Zeit-Ressourcen-Tausch, d.&nbsp;h. konstante Personentage je Vorgang. Kritische Ressourcen werden für eine höhere Zuteilung in Betracht gezogen: Nötigenfalls werden Ressourcen von bereits eingeplanten Aufträgen ausgeliehen – aber nur, wenn sich das Gesamtprojekt dadurch nicht verlängert – und im äußersten Fall werden andere laufende Aufträge verzögert.</p>
+
+    <h2 id="abschnitt-8">Die Line-of-Balance-Methode für repetitive Projekte</h2>
+    <p>Für <strong>repetitive Vorgänge</strong>, die von <strong>derselben Kolonne</strong> in gleichbleibender Abfolge über viele Abschnitte ausgeführt werden, bietet sich die <strong>Line-of-Balance-Methode (LOB</strong>, auch Linear Scheduling Method, LSM – Planung mit Fertigungslinien<strong>)</strong> an. Sie stellt den <strong>Arbeitsfortschritt</strong> je Vorgang als Linie im Orts-Zeit-Diagramm dar, macht die Fortschritts<em>rate</em> (Steigung) sichtbar und zielt darauf, Unterbrechungen im Einsatz der Kolonnen zu minimieren. Genutzt wird sie zur Planung der Kolonnen-Wiederverwendung sowie von Zeitpunkt und Geschwindigkeit der Arbeiten.</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k44-abb6.jpg" alt="Orts-Zeit-Diagramm eines Straßenbauprojekts mit ansteigenden Fortschrittslinien für sieben Vorgänge" loading="lazy">
+      <figcaption>Abb. 6: LSM-Diagramm eines Straßenbauprojekts: Ort (Station 0+00 bis 23+00) über der Zeit in Arbeitstagen. Jede Linie ist ein Vorgang – Einrichten („Move-In“), Roden und Abräumen („Clear &amp; Grub“), Erdbau („Earth Moving“), Frostschutzschicht („Subbase“), Tragschicht („Base“), Deckschicht („Paving“), Räumen („Move Out“); der Durchlass („Culvert“) wird separat im Netzplan geführt. Die Steigung jeder Linie ist die Fortschrittsrate der Kolonne (Folie 53 des Originalskripts).</figcaption>
+    </figure>
+    <p>Die Planungsschritte der LOB: Kolonnen dimensionieren („Design Crews“), Aufgaben je Kolonne festlegen, die Gewerkefolge bestimmen (nach Ort oder Arbeitsart), die Route über die Baustelle planen – und <strong>Puffer zwischen den Gewerke-Kolonnen</strong> vorsehen. Da sich die Fortschrittslinien zweier Gewerke nicht kreuzen dürfen (Vorgangsstörung, „Activity Interference“), werden Mindestabstände definiert:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k44-abb7.jpg" alt="Orts-Zeit-Diagramm mit zwei Fortschrittslinien, zwischen denen ein Zeitpuffer von 5 Tagen und ein Wegpuffer von 10 Metern eingezeichnet sind" loading="lazy">
+      <figcaption>Abb. 7: Aktivitätspuffer im LSM-Plan: Zwischen den Fortschrittslinien zweier aufeinanderfolgender Gewerke liegen ein <strong>Zeitpuffer</strong> („Time Buffer“, hier mindestens 5 Tage) und ein <strong>Wegpuffer</strong> („Distance Buffer“, hier mindestens 10 m) – erst wenn beide eingehalten sind, ist die Kollisionsfreiheit der Kolonnen gesichert (Folie 57 des Originalskripts).</figcaption>
+    </figure>
+    <p>Stärken und Schwächen im Überblick:</p>
+    <ul>
+      <li><strong>Vorteile:</strong> einfacher aufzustellen als Netzpläne und informativer als Gantt-Diagramme; grafisch ablesbar sind Fortschrittsrate, Vorgangsdauern, Ressourcenzuordnungen, Kalendertermine und das Konfliktrisiko zwischen Kolonnen. Die LOB ergänzt die Netzplantechnik bei Projekten mit repetitiven und diskreten Anteilen; aus ihr lassen sich Personalhistogramme (Resource-Loading-Diagramme) ableiten, Ressourcen ausbalancieren und Erlöskurven entwickeln.</li>
+      <li><strong>Nachteile:</strong> weniger wirksam, wenn die Arbeit regelmäßig unterbrochen wird oder die Vorgänge nicht an allen Orten derselben Reihenfolge folgen; Mindestabstände und Puffer sind schwer zu bestimmen; horizontaler und vertikaler Baufortschritt lassen sich schlecht gleichzeitig darstellen.</li>
+    </ul>
+    <div class="note">Damit ist die Projektplanung abgeschlossen: Kostenschätzung (Lerneinheit 3) und Terminplanung (Lerneinheit 4) liefern die Soll-Werte, an denen das laufende Projekt gemessen wird. Wie man Kosten und Termine während der Ausführung überwacht, zeigt <a href="kapitel-5-1.html">Kapitel 5.1</a>.</div>
+  </section>
+
+  <nav class="prevnext">
+    <a href="kapitel-4-3.html">← Kapitel 4.3: Probabilistische Planung II</a>
+    <span class="spacer"></span>
+    <a href="kapitel-5-1.html">Kapitel 5.1: Grundlagen der Kosten- und Terminüberwachung →</a>
+  </nav>
+</main>
+
+<footer>
+  <div class="inner">
+    <p>Deutsche Übersetzung der Kursunterlagen von <a href="https://ocw.mit.edu/courses/1-040-project-management-spring-2004/" target="_blank" rel="noopener">MIT OpenCourseWare: 1.040 Project Management, Spring 2004</a> (Dr.&nbsp;Nathaniel Osgood).<br>
+    Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons BY-NC-SA 4.0</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

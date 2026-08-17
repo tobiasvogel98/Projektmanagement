@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapitel 5.3: Problemdiagnose und Einführung in die Projektdynamik – Projektmanagement</title>
+<meta name="description" content="Kapitel 5.3 des Lernprogramms Projektmanagement: Problemdiagnose und Einführung in die Projektdynamik – vollständig übersetzt und aufbereitet.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <p class="kicker">Lerneinheit 5 · Projektüberwachung und -steuerung</p>
+    <h1>Kapitel 5.3: Problemdiagnose und Einführung in die Projektdynamik</h1>
+    <p class="sub">Mit Pareto-Analyse, Ursache-Wirkungs-Diagramm und Streudiagramm den Ursachen von Leistungsproblemen auf die Spur kommen – und mit Kausaldiagrammen und System Dynamics die Eigendynamik von Projekten verstehen.</p>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <a href="index.html">Startseite</a>
+    <a href="lehrplan.html">Lehrplan</a>
+    <a href="kursplan.html" class="active">Lernpfad</a>
+    <a href="vorlesungen.html">Vorlesungsskripte</a>
+    <a href="projekt.html">Semesterprojekt</a>
+    <a href="literatur.html">Literatur</a>
+  </div>
+</nav>
+
+<main>
+  <p class="breadcrumb"><a href="kursplan.html">Lernpfad</a> › <a href="kursplan.html#le5">Lerneinheit 5</a> › Kapitel 5.3</p>
+  <div class="kapitel-meta">
+    <span>📄 <a href="pdfs/vorlesung-15-problemdiagnose-projektdynamik.pdf">Original-Foliensatz (PDF, englisch)</a></span>
+    <span>Vorlesung 15 von 18 · MIT 1.040, Frühjahr 2004</span>
+  </div>
+
+  <section class="card">
+    <div class="toc">
+      <span class="label">Inhalt dieses Kapitels</span>
+      <ol>
+        <li><a href="#abschnitt-1">Werkzeuge der Problemdiagnose</a></li>
+        <li><a href="#abschnitt-2">Pareto-Analyse</a></li>
+        <li><a href="#abschnitt-3">Ursache-Wirkungs-Diagramm (Fishbone)</a></li>
+        <li><a href="#abschnitt-4">Streudiagramm: Korrelation ist nicht Kausalität</a></li>
+        <li><a href="#abschnitt-5">Systemdenken im Projektmanagement</a></li>
+        <li><a href="#abschnitt-6">Kausaldiagramme: Wirkungslinks und Polarität</a></li>
+        <li><a href="#abschnitt-7">Feedback-Loops und ihr dynamisches Verhalten</a></li>
+        <li><a href="#abschnitt-8">System Dynamics: Vom Kausaldiagramm zum Simulationsmodell</a></li>
+      </ol>
+    </div>
+
+    <h2 id="abschnitt-1">Werkzeuge der Problemdiagnose</h2>
+    <p>Die Projektsteuerung (vgl. <a href="kapitel-5-2.html">Kapitel 5.2</a>) beginnt mit der <strong>Problemdiagnose</strong>: Bevor gegengesteuert werden kann, müssen die Ursachen eines Leistungsproblems verstanden sein. Neben der bereits behandelten explorativen Auswertung (Exploratory Analysis, vgl. <a href="kapitel-5-1.html">Kapitel 5.1</a>) stellt die Vorlesung vier Diagnosewerkzeuge vor, die sich in Fokus und Ausdruckskraft unterscheiden:</p>
+    <ul>
+      <li><strong>Pareto-Analyse</strong> – welche wenigen Komponenten verursachen den Großteil des Problems?</li>
+      <li><strong>Ursache-Wirkungs-Diagramm</strong> (Fishbone-Diagramm) – welche Ursachen wirken in welchen Kategorien auf das Problem?</li>
+      <li><strong>Streudiagramm</strong> – wie hängen zwei Größen statistisch zusammen?</li>
+      <li><strong>Kausaldiagramm</strong> (Causal Loop Diagram) – welche Wirkungsketten und Rückkopplungen erzeugen das Verhalten?</li>
+    </ul>
+
+    <h2 id="abschnitt-2">Pareto-Analyse</h2>
+    <p>Der Grundgedanke der <strong>Pareto-Analyse</strong>: Wer einen kleinen Teil der Projektkomponenten richtig adressiert, gewinnt damit Kontrolle über den Rest. Sie hilft, die Haupttreiber einer bestimmten Leistungsdimension zu identifizieren – meist der Kosten- oder Qualitätsleistung. Dazu werden die Komponenten in drei Gruppen eingeteilt:</p>
+    <dl class="begriffe">
+      <dt>Gruppe A</dt>
+      <dd>Ein kleiner Teil der großen Kostenkomponenten, der einen erheblichen Anteil der Gesamtkosten ausmacht.</dd>
+      <dt>Gruppe B</dt>
+      <dd>Alle Kostenkomponenten, die weder zu Gruppe A noch zu Gruppe C gehören.</dd>
+      <dt>Gruppe C</dt>
+      <dd>Ein großer Teil der kleinen Kostenkomponenten, der zusammen nur einen unbedeutenden Anteil der Gesamtkosten ausmacht.</dd>
+    </dl>
+    <p>Beispiel aus dem Hochbau – Treiber von Qualitätsproblemen, nach Häufigkeit sortiert ergibt sich das typische Pareto-Bild: Wenige Gewerke stehen für die meisten Vorkommnisse.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Arbeitskräfte</th><th>Häufigkeit der Qualitätsprobleme</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Zimmerer/Schaler (Carpenters)</td><td>20</td></tr>
+          <tr><td>Betonbauer (Concrete workers)</td><td>15</td></tr>
+          <tr><td>Bewehrungsbauer (Rebar workers)</td><td>10</td></tr>
+          <tr><td>Maurer/Mörtelarbeiten (Mortar workers)</td><td>5</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="abschnitt-3">Ursache-Wirkungs-Diagramm (Fishbone)</h2>
+    <p>Das <strong>Fishbone-Diagramm</strong> („Fischgräten-“ bzw. Ursache-Wirkungs-Diagramm, auch Ishikawa-Diagramm) hilft, die Treiber eines Leistungsproblems zu identifizieren, indem es Ursache-Wirkungs-Beziehungen in einem leicht verständlichen Format darstellt. Vorgehen: Zuerst wird das Problem definiert; dann werden mögliche Ursachen in vorab festgelegte, projektspezifische <strong>Kategorien</strong> eingeordnet. Unterursachen erscheinen als zunehmend verfeinerte Verästelungen.</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k53-abb1.jpg" alt="Fishbone-Diagramm zum Terminverzug beim Betonieren mit den Kategorien Arbeitskräfte, Geräte und unbeeinflussbare Ursachen" loading="lazy">
+      <figcaption>Abb. 1: Fishbone-Diagramm am Beispiel „Verzögerung beim Betonieren“ („Delay in concrete pouring“): Auf die Wirkung „Terminverzug“ („Schedule Delay“) laufen Ursachenäste zu – bei den beeinflussbaren Ursachen („Controllable Causes“) die Kategorien Arbeitskräfte („Workers“: fehlende Erfahrung, Einstellung von Aushilfskräften, geringe Produktivität) und Geräte („Equipment“: Einsatz einer ineffizienten Betonpumpe, verspätete Ankunft der Betonpumpe am ersten Tag); dazu unbeeinflussbare Ursachen („Uncontrollable Causes“: Regen am Morgen des dritten Tages). Die Legende zeigt die Gliederung in Wirkung, Kategorien und Ursachen 1.–3. Ordnung. (Folie 8 des Originalskripts)</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-4">Streudiagramm: Korrelation ist nicht Kausalität</h2>
+    <p>Das <strong>Streudiagramm</strong> (Scatter Diagram) hilft, den Trend der künftigen Leistung abzuschätzen, indem es die Korrelation zwischen Variablen sichtbar macht. Der Datensatz besteht aus einer unabhängigen Variablen (horizontale Achse) und einer abhängigen Variablen (vertikale Achse); die Punktwolke zeigt den Zusammenhang.</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k53-abb2.jpg" alt="Drei Streudiagramme: keine Korrelation, positive Korrelation und negative Korrelation" loading="lazy">
+      <figcaption>Abb. 2: Typische Erscheinungsformen der Korrelation im Streudiagramm: keine Korrelation („No Correlation“), positive Korrelation („Positive Correlation“) und negative Korrelation („Negative Correlation“). (Folie 11 des Originalskripts)</figcaption>
+    </figure>
+    <div class="note">Die zentrale Schwäche des Streudiagramms: <strong>Korrelation belegt keinen kausalen Zusammenhang.</strong> Ist A mit B korreliert, kommen viele Kausalrichtungen infrage: A verursacht B, B verursacht A, beide beeinflussen sich wechselseitig – oder eine dritte Größe C verursacht sowohl A als auch B.</div>
+
+    <h2 id="abschnitt-5">Systemdenken im Projektmanagement</h2>
+    <p><strong>Systemdenken</strong> (Systems Thinking) bedeutet, Probleme in einem breiteren Kontext zu begreifen: Es betont die Wechselwirkungen statt reduktionistischer Einzelbetrachtung, richtet den Blick auf interne statt externe Faktoren und betrachtet die <strong>Rückkopplungsstruktur</strong> des Systems als Hauptursache seines Verhaltens. Es tritt in zwei Ausprägungen auf: qualitativ als Kausaldiagramme, quantitativ als System Dynamics.</p>
+    <p>Die Hauptkritik des Systemdenkens an den traditionellen Methoden des Projektmanagements: Sie sind zu</p>
+    <ul>
+      <li>fragmentiert,</li>
+      <li>restriktiv in ihren Annahmen,</li>
+      <li>lokal in der Betrachtung von Änderungsfolgen,</li>
+      <li>zögerlich bei der Abbildung „weicher“ Faktoren,</li>
+      <li>darauf angewiesen, dass Menschen die Teilmodelle verknüpfen,</li>
+      <li>bereit, wichtige „Nebenwirkungen“ zu ignorieren.</li>
+    </ul>
+    <p>Zugleich gilt Systemdenken als potenziell großer Beitrag zum <strong>Projektlernen</strong> (das Modell speichert institutionelles Wissen), zur <strong>Planung</strong> (robuste Entscheidungsregeln und Hebelpunkte identifizieren) und zur <strong>Steuerung</strong> (wie geht man am besten mit Abweichungen um?).</p>
+    <p>Die Kritik der Fragmentierung im Detail: Traditionelle diskrete Methoden – CPM, Ressourcenalgorithmen, Zeit-Kosten-Ausgleich, Produktivitätsbetrachtungen mit manueller Gesamtprüfung – analysieren Vorgänge isoliert (lokale Wirkung einer Verzögerung oder Verlängerung). Tatsächlich sind Produktivität, Ressourceneinsatz, Qualität und Kosten eng verkoppelt: Die Verzögerung eines Vorgangs zieht Personal von anderen Vorgängen ab und lässt anderes leerlaufen, kann Kundenbeziehungen und Personalzuteilung beeinträchtigen, macht Überstunden und Parallelarbeit wahrscheinlicher (und senkt damit die Qualität) und erfordert die Neubetrachtung von Nachunternehmern und Materialbeschaffung. Typische Terminplaner denken diese Implikationen nicht vollständig durch – und der Plan ändert sich ohnehin laufend.</p>
+
+    <h2 id="abschnitt-6">Kausaldiagramme: Wirkungslinks und Polarität</h2>
+    <p>Das <strong>Kausaldiagramm</strong> (Causal Loop Diagram, CLD) konzentriert sich wie das Fishbone-Diagramm auf Kausalität – im Kontrast zum korrelationsorientierten Streudiagramm –, ist aber allgemeiner und ausdrucksstärker: Es darf <strong>Zyklen</strong> enthalten und damit Rückkopplungseffekte erfassen, und jeder Wirkungspfeil trägt ein <strong>Vorzeichen</strong> (+ oder −), die sogenannte Polarität:</p>
+    <div class="formel">x →<sup>+</sup> y bedeutet ∂y/∂x &gt; 0&nbsp;&nbsp;&nbsp;&nbsp;x →<sup>−</sup> y bedeutet ∂y/∂x &lt; 0</div>
+    <dl class="begriffe">
+      <dt>Positiver Wirkungspfeil (+)</dt>
+      <dd>„Unter sonst gleichen Bedingungen hebt (senkt) eine Zunahme (Abnahme) der ersten Variablen die zweite Variable über (unter) den Wert, den sie sonst gehabt hätte.“</dd>
+      <dt>Negativer Wirkungspfeil (−)</dt>
+      <dd>„Unter sonst gleichen Bedingungen senkt (hebt) eine Zunahme (Abnahme) der ersten Variablen die zweite Variable unter (über) den Wert, den sie sonst gehabt hätte.“</dd>
+    </dl>
+    <p>Bei der Polarität von Links in längeren Wirkungsketten kann man sich leicht vertun. Zwei Faustregeln für den Link X → Y:</p>
+    <ul>
+      <li>Den Link <strong>isoliert</strong> betrachten – Links vor X oder nach Y ausblenden.</li>
+      <li>Fragen: „Wenn X <em>stiege</em> – würde Y steigen oder fallen?“ Steigt Y, ist die Polarität „+“; fällt Y, ist sie „−“.</li>
+    </ul>
+    <p>Ist die Antwort unklar oder hängt sie vom Wert von X ab, sollten mehrere Wirkungspfade zwischen X und Y getrennt dargestellt werden – der Link ist <strong>mehrdeutig</strong>:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k53-abb3.jpg" alt="Mehrdeutiger Wirkungspfeil von Überstunden auf Produktivität, aufgelöst in zwei getrennte Pfade über Ermüdung (negativ) und längere Arbeitszeit (positiv)" loading="lazy">
+      <figcaption>Abb. 3: Mehrdeutiger Link („Ambiguous Link“): Der direkte Pfeil Überstunden → Produktivität („Overtime“ → „Productivity“) ist mal positiv, mal negativ. Die Lösung: Die Kausalpfade werden disaggregiert – Überstunden erhöhen die Ermüdung („Fatigue“), die die Produktivität senkt (−), und zugleich die Arbeitsstunden („Longer Hours“), die die Produktivität erhöhen (+). (Folie 20 des Originalskripts)</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-7">Feedback-Loops und ihr dynamisches Verhalten</h2>
+    <p><strong>Schleifen</strong> (Loops) in einem Kausaldiagramm zeigen Rückkopplung im dargestellten System an: Eine Änderung stößt eine Kette weiterer Änderungen an, die die ursprüngliche Änderung entweder verstärken oder dämpfen. Die Klassifikation erfolgt über das <strong>Produkt der Vorzeichen</strong> entlang der Schleife:</p>
+    <dl class="begriffe">
+      <dt>Verstärkende Schleife (Reinforcing Loop)</dt>
+      <dd>Produkt der Vorzeichen positiv – die Änderung schaukelt sich auf.</dd>
+      <dt>Ausgleichende Schleife (Balancing Loop)</dt>
+      <dd>Produkt der Vorzeichen negativ – die Änderung wird gedämpft, das System strebt einem Ziel zu.</dd>
+    </dl>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k53-abb4.jpg" alt="Fünf einfache Kausalschleifen aus dem Projektalltag: Änderungswünsche und Projektdauer, wahrgenommener Puffer und Produktivität, Job Rhythm und Terminplanänderungen, Führungsstil und Informationsfluss, Designumfang und Zielbudget" loading="lazy">
+      <figcaption>Abb. 4: Einfache Kausalschleifen aus dem Projektalltag („Simple Causal Loops“): (1) Verstärkend: Änderungswünsche („Change Requests“) erhöhen die Restarbeit („Remaining Work“) und die Projektdauer („Project Duration“) – was weitere Änderungswünsche begünstigt. (2) Ausgleichend: Ein späterer Zieltermin („Target Completion Date“) erhöht den wahrgenommenen Puffer („Perceived Slack“), senkt damit die Produktivität („Worker Productivity“) und schiebt den wahrgenommenen Endtermin („Perceived Completion Date“) wieder hinaus. (3) Ausgleichend: Terminplanänderungen („Changes to Schedule“) stören den Arbeitsrhythmus („Job Rhythm“) und senken die Gesamtproduktivität („Aggregate Productivity“). (4) Verstärkend: Ein übergriffiger Führungsstil des Projektleiters („Overbearing PM Management Style“) senkt die Bereitschaft der Beteiligten, Informationen zu teilen („Willingness to share info with PM“), was das Misstrauen („PM Suspicion“) weiter erhöht. (5) Ausgleichend: Überschreiten die geschätzten Planungskosten das Zielbudget („Estimated Design Costs beyond Target Budget“), wird der Designumfang („Design Scope“) reduziert. (Folie 22 des Originalskripts)</figcaption>
+    </figure>
+    <p>Wie mächtig – und tückisch – solche Rückkopplungen im Projektalltag sind, zeigt das Beispiel der Termin- und Meilensteinsteuerung: Terminverzug löst Gegenmaßnahmen aus, die ihrerseits neue Probleme erzeugen.</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k53-abb5.jpg" alt="Kausaldiagramm der Termin- und Meilensteinsteuerung mit Schleifen über Überstunden, Ressourcenaufstockung, Termindruck, Abkürzungen und Mängel" loading="lazy">
+      <figcaption>Abb. 5: Termin- und Meilensteinsteuerung („Deadline and Milestone Control“) als Kausaldiagramm: Terminrutsch („Schedule slippage“) und Terminverzug („Schedule delays“) führen zu Überstunden („Overtime“) und Ressourcenaufstockung („Increasing resources“), die die Arbeitsrate („Work rate“) erhöhen. Zugleich verkürzt aggressive Terminplanung („Aggressive scheduling“) die Restdauer („Time to completion“) und erhöht den Termindruck („Schedule pressure“) – der einerseits die Produktivität („Productivity“) steigert, andererseits zum „Abkürzen“ verleitet („Cutting the corner“), was Mängel („Defects“) erzeugt und die Restarbeit („Work remaining“) wieder anwachsen lässt. (Folie 27 des Originalskripts)</figcaption>
+    </figure>
+    <p>Jede Schleife eines Kausaldiagramms ist mit einem qualitativen dynamischen Verhalten verbunden. Die häufigsten Verhaltensmodi einzelner Schleifen:</p>
+    <ul>
+      <li><strong>Exponentielles Wachstum</strong> – verstärkende Schleife erster Ordnung: z. B. Kunden → Mundpropaganda („Word of Mouth Sales“) → noch mehr Kunden; die Bestandskurve wächst exponentiell.</li>
+      <li><strong>Zielannäherung</strong> (Goal Seeking) – ausgleichende Schleife: Der Bestand nähert sich asymptotisch einem Zielwert, z. B. weil der Vorrat potenzieller Kunden („Potential Customers“) schrumpft.</li>
+      <li><strong>Oszillation</strong> – ausgleichende Schleife <em>mit Verzögerung</em>: Das System schießt wiederholt über das Ziel hinaus (Abb. 6).</li>
+    </ul>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k53-abb6.jpg" alt="Kausalstruktur einer ausgleichenden Schleife mit Verzögerung zwischen Produktionsstart und Fertigstellung sowie Diagramm oszillierender Nachfrage- und Produktionskurven" loading="lazy">
+      <figcaption>Abb. 6: Oszillation als Dynamik einer ausgleichenden Schleife mit Verzögerung („Balancing Loop with Delay“): Die Lücke zwischen Soll-Lagerbestand („Desired Inventory“) und Ist-Bestand („Inventory“) steuert die Produktionsstarts („Producing Starts“); da die Fertigstellung („Finishing Production“) verzögert nachläuft, pendeln Nachfrage und Produktion („demand vs. production“) dauerhaft um das Ziel. (Folie 31 des Originalskripts)</figcaption>
+    </figure>
+    <p>Setzt man mehrere Schleifen zusammen, mischen sich die Verhaltensmodi – das klassische Beispiel ist <strong>Wachstum mit Plateau</strong>:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k53-abb7.jpg" alt="Gekoppelte verstärkende und ausgleichende Schleife des Kundenwachstums und resultierende S-förmige Wachstumskurve" loading="lazy">
+      <figcaption>Abb. 7: Wachstum und Plateau („Growth and Plateau“): Die verstärkende Schleife (Kunden → Mundpropaganda → neue Kunden) dominiert anfangs und erzeugt exponentielles Wachstum; mit schrumpfendem Vorrat potenzieller Kunden übernimmt die ausgleichende Schleife – es entsteht die typische S-Kurve. (Folie 32 des Originalskripts)</figcaption>
+    </figure>
+    <p>Ein baunahes Beispiel für gekoppelte Schleifen liefert das <strong>Fast-Tracking</strong> (Überlappung von Planung und Ausführung): Frühe Fertigstellungsziele führen zu unvollständigem Leistungsumfang und zu Überlappung von Planung und Bau; unfertige Planung provoziert Änderungswünsche von Bauherr und Ausführenden, Termindruck senkt die Planungsvollständigkeit weiter – Änderungen und Verzug verstärken sich gegenseitig. Diese Dynamik wird in <a href="kapitel-5-4.html">Kapitel 5.4</a> vertieft.</p>
+
+    <h2 id="abschnitt-8">System Dynamics: Vom Kausaldiagramm zum Simulationsmodell</h2>
+    <p>Für die quantitative Systemanalyse von Projekten gibt es mehrere Rahmenwerke – etwa ereignisorientierte Simulation (Discrete Event Simulation) und agentenbasierte Simulation. Am weitesten verbreitet ist <strong>System Dynamics</strong> (SD). Seinen größten Vorteil spielt SD in Systemen aus, die nichtlinear und rückkopplungsreich sind, Verzögerungen aufweisen und wenig von kleinteiliger Heterogenität bestimmt werden.</p>
+    <dl class="begriffe">
+      <dt>System Dynamics</dt>
+      <dd>Stellt das System als gekoppeltes Gleichungssystem gewöhnlicher Differentialgleichungen (ODEs) dar – in Standard-Zustandsraumform und mit kontinuierlicher Zeit; stochastische Komponenten sind (mit Sonderbehandlung) zulässig. Analytische Lösungen sind nicht möglich, es wird numerisch integriert. Die grafische Darstellung dient dem Problemfokus: Zustandsgrößen als <strong>Bestände</strong> (Stocks), die Komponenten ihrer Ableitungen als <strong>Flüsse</strong> (Flows), Zwischenrechnungen als <strong>Hilfsgrößen</strong> (Auxiliaries) und Tabellenfunktionen.</dd>
+    </dl>
+    <p>Ein SD-Modell entsteht in mehreren Schritten:</p>
+    <ol>
+      <li>Das System mit einem Kausaldiagramm konzipieren.</li>
+      <li>Das Kausaldiagramm in eine <strong>Stock-and-Flow-Struktur</strong> übersetzen: Zustandsgrößen (Akkumulationen) werden Bestände, ihre Änderungen werden Flüsse – jede Zustandsänderung läuft über Flüsse, und jede Schleife enthält mindestens einen Bestand; Zwischenrechnungen und Ausgaben werden Hilfsgrößen.</li>
+      <li>Gleichungen ergänzen, die die Beziehungen zwischen den Variablen erfassen.</li>
+      <li>Das Modell an historischen Daten kalibrieren.</li>
+      <li>Szenarien rechnen, um Wirkungen zu erkennen und robuste Politiken zu identifizieren.</li>
+    </ol>
+    <p>Die Vorlesung führt das an zwei Beispielen vor. Erstens am Kundenwachstum: Aus der Schleife in Abb. 7 werden die Bestände „Potential Customers“ und „Customers“ mit dem Fluss „New Customers“ dazwischen; Hilfsgrößen wie Gesamtbevölkerung, Kundenanteil und Beitrittswahrscheinlichkeit sowie Gleichungen (z. B. Gesamtbevölkerung = Kunden + potenzielle Kunden) vervollständigen das Modell. Zweitens am Zusammenspiel von Arbeitsdruck, Ermüdung und Produktivität:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k53-abb8.jpg" alt="Stock-and-Flow-Diagramm mit den Beständen Restarbeit und Ermüdung, dem Fluss der fertiggestellten Arbeit sowie Hilfsgrößen zu Arbeitsstunden und Produktivitätskoeffizienten" loading="lazy">
+      <figcaption>Abb. 8: Vollständiges System-Dynamics-Modell zu Arbeitsdruck und Ermüdung: Der Bestand Restarbeit („Work Remaining“, Startwert „Initial Work Size“) wird über den Fluss „Work Being Completed“ abgebaut, dessen Rate von der Normalproduktivität („Normal Productivity“) und zwei Produktivitätskoeffizienten abhängt – einem als Funktion des direkten Arbeitsdrucks („Productivity Coefficient as a Function of Direct Work Pressure“) und einem aus dem Bestand Ermüdung („Fatigue“). Die Ermüdung wächst durch Termindruck („Growth in Fatigue due to Schedule Pressure“, gespeist aus den Arbeitsstunden „Work Hours“ im Verhältnis zu „Normal Work Hours“) und baut sich über „Recovery from Fatigue“ mit der mittleren Erholungszeit („Mean time to Recover From Fatigue“) wieder ab. (Folie 42 des Originalskripts)</figcaption>
+    </figure>
+  </section>
+
+  <nav class="prevnext">
+    <a href="kapitel-5-2.html">← Kapitel 5.2: Earned-Value-Analyse (C/SCSC) und Grundlagen der Projektsteuerung</a>
+    <span class="spacer"></span>
+    <a href="kapitel-5-4.html">Kapitel 5.4: System- und Änderungsdynamik →</a>
+  </nav>
+</main>
+
+<footer>
+  <div class="inner">
+    <p>Deutsche Übersetzung der Kursunterlagen von <a href="https://ocw.mit.edu/courses/1-040-project-management-spring-2004/" target="_blank" rel="noopener">MIT OpenCourseWare: 1.040 Project Management, Spring 2004</a> (Dr.&nbsp;Nathaniel Osgood).<br>
+    Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons BY-NC-SA 4.0</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

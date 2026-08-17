@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapitel 4.2: Deterministische Planung II und probabilistische Planung I – Projektmanagement</title>
+<meta name="description" content="Kapitel 4.2 des Lernprogramms Projektmanagement: Deterministische Planung II und probabilistische Planung I – vollständig übersetzt und aufbereitet.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <p class="kicker">Lerneinheit 4 · Projektplanung II: Terminplanung</p>
+    <h1>Kapitel 4.2: Deterministische Planung II und probabilistische Planung I</h1>
+    <p class="sub">Ein durchgerechnetes CPM-Beispiel, die erweiterten Anordnungsbeziehungen der Vorgangsknotenmethode mit ihren Fallstricken – und der Einstieg in die probabilistische Terminplanung mit PERT.</p>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <a href="index.html">Startseite</a>
+    <a href="lehrplan.html">Lehrplan</a>
+    <a href="kursplan.html" class="active">Lernpfad</a>
+    <a href="vorlesungen.html">Vorlesungsskripte</a>
+    <a href="projekt.html">Semesterprojekt</a>
+    <a href="literatur.html">Literatur</a>
+  </div>
+</nav>
+
+<main>
+  <p class="breadcrumb"><a href="kursplan.html">Lernpfad</a> › <a href="kursplan.html#le4">Lerneinheit 4</a> › Kapitel 4.2</p>
+  <div class="kapitel-meta">
+    <span>📄 <a href="pdfs/vorlesung-10-deterministisch-2-probabilistisch-1.pdf">Original-Foliensatz (PDF, englisch)</a></span>
+    <span>Vorlesung 10 von 18 · MIT 1.040, Frühjahr 2004</span>
+  </div>
+
+  <section class="card">
+    <div class="toc">
+      <span class="label">Inhalt dieses Kapitels</span>
+      <ol>
+        <li><a href="#abschnitt-1">CPM-Rechenbeispiel: das Dachprojekt in Vorwärts- und Rückwärtsrechnung</a></li>
+        <li><a href="#abschnitt-2">Erweiterte Anordnungsbeziehungen der PDM: FS, SS, FF, SF mit Lag und Lead</a></li>
+        <li><a href="#abschnitt-3">Fallstricke der PDM: verschwindende und kontraintuitive kritische Pfade</a></li>
+        <li><a href="#abschnitt-4">Aktivitätensplitting und Aktivitätsfenster</a></li>
+        <li><a href="#abschnitt-5">Verallgemeinerte Vorwärts- und Rückwärtsrechnung; Umgang mit Leads</a></li>
+        <li><a href="#abschnitt-6">Warum Unsicherheit einplanen? Motivation und Fallbeispiele</a></li>
+        <li><a href="#abschnitt-7">PERT: Grundidee, Beta-Verteilung und Kennwertformeln</a></li>
+        <li><a href="#abschnitt-8">PERT-Rechenbeispiel: Erwartungswert, Varianz und Fertigstellungswahrscheinlichkeiten</a></li>
+      </ol>
+    </div>
+
+    <h2 id="abschnitt-1">CPM-Rechenbeispiel: das Dachprojekt in Vorwärts- und Rückwärtsrechnung</h2>
+    <p>Zur Wiederholung aus <a href="kapitel-4-1.html">Kapitel 4.1</a>: In AON-Netzplänen (Vorgangsknotenmethode, PDM) sitzen die Vorgänge auf den Knoten, ein Vorwärts-/Rückwärtsdurchlauf in linearer Zeit O(n) bestimmt ES, EF, LS und LF, es gibt mehrere Beziehungstypen (FS, SS, FF, SF), und Scheinvorgänge sind nicht erforderlich. Das folgende Beispiel eines Dachaufbaus mit sieben Vorgängen macht die Rechnung konkret:</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Nr.</th><th>Vorgang</th><th>Dauer (Tage)</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td>Dachbinder aufstellen und sichern</td><td class="num">2</td></tr>
+        <tr><td class="num">2</td><td>Dachschalung einbauen</td><td class="num">7</td></tr>
+        <tr><td class="num">3</td><td>Dampfsperre aufbringen</td><td class="num">2</td></tr>
+        <tr><td class="num">4</td><td>Dacheindeckung aufbringen</td><td class="num">2</td></tr>
+        <tr><td class="num">5</td><td>Dachüberstand herstellen</td><td class="num">4</td></tr>
+        <tr><td class="num">6</td><td>Traufkästen (Soffits) montieren</td><td class="num">4</td></tr>
+        <tr><td class="num">7</td><td>Anschlussbleche (Flashing) anbringen</td><td class="num">6</td></tr>
+      </tbody>
+    </table></div>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k42-abb1.jpg" alt="AON-Netzplan des Dachprojekts mit sieben Vorgängen und Legende des unterteilten Knotensymbols" loading="lazy">
+      <figcaption>Abb. 1: Der AON-Netzplan für den Dachaufbau. Die Legende zeigt das unterteilte Knotensymbol: oben Vorgangsnummer mit frühestem Start-/Endtermin, unten spätester Start-/Endtermin und Dauer in Tagen (Folie 5 des Originalskripts).</figcaption>
+    </figure>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k42-abb2.jpg" alt="Derselbe Netzplan nach der Vorwärtsrechnung mit eingetragenen frühesten Start- und Endterminen" loading="lazy">
+      <figcaption>Abb. 2: Vorwärtsrechnung – die frühesten Zeitpunkte: Vorgang 1 läuft von Tag 0 bis 2, Vorgang 2 bis Tag 9, Vorgang 3 bis Tag 11 usw.; beim Zusammentreffen mehrerer Vorgänger gilt das Maximum ihrer frühesten Endtermine (Folie 6 des Originalskripts).</figcaption>
+    </figure>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k42-abb3.jpg" alt="Derselbe Netzplan nach der Rückwärtsrechnung mit eingetragenen spätesten Start- und Endterminen und Projektdauer 19 Tage" loading="lazy">
+      <figcaption>Abb. 3: Rückwärtsrechnung – ausgehend vom Projektende (Tag 19) werden die spätesten Zeitpunkte rückwärts bestimmt; bei mehreren Nachfolgern gilt das Minimum ihrer spätesten Starttermine. Vorgänge 5 und 6 (Überstand, Traufkästen) erhalten 2 Tage Puffer, der Pfad 1–2–3–4–7 ist kritisch (Folie 7 des Originalskripts).</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-2">Erweiterte Anordnungsbeziehungen der PDM: FS, SS, FF, SF mit Lag und Lead</h2>
+    <p>Die Vorgangsknotenmethode erweitert die klassische CPM um weitere Beziehungstypen jenseits der Normalfolge (Ende–Start) sowie um Zeitabstände: <strong>Lags</strong> (positive Verzögerungen) und <strong>Leads</strong> (negative Lags, also Vorläufe). Allgemein gilt für eine Beziehung XY mit Zeitabstand t zwischen den Vorgängen A und B, wobei X, Y ∈ {S, F} (Start, Finish) und t eine reelle Zahl ist: Das Ereignis Y des Vorgangs B darf frühestens t Zeiteinheiten nach dem Ereignis X des Vorgangs A eintreten. Es hilft, sich die Beziehungen als Verknüpfungen zwischen <em>Ereignissen</em> (Start- bzw. Endzeitpunkten) vorzustellen. In der AOA-Darstellung wären solche Spezialbeziehungen unnötig, da sie dort direkt zwischen Ereignisknoten gezeichnet werden können.</p>
+    <dl class="begriffe">
+      <dt>Ende–Start (Finish-to-Start, FS)</dt>
+      <dd>Die Normalfolge: Der Nachfolger startet frühestens t nach dem Ende des Vorgängers. Beispiel für einen Lead (FS = −1): Der Tankeinbau darf einen Tag vor Abschluss von Absteckung und Aushub beginnen. Beispiel für einen Lag (FS = +14): Die Schalung der Decke im 4. OG darf erst 14 Tage nach dem Betonieren ausgebaut werden (Aushärtezeit).</dd>
+      <dt>Start–Start (Start-to-Start, SS)</dt>
+      <dd>Der Nachfolger startet frühestens t nach dem <em>Start</em> des Vorgängers. Beispiel (SS = +1): Die Außenleerrohre können einen Tag nach Beginn des Tankeinbaus begonnen werden.</dd>
+      <dt>Ende–Ende (Finish-to-Finish, FF)</dt>
+      <dd>Der Nachfolger endet frühestens t nach dem <em>Ende</em> des Vorgängers. Beispiel (FF = +3): Die Rohrverlegung kann frühestens 3 Tage nach Abschluss des Grabenaushubs abgeschlossen werden.</dd>
+      <dt>Start–Ende (Start-to-Finish, SF)</dt>
+      <dd>Der Nachfolger endet frühestens t nach dem <em>Start</em> des Vorgängers – die seltenste Beziehung. Beispiel (SF = +1): Der Abschluss der Teppichverlegung hängt am Beginn der Wandvertäfelung.</dd>
+    </dl>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k42-abb4.jpg" alt="Balkendarstellungen der PDM-Beziehungen Ende-Start mit Lead und Lag sowie Start-Start mit Lag" loading="lazy">
+      <figcaption>Abb. 4: PDM-Beziehungen als Balkendarstellung: Ende–Start-Lead (FS = −1, „Lay-Out &amp; Excavate“ → „Install Fuel Tanks“), Ende–Start-Lag (FS = +14, „Pour 4th-Floor Slab“ → „Remove 4th Floor Shoring“) und Start–Start-Lag (SS = +1, „Install Fuel Tanks“ → „Install Exterior Conduits“) (Folie 10 des Originalskripts).</figcaption>
+    </figure>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k42-abb5.jpg" alt="Balkendarstellungen der PDM-Beziehungen Ende-Ende mit Lag und Start-Ende mit Lag" loading="lazy">
+      <figcaption>Abb. 5: Fortsetzung: Ende–Ende-Lag (FF = +3, „Excavate Trench“ → „Lay Pipe“) und Start–Ende-Lag (SF = +1, „Install Wood Paneling &amp; Base“ → „Install Carpeting“) (Folie 11 des Originalskripts).</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-3">Fallstricke der PDM: verschwindende und kontraintuitive kritische Pfade</h2>
+    <p>Die zusätzliche Ausdruckskraft hat ihren Preis. Zu den wichtigsten Vorbehalten:</p>
+    <ul>
+      <li>Unterschiedliche Beziehungskonstrukte können dieselben Termine liefern, aber <strong>Verschiedenes bedeuten</strong> – und der kritische Pfad kann sich unterscheiden. Man muss die Semantik der Beziehungen <em>in der konkret verwendeten Software</em> genau verstehen; „Lag“ und „Lead“ sind nicht einheitlich definiert.</li>
+      <li>Asymmetrien erschweren das Denken: Ein Vorgang kann <strong>unterschiedliche Puffer für Start und Ende</strong> haben (Startpuffer LS − ES, Endpuffer LF − EF), weil Start- und Endereignis verschiedene Nachfolger haben können.</li>
+      <li>Die Wahl der Beziehung (z.&nbsp;B. Ende–Start vs. Start–Start) <strong>verändert den kritischen Pfad</strong>. Man sollte sich den kritischen Pfad als durch <em>Ereignisse</em> laufend vorstellen; ein nicht kritischer Vorgang kann einen kritischen Start oder ein kritisches Ende haben. Wie der kritische Pfad angezeigt wird, hängt von der Software ab.</li>
+      <li>Ohne Splitting entstehen <strong>kontraintuitive Fälle</strong>: Eine <em>längere</em> Vorgangsdauer kann den kritischen Pfad <em>verkürzen</em> – das Projekt wäre schneller fertig. Ende–Ende-Beziehungen mit Vorläufen können sogar zu einem „verschwindenden“ kritischen Pfad führen, bei dem kein durchgehender kritischer Pfad mehr angezeigt wird.</li>
+    </ul>
+    <div class="note">Kernregel für das Modellieren: PDM-Beziehungen stehen oft für Abhängigkeiten zwischen <em>Teilen</em> von Vorgängen. Man frage sich stets, von welchem Teil eines Vorgangs der andere Vorgang tatsächlich abhängt – und wie sich die Abhängigkeit ändern würde, wenn sich die Dauer des Zielvorgangs ändert. Ist das unklar, hilft es, den Vorgang gedanklich (oder tatsächlich) in Teilvorgänge zu zerlegen.</div>
+
+    <h2 id="abschnitt-4">Aktivitätensplitting und Aktivitätsfenster</h2>
+    <p><strong>Splitting Teil 1 – nicht sequenzielle Teilung:</strong> Manche Algorithmen erlauben es, einen Vorgang in zwei zeitlich getrennte Stücke zu zerlegen. Das schafft Flexibilität bei Zeit- und Ressourcenbedarf, ermöglicht kürzere kritische Pfade, beseitigt die kontraintuitiven Fälle, in denen längere Vorgänge vorteilhaft wären, und erlaubt es Vorgängern (bei SF-/SS-Beziehungen) früher zu beginnen bzw. Nachfolgern (bei SF-/FF-Beziehungen) den Großteil ihrer Arbeit vorzuziehen und nur auf das letzte Ereignis zu warten.</p>
+    <p>Praxisbeispiel aus der Vorlesung: Wegen der Chefetage darf die Teppichverlegung erst enden, nachdem die Wandvertäfelung begonnen hat – die Tischler werden aber anderweitig gebraucht. Lösung durch Splitting: erst alle Teppiche außer der Chefetage verlegen, die Tischler in der Chefetage arbeiten lassen, danach den Teppich dort fertigstellen; die Tischler kehren zum Abschluss ihrer Arbeiten zurück, sobald sie frei sind.</p>
+    <p><strong>Splitting Teil 2 – Pipelining:</strong> Monolithische Aufgaben werden in parallel arbeitende Teilaufgaben zerlegt (Fließfertigung). Das erhöht typischerweise den Ressourcenbedarf, geschieht in der Regel manuell – für eine Automatisierung fehlen meist die Informationen – und wird oft über Start–Start-Beziehungen abgebildet.</p>
+    <p><strong>Aktivitätsfenster (Activity Windows):</strong> Mit Fenstern lassen sich absolute Zeitrestriktionen auf einzelne Vorgänge legen – für jeden der vier Zeitpunkte ES, EF, LS, LF. Setzt man das Fenster für frühesten und spätesten Start gleich (W<sub>ES</sub> = W<sub>LS</sub>), fixiert man den Termin exakt. Besonders nützlich ist das für zeitkritische Meilensteine.</p>
+
+    <h2 id="abschnitt-5">Verallgemeinerte Vorwärts- und Rückwärtsrechnung; Umgang mit Leads</h2>
+    <p>Mit den erweiterten Beziehungen und Fenstern verallgemeinert sich die Terminrechnung (hier ohne Splitting und ohne Leads; D<sub>k</sub> = Dauer des Knotens k, p = Vorgänger, s = Nachfolger; FS<sub>pk</sub> usw. bezeichnen die Zeitabstände der jeweiligen Beziehung):</p>
+    <div class="formel">
+      <strong>Vorwärtsrechnung für Knoten k:</strong><br>
+      ES<sub>k</sub> = max über alle Vorgänger p von:<br>
+      &nbsp;&nbsp;• Projektanfangstermin,<br>
+      &nbsp;&nbsp;• W<sub>ESk</sub> (Fenster frühester Start), &nbsp;• W<sub>EFk</sub> − D<sub>k</sub>,<br>
+      &nbsp;&nbsp;• EF<sub>p</sub> + FS<sub>pk</sub>, &nbsp;• ES<sub>p</sub> + SS<sub>pk</sub>,<br>
+      &nbsp;&nbsp;• EF<sub>p</sub> + FF<sub>pk</sub> − D<sub>k</sub>, &nbsp;• ES<sub>p</sub> + SF<sub>pk</sub> − D<sub>k</sub><br>
+      und EF<sub>k</sub> = ES<sub>k</sub> + D<sub>k</sub>.<br>
+      <em>Kerngedanke: Ein Vorgang kann erst starten, wenn alle Vorgängerbedingungen erfüllt sind – daher das Maximum.</em>
+    </div>
+    <div class="formel">
+      <strong>Rückwärtsrechnung für Knoten k:</strong><br>
+      LF<sub>k</sub> = min über alle Nachfolger s von:<br>
+      &nbsp;&nbsp;• Projektendtermin,<br>
+      &nbsp;&nbsp;• W<sub>LFk</sub>, &nbsp;• W<sub>LSk</sub> + D<sub>k</sub>,<br>
+      &nbsp;&nbsp;• LS<sub>s</sub> − FS<sub>ks</sub>, &nbsp;• LF<sub>s</sub> − FF<sub>ks</sub>,<br>
+      &nbsp;&nbsp;• LS<sub>s</sub> − SS<sub>ks</sub> + D<sub>k</sub>, &nbsp;• LF<sub>s</sub> − SF<sub>ks</sub> + D<sub>k</sub><br>
+      und LS<sub>k</sub> = LF<sub>k</sub> − D<sub>k</sub>.<br>
+      <em>Kerngedanke: Ein Vorgang muss so rechtzeitig fertig sein, dass alle Nachfolger pünktlich starten können – daher das Minimum.</em>
+    </div>
+    <p>Sobald <strong>Leads</strong> (negative Lags) ins Spiel kommen, reichen zwei O(n)-Durchläufe unter Umständen nicht mehr aus. Der Grundansatz: Man übersetzt das AON-Netz in eine AOA-ähnliche Form, in der Start- und Endknoten jedes Vorgangs explizit sind – das hilft auch beim Durchdenken der Bedeutung – und löst die Terminrechnung mit dem Dijkstra-Algorithmus in O(V·lg&nbsp;V + E). Der „vereinheitlichte Algorithmus“ der Vorlesung arbeitet mit Distanzmarken: In der Vorwärtsrechnung wird vom Projektstartknoten aus wiederholt der Knoten mit der größten vorläufigen Marke fixiert und seine ausgehenden Kanten werden relaxiert, bis der Projektendknoten erreicht ist; die früheste Ereigniszeit ist dann E(i) = PL(i). Für die Rückwärtsrechnung kehrt man alle Kantenrichtungen um, startet beim Projektende und setzt L(i) = E(PF) − PL(i).</p>
+
+    <h2 id="abschnitt-6">Warum Unsicherheit einplanen? Motivation und Fallbeispiele</h2>
+    <p>Reale Terminpläne stecken voller Unsicherheit: Wetterereignisse, Planungsdauern, Produktivität, Lieferzeiten, Qualität der Nachunternehmer, regulatorische Änderungen und mehr. Auftraggeber und Öffentlichkeit wollen Meilensteine und Endtermine <em>mit Vertrauensniveau</em> kennen – für Mieterbezugstermine, Verkehrsplanung oder Veranstaltungsplanung. Hinzu kommt das Durchdenken saisonaler Randbedingungen (Wetterfenster, Verkehrsspitzen). Und: Terminüberschreitungen wiegen oft deutlich schwerer, als eine frühere Fertigstellung nützt.</p>
+    <ul>
+      <li><strong>Fall 1 – Logan International Terminal (Boston):</strong> Verkaufsflächenmieter und Fluggesellschaften verlangten einen festen Termin; man setzte probabilistische Terminplanung ein, um die Unsicherheit zu quantifizieren.</li>
+      <li><strong>Fall 2 – Kinderkrankenhaus Philadelphia:</strong> Zu berücksichtigen waren Einsätze des Rettungshubschraubers, der Betrieb der Patientenbereiche, enge Arbeitszeitfenster (2–4 Uhr nachts) und Eventualplanungen für die Verlegung der Telefonzentrale.</li>
+    </ul>
+    <p>Die informellen Umgangsweisen mit Unsicherheit sind verbreitet, aber unbefriedigend: am häufigsten schlicht <em>ignorieren</em> (mit erwarteten Dauern rechnen und hoffen, dass sich Fehler ausgleichen), pauschale Zuschlagsfaktoren anwenden oder „Was-wäre-wenn“-Szenarien für einen optimistischen, einen wahrscheinlichsten und einen pessimistischen Fall durchspielen.</p>
+
+    <h2 id="abschnitt-7">PERT: Grundidee, Beta-Verteilung und Kennwertformeln</h2>
+    <p>Die <strong>Program Evaluation and Review Technique (PERT, Ereignisknoten-gestützte Programmbewertungs- und -überprüfungstechnik)</strong> wurde 1958 von der US Navy gemeinsam mit Booz Allen Hamilton und Lockheed für das Polaris-Raketen-/U-Boot-Programm entwickelt. Sie erfasst probabilistische Vorgangsdauern und erlaubt eine analytische Lösung für Projektdauer und Terminvarianz. Die Grundannahmen:</p>
+    <ul>
+      <li>Jede <strong>Vorgangsdauer</strong> folgt einer <strong>Beta-Verteilung</strong>. Diese ist auf das Intervall [a,&nbsp;b] begrenzt und kann – anders als die Normalverteilung – garantiert nicht negativ werden; je nach Lage des Modus ist sie symmetrisch, rechtsschief oder linksschief.</li>
+      <li>Die <strong>Projektdauer</strong> wird als <strong>normalverteilt</strong> angenommen: Als (näherungsweise) Summe vieler Zufallsvariablen tendiert sie nach dem zentralen Grenzwertsatz zur Normalverteilung.</li>
+      <li>Die Vorgangsdauern werden als <strong>unabhängig</strong> angenommen – was in der Realität nicht immer erfüllt ist.</li>
+    </ul>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k42-abb6.jpg" alt="Drei Formen der Beta-Verteilung: symmetrisch, rechtsschief und linksschief, jeweils mit den Parametern a, m und b" loading="lazy">
+      <figcaption>Abb. 6: Drei Fälle der Beta-Verteilung zwischen optimistischem Wert a und pessimistischem Wert b: symmetrisch („Symmetric“), rechtsschief („Skewed to Right“, Modus m nahe a) und linksschief („Skewed to Left“, Modus m nahe b) (Folie 41 des Originalskripts).</figcaption>
+    </figure>
+    <p>Für jeden Vorgang werden drei Zeitschätzungen erhoben – daraus ergeben sich die PERT-Kennwerte:</p>
+    <div class="formel">
+      <strong>Drei-Zeiten-Schätzung je Vorgang:</strong><br>
+      a = optimistische Dauer &nbsp;·&nbsp; m = wahrscheinlichste Dauer (Modus, <em>nicht</em> Mittelwert!) &nbsp;·&nbsp; b = pessimistische Dauer
+    </div>
+    <div class="formel">
+      <strong>Erwartete Dauer (Mittelwert):</strong> &nbsp;d̄ = (a + 4m + b) / 6<br>
+      <em>Herleitung als gewichtetes Mittel: d̄ = ⅓ · [ 2m + ½ (a + b) ] – der Modus zählt doppelt so stark wie das Mittel der Extremwerte.</em>
+    </div>
+    <div class="formel">
+      <strong>Standardabweichung:</strong> &nbsp;s = (b − a) / 6 &nbsp;&nbsp;&nbsp;&nbsp;<strong>Varianz:</strong> &nbsp;v = s²<br>
+      <em>Interpretation: Die Spannweite b − a wird als ±3 Standardabweichungen gelesen.</em>
+    </div>
+    <p>Die Schritte der PERT-Analyse:</p>
+    <ul>
+      <li>Für jeden Vorgang k die Schätzungen a<sub>k</sub>, m<sub>k</sub>, b<sub>k</sub> erheben und daraus erwartete Dauer d<sub>k</sub> und Varianz v<sub>k</sub> berechnen.</li>
+      <li>Die erwartete Projektdauer T<sub>e</sub> mit dem gewöhnlichen CPM-Algorithmus (auf Basis der erwarteten Dauern) bestimmen.</li>
+      <li>Die Projektvarianz V = S² als Summe der Varianzen der Vorgänge <em>auf dem kritischen Pfad</em> berechnen (setzt Unabhängigkeit voraus!). Bei mehreren kritischen Pfaden den mit der größten Varianz verwenden.</li>
+      <li>Die Wahrscheinlichkeit termingerechter Fertigstellung berechnen – unter der Annahme normalverteilter Projektdauer.</li>
+    </ul>
+
+    <h2 id="abschnitt-8">PERT-Rechenbeispiel: Erwartungswert, Varianz und Fertigstellungswahrscheinlichkeiten</h2>
+    <p>Das Beispielprojekt umfasst sieben Vorgänge; aus den drei Zeitschätzungen sind erwartete Dauer d und Varianz v je Vorgang bereits mit den obigen Formeln berechnet (z.&nbsp;B. Vorgang A: d = (1 + 4·2 + 4)/6 = 2,17 und v = ((4 − 1)/6)² = 0,25):</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Vorgang</th><th>Vorgänger</th><th>a</th><th>m</th><th>b</th><th>d = (a+4m+b)/6</th><th>v = ((b−a)/6)²</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>–</td><td class="num">1</td><td class="num">2</td><td class="num">4</td><td class="num">2,17</td><td class="num">0,25</td></tr>
+        <tr><td>B</td><td>–</td><td class="num">5</td><td class="num">6</td><td class="num">7</td><td class="num">6,00</td><td class="num">0,11</td></tr>
+        <tr><td>C</td><td>–</td><td class="num">2</td><td class="num">4</td><td class="num">5</td><td class="num">3,83</td><td class="num">0,25</td></tr>
+        <tr><td>D</td><td>A</td><td class="num">1</td><td class="num">3</td><td class="num">4</td><td class="num">2,83</td><td class="num">0,25</td></tr>
+        <tr><td>E</td><td>C</td><td class="num">4</td><td class="num">5</td><td class="num">7</td><td class="num">5,17</td><td class="num">0,25</td></tr>
+        <tr><td>F</td><td>A</td><td class="num">3</td><td class="num">4</td><td class="num">5</td><td class="num">4,00</td><td class="num">0,11</td></tr>
+        <tr><td>G</td><td>B, D, E</td><td class="num">1</td><td class="num">2</td><td class="num">3</td><td class="num">2,00</td><td class="num">0,11</td></tr>
+      </tbody>
+    </table></div>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k42-abb7.jpg" alt="AON-Netzplan des PERT-Beispiels nach der Rückwärtsrechnung; der kritische Pfad C-E-G ist hervorgehoben" loading="lazy">
+      <figcaption>Abb. 7: Das PERT-Beispiel nach Vorwärts- und Rückwärtsrechnung mit den erwarteten Dauern: Die erwartete Projektdauer beträgt T<sub>e</sub> = 11; der kritische Pfad C–E–G ist farblich hervorgehoben (3,83 + 5,17 + 2 = 11), alle übrigen Pfade besitzen Puffer (Folie 49 des Originalskripts).</figcaption>
+    </figure>
+    <p>Die Projektvarianz ergibt sich aus den Varianzen der kritischen Vorgänge C, E und G:</p>
+    <div class="formel">
+      T<sub>e</sub> = 11<br>
+      S² = V[C] + V[E] + V[G] = 0,25 + 0,25 + 0,1111 = 0,6111<br>
+      S = √0,6111 = 0,7817
+    </div>
+    <p><strong>Wahrscheinlichkeit, vor Tag 10 fertig zu sein</strong> (nur kritischer Pfad betrachtet): Die Projektdauer T wird als normalverteilt mit Mittelwert T<sub>e</sub> und Standardabweichung S angenommen; z ist die standardnormalverteilte Größe, P(z ≤ …) liest man aus der Tabelle der Standardnormalverteilung ab:</p>
+    <div class="formel">
+      P(T ≤ 10) = P( z ≤ (10 − T<sub>e</sub>) / S ) = P( z ≤ (10 − 11) / 0,7817 ) = P( z ≤ −1,2793 )<br>
+      = 1 − P( z ≤ 1,2793 ) = 1 − 0,8997 = 0,1003 ≈ <strong>10 %</strong>
+    </div>
+    <p><strong>Wahrscheinlichkeit, vor Tag 13 fertig zu sein:</strong></p>
+    <div class="formel">
+      P(T ≤ 13) = P( z ≤ (13 − 11) / 0,7817 ) = P( z ≤ 2,5585 ) = <strong>0,9948 ≈ 99,5 %</strong>
+    </div>
+    <p><strong>Wahrscheinlichkeit, zwischen Tag 9 und Tag 11,5 fertig zu werden</strong> – als Differenz zweier Unterschreitungswahrscheinlichkeiten:</p>
+    <div class="formel">
+      P(9 ≤ T ≤ 11,5) = P(T ≤ 11,5) − P(T ≤ 9)<br>
+      = P( z ≤ (11,5 − 11)/0,7817 ) − P( z ≤ (9 − 11)/0,7817 )<br>
+      = P( z ≤ 0,6396 ) − P( z ≤ −2,5585 )<br>
+      = 0,7389 − [1 − 0,9948] = 0,7389 − 0,0052 = <strong>0,7337 ≈ 73 %</strong>
+    </div>
+    <div class="note">Alle drei Rechnungen betrachten ausschließlich den kritischen Pfad. Warum das systematisch zu optimistisch ist – Stichwort Sammelknoten-Verzerrung (Merge Node Bias) – und wie PNet und die Monte-Carlo-Simulation Abhilfe schaffen, behandelt <a href="kapitel-4-3.html">Kapitel 4.3</a>.</div>
+  </section>
+
+  <nav class="prevnext">
+    <a href="kapitel-4-1.html">← Kapitel 4.1: Planung und deterministische Terminplanung</a>
+    <span class="spacer"></span>
+    <a href="kapitel-4-3.html">Kapitel 4.3: Probabilistische Planung II →</a>
+  </nav>
+</main>
+
+<footer>
+  <div class="inner">
+    <p>Deutsche Übersetzung der Kursunterlagen von <a href="https://ocw.mit.edu/courses/1-040-project-management-spring-2004/" target="_blank" rel="noopener">MIT OpenCourseWare: 1.040 Project Management, Spring 2004</a> (Dr.&nbsp;Nathaniel Osgood).<br>
+    Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons BY-NC-SA 4.0</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

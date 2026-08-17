@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapitel 3.2: Detaillierte Kostenschätzung und Überblick über das Pumpstationsprojekt – Projektmanagement</title>
+<meta name="description" content="Kapitel 3.2 des Lernprogramms Projektmanagement: Detaillierte Kostenschätzung und Überblick über das Pumpstationsprojekt – vollständig übersetzt und aufbereitet.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <p class="kicker">Lerneinheit 3 · Projektplanung I: Kostenschätzung</p>
+    <h1>Kapitel 3.2: Detaillierte Kostenschätzung und Überblick über das Pumpstationsprojekt</h1>
+    <p class="sub">Von der Mengenermittlung über die tückische Arbeitskostenschätzung bis zu probabilistischen Verfahren – und wie man am Fallbeispiel einer Pumpstation einen Aufmaß-Bogen (Take-off) sauber aufbaut.</p>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <a href="index.html">Startseite</a>
+    <a href="lehrplan.html">Lehrplan</a>
+    <a href="kursplan.html" class="active">Lernpfad</a>
+    <a href="vorlesungen.html">Vorlesungsskripte</a>
+    <a href="projekt.html">Semesterprojekt</a>
+    <a href="literatur.html">Literatur</a>
+  </div>
+</nav>
+
+<main>
+  <p class="breadcrumb"><a href="kursplan.html">Lernpfad</a> › <a href="kursplan.html#le3">Lerneinheit 3</a> › Kapitel 3.2</p>
+  <div class="kapitel-meta">
+    <span>📄 <a href="pdfs/vorlesung-08-detaillierte-kostenschaetzung.pdf">Original-Foliensatz (PDF, englisch)</a></span>
+    <span>Vorlesung 8 von 18 · MIT 1.040, Frühjahr 2004</span>
+  </div>
+
+  <section class="card">
+    <div class="toc">
+      <span class="label">Inhalt dieses Kapitels</span>
+      <ol>
+        <li><a href="#abschnitt-1">Von der Konzept- zur Detailschätzung</a></li>
+        <li><a href="#abschnitt-2">Kostenklassifikation: direkte und indirekte Kosten</a></li>
+        <li><a href="#abschnitt-3">Fair-Cost-, Angebots- und definitive Schätzungen</a></li>
+        <li><a href="#abschnitt-4">Mengenermittlung (Quantity Takeoff)</a></li>
+        <li><a href="#abschnitt-5">Arbeitskostenschätzung: Preis und Produktivität</a></li>
+        <li><a href="#abschnitt-6">Probabilistische Schätzverfahren</a></li>
+        <li><a href="#abschnitt-7">Fallbeispiel Pumpstation: Aufmaß in der Praxis</a></li>
+        <li><a href="#abschnitt-8">Betonierabläufe: Bodenplatte und Wand</a></li>
+      </ol>
+    </div>
+
+    <h2 id="abschnitt-1">1. Von der Konzept- zur Detailschätzung</h2>
+    <p>Nachdem <a href="kapitel-3-1.html">Kapitel 3.1</a> die Schätzstufen und die konzeptionellen Verfahren behandelt hat, geht es nun um die <strong>detaillierte Kostenschätzung</strong>. Sie ergänzt die Grobschätzungen, sobald die Detailplanung weitgehend oder vollständig abgeschlossen ist, und läuft in zwei Stufen ab:</p>
+    <ol>
+      <li><strong>Stufe 1 – Mengenermittlung (Quantity Takeoff):</strong> Messen der benötigten Material- und Arbeitsmengen; die Mengen werden aus Steuerungsgründen üblicherweise gewerkeweise zusammengefasst.</li>
+      <li><strong>Stufe 2 – Ermittlung der direkten Kosten:</strong></li>
+    </ol>
+    <div class="formel">Σ [Menge] × [Einheitskosten] = geschätzte direkte Baukosten</div>
+    <p>Einige Eigenheiten detaillierter Schätzungen sollte man kennen:</p>
+    <ul>
+      <li>Die Unsicherheitsspannen der einzelnen Positionen sind unterschiedlich groß; die Verteilungen sind typischerweise <strong>asymmetrisch</strong> (Überschreitungen sind wahrscheinlicher als Unterschreitungen).</li>
+      <li>Schätzen ist <strong>eher Kunst als Wissenschaft</strong> – und mehr als Buchhaltung: Detaillierte quantitative Schätzungen sind möglich, ignorieren aber wichtige qualitative Faktoren.</li>
+      <li>Es steckt eine Fülle gewerke- und verfahrensspezifischer Detailkomplexität darin.</li>
+      <li>Häufig hängt die Schätzung stark von <strong>Nachunternehmerangeboten</strong> ab – deren Kalkulation ist von außen nicht einsehbar („opake“ Pauschalangebote).</li>
+    </ul>
+    <div class="note"><strong>Wichtige Grundsatzlektion: Präzision ist nicht Genauigkeit!</strong> Eine detaillierte Schätzung kann auf den Dollar genau aussehen und trotzdem weit danebenliegen. Zwei Arten von Komplexität spielen hinein: <em>Detailkomplexität</em> (unzählige benötigte Komponenten) und <em>Systemkomplexität</em> (dynamische Wechselwirkungen). Deshalb immer fragen: Welche Annahmen stecken hinter der Schätzung? Welche Faktoren werden ignoriert? Wie könnten diese Faktoren die Schätzung verändern?</div>
+
+    <h2 id="abschnitt-2">2. Kostenklassifikation: direkte und indirekte Kosten</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Kostenkategorie</th><th>Bestandteile</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Direkte Kosten</strong></td>
+            <td>Lohnkosten · Materialkosten · Gerätekosten · Kleingeräte und Verbrauchsmaterial (ST&amp;S)</td>
+          </tr>
+          <tr>
+            <td><strong>Indirekte Kosten („Gemeinkosten“/Overhead)</strong></td>
+            <td>Kreditzinsen · Miete für Baucontainer · Bürokosten · Klimatisierung/Heizung · Planung und Logistik · Bauleitung/Aufsicht</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Bei den Gemeinkosten lohnt eine weitere Unterscheidung:</p>
+    <dl class="begriffe">
+      <dt>Projektgemeinkosten (Project Overhead)</dt>
+      <dd>Projektspezifisch: Führungspersonal, Medienanschlüsse, Verbrauchsmaterial, Ingenieurleistungen, Prüfungen, Zeichnungen, Mieten, Genehmigungen, Versicherungen. Sie können und sollten direkt geschätzt werden – bleiben aber recht unsicher (Qualität der eingesetzten Bauleitung, Projektdauer usw.).</dd>
+      <dt>Firmengemeinkosten (Firm Overhead)</dt>
+      <dd>Zentrale Verwaltung: Gehälter, Büromiete, Nebenkosten, Versicherungen, Steuern, Werkstätten und Lagerplätze, Sonstiges. Schwer zu schätzen; meist wird ein prozentualer Zuschlag verwendet.</dd>
+    </dl>
+    <p>Die Abgrenzung ist nicht immer scharf – etwa bei sprunghaften Investitionen der Zentrale, die mehreren Projekten zugutekommen.</p>
+
+    <h2 id="abschnitt-3">3. Fair-Cost-, Angebots- und definitive Schätzungen</h2>
+    <h3>Fair-Cost-Schätzung des Bauherrn</h3>
+    <p>Die <strong>Fair-Cost-Schätzung</strong> wird aus den tatsächlichen Ausschreibungsunterlagen erstellt, die den Bietern vorliegen – noch vor der Vergabe. Nach der Vergabe nutzt der Bauherrnvertreter sie, um Nachträge zu bewerten. Merkmale:</p>
+    <ul>
+      <li>Als Datenbasis dienen z.&nbsp;B. RS-Means-Handbücher oder andere Quellen; Pauschalangebote von Nachunternehmern fließen <em>nicht</em> ein.</li>
+      <li>Die Gliederung weicht etwas vom Angebot ab: teils weniger Einzelpositionen, teils detailliertere Aufschlüsselung (etwa bei Nachunternehmerleistungen).</li>
+      <li>Sie ist die primäre Grundlage für die Messung des Baufortschritts, für die Terminplanung und für die Kostensteuerung.</li>
+    </ul>
+    <h3>Angebotskalkulation des Unternehmers (Bid Estimate)</h3>
+    <ul>
+      <li>Ziel: <strong>niedrig genug, um den Auftrag zu gewinnen – hoch genug, um Gewinn zu machen.</strong></li>
+      <li>Stützt sich oft auf historische Produktivitätsdaten des eigenen Unternehmens, Intuition über das Arbeitstempo und eine Mengenermittlung der wichtigsten Positionen.</li>
+      <li>Teils weniger detailliert als die Fair-Cost-Schätzung – Nachunternehmer decken 30 bis 80&nbsp;% des Projekts ab.</li>
+      <li>Von einem eingespielten Routineprozess kann keine Rede sein: Zwischen dem niedrigsten und dem höchsten Gebot für dasselbe Projekt liegen in wettbewerbsintensiven Regionen mitunter über 50&nbsp;% Unterschied.</li>
+    </ul>
+    <h3>Definitive Schätzungen</h3>
+    <p>Irgendwann lässt sich eine <strong>definitive Schätzung</strong> aufstellen, die die endgültigen Projektkosten mit geringem Fehler vorhersagt; der Restfehler wird durch eine sorgfältig bewertete Rückstellung (Contingency) aufgefangen. Wann dieser Zeitpunkt erreicht ist, hängt vom Abwicklungsmodell ab:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Abwicklungsmodell</th><th>Definitive Schätzung</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Traditionell (Design-Bid-Build)</strong></td>
+            <td>Beim Pauschalpreis: definitive Schätzung = Angebot des Billigstbieters + bewertete Contingency. Bei Fast-Track mit GMP oder Cost-plus-Fee braucht es: detaillierte Pläne und Leistungsbeschreibungen, feste Materialangebote, Nachunternehmerangebote und Preise der Großausrüstung.</td>
+          </tr>
+          <tr>
+            <td><strong>Design-Build</strong></td>
+            <td>Ein Pauschalpreis kann einen unerfahrenen Bauherrn täuschen: Die Kosten stehen fest, aber <em>welches Gebäude</em> geliefert wird, nicht. Bei GMP- und Cost-plus-Fee-Verträgen liegt die definitive Schätzung früher vor als im traditionellen Modell, weil Planung und Ausführung in einer Hand liegen.</td>
+          </tr>
+          <tr>
+            <td><strong>Professionelles CM</strong></td>
+            <td>Die definitive Schätzung gelingt etwa zum gleichen Zeitpunkt wie bei GMP/Cost-plus-Fee im traditionellen Modell; Beispiele zeigen, dass sie ab etwa 95&nbsp;% fertiger Detailplanung möglich ist.</td>
+          </tr>
+          <tr>
+            <td><strong>Einheitspreisvertrag</strong></td>
+            <td>Typisch für Tiefbau-Großprojekte (Dämme, Tunnel, Autobahnen, Flughäfen): Die Preise stehen fest, die Mengen schwanken naturgemäß – Mehr- oder Mindermengen etwa durch zusätzliche Gründungen, Aushub bis zum anstehenden Fels oder schlechten Baugrund. Ohne verlässliche geologische Informationen sind die Endkosten unter Umständen erst am Projektende genau bekannt.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="abschnitt-4">4. Mengenermittlung (Quantity Takeoff)</h2>
+    <p>Die Mengenermittlung ist die systematische Erfassung aller benötigten Material- und Arbeitsmengen – und <strong>sie erfordert echtes Nachdenken!</strong> Zwei Schlüsseleigenschaften muss die Gliederung erfüllen: Sie muss <strong>vollständig</strong> (nichts vergessen) und <strong>überschneidungsfrei</strong> (nichts doppelt) sein. Aus den Mengen werden mehrere Größen abgeleitet: Materialmengen (z.&nbsp;B. Kubikyards Beton), Geräteeinsatz und Arbeitsstunden. Die Gliederung folgt oft der CSI-Systematik oder dem Projektstrukturplan (Work Breakdown Structure, WBS).</p>
+    <h3>Feinheiten der Mengenermittlung</h3>
+    <ul>
+      <li><strong>Verfahrensbedingte Elemente:</strong> Manche Positionen entstehen erst durch die Bauweise – z.&nbsp;B. Arbeitsfugen (Construction Joints) beim abschnittsweisen Betonieren.</li>
+      <li><strong>Wiederverwendung</strong> von Material (etwa Schalung) und Geräten hängt ab von der Leistungsbeschreibung, vom Terminplan (der selbst gerade erst geschätzt und angepasst wird) und vom Platz auf der Baustelle – beengte Verhältnisse können Parallelarbeit erschweren oder verhindern (reicht der Platz für zwei Krane? Für zwei Kolonnen?).</li>
+      <li><strong>Kosten und Zeit</strong> müssen gemeinsam geschätzt werden – teils iterativ, denn es gibt versteckte Abhängigkeiten der Kosten vom Terminplan.</li>
+      <li><strong>Schnittstellen zwischen den Beteiligten:</strong> Es passiert leicht, dass jede Partei glaubt, die andere habe eine Position übernommen – etwa die Annahme, der Aushub sei in den Einheitskosten der Rohrleitung enthalten.</li>
+      <li>Die <strong>Wahl des Bauverfahrens</strong> hat großen Einfluss auf die Mengen; die Arbeitskostenschätzung ist besonders heikel (siehe Abschnitt&nbsp;5).</li>
+      <li>Auch die Folgen von Fehlern erster und zweiter Art unterscheiden sich: etwas fälschlich einrechnen kostet Wettbewerbsfähigkeit, etwas übersehen kostet Gewinn.</li>
+    </ul>
+
+    <h2 id="abschnitt-5">5. Arbeitskostenschätzung: Preis und Produktivität</h2>
+    <p>Die Schätzung der Arbeitskosten ist der <strong>subtilste und heikelste Teil</strong> der Kalkulation. Für gute Übertragbarkeit zerlegt man sie in drei Faktoren:</p>
+    <div class="formel">Gesamtkosten [$] = Q × P × W<br>
+    Q&nbsp;=&nbsp;Menge [Einheiten] · P&nbsp;=&nbsp;Lohnpreis [$/Stunde] · W&nbsp;=&nbsp;Arbeitsstunden je Einheit [h/Einheit – der Kehrwert der Produktivität]</div>
+    <h3>Lohnpreis P</h3>
+    <p>Der Stundensatz setzt sich zusammen aus: Löhnen (variieren nach Region, Zuständigkeitsbereich, Seniorität), Versicherungen (abhängig von Schadenshistorie des Unternehmers und Arbeitsart), Sozialversicherung (FICA – je zur Hälfte von Arbeitgeber und Arbeitnehmer), Arbeitslosensteuer (bundesstaatlich), Lohnnebenleistungen (Ausbildung, Urlaub, Krankenversicherung&nbsp;…) und Lohnzuschlägen:</p>
+    <ul>
+      <li><strong>Schichtarbeit:</strong> teils über angepasste Stundenzahlen abgegolten.</li>
+      <li><strong>Überstunden:</strong> Faktor 1,5 bis 3; manche Gewerke erhalten Überstundenzuschlag bereits ab 32 Wochenstunden.</li>
+      <li><strong>Gefährliche oder beschwerliche Arbeit:</strong> etwa auf Hängegerüsten, mit größeren Kranen oder unter Tage.</li>
+    </ul>
+    <p>Die komplizierten, heterogenen Regeln und Ausnahmen in den USA – gerade in gewerkschaftlich organisierten Betrieben – machen die Schätzung aufwendiger als in den meisten anderen Branchen. Häufig kalkuliert man deshalb <strong>kolonnenbasiert</strong>: Man rechnet mit dem Preis einer Standardkolonne (Crew), was die Arbeitsregeln gleich mit einbezieht. Zwischen den Unternehmern bestehen erhebliche Unterschiede in der Handhabung.</p>
+    <h3>Produktivität W</h3>
+    <p>Die Produktivitätsschätzung ist schwierig, aber entscheidend – sie ist das primäre Mittel, die Arbeitskosten zu steuern, und qualitative Faktoren (Arbeitsumfeld, Moral, Ermüdung, Lernen) wiegen schwer. Historische Daten liefern das US-Arbeitsministerium, Berufsverbände und Bundesstaaten. Zu berücksichtigen sind: Lage der Baustelle (lokale Qualifikationsbasis, Regeln des Zuständigkeitsbereichs), Lernkurven, Arbeitszeitmodell (Überstunden, Schichtarbeit), Wetter (aufwendige Behelfslösungen kosten), Arbeitsumfeld (Ort auf der Baustelle, Lärm, Nähe zum Material), Führungsstil und Baustellenregeln.</p>
+    <p>Wie stark die Produktivität für vergleichbare Arbeiten schwankt, zeigen typische Job-Faktoren (1,0&nbsp;=&nbsp;Bestwert; höhere Werte bedeuten entsprechend mehr Stunden je Einheit):</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Einflussgröße / Projekttyp</th><th>Faktor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="2"><strong>Hochbau (Building Construction)</strong></td></tr>
+          <tr><td>Nicht mitarbeitende Aufsicht</td><td class="num">1,00–1,15</td></tr>
+          <tr><td>Handwerkliches Können</td><td class="num">1,00–1,20</td></tr>
+          <tr><td>Baustellenbedingungen</td><td class="num">1,00–1,20</td></tr>
+          <tr><td>Arbeitsbedingungen</td><td class="num">1,00–1,20</td></tr>
+          <tr><td>Schichtarbeit</td><td class="num">1,00–1,20</td></tr>
+          <tr><td><em>Gesamtspanne Hochbau</em></td><td class="num">1,00–2,00</td></tr>
+          <tr><td colspan="2"><strong>Industriebau</strong></td></tr>
+          <tr><td>Leichtindustrie</td><td class="num">1,25–2,25</td></tr>
+          <tr><td>Schwerindustrie</td><td class="num">1,50–3,00</td></tr>
+          <tr><td><em>Gesamtspanne Industriebau</em></td><td class="num">1,25–3,00</td></tr>
+          <tr><td colspan="2"><strong>Kernkraftwerke</strong></td></tr>
+          <tr><td>Vor Three Mile Island</td><td class="num">2,25–4,00</td></tr>
+          <tr><td>Nach Three Mile Island</td><td class="num">3,00–5,00</td></tr>
+          <tr><td><em>Gesamtspanne Kernkraftwerke</em></td><td class="num">2,25–5,00</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k32-abb1.jpg" alt="Vier Diagramme zu Lernkurven: durchschnittliche Arbeitsstunden je Einheit fallen mit der Stückzahl; Integration der Lernkurve, Variation mit der Menge, Anwendung in der Steuerung und die Verlernkurve nach einer Unterbrechung." loading="lazy">
+      <figcaption>Abb. 1: Lernkurven in Schätzung und Steuerung (Folie 29, nach Boyd C. Paulson, „Estimation and Control of Construction Labor Costs“, ASCE 1975). Oben links: Die durchschnittlichen Arbeitsstunden je Einheit (Average Man-Hours Per Unit) sinken mit der Stückzahl – die Fläche unter der Kurve ergibt den Gesamtaufwand. Oben rechts: Bei größerer Menge n′ sinkt der Durchschnittswert von w auf w′. Unten links: Anwendung in der Fortschrittskontrolle. Unten rechts: die „Verlernkurve“ (Unlearning Curve) – nach einer Unterbrechung steigt der Aufwand zunächst wieder an.</figcaption>
+    </figure>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k32-abb2.jpg" alt="Drei Diagramme zu Überstundeneffekten: kumulierte Produktivität relativ zur 40-Stunden-Woche fällt bei 50- und 60-Stunden-Wochen über die Wochen ab; der Kostenfaktor steigt auf das 1,6- bis 2-Fache; der effektive Ertrag der Überstunden sinkt bis auf null und darunter." loading="lazy">
+      <figcaption>Abb. 2: Produktivitätswirkung von Überstunden (Folie 30, nach „Effect of Scheduled Overtime on Construction Projects“, AACE Bulletin 1973). Oben: Bei dauerhaften 50- bzw. 60-Stunden-Wochen fällt die Produktivität relativ zur 40-Stunden-Woche über die Wochen auf etwa 0,7–0,6 – bis zum „Point of no Return“. Mitte: Die kumulierten Kosten steigen (einschließlich Produktivitäts- und Zuschlagsverlusten) auf das 1,6-Fache (50-h-Woche) bis über das 2-Fache (60-h-Woche). Unten: Der effektive Ertrag je geleisteter Überstunde sinkt nach wenigen Wochen gegen null („No return on overtime“) und wird sogar negativ – Dauerüberstunden zahlen sich nicht aus.</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-6">6. Probabilistische Schätzverfahren</h2>
+    <dl class="begriffe">
+      <dt>Sukzessive Schätzung (Successive Estimation)</dt>
+      <dd>Top-down-Ansatz für schnelle Schätzungen: Für jede Position werden Erwartungswert und Varianz bestimmt, ebenso die irreduzible Unsicherheit aus externen Faktoren. Die Gesamtvarianz ist die Summe der Komponentenvarianzen (Σ). Anschließend zerlegt man gezielt die Positionen mit der höchsten Varianz weiter – mehr Detail senkt die Varianz. Ergebnis: Oft muss nur ein kleiner Teil des Projekts detailliert geschätzt werden, um eine gute Gesamtschätzung zu erhalten.</dd>
+      <dt>Spannen-Schätzung (Range Estimation)</dt>
+      <dd>Für die erwarteten Gebote werden ein niedriger, ein mittlerer und ein hoher Wert geschätzt (Low–Mean–High); daraus wird die Unsicherheitsspanne des Gesamtprojekts abgeleitet. Damit lässt sich über Konfidenzintervalle argumentieren.</dd>
+    </dl>
+
+    <h2 id="abschnitt-7">7. Fallbeispiel Pumpstation: Aufmaß in der Praxis</h2>
+    <p>Den Abschluss der Vorlesung bildet die Einführung in die Mengenermittlungs-Übung am Beispiel einer <strong>Abwasser-Pumpstation</strong> – eines Stahlbetonbauwerks mit Pumpensumpf („Wet Well“) und Betriebsgeschoss („Operating Floor“). Anhand der Konstruktionszeichnungen und der Bauverfahren wird ein vollständiges Schalungs-Aufmaß aufgebaut.</p>
+    <h3>Was wird gemessen?</h3>
+    <p>Gemessen wird die <strong>Schalung (Formwork)</strong> in Quadratfuß (SF) – getrennt für die Bodenplatte des Pumpensumpfs (Wet Well Floor), das Betriebsgeschoss (Operating Floor) sowie Innenwände und Trennwände – plus die zugehörigen Zulagepositionen:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Position</th><th>Einheit</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Schalung (Formwork)</td><td>Quadratfuß (SF)</td></tr>
+          <tr><td>Ankerbolzen (Anchor Bolts)</td><td>Stück (qty)</td></tr>
+          <tr><td>Fugenfüllband (Joint Filler)</td><td>laufende Fuß (LF)</td></tr>
+          <tr><td>Kantenabschrägung / Dreikantleiste (Chamfer)</td><td>laufende Fuß (LF)</td></tr>
+          <tr><td>PVC-Fugenband (PVC Waterstop)</td><td>laufende Fuß (LF)</td></tr>
+          <tr><td>Arbeitsfugen (Construction Joints)</td><td>laufende Fuß (LF)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Wie wird gebaut?</h3>
+    <p>Die Mengen ergeben sich aus dem Bauablauf – deshalb zuerst das Verfahren verstehen:</p>
+    <ol>
+      <li>Schalung stellen</li>
+      <li>Bewehrung einbauen</li>
+      <li>Beton einbringen</li>
+      <li>Oberfläche fertigstellen (kleine Gefälle usw.)</li>
+      <li>Warten und wiederholen (Arbeitsfugen zwischen den Abschnitten)</li>
+      <li>Ausschalen</li>
+      <li>Nacharbeiten: Spachteln und Ausbessern (Point &amp; Patch), Abreiben (Rub)</li>
+    </ol>
+    <div class="note"><strong>Von unten nach oben denken – die Schwerkraft regiert! („Gravity rules!“)</strong> Ein Bauwerk wird in der Reihenfolge der Lastabtragung errichtet: erst die Bodenplatte, dann Wände, dann Decken. Das Aufmaß folgt derselben Logik.</div>
+    <h3>Umgang mit den Konstruktionszeichnungen</h3>
+    <p>Zur Navigation in den Zeichnungen dienen drei Elemente: der <strong>Zeichnungstitel</strong> (Drawing Title), der <strong>Querschnitt</strong> (Cross Section) und das <strong>Detail</strong>. Schnitt- und Detailverweise führen von den Grundrissen zu den maßgebenden Abmessungen.</p>
+    <h3>Der Aufmaß-Bogen (Take-off Template)</h3>
+    <p>Für das Aufmaß gelten vier Regeln:</p>
+    <ul>
+      <li>Jedes gemessene Objekt charakterisieren (aussagekräftige Beschreibung).</li>
+      <li>Angeben, in welcher Ebene gemessen wird.</li>
+      <li>Die Abmessungen des <strong>gesamten</strong> Objekts angeben.</li>
+      <li>Die Nordrichtung konsistent halten.</li>
+    </ul>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k32-abb3.jpg" alt="Folie Take-off Template: vier Regeln für das Aufmaß, darunter drei Volumenskizzen (Quader, Keil, Pyramidenstumpf) mit den Maßbezeichnungen a, b, c, d und ein Tabellenkopf mit den Spalten Item, Description, Drawings, Sketch, a, b, c, Qty or d, Units, Quantity, Deriver, Signoff; erste Zeile: Invert Edge Form." loading="lazy">
+      <figcaption>Abb. 3: Der Aufmaß-Bogen („Take-off Template“, Folie 38). Drei Standardskizzen definieren die Maßbuchstaben: Skizze&nbsp;1 – Quader mit Länge&nbsp;a, Höhe&nbsp;b, Breite&nbsp;c; Skizze&nbsp;2 – Keil; Skizze&nbsp;3 – Pyramidenstumpf mit zusätzlichem Maß&nbsp;d. Jede Zeile des Bogens verweist auf Zeichnung und Skizze, sodass jede Mengenberechnung nachvollziehbar und prüfbar bleibt.</figcaption>
+    </figure>
+    <p>Der Bogen selbst ist eine Tabelle mit folgenden Spalten (die Kopfzeile „Total (SF): Sum“ summiert alle Schalungsflächen):</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Pos.</th><th>Beschreibung</th><th>Zeichnungen</th><th>Skizze</th><th>a</th><th>b</th><th>c</th><th>d bzw. Anzahl</th><th>Einheit</th><th>Menge</th><th>Ermittelt von</th><th>Freigabe</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">1</td><td>Randschalung Sohlplatte (Invert Edge Form)</td><td>…</td><td>…</td><td>…</td><td>…</td><td>…</td><td>…</td><td>…</td><td>Summe</td><td>…</td><td>…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Beispiel – ein Objekt definieren:</strong> Die Position „Randschalung Sohlplatte“ wird in Teilobjekte zerlegt, die einzeln gemessen und dann summiert werden:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Pos.</th><th>Beschreibung</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">1</td><td><strong>Randschalung Sohlplatte (Invert Edge Form)</strong></td></tr>
+          <tr><td class="num">1a</td><td>Sohlplatte (Unterseite)</td></tr>
+          <tr><td class="num">1b</td><td>Sohlplatte (West- und Ostseite)</td></tr>
+          <tr><td class="num">1c</td><td>Sohlplatte (Nord- und Südseite)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Beispiel – Ebenen und Abmessungen festlegen:</strong> Anschließend werden die maßgebenden Zeichnungen gesucht (hier die Pläne S-1101 und S-1105) und die Maße in den Bogen eingetragen. Für die Seitenflächen der Sohlplatte ergibt sich:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Beschreibung</th><th>Zeichnungen</th><th>Skizze</th><th>a</th><th>b</th><th>c</th><th>Einheit</th><th>Menge</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Seitenflächen der Sohlplatte (Sides of Invert Slab)</td><td>S-1101, S-1105</td><td class="num">1</td><td class="num">44,00</td><td class="num">6,00</td><td class="num">54,50</td><td>SF</td><td class="num">1.182,0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Die Menge folgt aus Skizze&nbsp;1 (Quader): Umfang × Höhe = 2&nbsp;×&nbsp;(44,00&nbsp;+&nbsp;54,50)&nbsp;×&nbsp;6,00&nbsp;=&nbsp;1.182,0&nbsp;SF Schalfläche.</p>
+
+    <h2 id="abschnitt-8">8. Betonierabläufe: Bodenplatte und Wand</h2>
+    <p>Zwei Standardabläufe des Ortbetonbaus, die hinter den Aufmaß-Positionen stehen:</p>
+    <h3>Betonieren einer Bodenplatte auf dem Baugrund (Slab on Grade)</h3>
+    <ol>
+      <li>Schalung und Ränder herstellen</li>
+      <li>Bewehrung und Einbauteile einbringen</li>
+      <li>Abziehen mit der Richtlatte (Striking off/Straightedge)</li>
+      <li>Glätten mit dem Reibebrett (Floating) – falls eine glattere Oberfläche benötigt wird</li>
+      <li>Scheinfugen/Kontrollfugen anlegen (Control Joints)</li>
+      <li>Flügelglätten (Troweling) – falls eine sehr glatte Oberfläche benötigt wird</li>
+      <li>Nachbehandeln unter feuchten Bedingungen (Curing)</li>
+    </ol>
+    <p>(Für diese Plattenschalung ist man in der Übungsaufgabe nicht verantwortlich.)</p>
+    <h3>Betonieren einer Wand</h3>
+    <ol>
+      <li>Beschichtete Schalung stellen (zunächst nur eine Seite)</li>
+      <li>Bewehren</li>
+      <li>Schalungsanker setzen und Bewehrungsabnahme (Ties and Inspection)</li>
+      <li>Beschichtete Schalung der zweiten Seite stellen</li>
+      <li>Beton einbringen</li>
+      <li>Nachbehandeln (Curing)</li>
+      <li>Ausschalen und Abknipsen der Ankerenden (Snapping off Ties)</li>
+      <li>Spachteln und Ausbessern (Point and Patch)</li>
+      <li>Abreiben (Rub)</li>
+    </ol>
+    <div class="note"><strong>Warum das für die Kalkulation zählt:</strong> Jeder dieser Arbeitsschritte erzeugt eigene Mengenpositionen (Schalfläche je Seite, Anker als Stückzahl, Fugenbänder in laufenden Fuß) und eigene Arbeitsstunden – wer den Ablauf nicht kennt, übersieht Positionen oder rechnet sie doppelt.</div>
+  </section>
+
+  <nav class="prevnext">
+    <a href="kapitel-3-1.html">← Kapitel 3.1: Vergabeverfahren und Kostenschätzung I</a>
+    <span class="spacer"></span>
+    <a href="kapitel-4-1.html">Kapitel 4.1: Planung und deterministische Terminplanung →</a>
+  </nav>
+</main>
+
+<footer>
+  <div class="inner">
+    <p>Deutsche Übersetzung der Kursunterlagen von <a href="https://ocw.mit.edu/courses/1-040-project-management-spring-2004/" target="_blank" rel="noopener">MIT OpenCourseWare: 1.040 Project Management, Spring 2004</a> (Dr.&nbsp;Nathaniel Osgood).<br>
+    Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons BY-NC-SA 4.0</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapitel 1.3: Instrumente zur Projektbewertung – Projektmanagement</title>
+<meta name="description" content="Kapitel 1.3 des Lernprogramms Projektmanagement: Instrumente zur Projektbewertung – vollständig übersetzt und aufbereitet.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <p class="kicker">Lerneinheit 1 · Grundlagen und Projektbewertung</p>
+    <h1>Kapitel 1.3: Instrumente zur Projektbewertung</h1>
+    <p class="sub">Vom Zinseszins zum Kapitalwert: die Rechenwerkzeuge, mit denen Projekte verglichen und Investitionsentscheidungen begründet werden.</p>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <a href="index.html">Startseite</a>
+    <a href="lehrplan.html">Lehrplan</a>
+    <a href="kursplan.html" class="active">Lernpfad</a>
+    <a href="vorlesungen.html">Vorlesungsskripte</a>
+    <a href="projekt.html">Semesterprojekt</a>
+    <a href="literatur.html">Literatur</a>
+  </div>
+</nav>
+
+<main>
+  <p class="breadcrumb"><a href="kursplan.html">Lernpfad</a> › <a href="kursplan.html#le1">Lerneinheit 1</a> › Kapitel 1.3</p>
+  <div class="kapitel-meta">
+    <span>📄 <a href="pdfs/vorlesung-03-instrumente-zur-projektbewertung.pdf">Original-Foliensatz (PDF, englisch)</a></span>
+    <span>Vorlesung 3 von 18 · MIT 1.040, Frühjahr 2004</span>
+  </div>
+
+  <section class="card">
+    <div class="toc">
+      <span class="label">Inhalt dieses Kapitels</span>
+      <ol>
+        <li><a href="#abschnitt-1">Zinseszins und Zeitwert des Geldes</a></li>
+        <li><a href="#abschnitt-2">Zahlungen verschieben: die vier Grundumrechnungen</a></li>
+        <li><a href="#abschnitt-3">Kapitalwert (NPV) an zwei Minimalbeispielen</a></li>
+        <li><a href="#abschnitt-4">Entscheidungsregeln, Diskontsatz und MARR</a></li>
+        <li><a href="#abschnitt-5">Zinsformeln: Von der Einmalzahlung zur Annuität</a></li>
+        <li><a href="#abschnitt-6">Der interne Zinsfuß (IRR)</a></li>
+        <li><a href="#abschnitt-7">Weitere Bewertungsverfahren</a></li>
+        <li><a href="#abschnitt-8">Was die Verfahren stillschweigend voraussetzen</a></li>
+      </ol>
+    </div>
+
+    <h2 id="abschnitt-1">Zinseszins und Zeitwert des Geldes</h2>
+    <p>Ausgangspunkt aller Bewertungsinstrumente ist der <strong>Zinseszins</strong> (Compounding). Legen wir einen Betrag x bei einer Bank mit Zinssatz i an und werden die Zinsen jährlich gutgeschrieben, wächst das Guthaben exponentiell:</p>
+    <div class="formel">nach 1 Jahr: x × (1 + i) &nbsp;&nbsp; nach 2 Jahren: x × (1 + i)<sup>2</sup> &nbsp;&nbsp; nach 3 Jahren: x × (1 + i)<sup>3</sup> &nbsp;&nbsp; … &nbsp;&nbsp; nach n Jahren: x × (1 + i)<sup>n</sup></div>
+    <p>Daraus folgt der schon in <a href="kapitel-1-2.html">Kapitel 1.2</a> eingeführte <strong>Zeitwert des Geldes</strong>: Wenn Geld jederzeit verlässlich angelegt werden kann und wir als rationale Akteure keine Investition eingehen, die weniger abwirft als die Bank, dann ist Geld heute „gleich viel wert" wie ein größerer Betrag in der Zukunft – und ein künftiger Betrag gleich viel wert wie sein kleinerer <strong>Barwert</strong> heute. Bei einer verlässlichen Anlagequelle sind wir zwischen allen Zahlungsströmen mit demselben Barwert indifferent, weil sich einer ohne Zusatzkosten in den anderen umwandeln lässt.</p>
+
+    <h2 id="abschnitt-2">Zahlungen verschieben: die vier Grundumrechnungen</h2>
+    <p>In Zahlungsstrom-Diagrammen werden Kosten als Pfeile nach unten und Einnahmen als Pfeile nach oben auf einer Zeitachse notiert; eine einfache Investition besteht aus einer anfänglichen Auszahlung und späteren Einzahlungen. Mit der verlässlichen Anlagequelle (Zinssatz i) lässt sich jede Zahlung kostenneutral entlang der Zeitachse verschieben – in vier Grundfällen:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Umrechnung</th><th>Vorgehen (über die verlässliche Quelle)</th><th>Ergebnis</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Künftige Einnahme r (Jahr t) → heute</td><td>Heute den kleineren Betrag leihen; die künftige Einnahme tilgt den Kredit samt Zinsen.</td><td class="num">r / (1 + i)<sup>t</sup></td></tr>
+          <tr><td>Künftige Kosten c (Jahr t) → heute</td><td>Heute den kleineren Betrag anlegen; die Anlage wächst bis t genau auf c an.</td><td class="num">c / (1 + i)<sup>t</sup></td></tr>
+          <tr><td>Heutige Einnahme r → Jahr t</td><td>Alles sofort anlegen und im Jahr t abheben.</td><td class="num">r × (1 + i)<sup>t</sup></td></tr>
+          <tr><td>Heutige Kosten c → Jahr t</td><td>Den Betrag heute leihen und im Jahr t samt Zinsen zurückzahlen.</td><td class="num">c × (1 + i)<sup>t</sup></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note"><strong>Zusammenfassung:</strong> Bei einer verlässlichen Quelle mit Jahresrendite i können wir kostenlos zwischen einer Zahlung v zum Zeitpunkt 0 und v × (1 + i)<sup>t</sup> zum Zeitpunkt t wechseln. Weil dieser Wechsel nichts kostet, gelten die Werte als äquivalent. Der Barwert einer Zahlung v zum Zeitpunkt t ist schlicht v / (1 + i)<sup>t</sup>.</div>
+    <p>Der <strong>Kapitalwert</strong> (Net Present Value, NPV) eines Zahlungsstroms ist die Summe der Barwerte aller Kosten und Einnahmen – Einnahmen positiv, Kosten negativ gezählt. Er ist stets relativ zu einem <strong>Diskontsatz</strong> definiert (hier: dem Zinssatz der verlässlichen Quelle) und gibt den Wert des Zahlungsstroms über das hinaus an, was die verlässliche Quelle – die Opportunitätskosten – aus denselben Einsätzen gemacht hätte. Rechentechnisch werden die Glieder des Zahlungsstroms nacheinander mit dem Faktor 1 / (1 + r)<sup>t</sup> abgezinst (<strong>Discounted-Cash-Flow-Methode</strong>), denn der Wert von Anlagen und Krediten wächst exponentiell.</p>
+
+    <h2 id="abschnitt-3">Kapitalwert (NPV) an zwei Minimalbeispielen</h2>
+    <p>Zwei bewusst einfache Beispiele zeigen, was der NPV aussagt. Die verlässliche Quelle biete jeweils 10&nbsp;% Jahreszins.</p>
+    <h3>Beispiel 1: Hochverzinsliche Anlage</h3>
+    <p>Wir investieren im Jahr 0 100&nbsp;$ in ein risikoreiches Vorhaben und erhalten im Jahr 1 121&nbsp;$ zurück.</p>
+    <div class="formel">NPV = −100 + 121 / 1,10 = −100 + 110 = +10&nbsp;$ &nbsp;&nbsp;&nbsp;&nbsp; Nettozukunftswert (Jahr 1): −100 × 1,10 + 121 = +11&nbsp;$</div>
+    <p>Bedeutung: Die Investition ist um 10&nbsp;$ (in heutigem Geld) besser, als die 100&nbsp;$ zur Bank zu tragen – diesen Betrag könnte man sich sofort „auszahlen", wenn man die Investition über die Bank finanziert.</p>
+    <h3>Beispiel 2: Geld in der Matratze</h3>
+    <p>Wir stecken im Jahr 0 100&nbsp;$ in die Matratze und holen sie im Jahr 1 unversehrt wieder heraus.</p>
+    <div class="formel">NPV = −100 + 100 / 1,10 ≈ −9,09&nbsp;$</div>
+    <p>Bedeutung: Obwohl nominal kein Cent verloren geht, vernichtet die Matratze rund 9&nbsp;$ an heutigem Wert – nämlich die entgangenen Bankzinsen. Der NPV misst immer den Gewinn <em>relativ zur besten Alternative</em>, nie den nominalen Überschuss.</p>
+
+    <h2 id="abschnitt-4">Entscheidungsregeln, Diskontsatz und MARR</h2>
+    <p>„Entwickeln oder nicht entwickeln?" – die Bewertungsinstrumente beantworten drei Fragen: Lohnt sich ein einzelnes Projekt überhaupt? Welches aus einer Liste machbarer Projekte ist das beste? Und wie ist die Rangfolge aller Projekte untereinander? Die Leitlinie der Folien: <em>„Ziel ist, die höchste Nettorendite auf das eingesetzte Kapital zu erzielen, die mit den eingegangenen Risiken vereinbar ist."</em></p>
+    <p>Mit dem NPV lässt sich beides tun: ein Projekt gegen seine Opportunitätskosten prüfen (diese bestimmen den Diskontsatz r) – oder das beste aus mehreren sich gegenseitig ausschließenden Projekten wählen (NPV maximieren).</p>
+    <div class="formel">NPV &gt; 0 → Projekt annehmen &nbsp;&nbsp;·&nbsp;&nbsp; NPV = 0 → indifferent &nbsp;&nbsp;·&nbsp;&nbsp; NPV &lt; 0 → Projekt ablehnen</div>
+    <p>Zwei Zinsgrößen sind dabei auseinanderzuhalten:</p>
+    <dl class="begriffe">
+      <dt>Diskontsatz (Discount Rate)</dt>
+      <dd>Abzinsungssatz der Bewertung: Zeitwert des Geldes <em>plus</em> Risikozuschlag. Seine Wahl ist eine eigene Entscheidung und beeinflusst das Ergebnis maßgeblich.</dd>
+      <dt>MARR (Minimum Attractive Rate of Return)</dt>
+      <dd>Mindestverzinsung: der niedrigste Diskontsatz, den der Markt entsprechend den Risiken eines Projekts akzeptiert – die Latte, die ein Projekt mindestens überspringen muss.</dd>
+    </dl>
+    <h3>Beispiel: Zwei Lagerhallen im Vergleich</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th></th><th>Lagerhalle A</th><th>Lagerhalle B</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Bauzeit</td><td class="num">10 Monate</td><td class="num">20 Monate</td></tr>
+          <tr><td>Kosten</td><td class="num">100.000 $/Monat</td><td class="num">100.000 $/Monat</td></tr>
+          <tr><td>Verkaufserlös</td><td class="num">1.500.000 $</td><td class="num">2.800.000 $</td></tr>
+          <tr><td>Gesamtkosten (nominal)</td><td class="num">1.000.000 $</td><td class="num">2.000.000 $</td></tr>
+          <tr><td>Gewinn (nominal)</td><td class="num">500.000 $</td><td class="num">800.000 $</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Nominal scheint B klar vorn (800.000&nbsp;$ gegenüber 500.000&nbsp;$ Gewinn). Aber B bindet doppelt so lange Kapital, und alle Zahlungen liegen zeitlich anders. Erst wenn man beide Zahlungsströme aufzeichnet und mit demselben Diskontsatz abzinst, werden die Projekte vergleichbar – genau dafür sind die folgenden Zinsformeln da. Das Beispiel stammt von Peña-Mora (2003).</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k13-abb1.jpg" alt="Zahlungsstrom-Diagramme der Projekte A und B: monatliche Auszahlungen von 100.000 Dollar über 10 bzw. 20 Monate, am Ende Einnahme von 1,5 bzw. 2,8 Millionen Dollar" loading="lazy">
+      <figcaption>Abb. 1: Die beiden Lagerhallen-Projekte als Zahlungsstrom-Diagramme – Pfeile nach unten sind monatliche Kosten (je 100.000&nbsp;$), der Pfeil nach oben der Verkaufserlös nach 10 bzw. 20 Monaten (Folie 22 des Originalskripts).</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-5">Zinsformeln: Von der Einmalzahlung zur Annuität</h2>
+    <p>Für wiederkehrende Rechnungen haben sich Standardfaktoren etabliert, notiert als (Ziel/Quelle, i&nbsp;%, n). Die Symbole: i = effektiver Zinssatz pro Zinsperiode (Diskontsatz bzw. MARR), t bzw. n = Zahl der Zinsperioden, PV = Barwert, NPV = Kapitalwert, FV = Endwert (Future Value), A = <strong>Annuität</strong> (gleichbleibende jährliche Zahlung).</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Faktor (engl. Bezeichnung)</th><th>Notation</th><th>Formel</th><th>Beantwortet die Frage</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aufzinsungsfaktor (Single Payment Compound Amount)</td><td class="num">(F/P, i%, n)</td><td class="num">(1 + i)<sup>n</sup></td><td>Was wird aus einer Einmalzahlung nach n Jahren?</td></tr>
+          <tr><td>Abzinsungsfaktor (Single Payment Present Worth)</td><td class="num">(P/F, i%, n)</td><td class="num">1 / (1 + i)<sup>n</sup></td><td>Was ist eine künftige Einmalzahlung heute wert?</td></tr>
+          <tr><td>Rentenendwertfaktor (Uniform Series Compound Amount)</td><td class="num">(F/A, i%, n)</td><td class="num">[(1 + i)<sup>n</sup> − 1] / i</td><td>Was ergeben n gleiche Jahreszahlungen am Ende?</td></tr>
+          <tr><td>Tilgungsfaktor (Uniform Series Sinking Fund)</td><td class="num">(A/F, i%, n)</td><td class="num">i / [(1 + i)<sup>n</sup> − 1]</td><td>Welche Jahresrate spart ein Endwert-Ziel an?</td></tr>
+          <tr><td>Rentenbarwertfaktor (Uniform Series Present Worth)</td><td class="num">(P/A, i%, n)</td><td class="num">[(1 + i)<sup>n</sup> − 1] / [i (1 + i)<sup>n</sup>]</td><td>Was sind n gleiche Jahreszahlungen heute wert?</td></tr>
+          <tr><td>Annuitätenfaktor (Uniform Series Capital Recovery)</td><td class="num">(A/P, i%, n)</td><td class="num">[i (1 + i)<sup>n</sup>] / [(1 + i)<sup>n</sup> − 1]</td><td>Welche Jahresrate entspricht einem heutigen Betrag?</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Die Faktoren sind paarweise Kehrwerte voneinander: (P/F) = 1/(F/P), (A/F) = 1/(F/A), (A/P) = 1/(P/A). (Quelle: Peña-Mora 2003.)</p>
+    <h3>Anmerkung zur stetigen Verzinsung</h3>
+    <p>Bisher wurde jährlich verzinst. Wird der Jahreszins i auf n Zinsperioden pro Jahr verteilt, beträgt der Effektivzins für das ganze Jahr (1 + i/n)<sup>n</sup>. Lässt man n gegen unendlich gehen, erreicht man die <strong>stetige Verzinsung</strong>:</p>
+    <div class="formel">(1 + i/n)<sup>n</sup> → e<sup>i</sup> für n → ∞ &nbsp;&nbsp;&nbsp;&nbsp; über t Jahre: Aufzinsung mit e<sup>i·t</sup></div>
+    <h3>Beispiel: Baugerät (Annuität und Barwert)</h3>
+    <p>Ein Gerät kostet 20.000&nbsp;$, hält voraussichtlich 5 Jahre und hat dann einen Restwert (Salvage Value) von 4.000&nbsp;$; die Mindestverzinsung beträgt 15&nbsp;%. Gesucht sind (a) das jährliche Äquivalent A und (b) das Gegenwarts-Äquivalent P dieser Investition (Beispiel nach Peña-Mora 2003):</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k13-abb2.jpg" alt="Zahlungsstrom-Diagramm des Gerätebeispiels: Auszahlung 20.000 Dollar heute, fünf gleiche Jahreszahlungen A, Restwert 4.000 Dollar im Jahr 5, Zinssatz 15 Prozent" loading="lazy">
+      <figcaption>Abb. 2: Das Gerätebeispiel als Zahlungsstrom-Diagramm – gesucht sind die äquivalente Annuität A über 5 Jahre und der Barwert P bei i = 15&nbsp;%; der Restwert von 4.000&nbsp;$ fließt im Jahr 5 zurück (Folie 29 des Originalskripts).</figcaption>
+    </figure>
+    <div class="formel">A = −20.000 × (A/P, 15%, 5) + 4.000 × (A/F, 15%, 5) ≈ −20.000 × 0,2983 + 4.000 × 0,1483 ≈ −5.373&nbsp;$/Jahr<br>
+    P = −20.000 + 4.000 × (P/F, 15%, 5) ≈ −20.000 + 4.000 × 0,4972 ≈ −18.011&nbsp;$</div>
+    <p>Lesart: Das Gerät zu besitzen kostet – Restwert eingerechnet – umgerechnet rund 5.373&nbsp;$ pro Jahr bzw. einmalig rund 18.011&nbsp;$ in heutigem Geld. Solche Äquivalente machen Anschaffungen mit unterschiedlichen Laufzeiten und Restwerten vergleichbar.</p>
+
+    <h2 id="abschnitt-6">Der interne Zinsfuß (IRR)</h2>
+    <p>Der <strong>interne Zinsfuß</strong> (Internal Rate of Return, IRR) gibt die Verzinsung an, die eine Investition selbst erwirtschaftet – anschaulich die Rate einer geometrisch wachsenden Wertreihe. Berechnet wird er üblicherweise als der Diskontsatz, der den NPV auf null setzt. Die Entscheidungsregel lautet:</p>
+    <div class="formel">IRR (r*) &gt; Diskontsatz r → annehmen &nbsp;&nbsp;·&nbsp;&nbsp; IRR = r → indifferent &nbsp;&nbsp;·&nbsp;&nbsp; IRR &lt; r → ablehnen</div>
+    <p>„Akzeptiere ein Projekt, dessen IRR über dem Diskontsatz liegt" – oder alternativ: „Maximiere den IRR über sich gegenseitig ausschließende Projekte." (Peña-Mora 2003)</p>
+    <h3>IRR-Beispiel</h3>
+    <p>Für das Gerätebeispiel mit jährlichen Einnahmen von 5.600&nbsp;$ sucht man die Rate r, die den Kapitalwert auf null bringt:</p>
+    <div class="formel">0 = −20.000 + 5.600 × (P/A, r%, 5) + 4.000 × (P/F, r%, 5) &nbsp;&nbsp;→&nbsp;&nbsp; r ≈ 16,9&nbsp;%</div>
+    <p>Da 16,9&nbsp;% über der Mindestverzinsung von 15&nbsp;% liegt, ist das Projekt gerechtfertigt. Grafisch findet man den IRR als Nulldurchgang der NPV-Kurve über dem Zinssatz:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k13-abb3.jpg" alt="Diagramm: Kapitalwert in Dollar über dem Zinssatz in Prozent; die fallende Kurve schneidet die Nulllinie zwischen 15 und 20 Prozent" loading="lazy">
+      <figcaption>Abb. 3: Grafische Bestimmung des internen Zinsfußes – der NPV („Net Present Value") fällt mit steigendem Zinssatz („Interest Rate i"); wo die Kurve die Nulllinie schneidet (hier zwischen 15 und 20&nbsp;%), liegt der IRR (Folie 34 des Originalskripts).</figcaption>
+    </figure>
+    <h3>IRR oder NPV?</h3>
+    <ul>
+      <li>Meist führen IRR und NPV zur selben Entscheidung bzw. Rangfolge.</li>
+      <li>Der IRR kommt ohne Annahme (oder Berechnung) eines Diskontsatzes aus.</li>
+      <li>Aber: Der IRR betrachtet nur die <em>Rate</em> des Gewinns, nicht seine <em>Größe</em>; er ignoriert die Möglichkeit der Wiederanlage; und er ist nicht immer eindeutig – wechseln sich Ein- und Auszahlungen im Lebenszyklus mehrfach ab, kann die NPV-Kurve mehrere Nullstellen haben.</li>
+    </ul>
+    <div class="note"><strong>Im Zweifel dem NPV vertrauen:</strong> Er ist das einzige Kriterium, das die Maximierung des Vermögens garantiert. (Peña-Mora 2003)</div>
+
+    <h2 id="abschnitt-7">Weitere Bewertungsverfahren</h2>
+    <ul>
+      <li><strong>Nutzen-Kosten-Verhältnis</strong> (Benefit-Cost Ratio, Nutzen/Kosten – oder sein Kehrwert): Auch hier wird in der Regel diskontiert; akzeptiert wird, wenn der Nutzen die Kosten übersteigt (Verhältnis &gt; 1 bzw. Kehrwert &lt; 1). Bei öffentlichen Projekten verbreitet. Schwächen: Die absolute Größe des Nutzens bleibt außen vor, und oft ist schwer zu entscheiden, ob etwas als „Nutzen" oder als „negative Kosten" zählt – die Einordnung verändert das Verhältnis.</li>
+      <li><strong>Kostenwirksamkeitsanalyse</strong> (Cost-Effectiveness): bezieht nicht-ökonomische Größen ein, häufig ebenfalls mit Diskontierung – etwa $ pro gerettetem Leben oder $ pro qualitätskorrigiertem Lebensjahr (QALY).</li>
+      <li><strong>Amortisationsdauer</strong> (Payback Period, „Time to Return"): die Mindestzeit, bis die Erträge die Kosten zurückgezahlt haben. Nur als Zweitkriterium brauchbar, denn sie ignoriert alles nach dem Amortisationszeitpunkt und berücksichtigt keine Diskontierung. Die diskontierte Variante heißt <em>Capital Recovery Period</em>.</li>
+      <li><strong>Modifizierter interner Zinsfuß</strong> (Adjusted Internal Rate of Return, AIRR): behebt einen Teil der IRR-Schwächen.</li>
+    </ul>
+
+    <h2 id="abschnitt-8">Was die Verfahren stillschweigend voraussetzen</h2>
+    <p>Alle bisher vorgestellten Instrumente beruhen auf drei stillen Annahmen: dass <strong>nur bezifferbare Geldgrößen zählen</strong>, dass die <strong>künftigen Zahlungsströme sicher bekannt</strong> sind und dass beim Diskontieren <strong>Leihen und Anlegen zum gleichen Zinssatz</strong> möglich ist.</p>
+    <p>Doch Geld ist nicht alles. Regelmäßig fallen unter den Tisch:</p>
+    <ul>
+      <li><strong>Gesellschaftlicher Nutzen</strong> – Krankenhaus, Schule, Beschäftigungswirkung,</li>
+      <li><strong>immaterieller Nutzen</strong> – etwa eine neue Cafeteria,</li>
+      <li><strong>strategischer Nutzen</strong> – etwa die Partnerschaft mit einer Firma für eine langfristige Geschäftsbeziehung.</li>
+    </ul>
+    <p>Und es fehlen entscheidende Unsicherheiten – auf der Einnahmenseite wie auf der Kostenseite:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Unsichere Einnahmen</th><th>Unsichere Kosten</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Auslastungs- bzw. Belegungsgrad</td><td>Baukosten: Baugrund- und Umweltbedingungen, Lohnkosten, Höhe des niedrigsten Gebots, variable Zinssätze</td></tr>
+          <tr><td>Preiselastizität und Kostenniveau</td><td>Instandhaltungskosten: Energiekosten, Verschleißgeschwindigkeit, Lohnkosten</td></tr>
+          <tr><td>Projektdauer</td><td></td></tr>
+          <tr><td>Einnahmen nach der Bauphase, z.&nbsp;B. Verkaufserlös des Gebäudes</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">Genau hier setzt <a href="kapitel-1-4.html">Kapitel 1.4</a> an: Es liefert mit Wahrscheinlichkeiten, Entscheidungsbäumen und Sensitivitätsanalysen das Handwerkszeug, um Unsicherheit systematisch in die Projektbewertung einzubeziehen.</div>
+  </section>
+
+  <nav class="prevnext">
+    <a href="kapitel-1-2.html">← Kapitel 1.2: Projektfinanzierung und Projektbewertung</a>
+    <span class="spacer"></span>
+    <a href="kapitel-1-4.html">Kapitel 1.4: Umgang mit Unsicherheit: Konzepte und Instrumente →</a>
+  </nav>
+</main>
+
+<footer>
+  <div class="inner">
+    <p>Deutsche Übersetzung der Kursunterlagen von <a href="https://ocw.mit.edu/courses/1-040-project-management-spring-2004/" target="_blank" rel="noopener">MIT OpenCourseWare: 1.040 Project Management, Spring 2004</a> (Dr.&nbsp;Nathaniel Osgood).<br>
+    Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons BY-NC-SA 4.0</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

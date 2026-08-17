@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapitel 4.3: Probabilistische Planung II – Projektmanagement</title>
+<meta name="description" content="Kapitel 4.3 des Lernprogramms Projektmanagement: Probabilistische Planung II – vollständig übersetzt und aufbereitet.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <p class="kicker">Lerneinheit 4 · Projektplanung II: Terminplanung</p>
+    <h1>Kapitel 4.3: Probabilistische Planung II</h1>
+    <p class="sub">Warum die klassische PERT-Rechnung systematisch zu optimistisch ist – die Sammelknoten-Verzerrung, das PNet-Verfahren und die Monte-Carlo-Simulation mit dem Kritikalitätsindex als praxistauglicher Ausweg.</p>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <a href="index.html">Startseite</a>
+    <a href="lehrplan.html">Lehrplan</a>
+    <a href="kursplan.html" class="active">Lernpfad</a>
+    <a href="vorlesungen.html">Vorlesungsskripte</a>
+    <a href="projekt.html">Semesterprojekt</a>
+    <a href="literatur.html">Literatur</a>
+  </div>
+</nav>
+
+<main>
+  <p class="breadcrumb"><a href="kursplan.html">Lernpfad</a> › <a href="kursplan.html#le4">Lerneinheit 4</a> › Kapitel 4.3</p>
+  <div class="kapitel-meta">
+    <span>📄 <a href="pdfs/vorlesung-11-probabilistische-planung-2.pdf">Original-Foliensatz (PDF, englisch)</a></span>
+    <span>Vorlesung 11 von 18 · MIT 1.040, Frühjahr 2004</span>
+  </div>
+
+  <section class="card">
+    <div class="toc">
+      <span class="label">Inhalt dieses Kapitels</span>
+      <ol>
+        <li><a href="#abschnitt-1">PERT im Rückblick: das Handwerkszeug aus Kapitel 4.2</a></li>
+        <li><a href="#abschnitt-2">Die Sammelknoten-Verzerrung (Merge Node Bias)</a></li>
+        <li><a href="#abschnitt-3">Der naive Mehrpfad-Ansatz – und warum auch er scheitert</a></li>
+        <li><a href="#abschnitt-4">Das PNet-Verfahren und die Grenzen von PERT</a></li>
+        <li><a href="#abschnitt-5">Monte-Carlo-Simulation: Prinzip, Ablauf und Beispiel</a></li>
+        <li><a href="#abschnitt-6">Der Kritikalitätsindex</a></li>
+        <li><a href="#abschnitt-7">Wie viele Simulationsläufe braucht man?</a></li>
+        <li><a href="#abschnitt-8">Ausblick: dynamische Prozesssimulation</a></li>
+      </ol>
+    </div>
+
+    <h2 id="abschnitt-1">PERT im Rückblick: das Handwerkszeug aus Kapitel 4.2</h2>
+    <p>Dieses Kapitel setzt die probabilistische Terminplanung fort. Die Grundlagen von PERT wurden in <a href="kapitel-4-2.html">Kapitel 4.2</a> eingeführt; hier die Eckpunkte in Kurzform, weil das Folgende unmittelbar darauf aufbaut:</p>
+    <ul>
+      <li>Jede Vorgangsdauer wird als <strong>betaverteilt</strong> angenommen und aus der Drei-Zeiten-Schätzung (a, m, b) abgeleitet: erwartete Dauer d̄ = (a + 4m + b)/6, Standardabweichung s = (b − a)/6.</li>
+      <li>Die <strong>Projektdauer</strong> gilt als näherungsweise <strong>normalverteilt</strong> (zentraler Grenzwertsatz) mit Erwartungswert T<sub>e</sub> aus der gewöhnlichen CPM-Rechnung und Varianz S² als Summe der Varianzen der Vorgänge auf dem kritischen Pfad – unter der Annahme <strong>unabhängiger</strong> Vorgangsdauern.</li>
+      <li>Im Beispielprojekt aus Kapitel 4.2 (Vorgänge A–G, kritischer Pfad C–E–G) ergab sich T<sub>e</sub> = 11, S = 0,7817 und z.&nbsp;B. P(T ≤ 10) ≈ 10&nbsp;%.</li>
+    </ul>
+    <p>Alle diese Rechnungen betrachten ausschließlich <em>einen</em> Pfad – den kritischen. Genau hier liegt das Problem, dem sich dieses Kapitel widmet.</p>
+
+    <h2 id="abschnitt-2">Die Sammelknoten-Verzerrung (Merge Node Bias)</h2>
+    <p>Es ist irreführend, für jeden Knoten des kritischen Pfads nur die Varianz <em>eines einzigen</em> Vorgängers zu berücksichtigen. Denn der früheste Start eines Knotens hängt vom <strong>Maximum</strong> der End- (bzw. Start-)zeitpunkte <em>aller</em> Vorgänger ab – auch der nicht kritischen. Formal ist der früheste Start eine Zufallsvariable, die das Maximum mehrerer (nicht unabhängig identisch verteilter) Zufallsvariablen ist. Diese <strong>Sammelknoten-Verzerrung (Merge Node Bias)</strong> fällt umso stärker aus, je …</p>
+    <ul>
+      <li><strong>mehr Vorgänger</strong> in einem Knoten zusammenlaufen,</li>
+      <li><strong>ähnlicher die Termine</strong> der Vorgänger liegen (nahezu gleichzeitige Fertigstellung) und</li>
+      <li><strong>unabhängiger</strong> die Vorgänger voneinander sind.</li>
+    </ul>
+    <div class="note">Konsequenz: PERT liefert einen <strong>unrealistischen Optimismus</strong> – die erwartete Projektdauer wird unterschätzt, und noch stärker verzerrt ist die ausgewiesene Varianz.</div>
+    <p>Ein Minimalbeispiel aus der Vorlesung: Vorgang C hat zwei Vorgänger A und B. Der Endtermin von A ist normalverteilt mit N(10;&nbsp;1), der von B mit N(9;&nbsp;3). PERT würde nur den kritischen Vorgänger A ansetzen und für den Start von C den Erwartungswert 10 mit Standardabweichung 1 ausweisen. Tatsächlich gilt aber ES(C) = max(EF(A), EF(B)) – und dieses Maximum hat den Erwartungswert µ = 10,777 bei σ = 1,55. Der Start verschiebt sich also im Mittel spürbar nach hinten, und die Streuung wächst.</p>
+    <p>Dass die Verzerrung praktisch relevant ist, zeigt das folgende Beispielnetz in Vorgangspfeil-Darstellung mit einem kritischen und einem beinahe kritischen Pfad:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k43-abb1.jpg" alt="AOA-Netzplan mit eingezeichneten Beta-Verteilungen der Vorgangsdauern und der resultierenden Normalverteilung der Projektdauer mit Erwartungswert 15" loading="lazy">
+      <figcaption>Abb. 1: Das Beispielnetz („Sample Problem“) mit der konventionellen PERT-Statistik: Entlang des kritischen Pfads 0–3–7–8 summieren sich die erwarteten Dauern zu E<sub>8</sub> = 2 + 8 + 5 = 15 und die Varianzen zu V<sub>T8</sub> = 0,39 + 1,56 + 0,88 = 2,83; die Projektdauer T<sub>8</sub> wird als Normalverteilung um 15 dargestellt (Folie 17 des Originalskripts).</figcaption>
+    </figure>
+    <p>Die abgeleiteten Kennwerte beider Pfade – der kritische Pfad 0–3–7–8 und der beinahe kritische Pfad 0–3–4–5–8 – im Vergleich:</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th rowspan="2">Vorgang</th><th colspan="3">Zeitschätzungen</th><th colspan="2">Pfad 0–3–7–8 (kritisch)</th><th colspan="2">Pfad 0–3–4–5–8</th></tr>
+      <tr><th>a</th><th>m</th><th>b</th><th>Mittelwert</th><th>Varianz</th><th>Mittelwert</th><th>Varianz</th></tr></thead>
+      <tbody>
+        <tr><td>0–3</td><td class="num">1</td><td class="num">2</td><td class="num">3</td><td class="num">2</td><td class="num">0,39</td><td class="num">2</td><td class="num">0,39</td></tr>
+        <tr><td>3–7</td><td class="num">6</td><td class="num">8</td><td class="num">10</td><td class="num">8</td><td class="num">1,56</td><td class="num">–</td><td class="num">–</td></tr>
+        <tr><td>7–8</td><td class="num">3,5</td><td class="num">5</td><td class="num">6,5</td><td class="num">5</td><td class="num">0,88</td><td class="num">–</td><td class="num">–</td></tr>
+        <tr><td>3–4</td><td class="num">1</td><td class="num">4</td><td class="num">13</td><td class="num">–</td><td class="num">–</td><td class="num">5</td><td class="num">14,06</td></tr>
+        <tr><td>4–5</td><td class="num">2</td><td class="num">4</td><td class="num">6</td><td class="num">–</td><td class="num">–</td><td class="num">4</td><td class="num">1,56</td></tr>
+        <tr><td>5–8</td><td class="num">2</td><td class="num">3</td><td class="num">4</td><td class="num">–</td><td class="num">–</td><td class="num">3</td><td class="num">0,39</td></tr>
+        <tr><th>Summe</th><td class="num"></td><td class="num"></td><td class="num"></td><td class="num">15,0</td><td class="num">2,83</td><td class="num">14,0</td><td class="num">16,40</td></tr>
+        <tr><th>Standardabweichung</th><td class="num"></td><td class="num"></td><td class="num"></td><td class="num"></td><td class="num">1,68</td><td class="num"></td><td class="num">4,05</td></tr>
+      </tbody>
+    </table></div>
+    <p>Mittelwert und Varianz eines Pfads sind einfach die Summen der Mittelwerte und Varianzen seiner Vorgänge; die Standardabweichung ist die Wurzel der Pfadvarianz. Der zweite Pfad ist im Mittel nur einen Tag kürzer, streut aber wegen des Vorgangs 3–4 (a = 1, b = 13!) enorm. Das Projekt ist erst fertig, wenn <em>beide</em> Pfade fertig sind – die tatsächliche Projektdauer ist das Maximum beider Pfaddauern:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k43-abb2.jpg" alt="Kumulative Wahrscheinlichkeitskurven beider Pfade und ihres Maximums auf logarithmischem Wahrscheinlichkeitspapier" loading="lazy">
+      <figcaption>Abb. 2: Kumulative Fertigstellungswahrscheinlichkeit über der geplanten Projektdauer T<sub>s</sub> (Ordinate logarithmisch skaliert, „Log Scale“): kritischer Pfad 0–3–7–8 (Mittelwert 15,0; σ = 1,68), beinahe kritischer Pfad 0–3–4–5–8 („Near Critical Path“, 14,0; σ = 4,05) und die Verteilung des Maximums beider Pfade („Both Paths“, gestrichelt): Mittelwert 16,3 bei σ = 2,38 – das Projekt dauert im Mittel also über einen Tag länger, als die reine PERT-Betrachtung des kritischen Pfads verspricht (Folie 19 des Originalskripts).</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-3">Der naive Mehrpfad-Ansatz – und warum auch er scheitert</h2>
+    <p>Ein naheliegender Korrekturversuch: Statt nur den kritischen Pfad zu betrachten, berücksichtigt man die Varianz <em>aller</em> Pfade, die in einen Sammelknoten münden, und nimmt an, dass die Unterschreitungswahrscheinlichkeit des Knotens das Produkt der Wahrscheinlichkeiten aller Pfade ist:</p>
+    <div class="formel">
+      <strong>Naiver Mehrpfad-Ansatz:</strong> &nbsp;P( EF(i) ≤ T ) = <span aria-hidden="true">∏</span><sub>j ∈ Pfade nach i</sub> P( EF(j) ≤ T )
+    </div>
+    <p>Angewendet auf das PERT-Beispiel aus Kapitel 4.2 (Frage: Wahrscheinlichkeit, vor Tag 10 fertig zu sein): Neben dem kritischen Pfad C–E–G führen auch die Pfade A–D–G und B–G zum Endknoten. Für jeden Pfad rechnet man wie gewohnt:</p>
+    <div class="formel">
+      <strong>Pfad A–D–G:</strong> &nbsp;T<sub>e</sub> = 2,17 + 2,83 + 2,00 = 7<br>
+      S² = V[A] + V[D] + V[G] = 0,25 + 0,25 + 0,11 = 0,6111 &nbsp;⇒&nbsp; S = 0,7817<br>
+      P(T ≤ 10) = P( z ≤ (10 − 7)/0,7817 ) = P( z ≤ 3,8378 ) = 0,9999
+    </div>
+    <div class="formel">
+      <strong>Pfad B–G:</strong> &nbsp;T<sub>e</sub> = 6,00 + 2,00 = 8<br>
+      S² = V[B] + V[G] = 0,1111 + 0,1111 = 0,2222 &nbsp;⇒&nbsp; S = 0,4714<br>
+      P(T ≤ 10) = P( z ≤ (10 − 8)/0,4714 ) = P( z ≤ 4,2429 ) = 0,9999
+    </div>
+    <div class="formel">
+      <strong>Alle drei Pfade kombiniert:</strong><br>
+      P<sub>c</sub>(T ≤ 10) = P(T<sub>CEG</sub> ≤ 10) × P(T<sub>ADG</sub> ≤ 10) × P(T<sub>BG</sub> ≤ 10)<br>
+      = 0,1003 × 0,9999 × 0,9999 = 0,1003 ≈ <strong>10 %</strong>
+    </div>
+    <p>Damit das Projekt in 10 Tagen endet, müssen tatsächlich alle drei Pfade in 10 Tagen fertig sein. Aber: Die Produktformel unterstellt, dass die Pfaddauern <strong>unabhängig</strong> sind – und das kann nicht stimmen, sobald sich Pfade <strong>Vorgänge teilen</strong> (hier hängt der Vorgang G in allen drei Pfaden). Wie stark Abhängigkeit und Netzstruktur das Ergebnis verfälschen, zeigt der folgende systematische Vergleich:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k43-abb3.jpg" alt="Drei kleine Netzpläne mit zwei bis drei parallelen Pfaden und Vergleich von PERT-Mittelwert, exaktem Mittelwert und Fehler" loading="lazy">
+      <figcaption>Abb. 3: Wirkung paralleler Pfade auf die Sammelknoten-Verzerrung – mit und ohne Korrelation: In allen drei Varianten meldet PERT die Projektdauer 6,00; der exakte Erwartungswert („Exact (mean)“) liegt bei 6,89 / 7,34 / 7,07, der PERT-Fehler also bei 12,9&nbsp;% / 18,2&nbsp;% / 15,2&nbsp;%. Vorgänge der Dauer 2 haben σ = 0,707, Vorgänge der Dauer 4 haben σ = 1,414 (Folie 28 des Originalskripts).</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-4">Das PNet-Verfahren und die Grenzen von PERT</h2>
+    <p>Als Auswege aus der Sammelknoten-Verzerrung nennt die Vorlesung zwei Verfahren: <strong>PNet</strong> und die <strong>Monte-Carlo-Simulation</strong>. PNet verfeinert den naiven Mehrpfad-Ansatz, indem stark korrelierte (also nicht annähernd unabhängige) Pfade aussortiert werden:</p>
+    <ul>
+      <li>Alle Pfade P aufzählen, deren Dauer einen Mindestanteil der kritischen Pfaddauer erreicht: Dur(P) &gt; α · Dur(kritischer Pfad).</li>
+      <li>Die Pfade nach absteigender Dauer ordnen (bei Gleichstand: nach absteigender naiv geschätzter Varianz).</li>
+      <li>Den linearen Korrelationskoeffizienten zwischen den Pfaden berechnen.</li>
+      <li>Die Pfade der Reihe nach aufnehmen – und jeden Pfad streichen, dessen Korrelationskoeffizient mit einem bereits aufgenommenen Pfad größer als 0,5 ist.</li>
+    </ul>
+    <div class="formel">
+      <strong>PNet-Schätzung:</strong> &nbsp;P(T ≤ a) = <span aria-hidden="true">∏</span><sub>i = 1…(verbleibende Pfade)</sub> P( p<sub>i</sub> ≤ T )
+    </div>
+    <p>Zusammengefasst leidet PERT – trotz seiner analytischen Eleganz – an vier grundsätzlichen Schwächen:</p>
+    <ul>
+      <li><strong>Gültigkeit der Beta-Verteilung</strong> für Vorgangsdauern ist eine Annahme, keine Gewissheit.</li>
+      <li><strong>Gültigkeit des zentralen Grenzwertsatzes</strong> für die Projektdauer ist fraglich – die Vorgangsdauern sind in Wirklichkeit nicht unabhängig.</li>
+      <li>Es wird <strong>nur der kritische Pfad</strong> betrachtet: Die Projektdauer ist eben nicht bloß eine Summe von Zufallsvariablen, sondern enthält an Sammelknoten Maxima – das führt zu Überoptimismus und unterschätzter Dauer.</li>
+      <li>Die <strong>Drei-Zeiten-Schätzung</strong> für jeden Vorgang ist aufwendig zu erheben.</li>
+    </ul>
+
+    <h2 id="abschnitt-5">Monte-Carlo-Simulation: Prinzip, Ablauf und Beispiel</h2>
+    <p>Die <strong>Monte-Carlo-Simulation</strong> ersetzt die analytische Lösung durch rohe Rechenleistung: Man muss das Modell nicht mehr vereinfachen, um es geschlossen lösen zu können, und es sind keinerlei Annahmen über die funktionale Form der Vorgangs- oder Projektdauerverteilungen nötig. Für die Terminplanung wurde der Ansatz von Van Slyke (1963) eingeführt, gezielt zur Lösung des Sammelknoten-Problems in PERT. Als Nebenprodukt liefert die Simulation den <strong>Kritikalitätsindex</strong> jedes Vorgangs (Abschnitt 6). Erforderlich sind Hunderte bis Tausende von Simulationsläufen.</p>
+    <p>Der Ablauf:</p>
+    <ul>
+      <li><strong>Verteilungen festlegen:</strong> für jede Vorgangsdauer eine Verteilung wählen – ohne Formvorgabe; auch gemeinsame Verteilungen mehrerer Vorgänge (zur Abbildung von Abhängigkeiten) sind möglich.</li>
+      <li><strong>Iterieren:</strong> In jedem „Lauf“ (jeder „Realisierung“) wird aus jeder Verteilung eine zufällige Dauer gezogen, dann werden kritischer Pfad und Projektdauer mit dem gewöhnlichen CPM-Algorithmus bestimmt und die Ergebnisse aufgezeichnet.</li>
+      <li><strong>Auswerten:</strong> die empirische Verteilung der Projektdauer sowie je Vorgang der Kritikalitätsindex (Anteil der Läufe, in denen der Vorgang kritisch war).</li>
+    </ul>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k43-abb4.jpg" alt="Netzplan des Monte-Carlo-Beispiels mit den Vorgängen A bis G zwischen Start- und Endknoten" loading="lazy">
+      <figcaption>Abb. 4: Das Netz des Monte-Carlo-Beispiels: Von „START“ gehen die Vorgänge A, B und E aus; A führt zu C und D, B zu D, C und D münden in F, F und E in G, das bei „END“ endet (Folie 35 des Originalskripts).</figcaption>
+    </figure>
+    <p>Die Eingangsdaten der sieben Vorgänge (Drei-Zeiten-Schätzung wie bei PERT, hier zur Kalibrierung der Verteilungen):</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Vorgang</th><th>Optimistisch a</th><th>Wahrscheinlichst m</th><th>Pessimistisch b</th><th>Erwartungswert d</th><th>Standardabw. s</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td class="num">2</td><td class="num">5</td><td class="num">8</td><td class="num">5</td><td class="num">1,00</td></tr>
+        <tr><td>B</td><td class="num">1</td><td class="num">3</td><td class="num">5</td><td class="num">3</td><td class="num">0,66</td></tr>
+        <tr><td>C</td><td class="num">7</td><td class="num">8</td><td class="num">9</td><td class="num">8</td><td class="num">0,33</td></tr>
+        <tr><td>D</td><td class="num">4</td><td class="num">7</td><td class="num">10</td><td class="num">7</td><td class="num">1,00</td></tr>
+        <tr><td>E</td><td class="num">6</td><td class="num">7</td><td class="num">8</td><td class="num">7</td><td class="num">0,33</td></tr>
+        <tr><td>F</td><td class="num">2</td><td class="num">4</td><td class="num">6</td><td class="num">4</td><td class="num">0,66</td></tr>
+        <tr><td>G</td><td class="num">4</td><td class="num">5</td><td class="num">6</td><td class="num">5</td><td class="num">0,33</td></tr>
+      </tbody>
+    </table></div>
+    <p>Die ersten zehn Simulationsläufe im Detail – man beachte, dass der kritische Pfad von Lauf zu Lauf wechselt:</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Lauf</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>Kritischer Pfad</th><th>Projektdauer</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="num">6,3</td><td class="num">2,2</td><td class="num">8,8</td><td class="num">6,6</td><td class="num">7,6</td><td class="num">5,7</td><td class="num">4,6</td><td>A–C–F–G</td><td class="num">25,4</td></tr>
+        <tr><td class="num">2</td><td class="num">2,1</td><td class="num">1,8</td><td class="num">7,4</td><td class="num">8,0</td><td class="num">6,6</td><td class="num">2,7</td><td class="num">4,6</td><td>A–D–F–G</td><td class="num">17,4</td></tr>
+        <tr><td class="num">3</td><td class="num">7,8</td><td class="num">4,9</td><td class="num">8,8</td><td class="num">7,0</td><td class="num">6,7</td><td class="num">5,0</td><td class="num">4,9</td><td>A–C–F–G</td><td class="num">26,5</td></tr>
+        <tr><td class="num">4</td><td class="num">5,3</td><td class="num">2,3</td><td class="num">8,9</td><td class="num">9,5</td><td class="num">6,2</td><td class="num">4,8</td><td class="num">5,4</td><td>A–D–F–G</td><td class="num">25,0</td></tr>
+        <tr><td class="num">5</td><td class="num">4,5</td><td class="num">2,6</td><td class="num">7,6</td><td class="num">7,2</td><td class="num">7,2</td><td class="num">5,3</td><td class="num">5,6</td><td>A–C–F–G</td><td class="num">23,0</td></tr>
+        <tr><td class="num">6</td><td class="num">7,1</td><td class="num">0,4</td><td class="num">7,2</td><td class="num">5,8</td><td class="num">6,1</td><td class="num">2,8</td><td class="num">5,2</td><td>A–C–F–G</td><td class="num">22,3</td></tr>
+        <tr><td class="num">7</td><td class="num">5,2</td><td class="num">4,7</td><td class="num">8,9</td><td class="num">6,6</td><td class="num">7,3</td><td class="num">4,6</td><td class="num">5,5</td><td>A–C–F–G</td><td class="num">24,2</td></tr>
+        <tr><td class="num">8</td><td class="num">6,2</td><td class="num">4,4</td><td class="num">8,9</td><td class="num">4,0</td><td class="num">6,7</td><td class="num">3,0</td><td class="num">4,0</td><td>A–C–F–G</td><td class="num">22,1</td></tr>
+        <tr><td class="num">9</td><td class="num">2,7</td><td class="num">1,1</td><td class="num">7,4</td><td class="num">5,9</td><td class="num">7,9</td><td class="num">2,9</td><td class="num">5,9</td><td>A–C–F–G</td><td class="num">18,9</td></tr>
+        <tr><td class="num">10</td><td class="num">4,0</td><td class="num">3,6</td><td class="num">8,3</td><td class="num">4,3</td><td class="num">7,1</td><td class="num">3,1</td><td class="num">4,3</td><td>A–C–F–G</td><td class="num">19,7</td></tr>
+      </tbody>
+    </table></div>
+    <p>Aus vielen solchen Läufen entsteht die empirische Verteilung der Projektdauer – ganz ohne Normalverteilungsannahme:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k43-abb5.jpg" alt="Histogramm der simulierten Projektdauern zwischen 17 und 29 Wochen mit Häufigkeitsspitzen bei 21 und 23 Wochen" loading="lazy">
+      <figcaption>Abb. 5: Histogramm der Projektdauer („Project Duration Distribution“) über 50 Simulationsläufe: Häufigkeit („Frequency“) je simulierter Projektlänge („Project Length“) von 17 bis 29 Wochen (Folie 38 des Originalskripts).</figcaption>
+    </figure>
+    <p>Wahrscheinlichkeitsaussagen liest man direkt als relative Häufigkeit ab:</p>
+    <div class="formel">
+      P(X ≤ τ) = (Anzahl der Läufe, in denen das Projekt in höchstens τ Wochen fertig wurde) / (Gesamtzahl der Läufe)<br>
+      <em>Beispiel:</em> &nbsp;P(X ≤ 20) = 13 / 50 = <strong>26 %</strong>
+    </div>
+
+    <h2 id="abschnitt-6">Der Kritikalitätsindex</h2>
+    <dl class="begriffe">
+      <dt>Kritikalitätsindex (Criticality Index)</dt>
+      <dd>Der Anteil der Simulationsläufe, in denen ein Vorgang auf dem kritischen Pfad lag. CPM und PERT kennen dagegen nur die binäre Aussage „kritisch“ (100&nbsp;%) oder „nicht kritisch“ (0&nbsp;%).</dd>
+    </dl>
+    <p>Der Kritikalitätsindex ist ein wertvolles Instrument, um den Aufwand für die <strong>Terminüberwachung</strong> und die <strong>Projektsteuerung</strong> zu priorisieren: Ein Vorgang, der in 80&nbsp;% der Läufe kritisch ist, verdient deutlich mehr Aufmerksamkeit als einer, der es nur in 5&nbsp;% der Läufe ist – selbst wenn beide im deterministischen Plan Puffer besitzen. Im Beispiel oben ist der Pfad A–C–F–G in 8 von 10 Läufen kritisch, A–D–F–G in 2 von 10: Der Kritikalitätsindex von C wäre auf dieser (kleinen) Basis 0,8, der von D 0,2 – und B sowie E waren nie kritisch.</p>
+
+    <h2 id="abschnitt-7">Wie viele Simulationsläufe braucht man?</h2>
+    <p><strong>Für den Kritikalitätsindex p eines Vorgangs:</strong> Ursprünglich wurde sehr konservativ mit 10.000 Läufen gerechnet; empirische Untersuchungen zeigen, dass etwa 1.000 Läufe ausreichen. Die Genauigkeit lässt sich über ein Konfidenzintervall quantifizieren – das symmetrische Intervall um den Schätzwert p̂, das den wahren Wert p mit Wahrscheinlichkeit (1 − α) enthält:</p>
+    <div class="formel">
+      <strong>(1 − α)-Konfidenzintervall für den Kritikalitätsindex:</strong><br>
+      ( p̂ − z<sub>α/2</sub> · √( p̂(1 − p̂)/n ) , &nbsp; p̂ + z<sub>α/2</sub> · √( p̂(1 − p̂)/n ) )<br>
+      <em>Beispiel: Bei 95 % Konfidenz, 10 % ≤ p ≤ 90 % und 400 ≤ n ≤ 1.000 liegt p̂ mit 95 % Sicherheit innerhalb von 2–5 Prozentpunkten um p.</em>
+    </div>
+    <p><strong>Für die mittlere Projektdauer µ:</strong> Hier braucht man eine Annahme über den Variationskoeffizienten σ/µ (Standardabweichung geteilt durch Mittelwert):</p>
+    <div class="formel">
+      <strong>Fehler des Mittelwertschätzers:</strong> &nbsp;±Fehler % ≈ 100 · (σ/µ) · z<sub>α/2</sub> / √n<br>
+      <em>Für empirisch übliche Variationskoeffizienten (5–15 %): n = 400 ⇒ Schätzung innerhalb 0,5–1,5 % von µ; n = 1.000 ⇒ innerhalb 0,3–1 % von µ.</em>
+    </div>
+    <p><strong>Für die Standardabweichung der Projektdauer:</strong></p>
+    <div class="formel">
+      <strong>Fehler des Streuungsschätzers:</strong> &nbsp;±Fehler % ≈ 100 · z<sub>α/2</sub> / √(2n)<br>
+      <em>n = 400 ⇒ σ̂ innerhalb 7 % des wahren σ; n = 1.000 ⇒ innerhalb 4,38 %.</em>
+    </div>
+    <div class="note">In allen drei Formeln steckt die <strong>inverse Wurzelbeziehung</strong>: Um den Fehler zu halbieren, muss man die Zahl der Läufe <em>vervierfachen</em>. Die Analysequalität ist also skalierbar – aber mit überproportionalem Aufwand.</div>
+    <p>Bilanz der Monte-Carlo-Simulation: Sie ist konzeptionell einfach (es wird der gewöhnliche CPM-Algorithmus verwendet, ohne Sonderannahmen über Verteilungsformen), liefert mit dem Kritikalitätsindex eine wertvolle Priorisierungshilfe und erlaubt skalierbare Genauigkeit. Dem stehen der hohe Rechenaufwand und die mitunter teure Schätzung der Dauerverteilungen gegenüber.</p>
+
+    <h2 id="abschnitt-8">Ausblick: dynamische Prozesssimulation</h2>
+    <p>Alle bisher betrachteten, CPM-basierten Verfahren – auch die Monte-Carlo-Simulation über CPM – nutzen eine einfache Repräsentation: Sie rechnen in <strong>einem Durchlauf</strong> ohne Iteration und bilden Unsicherheit <strong>nur in der Dauer</strong> ab. Wer stattdessen den <em>Prozess</em> selbst explizit modelliert, gewinnt mehr: Man kann über das Prozessdesign nachdenken, emergentes Verhalten erkennen (etwa dynamisch wandernde Engpässe) und manche Unsicherheiten einfacher schätzen. Wichtig ist dabei die Klarheit, ob ein Modell nur die Prozessebene oder auch die Projektebene abbildet.</p>
+    <p>Eine solche detaillierte Repräsentation lohnt sich besonders für:</p>
+    <ul>
+      <li><strong>repetitive Prozesse</strong>, für die eine aggregierte Darstellung nicht sinnvoll ist – etwa wenn die Anzahl der Zyklen vorab unbekannt ist,</li>
+      <li>Prozesse, in denen <strong>statische Planung nicht möglich</strong> ist: die Koordination vieler kurzer, zeitkritischer Interaktionen oder Fälle, in denen Terminunsicherheiten den Ablauf selbst verändern,</li>
+      <li>Fälle, in denen sich <strong>einzelne Zeitkomponenten</strong> gut schätzen lassen, die <strong>aggregierte Statistik</strong> aber unbekannt ist.</li>
+    </ul>
+    <p>Typische Beispiele repetitiver Bauprozesse: Erdbau, Tunnelvortrieb, Hotel-, Wohnungs- und Wohnheimbau, Straßen- und Brückenbau sowie Sanitär- und Verglasungsarbeiten im Hochhaus. Als Vorgeschmack diente in der Vorlesung ein Erdbau-Beispiel – ein Radlader belädt eine Flotte von n Lkw (Kapazität c, Beladezeit t<sub>l</sub>, Geschwindigkeit beladen s<sub>l</sub> und leer s<sub>e</sub>, Entfernung zur Kippe d, Kippzeit vernachlässigt):</p>
+    <div class="formel">
+      <strong>Transportleistung der Lkw-Flotte:</strong> &nbsp;o<sub>Lkw</sub> = n·c / ( d/s<sub>l</sub> + d/s<sub>e</sub> ) = n·c·s<sub>l</sub>·s<sub>e</sub> / ( d·(s<sub>e</sub> + s<sub>l</sub>) )<br>
+      <strong>Naive Gesamtproduktivität:</strong> &nbsp;min( o<sub>Radlader</sub> , o<sub>Lkw</sub> )
+    </div>
+    <div class="note">Diese naive Minimum-Rechnung ignoriert Warteschlangen und Wechselwirkungen zwischen den Geräten – genau dort setzen die ereignisdiskreten Simulationsverfahren (GERT, CYCLONE &amp; Co.) an, die <a href="kapitel-4-4.html">Kapitel 4.4</a> zusammen mit der ressourcenbasierten Terminplanung behandelt.</div>
+  </section>
+
+  <nav class="prevnext">
+    <a href="kapitel-4-2.html">← Kapitel 4.2: Deterministische Planung II und probabilistische Planung I</a>
+    <span class="spacer"></span>
+    <a href="kapitel-4-4.html">Kapitel 4.4: Simulation und ressourcenbasierte Terminplanung →</a>
+  </nav>
+</main>
+
+<footer>
+  <div class="inner">
+    <p>Deutsche Übersetzung der Kursunterlagen von <a href="https://ocw.mit.edu/courses/1-040-project-management-spring-2004/" target="_blank" rel="noopener">MIT OpenCourseWare: 1.040 Project Management, Spring 2004</a> (Dr.&nbsp;Nathaniel Osgood).<br>
+    Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons BY-NC-SA 4.0</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

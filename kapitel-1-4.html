@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapitel 1.4: Umgang mit Unsicherheit: Konzepte und Instrumente – Projektmanagement</title>
+<meta name="description" content="Kapitel 1.4 des Lernprogramms Projektmanagement: Umgang mit Unsicherheit – Entscheidungsbäume, Risikopräferenzen, Sensitivitätsanalysen und Realoptionen, vollständig übersetzt und aufbereitet.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <p class="kicker">Lerneinheit 1 · Grundlagen und Projektbewertung</p>
+    <h1>Kapitel 1.4: Umgang mit Unsicherheit: Konzepte und Instrumente</h1>
+    <p class="sub">Entscheidungsbäume, Risikopräferenzen und Sensitivitätsanalysen: wie man unter Unsicherheit systematisch entscheidet – und was Flexibilität wert ist.</p>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <a href="index.html">Startseite</a>
+    <a href="lehrplan.html">Lehrplan</a>
+    <a href="kursplan.html" class="active">Lernpfad</a>
+    <a href="vorlesungen.html">Vorlesungsskripte</a>
+    <a href="projekt.html">Semesterprojekt</a>
+    <a href="literatur.html">Literatur</a>
+  </div>
+</nav>
+
+<main>
+  <p class="breadcrumb"><a href="kursplan.html">Lernpfad</a> › <a href="kursplan.html#le1">Lerneinheit 1</a> › Kapitel 1.4</p>
+  <div class="kapitel-meta">
+    <span>📄 <a href="pdfs/vorlesung-04-umgang-mit-unsicherheit.pdf">Original-Foliensatz (PDF, englisch)</a></span>
+    <span>Vorlesung 4 von 18 · MIT 1.040, Frühjahr 2004</span>
+  </div>
+
+  <section class="card">
+    <div class="toc">
+      <span class="label">Inhalt dieses Kapitels</span>
+      <ol>
+        <li><a href="#abschnitt-1">Entscheiden unter Risiko: Überblick</a></li>
+        <li><a href="#abschnitt-2">Entscheidungsbäume: die Bausteine</a></li>
+        <li><a href="#abschnitt-3">Einfache Beispiele: Bieten, Aufzüge, Elektrokapazität</a></li>
+        <li><a href="#abschnitt-4">Risikopräferenz, Risikoeinstellung und Risikoprämie</a></li>
+        <li><a href="#abschnitt-5">Mehrere Zielgrößen und Pareto-Optimalität</a></li>
+        <li><a href="#abschnitt-6">Analyse mit Entscheidungsbäumen und Sensitivitätsanalyse</a></li>
+        <li><a href="#abschnitt-7">Flexibilität und Realoptionen</a></li>
+      </ol>
+    </div>
+
+    <h2 id="abschnitt-1">Entscheiden unter Risiko: Überblick</h2>
+    <p><a href="kapitel-1-3.html">Kapitel 1.3</a> endete mit der Einsicht, dass NPV und IRR sichere Zahlungsströme voraussetzen – die es in Bauprojekten selten gibt. Diese Vorlesung liefert die Konzepte und Instrumente für Entscheidungen unter Risiko, in fünf Schritten:</p>
+    <ul>
+      <li>Entscheidungsbäume zur Darstellung von Unsicherheit,</li>
+      <li>Beispiele einfacher Entscheidungsbäume,</li>
+      <li>Risikopräferenzen, Risikoeinstellung und Risikoprämien,</li>
+      <li>Entscheidungsbäume als Analysewerkzeug,</li>
+      <li>Flexibilität und Realoptionen.</li>
+    </ul>
+    <div class="note"><strong>Gut lernen:</strong> Entscheidungsbäume tauchen im gesamten Kurs immer wieder auf – sie dienen sowohl der anschaulichen Darstellung von Entscheidungen unter Unsicherheit als auch dem quantitativen Schlussfolgern.</div>
+
+    <h2 id="abschnitt-2">Entscheidungsbäume: die Bausteine</h2>
+    <p>Ein Entscheidungsbaum bildet vier Dinge ab: den <strong>Zeitverlauf</strong> (von links nach rechts), <strong>Entscheidungen</strong>, <strong>Unsicherheiten</strong> (als Ereignisse) und <strong>Konsequenzen</strong> (deterministisch oder stochastisch). Dafür gibt es drei Knotentypen:</p>
+    <dl class="begriffe">
+      <dt>Entscheidungsknoten (Decision/Choice Node, Quadrat)</dt>
+      <dd>Hier wählt der Entscheider selbst zwischen mehreren Handlungsoptionen (Ästen).</dd>
+      <dt>Ereignisknoten (Chance/Event Node, Kreis)</dt>
+      <dd>Hier entscheidet der Zufall: Jeder Ast steht für einen möglichen Ausgang und trägt seine Eintrittswahrscheinlichkeit; die Wahrscheinlichkeiten aller Äste summieren sich zu 1 (z.&nbsp;B. 0,5 / 0,3 / 0,2).</dd>
+      <dt>Endknoten (Terminal/Consequence Node, Dreieck)</dt>
+      <dd>Hier endet ein Pfad; der Knoten trägt die Konsequenz (z.&nbsp;B. den Gewinn oder die Kosten) dieses Pfades.</dd>
+    </dl>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k14-abb1.jpg" alt="Die drei Knotentypen eines Entscheidungsbaums: Entscheidungsknoten als Quadrat mit vier Wahlmöglichkeiten, Ereignisknoten als Kreis mit drei Möglichkeiten und Wahrscheinlichkeiten 0,5, 0,3 und 0,2, Endknoten als Dreieck mit Konsequenz" loading="lazy">
+      <figcaption>Abb. 1: Die Bausteine eines Entscheidungsbaums – Entscheidungsknoten (Quadrat) mit Wahlmöglichkeiten („Choice 1–4"), Ereignisknoten (Kreis) mit Möglichkeiten („Possibility") und ihren Wahrscheinlichkeiten sowie Endknoten (Dreieck) mit der Konsequenz; die Zeit läuft von links nach rechts (Folie 4 des Originalskripts).</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-3">Einfache Beispiele: Bieten, Aufzüge, Elektrokapazität</h2>
+    <p>Das Standardbeispiel des Kurses ist die <strong>Angebotsentscheidung</strong> eines Bauunternehmers: Bietet er überhaupt – und wenn ja, zu welchem Preis? Der Baum beginnt mit einem Entscheidungsknoten (kein Angebot, 6,75&nbsp;Mio.&nbsp;$, 7&nbsp;Mio.&nbsp;$, 7,25&nbsp;Mio.&nbsp;$ oder 7,5&nbsp;Mio.&nbsp;$). Auf jede Angebotshöhe folgt ein Ereignisknoten: Wird das Angebot angenommen oder abgelehnt? Je niedriger der Preis, desto höher die Zuschlagswahrscheinlichkeit (0,8 – 0,6 – 0,4 – 0,2). Die Endknoten tragen die Konsequenzen: bei Zuschlag „Angebotssumme minus Baukosten minus Kalkulationskosten", sonst nur die verlorenen Kalkulationskosten (Kosten der Mengenermittlung, „Takeoff Estimate Cost").</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k14-abb2.jpg" alt="Entscheidungsbaum der Angebotsentscheidung: Wahl zwischen keinem Angebot und Geboten von 6,75 bis 7,5 Millionen Dollar; je Gebot ein Ereignisknoten Angenommen/Abgelehnt mit Wahrscheinlichkeiten von 0,8 bis 0,2 und den jeweiligen Gewinnkonsequenzen" loading="lazy">
+      <figcaption>Abb. 2: Entscheidungsbaum der Angebotsentscheidung – „No Bid" kostet nur die Kalkulation; höhere Gebote versprechen mehr Gewinn („Accepted": Angebotssumme − Kosten − Kalkulationskosten), werden aber seltener angenommen („Rejected": nur Kalkulationskosten verloren) (Folie 6 des Originalskripts).</figcaption>
+    </figure>
+    <p>Nach demselben Muster lassen sich viele Bauentscheidungen strukturieren – die Folien zeigen etwa die Wahl der <strong>Aufzugsanzahl</strong> eines Gebäudes und die Wahl der gewünschten <strong>elektrischen Anschlusskapazität</strong>. Der Bieterbaum lässt sich zudem verfeinern, indem auch die eigenen Baukosten und die Gebote der Konkurrenz als stochastische Größen (Ereignisknoten) modelliert werden.</p>
+    <p>Zur Auswertung eines Baums dient zunächst der <strong>Erwartungswert</strong>: Jeder Handlungsoption wird der mit den Wahrscheinlichkeiten gewichtete Mittelwert ihrer Konsequenzen zugeordnet; am Entscheidungsknoten wählt man die Option mit dem besten Erwartungswert.</p>
+    <div class="formel">Erwartungswert einer Option: &nbsp; E[c] = Σ<sub>k</sub> p<sub>k</sub> × c<sub>k</sub> &nbsp;&nbsp;&nbsp;&nbsp; (p<sub>k</sub> = Wahrscheinlichkeit des Ausgangs k, c<sub>k</sub> = zugehörige Konsequenz)</div>
+
+    <h2 id="abschnitt-4">Risikopräferenz, Risikoeinstellung und Risikoprämie</h2>
+    <p>Der Erwartungswert allein greift jedoch zu kurz, denn Menschen sind gegenüber Unsicherheit <strong>nicht indifferent</strong>. Die fehlende Gleichgültigkeit rührt von ungleichen Präferenzen für verschiedene Ausgänge her – jemand kann den Verlust von x&nbsp;$ weit stärker verabscheuen, als er den Gewinn von x&nbsp;$ schätzt. Wie gut jemand Unsicherheit erträgt, hängt von Umständen und Vorlieben ab; risikoscheue Personen zahlen <strong>Risikoprämien</strong>, um Unsicherheit zu vermeiden. Man unterscheidet drei <strong>Risikoeinstellungen</strong> (Risk Attitudes):</p>
+    <ul>
+      <li><strong>Risikoscheu</strong> (risk averse): fürchtet Verluste und sucht sichere Gewinne,</li>
+      <li><strong>risikoneutral</strong>: ist gegenüber Unsicherheit indifferent und rechnet nur mit Erwartungswerten,</li>
+      <li><strong>risikofreudig</strong> (risk loving): hofft auf den „großen Wurf".</li>
+    </ul>
+    <p>Die Risikoeinstellung ändert sich mit der Zeit und mit den Umständen. Formal erfasst wird sie durch eine <strong>Präferenzfunktion</strong> (Nutzenfunktion): Sie drückt aus, wie zufrieden eine bestimmte Partei mit verschiedenen Ausgängen ist – gemessen in Geld, Zeit, Konfliktniveau, Qualität usw. Sie lässt sich systematisch herleiten, indem man den Nutzenwert für einige Ausgänge erfragt und dazwischen interpoliert. Bei Unsicherheit über die Konsequenzen ist die Option mit der höchsten <em>mittleren Präferenz</em> die beste Strategie für diese Partei.</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k14-abb3.jpg" alt="Diagramm dreier Präferenzfunktionen über dem Gewinn: konkave Kurve des Risikoscheuen, Gerade des Risikoneutralen, konvexe Kurve des Risikofreudigen" loading="lazy">
+      <figcaption>Abb. 3: Risikoeinstellung in Präferenzfunktionen – aufgetragen ist der Nutzen („Utility") über dem Gewinn („Payoff"): Der Risikoscheue („Risk Averter") hat eine nach oben gewölbte (konkave), der Risikoneutrale („Risk Neutral") eine gerade, der Risikofreudige („Risk Lover") eine nach unten gewölbte (konvexe) Kurve (Folie 15 des Originalskripts).</figcaption>
+    </figure>
+
+    <h3>Sicherheitsäquivalent: ein Zahlenbeispiel</h3>
+    <p>Eine risikoscheue Person mit Präferenzfunktion f steht vor einer Investition c, die mit 50&nbsp;% Wahrscheinlichkeit 20.000&nbsp;$ und mit 50&nbsp;% Wahrscheinlichkeit 0&nbsp;$ einbringt:</p>
+    <ul>
+      <li>Mittlerer Geldertrag: 0,5 × 20.000&nbsp;$ + 0,5 × 0&nbsp;$ = <strong>10.000&nbsp;$</strong></li>
+      <li>Mittlere Zufriedenheit: 0,5 × f(20.000&nbsp;$) + 0,5 × f(0&nbsp;$) = <strong>0,25</strong></li>
+      <li>Dieselbe Zufriedenheit 0,25 bietet aber schon ein <em>sicherer</em> Betrag von f<sup>−1</sup>(0,25) = <strong>5.000&nbsp;$</strong> – das <strong>Sicherheitsäquivalent</strong> (Certainty Equivalent) der Investition.</li>
+      <li>Die Person sollte die unsichere Investition also gegen jeden sicheren Betrag über 5.000&nbsp;$ eintauschen.</li>
+    </ul>
+    <p>Daraus ergibt sich die <strong>Risikoprämie</strong>: Die risikoscheue Person wäre bereit, einer weniger risikoscheuen Partei bis zu 5.000&nbsp;$ (= 10.000&nbsp;$ − 5.000&nbsp;$) dafür zu zahlen, dass diese ihr die 10.000&nbsp;$ garantiert. Beide gewinnen: Die andere Partei erhält im Mittel die Prämie, die risikoscheue Person ist zufriedener. Risikoprämien begegnen uns überall – Versicherungsprämien, höhere Honorare des Bauherrn für renommierte Bauunternehmer, höhere Preise des Unternehmers für riskante Arbeiten, niedrigere Renditen risikoarmer Anlagen und Geld, das für Flexibilität als Schutz gegen Risiko ausgegeben wird.</p>
+    <p>Allgemein, mit E[·] als Erwartungswert-Operator und nichtlinearer Präferenzfunktion f:</p>
+    <div class="formel">Mittlerer Ertrag: E[c] &nbsp;&nbsp;·&nbsp;&nbsp; mittlere Zufriedenheit: E[f(c)] &nbsp;&nbsp;·&nbsp;&nbsp; Sicherheitsäquivalent: CE = f<sup>−1</sup>(E[f(c)]) &nbsp;&nbsp;·&nbsp;&nbsp; Risikoprämie: r ≤ E[c] − CE</div>
+    <div class="note">Für risikoscheue Personen gilt stets f<sup>−1</sup>(E[f(c)]) &lt; E[c]: Das Sicherheitsäquivalent liegt <em>unter</em> dem Erwartungswert – genau diese Lücke macht Risikotransfers (Versicherungen, Garantien, Festpreisverträge) für beide Seiten vorteilhaft.</div>
+
+    <h2 id="abschnitt-5">Mehrere Zielgrößen und Pareto-Optimalität</h2>
+    <p>Häufig zählen mehrere Attribute zugleich: Kosten, Zeit, Qualität, die Beziehung zum Bauherrn. Endknoten von Entscheidungsbäumen können all diese Größen erfassen – für eine Gesamtentscheidung müssen die Attribute aber vergleichbar gemacht werden.</p>
+    <p>Selbst wenn sich die Attribute nicht direkt gegeneinander abwägen lassen, kann man Konsequenzen teilweise ordnen: Entscheidungen, deren Konsequenzen in <em>allen</em> Attributen schlechter sind als die einer anderen, scheiden aus – sie werden von dieser „dominiert". Eine Entscheidung heißt <strong>Pareto-optimal</strong>, wenn keine andere Entscheidung sie dominiert. Der Kerngedanke: Man kann vielleicht nicht die beste Entscheidung identifizieren – aber offensichtlich schlechte lassen sich sicher ausschließen.</p>
+
+    <h2 id="abschnitt-6">Analyse mit Entscheidungsbäumen und Sensitivitätsanalyse</h2>
+    <p>Entscheidungsbäume sind ein mächtiges Analysewerkzeug – erst recht, wenn man sie um symbolische Größen (Variablen statt fester Zahlen) erweitert. Typische Auswertungen sind die <strong>Strategiewahl</strong>, <strong>ein- und mehrdimensionale Sensitivitätsanalysen</strong> und der <strong>Wert von Information</strong>.</p>
+    <p>Am Bieterbaum zeigen die Folien exemplarisch, wie die Analyse abläuft: Für jede Angebotshöhe wird die Verteilung des Geldwerts berechnet (etwa für das 6,75-Mio.- und das 7-Mio.-Gebot), einmal rein monetär und einmal unter Einbeziehung der Risikopräferenzen. Anschließend wird untersucht, wie sich größere Kostenunsicherheiten auswirken – mit dem Ergebnis, dass die optimale Strategie kippen kann: Was für einen Risikoneutralen optimal ist, muss es für einen Risikoscheuen nicht sein.</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k14-abb4.jpg" alt="Balkendiagramm einer Monte-Carlo-Simulation: Anteil der Simulationsläufe, in denen jede Option optimal ist – nicht bieten etwa 32 Prozent, die Gebote 6,75 bis 7,5 Millionen Dollar je 15 bis 19 Prozent" loading="lazy">
+      <figcaption>Abb. 4: Strategiewahl per Monte-Carlo-Simulation – für jede Option („Do Not Bid" bis 7,5&nbsp;Mio.&nbsp;$) wird ausgezählt, in welchem Anteil der Simulationsläufe sie optimal ist („Percent Optimal"); hier liegt „nicht bieten" mit rund 32&nbsp;% vorn, die übrigen Gebote folgen dicht beieinander (Folie 27 des Originalskripts).</figcaption>
+    </figure>
+    <h3>Interaktives Beispiel: Bestellzeitpunkt in der Beschaffung</h3>
+    <p>Ein zweites durchgerechnetes Beispiel betrifft die <strong>Beschaffung</strong> (Procurement): Soll eine Komponente früh oder spät bestellt werden?</p>
+    <ul>
+      <li><strong>Entscheidung:</strong> Bestellzeitpunkt (früh bestellen / spät bestellen),</li>
+      <li><strong>Ereignisse:</strong> Ankunftszeit (rechtzeitig, zu früh, zu spät) sowie – nur bei zu früher Ankunft – Diebstahl oder Beschädigung im Lager,</li>
+      <li><strong>Konsequenzen (Kosten):</strong> Verzugskosten, Lagerkosten und ggf. die Kosten einer Nachbestellung (einschließlich Verzögerung).</li>
+    </ul>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k14-abb5.jpg" alt="Entscheidungsbaum zur Beschaffung: frühe oder späte Bestellung, danach Ereignisse Ankunft im Einbaufenster, zu früh mit Diebstahl- oder Beschädigungsrisiko von 4 beziehungsweise 2 Prozent oder zu spät mit Verzugskosten" loading="lazy">
+      <figcaption>Abb. 5: Verfeinerter Beschaffungs-Entscheidungsbaum – nach der Bestellentscheidung („Early Order" / „Late Order") entscheidet der Zufall über die Ankunft: im Einbaufenster (Kosten 0), zu früh (Lagerkosten, mit 4&nbsp;% bzw. 2&nbsp;% Wahrscheinlichkeit Diebstahl/Beschädigung samt Nachbestellkosten) oder zu spät (Verzugskosten „DelayCost"). Die Bedingungen an den Ästen vergleichen Ankunftszeit und Einbaufenster (Folie 37 des Originalskripts).</figcaption>
+    </figure>
+    <p>Die <strong>Sensitivitätsanalyse</strong> prüft anschließend, wie robust die gewählte Strategie ist: Ein Eingangswert (oder mehrere) wird über eine Bandbreite variiert, und man beobachtet, ab welchen Werten die optimale Entscheidung wechselt. Eindimensionale Analysen variieren eine Größe, mehrdimensionale – wie in Abb.&nbsp;6 – zeigen für Kombinationen zweier Größen, welche Option jeweils optimal ist.</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k14-abb6.jpg" alt="Zweidimensionale Sensitivitätsanalyse: Regionen der optimalen Aufzugsanzahl (ein, zwei oder drei Aufzüge) in Abhängigkeit von Ausfallkosten pro Tag und täglicher Ausfallwahrscheinlichkeit" loading="lazy">
+      <figcaption>Abb. 6: Zweidimensionale Sensitivitätsanalyse zur Aufzugsanzahl – je nach Ausfallkosten pro Tag („CostPerDayDowntime") und täglicher Ausfallwahrscheinlichkeit („Per day likelihood of elevator failure") ist ein, zwei oder drei Aufzüge optimal; die Grenzlinien markieren, wo die Entscheidung kippt (Folie 45 des Originalskripts).</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-7">Flexibilität und Realoptionen</h2>
+    <p><strong>Flexibilität</strong> heißt: zusätzliche Wahlmöglichkeiten bereitstellen. Sie hat typischerweise einen <strong>Wert</strong>, weil sie die negativen Folgen von Unsicherheit abmildert – und <strong>Kosten</strong>: das Hinauszögern einer Entscheidung, zusätzliche Zeit und den Preis für die „Reserve", die Flexibilität erst ermöglicht.</p>
+    <p>Im Bauwesen lässt sich Flexibilität auf vielen Wegen sichern:</p>
+    <ul>
+      <li>alternative Abwicklungsmodelle,</li>
+      <li>stützenfreie Spannweiten (für versetzbare Wände),</li>
+      <li>zusätzliche Leerrohre für Elektro- und Telefonleitungen, Verkabelung bis in die Räume,</li>
+      <li>größere Fundamente und Stützen, breitere Gründungen (für spätere Aufstockung),</li>
+      <li>alternative Heizungs- und Elektrosysteme, größere Elektroverteiler, ein zusätzlicher Aufzug,</li>
+      <li>Grundstücksreserven für Erweiterungen, sequenzielles (abschnittsweises) Bauen,</li>
+      <li>Eventualpläne für Value Engineering (Wertanalyse), Baugrundverhältnisse und die Beschaffungsstrategie.</li>
+    </ul>
+    <p>Eine <strong>adaptive Strategie</strong> ist eine Strategie, die den Kurs anhand des Beobachteten ändert – also Flexibilität besitzt: Statt starr im Voraus zu planen, plant man ausdrücklich ein, sich an die Ereignisse anzupassen, typischerweise indem eine Entscheidung in die Zukunft verschoben wird.</p>
+    <p>Die <strong>Realoptionstheorie</strong> (Real Options) liefert ein Verfahren, den finanziellen Wert von Flexibilität zu schätzen – etwa der Option, ein Werk aufzugeben oder ein Gebäude zu erweitern. Ihre Kernerkenntnis: Der klassische NPV funktioniert bei unsicheren Kosten und Erlösen schlecht; so lässt sich z.&nbsp;B. die Option, eine Investition abzubrechen, kaum abbilden. Ereignisse werden stattdessen mit stochastischen Differenzialgleichungen modelliert und numerisch oder analytisch gelöst; herleiten lässt sich der Ansatz auch aus dem Entscheidungsbaum-Rahmen. Die Folien illustrieren dies am Beispiel der Flexibilität der Tragwerksform.</p>
+    <div class="note"><strong>Abwägungen:</strong> Flexibilität konkurriert kurzfristig mit Tempo und Kosten – die Überlappung von Planung und Ausführung (Fast-Track) schränkt spätere Änderungen ein; Value Engineering und die Wahl des billigsten Bieters „optimieren" Flexibilität oft weg; späte Entscheidungen können teurer werden. <em>Aber:</em> Budget wie Terminplan können mit mehr Flexibilität am Ende trotzdem besser dastehen – und Nachrüsten kostet häufig mehr als von vornherein eingeplante Reserven.</div>
+  </section>
+
+  <nav class="prevnext">
+    <a href="kapitel-1-3.html">← Kapitel 1.3: Instrumente zur Projektbewertung</a>
+    <span class="spacer"></span>
+    <a href="kapitel-2-1.html">Kapitel 2.1: Projektorganisation →</a>
+  </nav>
+</main>
+
+<footer>
+  <div class="inner">
+    <p>Deutsche Übersetzung der Kursunterlagen von <a href="https://ocw.mit.edu/courses/1-040-project-management-spring-2004/" target="_blank" rel="noopener">MIT OpenCourseWare: 1.040 Project Management, Spring 2004</a> (Dr.&nbsp;Nathaniel Osgood).<br>
+    Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons BY-NC-SA 4.0</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

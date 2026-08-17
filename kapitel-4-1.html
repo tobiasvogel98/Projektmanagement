@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapitel 4.1: Planung und deterministische Terminplanung – Projektmanagement</title>
+<meta name="description" content="Kapitel 4.1 des Lernprogramms Projektmanagement: Planung und deterministische Terminplanung – vollständig übersetzt und aufbereitet.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <p class="kicker">Lerneinheit 4 · Projektplanung II: Terminplanung</p>
+    <h1>Kapitel 4.1: Planung und deterministische Terminplanung</h1>
+    <p class="sub">Von den Strukturplänen CBS, OBS und WBS über Gantt-Diagramme zur Critical Path Method: Netzpläne, Vorwärts- und Rückwärtsrechnung, Pufferzeiten und kritischer Pfad.</p>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <a href="index.html">Startseite</a>
+    <a href="lehrplan.html">Lehrplan</a>
+    <a href="kursplan.html" class="active">Lernpfad</a>
+    <a href="vorlesungen.html">Vorlesungsskripte</a>
+    <a href="projekt.html">Semesterprojekt</a>
+    <a href="literatur.html">Literatur</a>
+  </div>
+</nav>
+
+<main>
+  <p class="breadcrumb"><a href="kursplan.html">Lernpfad</a> › <a href="kursplan.html#le4">Lerneinheit 4</a> › Kapitel 4.1</p>
+  <div class="kapitel-meta">
+    <span>📄 <a href="pdfs/vorlesung-09-deterministische-terminplanung.pdf">Original-Foliensatz (PDF, englisch)</a></span>
+    <span>Vorlesung 9 von 18 · MIT 1.040, Frühjahr 2004</span>
+  </div>
+
+  <section class="card">
+    <div class="toc">
+      <span class="label">Inhalt dieses Kapitels</span>
+      <ol>
+        <li><a href="#abschnitt-1">Die Bausteine der Projektplanung: CBS, OBS und WBS</a></li>
+        <li><a href="#abschnitt-2">Warum Terminplanung? Motivation und rechtliche Bedeutung</a></li>
+        <li><a href="#abschnitt-3">Praktische Einflussfaktoren: Beschaffung, Genehmigungen, Ressourcen</a></li>
+        <li><a href="#abschnitt-4">Gantt-Diagramme (Balkenpläne)</a></li>
+        <li><a href="#abschnitt-5">Die Critical Path Method und ihre Netzplandarstellungen (AON und AOA)</a></li>
+        <li><a href="#abschnitt-6">Der CPM-Algorithmus: Vorwärts- und Rückwärtsrechnung</a></li>
+        <li><a href="#abschnitt-7">Pufferzeiten (Float): Gesamtpuffer, freier und unabhängiger Puffer</a></li>
+        <li><a href="#abschnitt-8">Kritischer Pfad und die Frage, wem der Puffer „gehört“</a></li>
+      </ol>
+    </div>
+
+    <h2 id="abschnitt-1">Die Bausteine der Projektplanung: CBS, OBS und WBS</h2>
+    <p>Bevor ein Terminplan entstehen kann, muss das Projekt in strukturierter Form beschrieben sein. Die Vorlesung fasst die Planungskomponenten in fünf Fragen zusammen: <em>Was</em> wird gebaut (Leistungsumfang aus Plänen und Spezifikationen), <em>wie viel</em> kostet es (Budget über die Kostenstruktur und die Kostenschätzung), <em>wer</em> führt es aus (Organisationsstruktur), <em>wie</em> wird die Arbeit gegliedert (Projektstrukturplan) und <em>wann</em> geschieht sie (Terminplan).</p>
+
+    <dl class="begriffe">
+      <dt>Cost Breakdown Structure (CBS, Kostenstruktur)</dt>
+      <dd>Die kanonische Gliederung, nach der alle Kosten des Projekts verbucht werden. Sie ordnet jeder Ausgabenart ein Konto zu und soll es erlauben, Ausgaben je Vorgang (Arbeitspaket) zu verfolgen. Häufig baut sie auf einer standardisierten, WBS-artigen Klassifikation auf – im US-Hochbau typischerweise dem CSI Masterformat mit seinen Gewerke-Divisionen (z.&nbsp;B. Division 2 Erdarbeiten, Division 3 Beton, Division 5 Metallbau).</dd>
+      <dt>Kostencode (Cost Code)</dt>
+      <dd>Der strukturierte Schlüssel eines Kontos, gespiegelt an der Kostenhierarchie. Er kombiniert üblicherweise eine Projektkennung, einen Bereichs-/Anlagencode (bei räumlich verteilten Projekten), einen Arbeitsart-Code (oft ein Standardcode wie CSI Masterformat) und einen Verteilcode für die Kostenart (Material, Gerät, Lohn, Nachunternehmer usw.).</dd>
+      <dt>Organizational Breakdown Structure (OBS, Organisationsstruktur)</dt>
+      <dd>Die hierarchische Darstellung der Projektorganisation: Wer ist für welche Einheit verantwortlich? In Matrixorganisationen kreuzen sich dabei Fachabteilungen (z.&nbsp;B. Tragwerksplanung, Maschinenbau, Elektrotechnik) mit den einzelnen Projekten.</dd>
+      <dt>Work Breakdown Structure (WBS, Projektstrukturplan)</dt>
+      <dd>Die hierarchische Zerlegung des Gesamtprojekts in Teilaufgaben und Arbeitspakete. Sie spielt die zentrale Rolle für Projektüberwachung und -steuerung und entsteht in Zusammenarbeit von Kalkulationsteam, Projektsteuerung und Bauleitung/Betrieb. Beschaffungsvorgänge werden häufig nicht in die WBS aufgenommen – im Terminplan müssen sie aber unbedingt erscheinen!</dd>
+    </dl>
+
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k41-abb1.jpg" alt="Vollständiger Projektstrukturplan (WBS) für ein Lagerhallenprojekt mit fünf Hauptästen und nummerierten Arbeitspaketen" loading="lazy">
+      <figcaption>Abb. 1: Verfeinerter Projektstrukturplan (WBS) für den Bau einer Lagerhalle. Aus dem Wurzelknoten („Bau einer Mehrmieter-Lagerhalle für Leichtindustrie“) entstehen fünf Äste – Baustelle vorbereiten, Gründung, Tragwerk, technische Gebäudeausrüstung, Fertigstellung – die bis auf nummerierte Arbeitspakete heruntergebrochen werden (Folie 20 des Originalskripts).</figcaption>
+    </figure>
+
+    <p>Ihren vollen Nutzen entfalten die Strukturen erst in Kombination: CBS + OBS ermöglicht die Budgetüberwachung einzelner Kolonnen, WBS + OBS liefert Aufgabenzuweisungen, Terminplan + OBS die Kolonneneinsatzplanung und Terminplan + CBS die laufende Kostenüberwachung.</p>
+
+    <h2 id="abschnitt-2">Warum Terminplanung? Motivation und rechtliche Bedeutung</h2>
+    <p>Der Kernnutzen der Terminplanung ist doppelt: Sie senkt die Wahrscheinlichkeit von Verzögerungen <em>und</em> hilft, sich von eingetretenen Verzögerungen zu erholen und Verantwortlichkeiten zu klären. Viele Verzögerungen entstehen schlicht aus schlechter Planung. Ein formaler Terminplan unterstützt das Durchdenken tausender Einzelvorgänge, macht Ressourcenkonflikte weit im Voraus sichtbar und ist damit notwendige – wenn auch nicht hinreichende – Voraussetzung für erfolgreiches Projektmanagement.</p>
+    <p>Der Terminplan ist im gesamten Projektverlauf allgegenwärtig: als vorläufiger Terminplan schon in der Planungsphase, zur Festlegung von Fertigstellungs- und Meilensteinterminen (Beschaffungszeiten, Präsenz der Nachunternehmer, Mieterbezug), als Kommunikationsinstrument zwischen den Beteiligten, als Rahmen für die Projektüberwachung, zur Bewertung von Änderungsauswirkungen (einschließlich des Nachweises indirekter Kosten), als Verknüpfung zu Ressourcen und Zahlungen sowie zur Erkennung von Risiken durch Überbelegung der Baustelle oder Witterung.</p>
+    <div class="note">Terminpläne haben erhebliche rechtliche Bedeutung: In manchen Fällen ist ihre Erstellung gesetzlich vorgeschrieben. Netzpläne, die Abhängigkeiten explizit codieren, sind das zentrale Beweismittel für die Auswirkung von Änderungen und die Verantwortung für Verzögerungen. Im Fall <em>Mega Construction Co. v. United States</em> (1993) scheiterte der Kläger, weil sein Balkenplan die gegenseitigen Abhängigkeiten der Vorgänge auf dem kritischen Pfad nicht nachwies – ein bloßes Balkendiagramm ohne Anordnungsbeziehungen genügte dem Gericht nicht.</div>
+    <p>Terminplanung und Kostenschätzung sind eng verzahnt: Erst der Terminplan macht den Cashflow über die Zeit verständlich, und wegen des Zeitwerts des Geldes ist er entscheidend für den Barwert der Kostenschätzung. Die Mengenermittlung (Quantity Takeoff) informiert beide. Zu den praktischen Risiken gehört ein unausgewogener Einsatz – der Plan wird anfangs intensiv genutzt und später verworfen – sowie die Gefahr, dass Termininformationen nur in der Zentrale bleiben und nicht zu den ausführenden Firmen und Polieren durchdringen. Gefragt ist ein gemeinsam getragener Terminplan. Die eigene Terminplanung der Bauunternehmen ist dagegen oft sehr einfach und kurzfristig (etwa ein wöchentliches Treffen zur Planung der nächsten zwei Wochen) und darauf ausgerichtet, die Kolonnen beschäftigt zu halten – erfüllt der Rahmenterminplan das nicht, wird unter Umständen außerhalb der geplanten Reihenfolge gearbeitet.</p>
+
+    <h2 id="abschnitt-3">Praktische Einflussfaktoren: Beschaffung, Genehmigungen, Ressourcen</h2>
+    <p>Wichtige Faktoren, die im Terminplan berücksichtigt werden müssen:</p>
+    <ul>
+      <li><strong>Prüf- und Genehmigungszeiten</strong> für technische Unterlagen (Submittals) und behördliche Genehmigungen,</li>
+      <li><strong>Beschaffung</strong> von Materialien und Anlagen,</li>
+      <li><strong>Planung für Änderungen</strong>, die erfahrungsgemäß eintreten,</li>
+      <li><strong>Koordination von Personal und Geräten</strong> sowie die – kritische und wegen der vielen Schnittstellen schwierige – Koordination der Nachunternehmer durch den Generalunternehmer,</li>
+      <li><strong>Planungs-/Entwurfstermine</strong>: Die Terminplanung der Planung selbst ist schwierig, weil Entwurfsprozesse hochgradig iterativ sind und schwer vorherzusagen ist, wann Entwurf und Kosten konvergieren.</li>
+    </ul>
+    <p>Die Beschaffungsterminplanung ist besonders in urbanen Lagen entscheidend. Bei Sonderanfertigungen sind die Lieferzeiten unsicher, viele Parteien und Qualitätsprüfungen beteiligt. Als grobe Einteilung gilt: Schüttgüter und Massenware werden in 1–5 Tagen geliefert, standardisierte Fertigung braucht 3–12 Wochen, kundenspezifische Fertigung 10–16 Wochen. Typische Langläufer (Long-Lead Items) sind Aufzüge, Pumpen, Kessel, Kühltürme, Leittechnik, Lüftungsgeräte und Kältemaschinen, außerdem Baustahl, Bewehrung, Betonfertigteile, Sonderfassaden sowie Elektrogroßkomponenten wie Transformatoren, Motoren und Schaltanlagen.</p>
+    <p>Schließlich besteht eine wechselseitige Abhängigkeit zwischen Terminplan und Ressourcen: Der Terminplan beruht auf Vorgangsdauern, die eine bestimmte Ressourcenverfügbarkeit unterstellen – und die Ressourcenverfügbarkeit hängt ihrerseits vom Terminplan ab. Dieses hochkomplexe Problem wird in der Praxis meist iterativ gelöst; Kapitel 4.4 widmet sich ihm ausführlich.</p>
+
+    <h2 id="abschnitt-4">Gantt-Diagramme (Balkenpläne)</h2>
+    <p>Das Gantt-Diagramm („Balkenplan“) hat seinen Ursprung im Ersten Weltkrieg und systematisierte ältere Darstellungen. Es ist ein sehr wirksames Kommunikationsmittel und für einfachere Terminpläne äußerst beliebt, wird jedoch ab etwa 50 Vorgängen unübersichtlich. Sein entscheidender Mangel: <strong>Abhängigkeiten zwischen Vorgängen werden nicht erfasst.</strong> Es eignet sich deshalb am besten als Berichtsformat, weniger als eigentliche Planungsrepräsentation.</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k41-abb2.jpg" alt="Gantt-Diagramm, das einen sequenziellen Ablauf mit einem phasenweisen Ablauf vergleicht und die Zeitersparnis zeigt" loading="lazy">
+      <figcaption>Abb. 2: Sequenzieller versus phasenweiser Ablauf im Gantt-Diagramm. Oben der klassische Einzelvertrag mit fester Vergütung (Planung → Prüfung → Ausschreibung/Vergabe → Bauausführung nacheinander), unten die überlappende, phasenweise Abwicklung („Phased Construction“) mit mehreren Teilverträgen – rechts markiert die eingesparte Zeit („Time Saved“) (Folie 36 des Originalskripts).</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-5">Die Critical Path Method und ihre Netzplandarstellungen (AON und AOA)</h2>
+    <p>Die <strong>Critical Path Method (CPM, Methode des kritischen Pfades)</strong> entstand 1956 bei DuPont und wurde Anfang der 1960er-Jahre erstmals im Bauwesen angewandt. Der Begriff wird teils eng (deterministischer Netzplanalgorithmus), teils weiter gefasst. Formal ist der Netzplan ein gerichteter azyklischer Graph, der topologisch sortiert von links nach rechts gezeichnet wird: Man spezifiziert Vorgänge mit ihren Kenndaten (insbesondere Dauern) und lässt einen Planungsalgorithmus Terminempfehlungen und -restriktionen berechnen.</p>
+    <p>Das Grundvorgehen der Netzplantechnik:</p>
+    <ul>
+      <li>Vorgänge aus den Arbeitspaketen der WBS definieren,</li>
+      <li>Kosten, Zeit und Ressourcen je Vorgang schätzen,</li>
+      <li>Anordnungsbeziehungen (Abhängigkeiten) zwischen den Vorgängen festlegen,</li>
+      <li>iterieren: CPM-Terminrechnung durchführen, Zeit-, Kosten- und Ressourcenverlauf abschätzen – ist das Ergebnis akzeptabel, fertig; wenn nicht, Abhängigkeiten anpassen oder Ressourcen erhöhen/reduzieren.</li>
+    </ul>
+    <p>Dabei ist zu bedenken, dass Vorgangsdauern implizit von vielem abhängen: von der Arbeitsmenge, der Produktivität (Umgebung, Qualifikation, Lerneffekte, Führung …), der Zahl der eingesetzten Personen und der Geräteausstattung. Es kann sinnvoll sein, Dauern auf mehreren Wegen zu schätzen. Sofern keine Beziehungen definiert werden, gelten Vorgänge als parallel ausführbar; Anordnungsbeziehungen bilden reale Restriktionen ab – regulatorische/vertragliche, physikalische, ressourcen- und finanzierungsbedingte, sicherheitstechnische, organisatorische und umweltbezogene.</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k41-abb3.jpg" alt="Gegenüberstellung von AON-Netzplan, AOA-Netzplan und Gantt-Diagramm für dasselbe kleine Projekt" loading="lazy">
+      <figcaption>Abb. 3: Drei Darstellungen desselben Projekts: „Bubble“-Netzplan (AON, Vorgänge auf Knoten), Pfeil-Netzplan (AOA, Vorgänge auf Pfeilen) und Balkenplan (Gantt). Nur die beiden Netzpläne machen die Abhängigkeiten explizit (Folie 40 des Originalskripts).</figcaption>
+    </figure>
+
+    <dl class="begriffe">
+      <dt>Activity on Node (AON, Vorgangsknoten-Netzplan)</dt>
+      <dd>Auch „Precedence Diagram Method“ (PDM, Vorgangsknotenmethode) oder „Bubble Diagram“ genannt: Vorgänge sitzen auf den Knoten, Pfeile stellen Abhängigkeiten dar. Parallelisierungsmöglichkeiten sind visuell leichter zu erkennen, es sind keine Scheinvorgänge nötig, und die Darstellung erlaubt reichere Beziehungstypen (Start–Start, Ende–Ende, Start–Ende, Ende–Start). In Software ist AON heute am verbreitetsten. Das Diagramm sollte früheste/späteste Start- und Endzeitpunkte (EST, LST, EFT, LFT) codieren.</dd>
+      <dt>Activity on Arrow (AOA, Vorgangspfeil-Netzplan)</dt>
+      <dd>Historisch am populärsten; im „Manhattan-Layout“ dem Gantt-Format sehr ähnlich. Vorgänge liegen auf den Pfeilen zwischen Ereignisknoten. Da ein Pfeil nur genau einen Anfangs- und einen Endknoten haben darf und zwischen zwei Knoten nur ein Pfeil verlaufen darf, sind <em>Scheinvorgänge</em> (Dummy-Pfeile) nötig – etwa wenn zwei Vorgänge gemeinsame Nachfolger, aber unterschiedliche Vorgängermengen haben.</dd>
+    </dl>
+
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k41-abb4.jpg" alt="AON-Netzplan (Bubble-Netzwerk) des Lagerhallenprojekts mit 24 nummerierten Vorgängen zwischen Start und Ende" loading="lazy">
+      <figcaption>Abb. 4: Der fertige AON-Netzplan („Bubble Network“) für das 24-Vorgänge-Modell der Lagerhalle: Jeder Knoten ist ein Vorgang, die Kanten codieren die direkten Anordnungsbeziehungen von START bis END (Folie 50 des Originalskripts).</figcaption>
+    </figure>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k41-abb5.jpg" alt="AOA-Netzplan desselben Lagerhallenprojekts mit durchgezogenen Vorgangspfeilen und gestrichelten Scheinvorgängen" loading="lazy">
+      <figcaption>Abb. 5: Derselbe Terminplan als AOA-Netzplan: Vorgänge (in Klammern nummeriert) liegen auf den Pfeilen zwischen Ereignisknoten; gestrichelte Pfeile sind Scheinvorgänge (Dummys), die nur logische Abhängigkeiten übertragen und keine Dauer besitzen (Folie 58 des Originalskripts).</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-6">Der CPM-Algorithmus: Vorwärts- und Rückwärtsrechnung</h2>
+    <p>Der CPM-Algorithmus berechnet für jeden Vorgang bzw. jedes Ereignis die frühesten und spätesten Start- und Endzeitpunkte. Er läuft auf AON- wie AOA-Diagrammen und benötigt nur lineare Zeit O(n). Wichtig zur Interpretation: Späteste Zeitpunkte (LS, LF) sind die spätesten Termine, zu denen ein Vorgang starten bzw. enden könnte, <em>ohne das Gesamtprojekt zu verzögern</em> – nicht die spätesten Termine im Sinne einer durchgehenden Auslastung.</p>
+    <p>In der AON-Notation trägt jeder Knoten die vier Zeitwerte – Early Start (ES, frühester Start), Early Finish (EF, frühestes Ende), Late Start (LS, spätester Start), Late Finish (LF, spätestes Ende) – sowie die Dauer. In der Praxis existieren dafür viele unterschiedliche Symbolkonventionen:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k41-abb6.jpg" alt="Verschiedene AON-Knotensymbole mit Feldern für früheste und späteste Start- und Endtermine sowie Dauer" loading="lazy">
+      <figcaption>Abb. 6: Typische AON-Knotennotationen: unterteilte „Bubble“-Symbole und Kastensymbole mit Feldern für EST/EFT (oben), LST/LFT (unten) und Dauer. Da jeder Knoten den gesamten Vorgang repräsentiert, müssen ES, LS, EF und LF explizit angegeben werden; es gilt Puffer = LS − ES = LF − EF (Folie 61 des Originalskripts).</figcaption>
+    </figure>
+    <p>Die Terminrechnung erfolgt in zwei Durchläufen („Pässen“):</p>
+    <ul>
+      <li><strong>Vorwärtsrechnung (Forward Pass):</strong> Da alle Vorgänger abgeschlossen sein müssen, bevor ein Nachfolger beginnen kann, ist der früheste Start eines Knotens das <em>Maximum</em> der frühesten Endtermine seiner Vorgänger. Die Gesamtprojektdauer ergibt sich als Maximum der frühesten Endtermine aller Knoten.</li>
+      <li><strong>Rückwärtsrechnung (Backward Pass):</strong> Da ein Vorgang rechtzeitig fertig sein muss, damit alle Nachfolger rechtzeitig starten können, ist das späteste Ende eines Vorgangs das <em>Minimum</em> der spätesten Starttermine seiner Nachfolger.</li>
+    </ul>
+    <p>Als Pseudocode für AOA-Netzpläne (Ereignisse 0…n, D<sub>ij</sub> = Dauer des Vorgangs vom Ereignis i zum Ereignis j):</p>
+    <div class="formel">
+      <strong>Früheste Ereigniszeiten (Vorwärtsrechnung):</strong><br>
+      Schritt 1: E(0) = 0.<br>
+      Schritt 2: Für j = 1, 2, …, n: &nbsp;E(j) = max<sub>i</sub> { E(i) + D<sub>ij</sub> },<br>
+      wobei das Maximum über alle Vorgänge (i,&nbsp;j) gebildet wird, die im Ereignis j enden.
+    </div>
+    <div class="formel">
+      <strong>Späteste Ereigniszeiten (Rückwärtsrechnung):</strong><br>
+      Schritt 1: L(n) = geforderter Fertigstellungstermin des Projekts (mit L(n) ≥ E(n)).<br>
+      Schritt 2: Für i = n−1, n−2, …, 0: &nbsp;L(i) = min<sub>j</sub> { L(j) − D<sub>ij</sub> },<br>
+      wobei das Minimum über alle Vorgänge (i,&nbsp;j) gebildet wird, die im Ereignis i beginnen.
+    </div>
+    <p>Ein vollständig durchgerechnetes Zahlenbeispiel (Dachkonstruktion mit sieben Vorgängen) folgt zu Beginn von <a href="kapitel-4-2.html">Kapitel 4.2</a>.</p>
+
+    <h2 id="abschnitt-7">Pufferzeiten (Float): Gesamtpuffer, freier und unabhängiger Puffer</h2>
+    <p>Der Puffer (englisch <em>Float</em> oder <em>Slack</em>) misst den zeitlichen Spielraum eines Vorgangs – den Freiheitsgrad bei der Wahl seines Ausführungszeitpunkts. Anschaulich ist er die Differenz zwischen dem Zeitpunkt, zu dem der Vorgang „fertig sein muss“, und der Zeit, die er tatsächlich benötigt; die Puffervarianten unterscheiden sich darin, wie streng dieses „muss“ definiert ist. Auch wenn ein Vorgang zu vielen Zeitpunkten eingeplant werden <em>kann</em>, sind manche Zeitpunkte deutlich günstiger als andere.</p>
+    <div class="formel">
+      <strong>Gesamtpuffer (Total Float):</strong> maximale Verzögerung, ohne das <em>Projekt</em> zu verzögern<br>
+      TF = min<sub>j</sub> ( (L(j) − D<sub>ij</sub>) − E(i) )<br>
+      = (spätester Start, mit dem das Projekt noch rechtzeitig endet) − (frühestmöglicher Start)
+    </div>
+    <div class="formel">
+      <strong>Freier Puffer (Free Float):</strong> maximale Verzögerung, ohne einen <em>Nachfolger</em> zu verzögern<br>
+      FF = min<sub>j</sub> ( (E(j) − D<sub>ij</sub>) − E(i) )<br>
+      = (spätester Start, mit dem noch vor dem frühesten Start des Nachfolgers fertig ist) − (frühestmöglicher Start)
+    </div>
+    <div class="formel">
+      <strong>Unabhängiger Puffer (Independent Float):</strong><br>
+      IF = max( 0, min<sub>j</sub> ( (E(j) − D<sub>ij</sub>) − L(i) ) )<br>
+      wie der freie Puffer, aber unter Annahme des ungünstigsten (spätesten) eigenen Startzeitpunkts.
+    </div>
+    <p>Dabei bezeichnet E(i) die früheste und L(i) die späteste Zeit des Anfangsereignisses, E(j) bzw. L(j) die des Endereignisses und D<sub>ij</sub> die Vorgangsdauer. Für AON-Knoten gilt kompakt: Puffer = LS − ES = LF − EF.</p>
+
+    <h2 id="abschnitt-8">Kritischer Pfad und die Frage, wem der Puffer „gehört“</h2>
+    <dl class="begriffe">
+      <dt>Kritischer Pfad (Critical Path)</dt>
+      <dd>Der längste Pfad von Vorgängen mit Gesamtpuffer null. Für den beschriebenen Algorithmus existiert mindestens ein solcher Pfad. Jeder Vorgang darauf muss pünktlich abgeschlossen werden, sonst verzögert sich das gesamte Projekt – der kritische Pfad markiert also im Wesentlichen die Mindestdauer des Projekts.</dd>
+    </dl>
+    <ul>
+      <li>Auch <strong>nahkritische</strong> Vorgänge (mit sehr kleinem Puffer) verdienen Aufmerksamkeit.</li>
+      <li>Der kritische Pfad <strong>verändert sich typischerweise im Projektverlauf</strong>, wenn sich die tatsächlichen Vorgangsdauern herausstellen.</li>
+      <li>Kritische Vorgänge bieten keinerlei Verschiebespielraum, etwa für den Ressourcenausgleich; Gegenmittel sind Zeitreserven (Contingency Buffer) und die Pufferung nach der Critical-Chain-Methode.</li>
+    </ul>
+    <p>Puffer lässt sich auch gezielt „verbrauchen“, indem eigentlich parallele Vorgänge über zusätzliche Netzplanlogik in eine Reihenfolge gezwungen werden – etwa um mit nur einer Kolonne zwei Fundamente nacheinander statt gleichzeitig zu betonieren:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k41-abb7.jpg" alt="Netzplanausschnitt: zwei Fundamentvorgänge einmal parallel und einmal durch eine Anordnungsbeziehung in Reihe geschaltet" loading="lazy">
+      <figcaption>Abb. 7: Nutzung von Puffer durch Sequenzialisierung: Die Vorgänge „Fundament 1 herstellen“ und „Fundament 2 herstellen“ können parallel (oben, CONCURRENT) oder – per zusätzlicher, ressourcenbedingter Netzplanlogik – nacheinander (unten, SEQUENTIAL) angeordnet werden (Folie 69 des Originalskripts).</figcaption>
+    </figure>
+    <p>Um die Nutzung dieses Spielraums entsteht ein echter Interessenkonflikt mit erheblichen rechtlichen Folgen: Auftraggeber wollen die Auftragnehmer auf einen straffen Terminplan verpflichten, Auftragnehmer wollen Flexibilität – und gegebenenfalls Nachtragsansprüche gegen den Auftraggeber.</p>
+    <ul>
+      <li><strong>Argumente der Auftragnehmerseite:</strong> Sie sieht sich für höhere Vergütung berechtigt, weil auftraggeberseitige Verzögerungen ohne ihre „Heldentaten“ viel schlimmer ausfielen; sie braucht Spielraum z.&nbsp;B. für den Ressourcenausgleich – Flexibilität hat Wert. Taktiken sind das bewusste Aufblähen von Dauern (Beschleunigung nur gegen Vergütung), das Einfügen künstlicher Anordnungsbeziehungen als „bevorzugte Arbeitsweise“ (Änderung nur gegen Vergütung) und damit das Erzeugen mehrerer (nah-)kritischer Pfade; Eingriffe des Auftraggebers in den Bauablauf werden abgelehnt.</li>
+      <li><strong>Argumente der Auftraggeberseite:</strong> Sie will Risiken senken, indem Arbeiten früh erledigt werden – zu viele späte Starts gefährden die Gesamtdauer. Sie kann versucht sein, unrealistisch kurze Termine vorzugeben, und kann die Flexibilität des Auftragnehmers vertraglich beschränken: eigene Rechte an der Puffernutzung, das Recht zur Wahl des Terminplanungsverfahrens, Widerspruchsrechte gegen „unangemessene“ Dauern, das Recht, künstliche Anordnungsbeziehungen zu streichen, und die Pflicht zur Neuberechnung des kritischen Pfades bei Verzug des Auftragnehmers.</li>
+    </ul>
+  </section>
+
+  <nav class="prevnext">
+    <a href="kapitel-3-2.html">← Kapitel 3.2: Detaillierte Kostenschätzung und Überblick über das Pumpstationsprojekt</a>
+    <span class="spacer"></span>
+    <a href="kapitel-4-2.html">Kapitel 4.2: Deterministische Planung II und probabilistische Planung I →</a>
+  </nav>
+</main>
+
+<footer>
+  <div class="inner">
+    <p>Deutsche Übersetzung der Kursunterlagen von <a href="https://ocw.mit.edu/courses/1-040-project-management-spring-2004/" target="_blank" rel="noopener">MIT OpenCourseWare: 1.040 Project Management, Spring 2004</a> (Dr.&nbsp;Nathaniel Osgood).<br>
+    Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons BY-NC-SA 4.0</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

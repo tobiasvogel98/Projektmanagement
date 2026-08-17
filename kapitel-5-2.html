@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapitel 5.2: Earned-Value-Analyse (C/SCSC) und Grundlagen der Projektsteuerung – Projektmanagement</title>
+<meta name="description" content="Kapitel 5.2 des Lernprogramms Projektmanagement: Earned-Value-Analyse (C/SCSC) und Grundlagen der Projektsteuerung – vollständig übersetzt und aufbereitet.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <p class="kicker">Lerneinheit 5 · Projektüberwachung und -steuerung</p>
+    <h1>Kapitel 5.2: Earned-Value-Analyse (C/SCSC) und Grundlagen der Projektsteuerung</h1>
+    <p class="sub">Wie die Earned-Value-Kennzahlen Kosten- und Terminlage in einer Zahl verdichten, wie sich Endtermin und Endkosten prognostizieren lassen – und mit welchen Hebeln (und Nebenwirkungen) die Projektsteuerung gegensteuert.</p>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <a href="index.html">Startseite</a>
+    <a href="lehrplan.html">Lehrplan</a>
+    <a href="kursplan.html" class="active">Lernpfad</a>
+    <a href="vorlesungen.html">Vorlesungsskripte</a>
+    <a href="projekt.html">Semesterprojekt</a>
+    <a href="literatur.html">Literatur</a>
+  </div>
+</nav>
+
+<main>
+  <p class="breadcrumb"><a href="kursplan.html">Lernpfad</a> › <a href="kursplan.html#le5">Lerneinheit 5</a> › Kapitel 5.2</p>
+  <div class="kapitel-meta">
+    <span>📄 <a href="pdfs/vorlesung-14-earned-value-analyse-projektsteuerung.pdf">Original-Foliensatz (PDF, englisch)</a></span>
+    <span>Vorlesung 14 von 18 · MIT 1.040, Frühjahr 2004</span>
+  </div>
+
+  <section class="card">
+    <div class="toc">
+      <span class="label">Inhalt dieses Kapitels</span>
+      <ol>
+        <li><a href="#abschnitt-1">Die Earned-Value-Kennzahlen im Überblick</a></li>
+        <li><a href="#abschnitt-2">Das durchgängige Beispiel im Wochenverlauf</a></li>
+        <li><a href="#abschnitt-3">Leistungsprognosen: Endtermin und Gesamtkosten</a></li>
+        <li><a href="#abschnitt-4">Kostenfortschreibung: BAC, ETC und EAC</a></li>
+        <li><a href="#abschnitt-5">Der Projektsteuerungsprozess als doppelter Regelkreis</a></li>
+        <li><a href="#abschnitt-6">Leistungsorientierte Steuerung: Hebel und Nebenwirkungen</a></li>
+        <li><a href="#abschnitt-7">Zeit-Kosten-Ausgleich und Projektbeschleunigung („Crashing“)</a></li>
+        <li><a href="#abschnitt-8">Kostensteuerung, Slack Management und zielorientierte Steuerung</a></li>
+      </ol>
+    </div>
+
+    <h2 id="abschnitt-1">Die Earned-Value-Kennzahlen im Überblick</h2>
+    <p>Die <strong>Earned-Value-Analyse</strong> (EVA, Fertigstellungswert-Analyse) – im US-Verteidigungsstandard auch <em>Cost/Schedule Control Systems Criteria</em> (C/SCSC) genannt – integriert Kosten, Termine und geleistete Arbeit, indem sie allen drei Größen Geldwerte zuordnet. <a href="kapitel-5-1.html">Kapitel 5.1</a> hat die Grundgrößen eingeführt; hier werden sie vertieft, auf ein durchgängiges Beispiel angewendet und zur Prognose fortgeschrieben. Die folgende Tabelle fasst alle Kennzahlen zusammen – in der klassischen C/SCSC-Notation der Vorlesung und mit den heute gebräuchlichen Bezeichnungen:</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Kennzahl</th><th>Heutiger Name</th><th>Formel / Einheit</th><th>Bedeutung und Interpretation</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>BCWS</strong> – Budgeted Cost of Work Scheduled</td><td>PV (Planned Value, Planwert)</td><td>$</td><td>Wert der Arbeit, die im betrachteten Zeitraum planmäßig zu leisten war.</td></tr>
+          <tr><td><strong>BCWP</strong> – Budgeted Cost of Work Performed</td><td>EV (Earned Value, Fertigstellungswert)</td><td>$</td><td>Zu Budgetpreisen bewerteter Geldwert der im Kontrollzeitraum tatsächlich geleisteten Arbeit.</td></tr>
+          <tr><td><strong>ACWP</strong> – Actual Cost of Work Performed</td><td>AC (Actual Cost, Istkosten)</td><td>$</td><td>Kosten, die für die geleistete Arbeit tatsächlich angefallen sind.</td></tr>
+          <tr><td><strong>STWP / ATWP</strong> – Scheduled/Actual Time of Work Performed</td><td>–</td><td>Zeit</td><td>Plandauer bzw. tatsächlich aufgewendete Zeit für die geleistete Arbeit.</td></tr>
+          <tr><td><strong>CV</strong> – Cost Variance (Kostenabweichung)</td><td>CV</td><td>CV = BCWP − ACWP</td><td>„Gebe ich für die geleistete Arbeit mehr oder weniger aus als geplant?“ + = Budgetunterschreitung, − = Überschreitung, 0 = im Budget.</td></tr>
+          <tr><td><strong>CI</strong> – Cost Index</td><td>CPI (Cost Performance Index)</td><td>CI = BCWP / ACWP</td><td>&gt; 1 Unterschreitung, &lt; 1 Überschreitung, = 1 im Budget.</td></tr>
+          <tr><td><strong>SV</strong> – Schedule Variance (Terminabweichung)</td><td>SV</td><td>SV = BCWP − BCWS</td><td>„Wie verhält sich der Wert der geleisteten zur geplanten Arbeit?“ + = voraus, − = im Rückstand, 0 = im Plan. Gemessen in $ als Näherung für den Wert.</td></tr>
+          <tr><td><strong>SI</strong> – Schedule Index</td><td>SPI (Schedule Performance Index)</td><td>SI = BCWP / BCWS</td><td>&gt; 1 voraus, &lt; 1 im Rückstand, = 1 im Plan.</td></tr>
+          <tr><td><strong>TV / TI</strong> – Time Variance / Time Index</td><td>–</td><td>TV = STWP − ATWP; TI = STWP / ATWP</td><td>Zeitabweichung in Zeiteinheiten; kann klein sein, obwohl der Mittelverbrauch stark abweicht.</td></tr>
+          <tr><td><strong>RV / RI</strong> – Resource Flow Variance / Index</td><td>–</td><td>RV = BCWS − ACWP; RI = BCWS / ACWP</td><td>Geplante vs. tatsächliche Ausgaben des Zeitraums – unabhängig von der geleisteten Arbeit; sagt allein nichts über „gut“ oder „schlecht“.</td></tr>
+          <tr><td><strong>BAC</strong> – Budget at Completion</td><td>BAC</td><td>Σ BCWS über WBS bzw. OBS</td><td>Gesamtbudget des Projekts bei Fertigstellung.</td></tr>
+          <tr><td><strong>ETC</strong> – Estimate to Complete</td><td>ETC</td><td>z. B. ETC = (BAC − BCWP) / CI</td><td>Prognostizierte Kosten der noch ausstehenden Restarbeit.</td></tr>
+          <tr><td><strong>EAC</strong> – Estimate at Completion</td><td>EAC</td><td>EAC = BAC − CV bzw. EAC = BAC / CI</td><td>Prognostizierte Gesamtkosten bei Fertigstellung (siehe <a href="#abschnitt-4">Abschnitt 4</a>).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="formel">CV = BCWP − ACWP&nbsp;&nbsp;&nbsp;&nbsp;CI (CPI) = BCWP / ACWP&nbsp;&nbsp;&nbsp;&nbsp;SV = BCWP − BCWS&nbsp;&nbsp;&nbsp;&nbsp;SI (SPI) = BCWP / BCWS</div>
+    <div class="formel">TV = STWP − ATWP&nbsp;&nbsp;&nbsp;&nbsp;TI = STWP / ATWP&nbsp;&nbsp;&nbsp;&nbsp;RV = BCWS − ACWP&nbsp;&nbsp;&nbsp;&nbsp;RI = BCWS / ACWP</div>
+
+    <p>Zur Interpretation: Die Terminabweichung SV wird in Geld gemessen – selbst ein zeitlich kleiner Rückstand kann groß ausfallen, wenn gerade an einer teuren Projektkomponente gearbeitet wird. Alle drei Grundgrößen lassen sich in einem Diagramm über der Zeit auftragen – der klassischen EVA-Kurve:</p>
+
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k52-abb1.jpg" alt="Earned-Value-Diagramm: kumulierte Kostenkurven für Plan (Baseline), Istkosten und Fertigstellungswert über der Zeit, mit eingezeichneter Kosten-, Termin- und Zeitabweichung" loading="lazy">
+      <figcaption>Abb. 1: Die typische EVA-Kurve („Earned Value Chart“): Über der Zeit werden die S-förmige Plankurve („Cost Schedule Plan/Baseline“ = BCWS), die Istkosten („Actual Cost“ = ACWP) und der Fertigstellungswert („Value Completed“ = BCWP) aufgetragen. Der vertikale Abstand ACWP−BCWP ist die Kostenüberschreitung („Spending Variance“ – aus Mengen- und Preisabweichung), BCWS−BCWP die Terminabweichung („Schedule Variance“), der horizontale Abstand zwischen STWP und ATWP die Zeitabweichung („Time Variance“, hier 10 Tage Verzug). (Folie 8 des Originalskripts)</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-2">Das durchgängige Beispiel im Wochenverlauf</h2>
+    <p>Die Vorlesung greift das Beispiel aus <a href="kapitel-5-1.html">Kapitel 5.1</a> wieder auf: ein Projekt mit den Vorgängen A bis G, von denen nach vier Wochen A (Budget 1.500 $, 5 Wochen), B (3.000 $, 3 Wochen) und E (5.700 $, 7 Wochen) angelaufen sind. A und B sind abgeschlossen, E ist erst zu 2/7 ≈ 28,6 % fertig. Neu ist hier die Betrachtung als <strong>Zeitreihe</strong>: Erfasst man BCWS, BCWP und ACWP wochenweise je Vorgang, wird sichtbar, wie sich die Lage entwickelt:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th rowspan="2">Vorgang</th><th colspan="3">Woche 1 ($)</th><th colspan="3">Woche 2 ($)</th><th colspan="3">Woche 3 ($)</th><th colspan="3">Woche 4 ($)</th></tr>
+          <tr><th>BCWS</th><th>BCWP</th><th>ACWP</th><th>BCWS</th><th>BCWP</th><th>ACWP</th><th>BCWS</th><th>BCWP</th><th>ACWP</th><th>BCWS</th><th>BCWP</th><th>ACWP</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>A</td><td>300</td><td>500</td><td>500</td><td>300</td><td>500</td><td>500</td><td>300</td><td>300</td><td>300</td><td>300</td><td>200</td><td>200</td></tr>
+          <tr><td>B</td><td>1.000</td><td>1.000</td><td>1.000</td><td>1.000</td><td>1.000</td><td>1.000</td><td>1.000</td><td>500</td><td>500</td><td>0</td><td>500</td><td>500</td></tr>
+          <tr><td>E</td><td>814</td><td>300</td><td>814</td><td>814</td><td>400</td><td>686</td><td>814</td><td>500</td><td>1.000</td><td>814</td><td>428</td><td>400</td></tr>
+          <tr><td><strong>Summe</strong></td><td><strong>2.114</strong></td><td><strong>1.800</strong></td><td><strong>2.314</strong></td><td><strong>2.114</strong></td><td><strong>1.900</strong></td><td><strong>2.186</strong></td><td><strong>2.114</strong></td><td><strong>1.300</strong></td><td><strong>1.800</strong></td><td><strong>1.114</strong></td><td><strong>1.128</strong></td><td><strong>1.100</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Daraus ergeben sich die wöchentlichen Indizes SI = 0,85 / 0,88 / 0,79 / 0,82 und CI = 0,78 / 0,82 / 0,79 / 0,83 – das Projekt liegt durchgehend hinter Plan und über Budget. Kumuliert über den ganzen Monat:</p>
+    <div class="formel">BCWS = 7.456 $&nbsp;&nbsp;&nbsp;&nbsp;BCWP = 6.128 $&nbsp;&nbsp;&nbsp;&nbsp;ACWP = 7.400 $&nbsp;&nbsp;&nbsp;&nbsp;CV = −1.272 $&nbsp;&nbsp;&nbsp;&nbsp;SV = −1.328 $&nbsp;&nbsp;&nbsp;&nbsp;CI = 0,83&nbsp;&nbsp;&nbsp;&nbsp;SI = 0,82</div>
+
+    <h2 id="abschnitt-3">Leistungsprognosen: Endtermin und Gesamtkosten</h2>
+    <p>Die <strong>Leistungsprognose</strong> (Forecasting) ist ein zentraler Baustein der Leistungsanalyse: Sie erlaubt es, künftige Abweichungen zu erkennen und den Steuerungsprozess zu entwerfen, <em>bevor</em> die Probleme tatsächlich eintreten. Prognosen schätzen die Verhältnisse zu einem späteren Zeitpunkt oder am Projektende und werden typischerweise regelmäßig über die gesamte Laufzeit wiederholt.</p>
+    <p>Für den <strong>Endtermin</strong> wird die Restarbeit mit der erwarteten Arbeitsrate hochgerechnet:</p>
+    <div class="formel">Prognostizierter Endtermin = heutiges Datum + Restarbeit / erwartete Arbeitsrate</div>
+    <div class="formel">Erwartete Arbeitsrate = erwartete Produktivität × Anzahl Arbeitskräfte&nbsp;&nbsp;&nbsp;&nbsp;Erwartete Produktivität = (geleistete Arbeit / Arbeitskräfte) / aufgewendete Zeit</div>
+    <p>Für die <strong>Gesamtkosten</strong> wird analog die Restarbeit mit den erwarteten Einheitskosten bewertet:</p>
+    <div class="formel">Prognostizierte Gesamtkosten = bisherige Kosten + Restarbeit × erwartete Einheitskosten&nbsp;&nbsp;&nbsp;&nbsp;Erwartete Einheitskosten = bisherige Kosten / geleistete Arbeit</div>
+
+    <h2 id="abschnitt-4">Kostenfortschreibung: BAC, ETC und EAC</h2>
+    <p>Für die laufende Fortschreibung der Kostenprognose werden vier Größen unterschieden:</p>
+    <dl class="begriffe">
+      <dt>Budget at Completion (BAC)</dt>
+      <dd>Das Gesamtbudget bei Fertigstellung – die Summe der BCWS-Werte über die unteren Ebenen des Projektstrukturplans (WBS) bzw. der Organisationsstruktur (OBS).</dd>
+      <dt>Work Remaining (WR)</dt>
+      <dd>Die Restarbeit, bewertet zu Budgetpreisen: WR = BAC − BCWP.</dd>
+      <dt>Estimate to Complete (ETC)</dt>
+      <dd>Die aktualisierte Kostenschätzung für die verbleibende Restarbeit.</dd>
+      <dt>Estimate at Completion (EAC)</dt>
+      <dd>Die prognostizierten Gesamtkosten bei Fertigstellung: EAC = ACWP + ETC.</dd>
+    </dl>
+    <p>Für das EAC gibt es zwei klassische Ansätze, die sich in der Behandlung der Restarbeit unterscheiden:</p>
+    <ul>
+      <li><strong>Ansatz „ursprüngliche Schätzung“</strong> (Original Estimate): Die Restarbeit wird weiterhin zu Budgetpreisen bewertet – die bisherige Abweichung bleibt als einmaliger „Ausrutscher“ stehen: ETC = BAC − BCWP.</li>
+      <li><strong>Ansatz „revidierte Schätzung“</strong> (Revised Estimate): Die bisherige Kosteneffizienz wird auf die Restarbeit fortgeschrieben – wer bisher zu teuer war, bleibt es voraussichtlich: ETC = (BAC − BCWP) / CI.</li>
+    </ul>
+    <div class="formel">Ursprüngliche Schätzung: EAC = ACWP + (BAC − BCWP) = BAC − CV</div>
+    <div class="formel">Revidierte Schätzung: EAC = ACWP + (BAC − BCWP) / CI = BAC / CI = BAC × ACWP / BCWP</div>
+    <p>Im Beispiel (BAC = 31.000 $, CV = −1.272 $, CI = 0,83) liegen die beiden Prognosen deutlich auseinander:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Ansatz</th><th>Rechnung</th><th>EAC</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Ursprüngliche Schätzung</td><td>EAC = BAC − CV = 31.000 − (−1.272)</td><td>32.272 $</td></tr>
+          <tr><td>Revidierte Schätzung</td><td>EAC = BAC / CI = 31.000 / 0,83</td><td>37.349 $</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">Vorsicht vor Verzögerungen im Berichtswesen: Finanz- und Zeitindikatoren sind notwendig, aber nicht hinreichend, um auf Probleme aufmerksam zu werden. Bei ernsten Problemen und „normalem“ Berichtsrhythmus ist das Problem oft schon gravierend, wenn es in den formalen Berichten sichtbar wird. Ein schnelles qualitatives Urteil ist häufig wirksamer als eine verspätete quantitative Auswertung.</div>
+
+    <h2 id="abschnitt-5">Der Projektsteuerungsprozess als doppelter Regelkreis</h2>
+    <p>Die Überwachung meldet, <em>dass</em> es ein Problem gibt – die Steuerung muss es beheben. Ihre Schlüsselelemente sind die <strong>Problemdiagnose</strong> (Thema von <a href="kapitel-5-3.html">Kapitel 5.3</a>) und anschließend entweder die <strong>Plankorrektur</strong> (oft ein politischer Prozess) oder die <strong>Problemkorrektur</strong> (oft technisch-organisatorisch). Alles muss zügig geschehen: Es ist zu prüfen, ob die Maßnahmen das Problem tatsächlich beheben, und entsprechend nachzusteuern. Steuerung ohne schnelle Überwachung ist stark eingeschränkt.</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k52-abb2.jpg" alt="Flussdiagramm des Projektsteuerungsprozesses mit Leistungstest, Fehlersignalen, Steuerungsmaßnahmen sowie leistungsorientiertem und zielorientiertem Regelkreis" loading="lazy">
+      <figcaption>Abb. 2: Der Projektsteuerungsprozess: Aus Anfangszielen („Initial Targets“) entstehen Projekt- und Leistungsziele, die im Leistungstest („Performance Test“) mit gemessener und prognostizierter Leistung verglichen werden. Defizite und Überschüsse werden als Fehlersignale („Error Signals“) beschrieben und lösen Steuerungsmaßnahmen („Control Actions“) aus. Es entstehen zwei Regelkreise: Der <em>leistungsorientierte</em> („Performance-Driven Control Loop“) verändert das Projekt, der <em>zielorientierte</em> („Target-Driven Control Loop“) verändert die Ziele. (Folie 33 des Originalskripts)</figcaption>
+    </figure>
+    <p><strong>Flexibilität</strong> ist dabei die wichtigste Verteidigung gegen Risiken: Eine zu straffe Planung kann die Steuerung erheblich erschweren. Was für den Bauherrn gilt (Erweiterbarkeit durch stützenfreie Spannweiten, Leerrohre usw.), gilt auch für die Bauausführung – man braucht genug „Spiel“, um Pläne bei Bedarf zu ändern. Der übliche Zielkonflikt: Wer zu stark auf Kosten optimiert (etwa bei Geräten, Material oder Personal), verliert Flexibilität. Vorsicht auch bei Value Engineering, das Flexibilität einschränkt.</p>
+
+    <h2 id="abschnitt-6">Leistungsorientierte Steuerung: Hebel und Nebenwirkungen</h2>
+    <p>Eine unbequeme Tatsache der leistungsorientierten Steuerung: Man kann typischerweise <strong>nur ein Merkmal</strong> eines Problems auf einmal korrigieren – Zeit, Kosten <em>oder</em> Qualität. Man muss die Wechselwirkungen verstehen und priorisieren (Triage). Die meisten „leichten Gewinne“ sind ohnehin bereits ausgeschöpft; eine Ausnahme besteht, wenn neue Informationen verfügbar werden, die jetzt bessere Leistung ermöglichen.</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k52-abb3.jpg" alt="Diagramm: Projektzeit in Prozent über budgetierten Ausgaben in Prozent, mit Kurven für geplante und tatsächliche Ausgaben sowie revidierter Prognose der künftigen Ausgaben" loading="lazy">
+      <figcaption>Abb. 3: Leistungsorientierte Steuerung in der Praxis: Geplante („Planned Expenditure“) und tatsächliche Ausgaben („Actual Expenditure“) eines Projekts, aufgetragen als Projektzeit über budgetierten Ausgaben. Auf Basis der Ist-Entwicklung wird die künftige Ausgabenkurve revidiert („Revised Estimate of Future Expenditure“). (Folie 36 des Originalskripts)</figcaption>
+    </figure>
+    <p>Die drei Zielgrößen sind eng verkoppelt – Eingriffe an einer Stelle wirken auf die anderen zurück:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k52-abb4.jpg" alt="Dreiecksdiagramm der Wechselwirkungen zwischen Kosten, Termin und Qualität mit beschrifteten Wirkungspfaden" loading="lazy">
+      <figcaption>Abb. 4: Wechselwirkungen der Zielgrößen („Attribute Linkages“): Beschleunigung kostet Geld („Acceleration ⇒ $“: Überstunden, Schichtarbeit, besseres Gerät, bessere Kolonnen), langsamer Fortschritt ebenfalls („Slow progress ⇒ $“: verspäteter Bezug, höhere Bauzinsen, Mieterverlust, Opportunitätskosten). Kostenprobleme schlagen auf den Termin durch („Cost ⇒ Schedule“: Finanzierungsschwierigkeiten, Ausfall von Beteiligten, Arbeitsunterbrechung, Auswahl schlechter Arbeitskräfte). Sparzwang führt zu Substitution und schlechterer Ausführungsqualität; Nacharbeit verursacht hohe Kosten; das Qualitätsniveau beeinflusst Arbeitstempo und Nacharbeitsumfang – und Qualitätsprobleme entstehen ihrerseits durch Überstunden, Schichtarbeit und Neueinstellungen. (Folie 38 des Originalskripts)</figcaption>
+    </figure>
+    <p>Zur <strong>Terminsteuerung</strong> können Projektleiter die Arbeitsrate im Wesentlichen auf zwei Wegen erhöhen: durch zusätzliche Ressourcen (z. B. Schedule Crashing, siehe <a href="#abschnitt-7">Abschnitt 7</a>) oder durch Umverteilung vorhandener Ressourcen (z. B. Linear Scheduling Method). Daneben lassen sich die Randbedingungen ändern: der Ort der Arbeit, die Reihenfolge, Abfolge oder der Zeitpunkt der Arbeiten, die eingesetzte Technologie sowie Werkzeuge und Verfahren.</p>
+    <p>Alle Beschleunigungsmaßnahmen haben jedoch typische Nebenwirkungen:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Beschleunigungsmaßnahme</th><th>Typische Nebenwirkungen und Grenzen</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Mehrschichtbetrieb</td><td>Koordinationsprobleme, Personalbeschaffung, Umwelt- und Arbeitsschutzauflagen</td></tr>
+          <tr><td>Überstunden / verlängerte Arbeitstage</td><td>Ermüdung, sinkende Arbeitsmoral, Nacharbeit</td></tr>
+          <tr><td>Größeres oder leistungsfähigeres Gerät</td><td>Einarbeitung/Lernkurve, Beschaffungszeit, Platzmangel</td></tr>
+          <tr><td>Mehr Arbeitskräfte</td><td>Einarbeitung (bindet die erfahrensten Kräfte!), Platzmangel, Einstellungsdauer, fehlende Prozesskenntnis</td></tr>
+          <tr><td>Schneller einbaubare Materialien</td><td>Beschaffung</td></tr>
+          <tr><td>Alternative Bauverfahren</td><td>Qualifikationsprofil, Lernkurve, unbekannte Nebenwirkungen</td></tr>
+          <tr><td>Abruf eines Bereitschafts-Nachunternehmers</td><td>Lernkurve, Reibung zwischen Teams, unbekannte Persönlichkeiten</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">Vorsicht vor Überreaktion: Korrekturversuche stoßen oft an andere begrenzende Faktoren – Platz, Breite des Qualifikationsprofils, Einstellungsdauer, Arbeitsmoral, Koordinationsaufwand. Improvisation führt leicht zu Verwirrung und kaskadierenden, unvorhergesehenen Effekten. „Job Rhythm“ (eingespielter Arbeitsrhythmus) und Lernkurven machen einen großen Unterschied!</div>
+
+    <h2 id="abschnitt-7">Zeit-Kosten-Ausgleich und Projektbeschleunigung („Crashing“)</h2>
+    <p>Häufig besteht ein Zielkonflikt zwischen Geld und Zeit – „Zeit ist Geld“: Schnellere Fertigstellung gelingt mit höher qualifizierten Arbeitskräften, teurerem Gerät, mehr Personal oder besser bezahlten (motivierten!) Kräften. Für jeden einzelnen Vorgang lässt sich dieser Zusammenhang als <strong>Zeit-Kosten-Kurve</strong> darstellen:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k52-abb5.jpg" alt="Zeit-Kosten-Kurve eines einzelnen Vorgangs: fallende direkte Kosten bei zunehmender Dauer bis zur Normaldauer" loading="lazy">
+      <figcaption>Abb. 5: Zeit-Kosten-Kurve eines einzelnen Vorgangs: Je kürzer die Dauer, desto höher die direkten Kosten; der günstigste Punkt liegt bei der Normaldauer („Normal Duration“). Die Frage „Welche Dauer würden Sie wählen?“ lässt sich nur mit Blick auf das Gesamtprojekt beantworten. (Folie 50 des Originalskripts)</figcaption>
+    </figure>
+    <p>Der Zeit-Kosten-Ausgleich hat zwei Komponenten (einzeln oder kombiniert): (1) Dauerverkürzung bei Vorgängen <em>auf dem kritischen Weg</em> – mit möglichst geringem Kostenanstieg; (2) Kostensenkung bei Vorgängen <em>abseits</em> des kritischen Wegs – oft durch Verlängerung, die den Vorgang aber nicht kritisch werden lassen darf. Wichtig: Explizite Vorgangs-Zeit-Kosten-Kurven erfassen nur die direkten, lokalen Vorgangskosten und ignorieren die (wichtigen) indirekten Kosten der Projektverlängerung – globale Kosten, die von der Gesamtdauer abhängen.</p>
+    <dl class="begriffe">
+      <dt>Activity Crashing (Vorgangsbeschleunigung)</dt>
+      <dd>Der gezielte Einsatz von Geld zur Dauerverkürzung. Der kritische Weg benennt die zeitbestimmenden Vorgänge: Es bringt nichts, alle Vorgänge zu beschleunigen – nur die kritischen. Das ist ein wichtiger Beitrag der Critical Path Method (CPM) zum Bauverständnis; zuvor beschleunigten viele Bauleiter pauschal das ganze Projekt. Achtung: Der kritische Weg kann sich durch das Crashing selbst verschieben.</dd>
+    </dl>
+    <p>Die <strong>Heuristik von Kelley und Walker</strong> systematisiert das Vorgehen:</p>
+    <ol>
+      <li>CPM-Netzplan mit Normaldauern berechnen.</li>
+      <li>Für alle kritischen Vorgänge die Grenzkosten des Crashing bestimmen (Mehrkosten je eingesparter Zeiteinheit).</li>
+      <li>Den kritischen Vorgang mit den geringsten Grenzkosten um einen Zeitschritt verkürzen.</li>
+      <li>Resultierende Projektdauer und -kosten festhalten.</li>
+      <li>Schritt 3 wiederholen, bis ein weiterer Weg kritisch wird.</li>
+      <li>Ab Schritt 1 wiederholen, bis die Projektkosten steigen.</li>
+    </ol>
+    <p>Die Heuristik liefert gute, aber nicht notwendigerweise optimale Lösungen. Probleme: Waren die ursprünglichen Dauern teilweise durch Ressourcenrestriktionen bestimmt, ist der resultierende Terminplan womöglich nicht mehr zulässig oder hat einen stark unregelmäßigen (und damit teuren) Ressourceneinsatz; bei feineren Kostenabstufungen vervielfacht sich die Zahl der Knoten; monoton fallende, aber nicht konvexe Kurven erfordern andere Algorithmen. Sind alle Zeit-Kosten-Kurven linear, lässt sich die optimale Projektdauer als lineares Programm (LP) bestimmen, andernfalls als nichtlineares Programm (NLP). Übliche Annahmen: konvexer Zeit-Kosten-Verlauf, keine bindenden Ressourcenrestriktionen, Normaldauer als kostengünstigster Punkt.</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k52-abb6.jpg" alt="Zeit-Kosten-Kurve auf Projektebene: direkte Projektkosten, Vertragsstrafe, Gemeinkosten und Gesamtkosten über der Projektdauer mit Minimum bei mittlerer Dauer" loading="lazy">
+      <figcaption>Abb. 6: Zeit-Kosten-Ausgleich auf Projektebene: Die direkten Projektkosten („project“) fallen mit zunehmender Dauer, während Vertragsstrafen („penalty“) und Gemeinkosten („Overhead“) steigen. Die Gesamtkosten („Total“) verlaufen daher nicht monoton – manchmal ist eine global kürzere Dauer auch die billigere. (Folie 47 des Originalskripts)</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-8">Kostensteuerung, Slack Management und zielorientierte Steuerung</h2>
+    <p>Auch bei der <strong>Kostensteuerung</strong> stehen Ressourceneinsatz und -zuteilung im Mittelpunkt. Wirksame und rechtzeitige Kostensteuerung ist ein fortlaufender Prozess mit folgenden Ansatzpunkten:</p>
+    <ul>
+      <li>Ressourcen anpassen, um Überkapazitäten abzubauen</li>
+      <li>Randbedingungen ändern, um Arbeitseffizienz und Produktqualität zu erhöhen</li>
+      <li>Verfahren ändern, etwa durch Fremdvergabe einzelner Arbeiten (Outsourcing)</li>
+      <li>Arbeit, Geräte oder Material neu bepreisen</li>
+      <li>Durch günstigere, aber akzeptable Materialien oder Geräte substituieren</li>
+    </ul>
+    <dl class="begriffe">
+      <dt>Slack Management (Puffermanagement) – Zeit gegen Geld tauschen</dt>
+      <dd>Ist das Budget in einem Zeitraum begrenzt, wird das Projekt durch Verschieben von Vorgängen („Timing“) und der zugehörigen Aus- und Einzahlungen umgeplant – Zeit verursacht allerdings zusätzliche indirekte Kosten! Reihenfolge der Verschiebung: zuerst Vorgänge mit freiem Puffer (FF), dann solche mit Gesamtpuffer (TF), zuletzt kritische Vorgänge.</dd>
+      <dt>Ressourcenglättung (Resource Leveling)</dt>
+      <dd>Zur Erinnerung aus <a href="kapitel-4-4.html">Kapitel 4.4</a>: Gleichmäßigerer Ressourceneinsatz senkt die Ressourcenkosten – bei Personal die Kosten für Einstellung, Entlassung und Einarbeitung, bei Material Lagerbedarf sowie Planungs- und Steuerungsaufwand. Ressourcenglättung verteilt die Puffer (TF oder FF) unkritischer Vorgänge so um, dass die Schwankungen im Ressourcenbedarfsprofil minimiert werden.</dd>
+    </dl>
+    <p>Greifen die leistungsorientierten Maßnahmen nicht oder sind die Ziele nicht mehr realistisch, bleibt die <strong>zielorientierte Steuerung</strong> (Target-Driven Control, vgl. Abb. 2): die Anpassung der Projektziele selbst. Sie ist weniger ein technischer als ein politischer Prozess – Budgets, Termine und Leistungsumfang müssen mit Bauherr und Beteiligten neu verhandelt werden.</p>
+  </section>
+
+  <nav class="prevnext">
+    <a href="kapitel-5-1.html">← Kapitel 5.1: Grundlagen der Kosten- und Terminüberwachung</a>
+    <span class="spacer"></span>
+    <a href="kapitel-5-3.html">Kapitel 5.3: Problemdiagnose und Einführung in die Projektdynamik →</a>
+  </nav>
+</main>
+
+<footer>
+  <div class="inner">
+    <p>Deutsche Übersetzung der Kursunterlagen von <a href="https://ocw.mit.edu/courses/1-040-project-management-spring-2004/" target="_blank" rel="noopener">MIT OpenCourseWare: 1.040 Project Management, Spring 2004</a> (Dr.&nbsp;Nathaniel Osgood).<br>
+    Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons BY-NC-SA 4.0</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

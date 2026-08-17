@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapitel 3.1: Vergabeverfahren und Kostenschätzung I – Projektmanagement</title>
+<meta name="description" content="Kapitel 3.1 des Lernprogramms Projektmanagement: Vergabeverfahren und Kostenschätzung I – vollständig übersetzt und aufbereitet.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <p class="kicker">Lerneinheit 3 · Projektplanung I: Kostenschätzung</p>
+    <h1>Kapitel 3.1: Vergabeverfahren und Kostenschätzung I</h1>
+    <p class="sub">Wie Bauaufträge abgesichert und vergeben werden – und wie sich Projektkosten schon früh abschätzen lassen: Lebenszykluskosten, Kostenindizes, Kosten-Kapazitäts-Faktoren, Komponentenverhältnisse und Parameterkosten.</p>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <a href="index.html">Startseite</a>
+    <a href="lehrplan.html">Lehrplan</a>
+    <a href="kursplan.html" class="active">Lernpfad</a>
+    <a href="vorlesungen.html">Vorlesungsskripte</a>
+    <a href="projekt.html">Semesterprojekt</a>
+    <a href="literatur.html">Literatur</a>
+  </div>
+</nav>
+
+<main>
+  <p class="breadcrumb"><a href="kursplan.html">Lernpfad</a> › <a href="kursplan.html#le3">Lerneinheit 3</a> › Kapitel 3.1</p>
+  <div class="kapitel-meta">
+    <span>📄 <a href="pdfs/vorlesung-07-vergabeverfahren-kostenschaetzung-1.pdf">Original-Foliensatz (PDF, englisch)</a></span>
+    <span>Vorlesung 7 von 18 · MIT 1.040, Frühjahr 2004</span>
+  </div>
+
+  <section class="card">
+    <div class="toc">
+      <span class="label">Inhalt dieses Kapitels</span>
+      <ol>
+        <li><a href="#abschnitt-1">Rückblick: Vergabeverfahren – Ausschreibung und Verhandlung</a></li>
+        <li><a href="#abschnitt-2">Bürgschaften (Bonds) und der Miller Act</a></li>
+        <li><a href="#abschnitt-3">Lebenszykluskosten (Life-Cycle Costing)</a></li>
+        <li><a href="#abschnitt-4">Schätzstufen im Projektverlauf</a></li>
+        <li><a href="#abschnitt-5">Kostenindizes</a></li>
+        <li><a href="#abschnitt-6">Kosten-Kapazitäts-Faktoren</a></li>
+        <li><a href="#abschnitt-7">Komponentenverhältnisse (Component Ratios)</a></li>
+        <li><a href="#abschnitt-8">Parameterkosten</a></li>
+      </ol>
+    </div>
+
+    <h2 id="abschnitt-1">1. Rückblick: Vergabeverfahren – Ausschreibung und Verhandlung</h2>
+    <p>Die Vorlesung schließt den Themenblock „Vergabeverfahren“ ab, der in <a href="kapitel-2-2.html">Kapitel 2.2</a> ausführlich behandelt wurde. Ausgangspunkt ist erneut das Spektrum zwischen zwei Extremen:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th></th><th>Extrem 1</th><th>Extrem 2</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Vergütung</strong></td><td>Selbstkostenerstattung (reimbursable)</td><td>Festpreis (fixed price)</td></tr>
+          <tr><td><strong>Produkttyp</strong></td><td>Dienstleistung (Service)</td><td>Handelsware (Commodity)</td></tr>
+          <tr><td><strong>Vergabe</strong></td><td>Auswahl nach Reputation, Einigung per Verhandlung</td><td>Ausschreibung (Bidding)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Die Folien zu Ausschreibung (Varianten, Vor- und Nachteile, Abwägungen bei Frist und Bieterzahl, Bewertungsmetriken, Ablauf, Eignungskriterien, öffentliche vs. private Vergabe, extrem niedrige Gebote, Nachunternehmergebote) und Verhandlung (Anwendungsfälle, Win-win-Potenzial, Verhandlungstipps, die vier „Todsünden“ nach Thompson) wiederholen den Stoff aus <a href="kapitel-2-2.html#abschnitt-8">Kapitel 2.2, Abschnitt 8</a> – dort ist alles im Detail nachzulesen. Zwei Ergänzungen dieser Vorlesung sind neu:</p>
+    <ul>
+      <li><strong>Frühe Ausschreibung für Fast-Tracking:</strong> Um überlappende Planung und Ausführung zu ermöglichen, kann bereits bei einem Planungsstand von etwa 30&nbsp;% ausgeschrieben werden.</li>
+      <li><strong>Billigstbieter und Entwurfsqualität:</strong> Der Preisdruck des Billigstbieterprinzips kann sich besonders schädlich auf die Planungsqualität auswirken, wenn die Planung Teil der Leistung ist (Design-Build, CM at Risk). Unzuverlässige Billigstbieter sind ein reales Risiko – deshalb aggressiv präqualifizieren.</li>
+    </ul>
+    <div class="note"><strong>Aus dem Gastvortrag (Granli) – Kernthemen bei Megaprojekten:</strong> Umgang mit Unsicherheit; Frühindikatoren, um Probleme rechtzeitig zu erkennen; Management über den gesamten Lebenszyklus; und die Steuerung des gesamten „Projekt-Ökosystems“ – Beschaffung, Partnerthemen, Governance, politische Unterstützung und Anliegen der Anwohner. Zwei dieser Themen greift diese Vorlesung direkt auf: den Lebenszyklus (Abschnitt&nbsp;3) und die Beschaffung (Abschnitte&nbsp;1–2).</div>
+
+    <h2 id="abschnitt-2">2. Bürgschaften (Bonds) und der Miller Act</h2>
+    <p>Bürgschaften sichern den Bauherrn gegen den Ausfall des Bieters bzw. Auftragnehmers ab. Sie werden von Bürgschaftsversicherern (Surety Companies) gestellt und sind in den USA seit dem <strong>Miller Act von 1935</strong> für öffentliche Bundesbauprojekte vorgeschrieben. Drei Arten sind üblich:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Bürgschaftsart</th><th>Zweck</th><th>Übliche Höhe</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Bietungsbürgschaft</strong> (Bid Bond)</td>
+            <td>Sichert ab, dass der Bieter im Zuschlagsfall den Vertrag auch eingeht.</td>
+            <td>Öffentlich: ca. 20&nbsp;% der Angebotssumme (teils nur 5&nbsp;%); privat: 5–10&nbsp;%</td>
+          </tr>
+          <tr>
+            <td><strong>Erfüllungsbürgschaft</strong> (Performance Bond)</td>
+            <td>Garantiert die vollständige Fertigstellung des Projekts zum Angebotspreis.</td>
+            <td class="num">100&nbsp;%</td>
+          </tr>
+          <tr>
+            <td><strong>Zahlungsbürgschaft</strong> (Payment Bond)</td>
+            <td>Deckt unbezahlte Rechnungen des Auftragnehmers (z.&nbsp;B. gegenüber Nachunternehmern und Lieferanten).</td>
+            <td>Gestaffelt: 50&nbsp;% der Auftragssumme bis 1&nbsp;Mio.&nbsp;$; 40&nbsp;% zwischen 1 und 5&nbsp;Mio.&nbsp;$; pauschal 2,5&nbsp;Mio.&nbsp;$ über 5&nbsp;Mio.&nbsp;$</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li><strong>Kosten:</strong> etwa 1&nbsp;% je 1.000&nbsp;$ Auftragssumme bis 200.000&nbsp;$; darüber niedrigere Sätze.</li>
+      <li><strong>Bürgschaftskapazität des Unternehmers:</strong> Der Versicherer bemisst sie am kurzfristig liquiden Nettovermögen („Net Quick Assets“): ohne Referenzbilanz etwa das 5- bis 6-Fache, bei langer zuverlässiger Erfolgsbilanz das 40-Fache und mehr.</li>
+    </ul>
+
+    <h2 id="abschnitt-3">3. Lebenszykluskosten (Life-Cycle Costing)</h2>
+    <p>Die <strong>Lebenszykluskostenrechnung (Life-Cycle Costing, LCC)</strong> betrachtet nicht nur die Baukosten, sondern die Kosten eines Systems über alle Phasen seines Lebens:</p>
+    <ol>
+      <li>Konzeptphase (Conceptual Design)</li>
+      <li>Detailplanungsphase (Detailed Design)</li>
+      <li>Erstellungsphase (Production)</li>
+      <li>Betriebs- und Instandhaltungsphase (Operation and Maintenance)</li>
+      <li>Verwertungs- bzw. Rückbauphase (Divestment)</li>
+    </ol>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k31-abb1.jpg" alt="Diagramm: Prozentsatz der noch beeinflussbaren Lebenszykluskosten über der Zeit. Die Kurve fällt von 100 Prozent in der Konzeptphase steil ab und nähert sich in Betriebs- und Verwertungsphase der Null." loading="lazy">
+      <figcaption>Abb. 1: Wirkung von Entscheidungen auf die Lebenszykluskosten (Folie 26 des Originalskripts). In der Konzeptphase sind noch nahezu 100&nbsp;% der Lebenszykluskosten (Percent of Total LCC) durch Entscheidungen beeinflussbar; mit jeder weiteren Phase – Detailplanung, Erstellung, Betrieb, Verwertung – sinkt dieser Anteil rapide. Früh entscheiden heißt also: Kosten wirksam gestalten.</figcaption>
+    </figure>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k31-abb2.jpg" alt="Diagramm: Prozentualer Fehler von Kostenschätzungen über der Zeit. Die Kurve fällt von knapp 50 Prozent in der Konzeptphase kontinuierlich auf null in der Verwertungsphase." loading="lazy">
+      <figcaption>Abb. 2: Fehler von Kostenschätzungen im Zeitverlauf (Folie 27). Spiegelbildlich zu Abb.&nbsp;1 sinkt der Schätzfehler (Percent Error in Cost Estimates) von fast 50&nbsp;% in der Konzeptphase stetig gegen null – je später geschätzt wird, desto genauer, aber desto weniger lässt sich noch beeinflussen.</figcaption>
+    </figure>
+    <p>Weitere Folien zeigen den typischen Kostenverlauf eines Systems über rund 19 Quartale: Die <em>kumulierten</em> Lebenszykluskosten steigen S-förmig auf etwa 170.000&nbsp;$ und flachen zum Ende ab, während die Kosten je Quartal in der Erstellungsphase ihren Gipfel (ca. 20.000–25.000&nbsp;$) erreichen. Aufgeschlüsselt nach Phasen überlappen sich die Kostenkurven der einzelnen Lebenszyklusphasen; aufgeschlüsselt nach Kostenarten liegt der Lohnkostenanteil (Labor Cost) über dem Materialkostenanteil (Material Cost).</p>
+    <h3>Wo lohnt sich die Lebenszyklusbetrachtung besonders?</h3>
+    <ul>
+      <li>Bei den <strong>nicht-statischen Teilen</strong> eines Bauwerks: alles, was sich bewegt, stark genutzt wird, verschleißt oder gewartet/ersetzt werden muss.</li>
+      <li>Beispiele: Teppichböden, Heizungs-/Lüftungs-/Klimatechnik (HVAC), Elektroanlagen, Ausbau und Oberflächen, Parkflächen, Dachabdichtung.</li>
+      <li><strong>Wechselwirkungen sind entscheidend:</strong> HVAC und Wärmedämmung müssen z.&nbsp;B. gemeinsam betrachtet werden – eine bessere Dämmung erlaubt eine kleinere Anlage.</li>
+    </ul>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k31-abb4.jpg" alt="Balkendiagramm: Anteil der Lebenszykluskosten je Phase für zwei Systeme A und B. System A: 20 Prozent Konzeptphase, 30 Prozent Detailplanung, 30 Prozent Erstellung, 16 Prozent Betrieb, 6 Prozent Verwertung. System B: 10, 20, 50, 16 und 6 Prozent." loading="lazy">
+      <figcaption>Abb. 3: Kostenklassifikation nach Lebenszyklusphase (Folie 29). Zwei Systeme im Vergleich: System&nbsp;A investiert mehr in Konzept und Planung (20&nbsp;% bzw. 30&nbsp;% der Lebenszykluskosten), System&nbsp;B verlagert die Kosten in die Erstellungsphase (50&nbsp;%). Betriebs- und Verwertungsphase sind hier gleich – oft zahlt sich Mehraufwand in frühen Phasen aber gerade dort aus.</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-4">4. Schätzstufen im Projektverlauf</h2>
+    <p>Im Projektverlauf werden unterschiedliche Arten von Kostenschätzungen benötigt – mit wachsendem Informationsstand steigen Detaillierung und Genauigkeit:</p>
+    <dl class="begriffe">
+      <dt>Konzeptionelle und vorläufige Schätzungen (Conceptual/Preliminary Estimates)</dt>
+      <dd>Entstehen vor Abschluss der Ingenieurplanung; sie stützen Machbarkeitsentscheidungen und schnelle Planungsiterationen.</dd>
+      <dt>Definitive Schätzungen (Definitive Estimates)</dt>
+      <dd>Prognostizieren die Projektkosten innerhalb zulässiger Toleranzen aus einer Kombination konzeptioneller und detaillierter Informationen – oft einschließlich bereits vergebener Teilaufträge und anderer Beschaffungen.</dd>
+      <dt>Detaillierte Schätzungen (Detailed Estimates)</dt>
+      <dd>Werden aus fertigen Plänen und Leistungsbeschreibungen erstellt („Engineer’s Estimate“ des Planers bzw. Angebotskalkulation der Bieter).</dd>
+    </dl>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k31-abb3.jpg" alt="Matrix der Schätztypen 1 bis 6 (Magnitude, Conceptual, Preliminary, Definitive, Engineers, Bid) gegen die jeweils benötigten Informationselemente, daneben Kurven der wahrscheinlichen Contingency in Prozent für Neubauprojekte ohne und mit historischen Daten." loading="lazy">
+      <figcaption>Abb. 4: „Elements of Estimation“ – Schätztypen und benötigte Informationselemente (Folie 35, nach Building Construction Handbook, 2.&nbsp;Aufl., 1975). Je höher die Schätzstufe (Typ&nbsp;1 „Order of Magnitude“ bis Typ&nbsp;6 „Bid“), desto mehr Elemente müssen vorliegen – von Produktkapazität und Standort über Ausrüstungslisten und Zeichnungen bis zu Nachunternehmerangeboten. Rechts: die wahrscheinliche Rückstellung (Contingency) in&nbsp;% sinkt mit steigender Schätzstufe; mit historischen Vergleichsdaten (rechte Kurve) ist sie durchweg niedriger. Basisdaten jeder Schätzung: Lohnsätze und Lohnnebenkosten, Lohnsteuern und Versicherungen, lokale Steuern, Planungs- und Bauterminplan, Versicherungsanforderungen.</figcaption>
+    </figure>
+    <h3>Schätzstufen im Detail: Planungsstand, Rückstellung und Methoden</h3>
+    <p>Die folgende Tabelle (Folie 36 des Originalskripts) ordnet jeder Schätzklasse die Projektphase, den ungefähren Planungsfertigstellungsgrad, die typische Rückstellung (Contingency) sowie die verwendeten Methoden und Kostenbasen zu:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Klasse</th>
+            <th>Projektphase</th>
+            <th>Planung fertig (ca.)</th>
+            <th>Typische Contingency</th>
+            <th>Benötigte Informationen</th>
+            <th>Großausrüstung</th>
+            <th>Übrige Materialien</th>
+            <th>Arbeit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1: Größenordnung</strong> (Order of Magnitude)</td>
+            <td>Geschäftsplanung</td>
+            <td class="num">&lt;&nbsp;1&nbsp;%</td>
+            <td class="num">100–200&nbsp;%</td>
+            <td>Projektzweck/Produkt</td>
+            <td colspan="3">Indexmethoden</td>
+          </tr>
+          <tr>
+            <td><strong>2: Konzeptionell</strong> (Conceptual)</td>
+            <td>Machbarkeit</td>
+            <td class="num">2–5&nbsp;%</td>
+            <td class="num">30–50&nbsp;%</td>
+            <td>Anlagenkapazität; Standort (ggf.) gewählt; Projektleitung des Bauherrn benannt; beratender Ingenieur, CM oder Turnkey-Unternehmer ausgewählt</td>
+            <td colspan="3">Indexmethoden; Kosten-Kapazitäts-Kurven; Vergleichsprojekte; veröffentlichte Branchendaten; Lizenzgeber-Schätzung</td>
+          </tr>
+          <tr>
+            <td><strong>3: Vorläufig</strong> (Preliminary)</td>
+            <td>Konzeptplanung</td>
+            <td class="num">15–30&nbsp;%</td>
+            <td class="num">15–40&nbsp;%</td>
+            <td>Anlagenkapazität; Baugrundinformationen; R&amp;I-/Verfahrensfließbilder; vorläufige Ausrüstungsliste; vorläufiger Projektterminplan</td>
+            <td>Kostenkurven; telefonische Lieferantenangebote; jüngste Einkäufe; veröffentlichte Schätzdaten</td>
+            <td>Verhältnis zur Großausrüstung; Verhältniswerte ähnlicher Anlagen</td>
+            <td>Lohn-/Material-Verhältniswerte</td>
+          </tr>
+          <tr>
+            <td><strong>4: Definitiv</strong> (Definitive)</td>
+            <td>Detailplanung</td>
+            <td class="num">50–75&nbsp;%</td>
+            <td class="num">10–20&nbsp;%</td>
+            <td>Detailplanungszeichnungen; Leistungsbeschreibungen; Vergabeplan; Ausrüstung mit langen Lieferzeiten bestellt; Terminplan auf CPM-Niveau</td>
+            <td>Lieferantenangebote; Langläufer bestellt; Preissteigerungen definiert</td>
+            <td>Verhältnis zur Großausrüstung; Preissteigerungen definiert; Schlüsselmengen bestimmt</td>
+            <td>Lohn-/Material-Verhältniswerte; Arbeitsstunden je Einheit; Produktivität der Region; Lohnsätze</td>
+          </tr>
+          <tr>
+            <td><strong>5: Planer- bzw. Bauherrenschätzung</strong> (Engineer’s/Owner’s)</td>
+            <td>Vor der Ausschreibung</td>
+            <td class="num">90&nbsp;%</td>
+            <td class="num">5–10&nbsp;%</td>
+            <td>Vollständige Planungs- und Ausschreibungsunterlagen</td>
+            <td>Preise der Langläufer fixiert; Liefertermine definiert</td>
+            <td>Detaillierte Mengenermittlung; feste Einheitspreisangebote</td>
+            <td>Indirekte Kosten definiert</td>
+          </tr>
+          <tr>
+            <td><strong>6: Angebotsniveau</strong> (Bid Level)</td>
+            <td>Bauausführung</td>
+            <td class="num">100&nbsp;%</td>
+            <td class="num">5&nbsp;%</td>
+            <td>Unternehmer, Nachunternehmer und Lieferanten; ressourcen­abgeglichener CPM-Terminplan; Nachträge zur Ausschreibung</td>
+            <td>Tatsächliche bzw. vertraglich gebundene Kosten</td>
+            <td>Schüttgut-/Materialpreise und Lieferbedingungen angeboten</td>
+            <td>Detaillierte Bewertung von Gewerken und Produktivität; Nachunternehmerangebote liegen vor</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Eine zweite Übersicht (Folie 37) ergänzt, <em>wer</em> die jeweilige Schätzung erstellt und <em>wie</em> einzelne Bestandteile ermittelt werden:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Größenordnung</th>
+            <th>Konzeptionell</th>
+            <th>Vorläufig</th>
+            <th>Definitiv</th>
+            <th>Planer-/Bauherren­schätzung</th>
+            <th>Angebotsniveau</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Erstellt durch</strong></td>
+            <td>Bauherr</td>
+            <td colspan="4">Bauherr, Berater, CM oder Turnkey-Unternehmer</td>
+            <td>Bauunternehmer</td>
+          </tr>
+          <tr>
+            <td><strong>Contingency und Preissteigerung ermittelt durch</strong></td>
+            <td>Einheitlicher Prozentsatz</td>
+            <td>Grobe Bewertung</td>
+            <td>Grobe Bewertung</td>
+            <td>Detaillierte Bewertung</td>
+            <td>Detaillierte Schätzung</td>
+            <td>Detaillierte Schätzung; Risikosimulation</td>
+          </tr>
+          <tr>
+            <td><strong>Planungs- und Managementhonorar</strong></td>
+            <td>%&nbsp;der Baukosten</td>
+            <td>%&nbsp;der Baukosten</td>
+            <td>Grobe Schätzung</td>
+            <td>Grobe Schätzung</td>
+            <td>Detaillierte Schätzung</td>
+            <td>Detaillierte Schätzung</td>
+          </tr>
+          <tr>
+            <td><strong>Gemeinkosten und Gewinn des Unternehmers</strong></td>
+            <td>Implizit enthalten</td>
+            <td>%&nbsp;der direkten Kosten</td>
+            <td>%&nbsp;der direkten Kosten</td>
+            <td>%&nbsp;der direkten Kosten</td>
+            <td>%&nbsp;der direkten Kosten</td>
+            <td>Detaillierte Schätzung</td>
+          </tr>
+          <tr>
+            <td><strong>Bauablaufplan</strong></td>
+            <td>Keiner</td>
+            <td>Nicht erforderlich</td>
+            <td>Wünschenswert</td>
+            <td>Wünschenswert</td>
+            <td>Sehr wünschenswert</td>
+            <td>Erforderlich</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Konzeptionelle und vorläufige Schätzverfahren im Überblick</h3>
+    <p>Konzept- und Vorschätzungen helfen bei der Machbarkeitsentscheidung und erlauben schnelle Iterationen des Entwurfs. Ihre Genauigkeit schwankt stark je nach Verfahren. Vier Kategorien werden – mit steigender Genauigkeit und Komplexität – in den folgenden Abschnitten behandelt: zeitbezogene <strong>Kostenindizes</strong>, <strong>Kosten-Kapazitäts-Faktoren</strong>, <strong>Komponentenverhältnisse</strong> und <strong>Parameterkosten</strong>.</p>
+
+    <h2 id="abschnitt-5">5. Kostenindizes</h2>
+    <p><strong>Kostenindizes</strong> bilden die Veränderung von Kosten über die Zeit ab – getrieben durch Technologie, Bauverfahren, Produktivität und Inflation. Sie werden regelmäßig veröffentlicht, etwa vom <em>Engineering News-Record (ENR)</em>. Es gibt zwei Grundtypen:</p>
+    <dl class="begriffe">
+      <dt>Input-Kostenindizes</dt>
+      <dd>Verfolgen die Preisentwicklung eines festen „Warenkorbs“ von Einsatzgütern – analog zum Verbraucherpreisindex. Sie sind sehr allgemein. Schwächen: Sie spiegeln die konkreten Einsatzgüter des eigenen Projekts womöglich nicht wider und ignorieren Produktivitätsfortschritte, Technologiewandel und die Wettbewerbsintensität der Unternehmer (gesenkte Gemeinkosten).</dd>
+      <dt>Output-Kostenindizes</dt>
+      <dd>Basieren auf den historischen Kosten ähnlicher <em>fertiger</em> Projekte. Sie sind eng definiert – für das konkrete Bauwerk findet sich unter Umständen kein passendes Gegenstück.</dd>
+    </dl>
+    <p>Der <strong>ENR Building Cost Index</strong> ist ein Input-Index aus vier Komponenten (jeweils Durchschnitt über 20 US-Städte):</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Komponente</th><th>Menge</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Schnittholz (2×4)</td><td class="num">1.088 Board Feet</td></tr>
+          <tr><td>Baustahlprofile (bis 1996 Werksgrundpreis, danach gefertigt)</td><td class="num">2.500 Pfund</td></tr>
+          <tr><td>Portlandzement (lose)</td><td class="num">1,128 Tonnen</td></tr>
+          <tr><td>Facharbeiterstunden (Maurer, Zimmerer, Stahlbauer)</td><td class="num">66,38 Stunden</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Umrechnung zwischen Zeitpunkten</h3>
+    <p>Kostenindizes werden relativ zu einem Basisjahr angegeben – beim ENR-Index ist das 1913 mit dem Basiswert 100. Der Indexstand im Februar 2004 betrug 3802, also 3802&nbsp;% des Basisjahres. Damit lassen sich historische Kosten in heutige umrechnen:</p>
+    <div class="note"><strong>Beispiel Lagerhalle:</strong> Eine vergleichbare Lagerhalle wurde 1978 für 4.200.000&nbsp;$ gebaut; der ENR-Index für 1978 betrug 1654&nbsp;% (Basis 1913). Für einen Neubau im Jahr 2002 gilt:</div>
+    <div class="formel">Kosten<sub>neu</sub> = (3802&nbsp;% / 1654&nbsp;%) × 4.200.000&nbsp;$ = 9.654.413,54&nbsp;$ ≈ 9.650.000&nbsp;$</div>
+    <p><strong>Genauigkeit und Aufwand:</strong> Kostenindizes erreichen etwa 20–30&nbsp;% Genauigkeit bei vernachlässigbarem Zeit- und Arbeitsaufwand – wertvoll für die frühe Grobplanung.</p>
+
+    <h2 id="abschnitt-6">6. Kosten-Kapazitäts-Faktoren</h2>
+    <p><strong>Kosten-Kapazitäts-Faktoren (Cost-Capacity Factors)</strong> übertragen bekannte Kosten auf Projekte gleichen Typs, aber anderer Größe, anderen Umfangs oder anderer Kapazität. Sie bilden den <em>nichtlinearen</em> Zusammenhang zwischen Größe und Kosten ab (Skaleneffekte, Lernkurven):</p>
+    <div class="formel">C<sub>2</sub> = C<sub>1</sub> × (Q<sub>2</sub>&nbsp;/&nbsp;Q<sub>1</sub>)<sup>x</sup></div>
+    <dl class="begriffe">
+      <dt>C<sub>2</sub></dt><dd>Geschätzte Kosten der neuen Anlage mit Kapazität Q<sub>2</sub></dd>
+      <dt>C<sub>1</sub></dt><dd>Bekannte Kosten einer Anlage mit Kapazität Q<sub>1</sub></dd>
+      <dt>x</dt><dd>Kosten-Kapazitäts-Faktor für diese Art von Bauwerk – empirisch aus gut dokumentierten historischen Daten abgeleitet</dd>
+      <dt>Q</dt><dd>Ein Parameter, der die Größe der Anlage sinnvoll widerspiegelt: Barrel pro Tag einer Raffinerie, Tonnen Stahl pro Tag eines Stahlwerks, Bruttogeschossfläche einer Lagerhalle usw.</dd>
+    </dl>
+    <div class="note"><strong>Beispiel (Peña-Mora, 2003):</strong> Für Lagerhallen gelte x&nbsp;=&nbsp;0,8. Bekannt ist die Halle aus dem Beispiel in Abschnitt&nbsp;5: 120.000&nbsp;Quadratfuß Nutzfläche, Kosten 4,2&nbsp;Mio.&nbsp;$ (1978). Der Bauherr wünscht nun 150.000&nbsp;Quadratfuß. Kombination aus Index-Umrechnung (Zeit) und Kapazitätsfaktor (Größe):</div>
+    <div class="formel">C<sub>2</sub> = 4.200.000&nbsp;$ × (3802&nbsp;/&nbsp;1654) × (150.000&nbsp;/&nbsp;120.000)<sup>0,8</sup> = 11.541.278&nbsp;$</div>
+    <p><strong>Genauigkeit:</strong> Kosten-Kapazitäts-Faktoren können bis auf 15–20&nbsp;% an die tatsächlichen Kosten herankommen.</p>
+
+    <h2 id="abschnitt-7">7. Komponentenverhältnisse (Component Ratios)</h2>
+    <p><strong>Komponentenverhältnisse</strong> setzen bei der Großausrüstung an – Kompressoren, Pumpen, Öfen, Kälteanlagen, Bandförderern, Turbinengeneratoren. Aus deren Kaufpreis werden über empirische Faktoren die Gesamtkosten hochgerechnet. Zwei Varianten:</p>
+    <h3>Installationskostenfaktoren (Equipment Installation Cost Ratios)</h3>
+    <p>Der Kaufpreis eines Ausrüstungsteils wird mit einem Installationskostenfaktor multipliziert, um die Einbaukosten zu erhalten. Genauigkeit: etwa ±10–20&nbsp;%. Typische Werte (Folie 54, nach F.&nbsp;C. Jelen (Hrsg.), <em>Cost and Optimization Engineering</em>, McGraw-Hill, 1970, S.&nbsp;316):</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Ausrüstung</th><th>Installationskosten in % des Kaufpreises</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Bandförderer</td><td class="num">20–25</td></tr>
+          <tr><td>Becherwerke</td><td class="num">25–40</td></tr>
+          <tr><td>Zentrifugen (Teller- oder Trommelbauart)</td><td class="num">5–6</td></tr>
+          <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;hängend gelagert (top suspended)</td><td class="num">30–40</td></tr>
+          <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;kontinuierlich</td><td class="num">10–25</td></tr>
+          <tr><td>Kristallisatoren</td><td class="num">30–50</td></tr>
+          <tr><td>Trockner, kontinuierliche Trommel</td><td class="num">100*</td></tr>
+          <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Vakuum-Drehrohr</td><td class="num">150–200*</td></tr>
+          <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Drehrohr</td><td class="num">50–100*</td></tr>
+          <tr><td>Entstauber, nass</td><td class="num">220–450*</td></tr>
+          <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;trocken</td><td class="num">10–200*</td></tr>
+          <tr><td>Elektrofilter</td><td class="num">33–100*</td></tr>
+          <tr><td>Elektromotoren einschließlich Steuerung</td><td class="num">60</td></tr>
+          <tr><td>Filter</td><td class="num">25–45</td></tr>
+          <tr><td>Gaserzeuger</td><td class="num">45–250</td></tr>
+          <tr><td>Instrumentierung</td><td class="num">6–300</td></tr>
+          <tr><td>Ionenaustauscher</td><td class="num">30–275*</td></tr>
+          <tr><td>Kolonnen (Towers)</td><td class="num">25–50</td></tr>
+          <tr><td>Turbinengeneratoren</td><td class="num">10–30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>* einschließlich Zubehör.</p>
+    <h3>Anlagenkostenfaktoren (Plant Cost Ratios)</h3>
+    <p><strong>Anlagenkostenfaktoren</strong> gehen von Lieferanten-Preisangeboten für die Ausrüstung aus: Der Kaufpreis wird mit einem Faktor multipliziert, der die <em>vollständigen</em> installierten Kosten liefert – einschließlich Baustellenerschließung, Gebäuden, Elektroinstallation, Zimmerer- und Malerarbeiten, Unternehmerhonorar und Mieten, Fundamenten, Tragkonstruktionen, Rohrleitungen, Montage, Planung, Gemeinkosten und Bauüberwachung. Rechenbeispiel von Folie 55 (Werte wie im Original):</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Ausrüstung</th><th>Kaufpreis</th><th>Faktor</th><th>Anlagenkosten</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gebläse und Ventilatoren</td><td class="num">10.000&nbsp;$</td><td class="num">× 2,5</td><td class="num">25.000&nbsp;$</td></tr>
+          <tr><td>Kompressoren</td><td class="num">50.000&nbsp;$</td><td class="num">× 2,3</td><td class="num">115.000&nbsp;$</td></tr>
+          <tr><td>Öfen</td><td class="num">100.000&nbsp;$</td><td class="num">× 2,0</td><td class="num">200.000&nbsp;$</td></tr>
+          <tr><td>Wärmetauscher</td><td class="num">80.000&nbsp;$</td><td class="num">× 4,8</td><td class="num">384.000&nbsp;$</td></tr>
+          <tr><td>Instrumentierung</td><td class="num">50.000&nbsp;$</td><td class="num">× 4,1</td><td class="num">205.000&nbsp;$</td></tr>
+          <tr><td>Elektromotoren</td><td class="num">60.000&nbsp;$</td><td class="num">× 8,5</td><td class="num">510.000&nbsp;$</td></tr>
+          <tr><td>Pumpen</td><td class="num">20.000&nbsp;$</td><td class="num">× 7,0</td><td class="num">140.000&nbsp;$</td></tr>
+          <tr><td>Tanks</td><td class="num">125.000&nbsp;$</td><td class="num">× 2,4</td><td class="num">260.000&nbsp;$</td></tr>
+          <tr><td>Kolonnen</td><td class="num">200.000&nbsp;$</td><td class="num">× 4,0</td><td class="num">800.000&nbsp;$</td></tr>
+          <tr><td><strong>Summe</strong></td><td class="num"><strong>685.000&nbsp;$</strong></td><td></td><td class="num"><strong>2.639.000&nbsp;$</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Eine ausführlichere Faktorentabelle (Folie 56, nach W.&nbsp;F. Wroth, „Factors in Cost Estimation“, <em>Chem. Eng.</em> 1960, und Jelen 1970) differenziert weiter, z.&nbsp;B.: Mischer 2,0; Gebläse/Ventilatoren (mit Motor) 2,5; Prozesszentrifugen 2,0; Kompressoren 2,0–2,3 je nach Antrieb; Strahlpumpen (Vakuum) 2,5; Paketöfen 2,0; Wärmetauscher 4,8; Instrumentierung 4,1; Elektromotoren 8,5; Kreiselpumpen mit Motor 7,0, mit Dampfturbine 6,5, Verdrängerpumpen 5,0; Kälteanlagen (Paketeinheit) 2,5; Prozesstanks 4,1, Lagertanks 3,5, vor Ort errichtete Großtanks (ab 50.000&nbsp;Gallonen) 2,0; Kolonnen 4,0. Reaktoren werden wie die jeweils ähnlichste Ausrüstungsart behandelt.</p>
+
+    <h2 id="abschnitt-8">8. Parameterkosten</h2>
+    <p>Die <strong>Parameterkostenmethode</strong> bezieht sämtliche Projektkosten auf wenige physische Kenngrößen („Parameter“), die Größe und Umfang des Projekts widerspiegeln – bei einer Lagerhalle etwa die umbaute Bruttogeschossfläche. Sie ist im Hochbau weit verbreitet.</p>
+    <ul>
+      <li><strong>Datenquellen:</strong> der vierteljährliche „Quarterly Cost Roundup“ des ENR sowie „Means Square Foot Costs“ von R.S.&nbsp;Means (nicht zu verwechseln mit „RS Means Building Construction Cost Data“).</li>
+      <li><strong>Genauigkeit:</strong> Mit guten historischen Aufzeichnungen vergleichbarer Bauwerke liefert die Parameterkostenmethode für vorläufige Schätzungen eine beachtliche Genauigkeit.</li>
+    </ul>
+    <div class="note"><strong>Ausblick:</strong> Die detaillierte Kostenschätzung – Mengenermittlung (Quantity Takeoff), Arbeitskostenschätzung und probabilistische Verfahren – folgt in <a href="kapitel-3-2.html">Kapitel 3.2</a>, zusammen mit dem Fallbeispiel Pumpstation.</div>
+  </section>
+
+  <nav class="prevnext">
+    <a href="kapitel-2-2.html">← Kapitel 2.2: Abwicklungsmodelle (Forts.), Vergütungs- und Vergabeverfahren</a>
+    <span class="spacer"></span>
+    <a href="kapitel-3-2.html">Kapitel 3.2: Detaillierte Kostenschätzung und Überblick über das Pumpstationsprojekt →</a>
+  </nav>
+</main>
+
+<footer>
+  <div class="inner">
+    <p>Deutsche Übersetzung der Kursunterlagen von <a href="https://ocw.mit.edu/courses/1-040-project-management-spring-2004/" target="_blank" rel="noopener">MIT OpenCourseWare: 1.040 Project Management, Spring 2004</a> (Dr.&nbsp;Nathaniel Osgood).<br>
+    Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons BY-NC-SA 4.0</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>

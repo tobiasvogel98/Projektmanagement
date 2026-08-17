@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapitel 5.4: System- und Änderungsdynamik – Projektmanagement</title>
+<meta name="description" content="Kapitel 5.4 des Lernprogramms Projektmanagement: System- und Änderungsdynamik – vollständig übersetzt und aufbereitet.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <p class="kicker">Lerneinheit 5 · Projektüberwachung und -steuerung</p>
+    <h1>Kapitel 5.4: System- und Änderungsdynamik</h1>
+    <p class="sub">Wie Änderungen durch ein Projekt kaskadieren: System-Dynamics-Modelle im praktischen Einsatz, das DPM-Modell für die Bauausführung, Qualität und Nacharbeit, die Doppelrisiken des Fast-Tracking – und der Umgang mit Unsicherheit per Monte-Carlo-Simulation.</p>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <a href="index.html">Startseite</a>
+    <a href="lehrplan.html">Lehrplan</a>
+    <a href="kursplan.html" class="active">Lernpfad</a>
+    <a href="vorlesungen.html">Vorlesungsskripte</a>
+    <a href="projekt.html">Semesterprojekt</a>
+    <a href="literatur.html">Literatur</a>
+  </div>
+</nav>
+
+<main>
+  <p class="breadcrumb"><a href="kursplan.html">Lernpfad</a> › <a href="kursplan.html#le5">Lerneinheit 5</a> › Kapitel 5.4</p>
+  <div class="kapitel-meta">
+    <span>📄 <a href="pdfs/vorlesung-16-system-aenderungsdynamik.pdf">Original-Foliensatz (PDF, englisch)</a></span>
+    <span>Vorlesung 16 von 18 · MIT 1.040, Frühjahr 2004</span>
+  </div>
+
+  <section class="card">
+    <div class="toc">
+      <span class="label">Inhalt dieses Kapitels</span>
+      <ol>
+        <li><a href="#abschnitt-1">Vom einfachen zum aussagekräftigen Kausaldiagramm</a></li>
+        <li><a href="#abschnitt-2">Arbeiten mit System-Dynamics-Modellen: Szenarien und Unsicherheit</a></li>
+        <li><a href="#abschnitt-3">Das DPM-Modell: Dynamik von Planung und Bauausführung</a></li>
+        <li><a href="#abschnitt-4">Qualität, Nacharbeit und Spezifikationsänderungen</a></li>
+        <li><a href="#abschnitt-5">Änderungsfortpflanzung und der Wert von Flexibilität</a></li>
+        <li><a href="#abschnitt-6">Fast-Tracking und seine Rückkopplungen</a></li>
+        <li><a href="#abschnitt-7">Der Änderungsprozess als Wirkungsschleife und Stock-and-Flow-Modell</a></li>
+        <li><a href="#abschnitt-8">System Dynamics und Prozesssimulation im Vergleich</a></li>
+      </ol>
+    </div>
+
+    <h2 id="abschnitt-1">Vom einfachen zum aussagekräftigen Kausaldiagramm</h2>
+    <p>Dieses Kapitel setzt die Einführung in Systemdenken und System Dynamics aus <a href="kapitel-5-3.html">Kapitel 5.3</a> fort und wendet sie auf die <strong>Änderungsdynamik</strong> in Bauprojekten an. Ausgangspunkt bleibt die Kritik an den traditionellen Methoden: zu fragmentiert, zu restriktiv in den Annahmen, zu lokal bei den Folgen von Änderungen, zu zögerlich bei „weichen“ Faktoren und zu bereit, Nebenwirkungen zu ignorieren. Kausaldiagramme entstehen dabei nicht in einem Wurf, sondern <strong>evolutionär</strong> – sie werden schrittweise um Variablen und Schleifen erweitert, bis sie die beobachtete Dynamik erklären:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k54-abb1.jpg" alt="Vier Entwicklungsstufen eines Kausaldiagramms um Verzug, Streitigkeiten mit dem Bauherrn, Arbeitsmoral und Produktivität" loading="lazy">
+      <figcaption>Abb. 1: Schrittweiser Ausbau eines Kausaldiagramms („Evolving More Complex Diagrams“): Die Keimzelle ist eine verstärkende Schleife – Verzug („Delay“) belastet die Beziehung zum Bauherrn („Relationship with Owner“), was Streitigkeiten („Disputes with Owner“) fördert, die den Verzug weiter vergrößern. Nach und nach kommen Arbeitsproduktivität („Labor Productivity“) und Arbeitsmoral („Morale“) hinzu (Streit senkt die Moral, geringe Moral senkt die Produktivität, geringe Produktivität vergrößert den Verzug) und schließlich Termindruck („Schedule Pressure“) und die Sorge über Verzugskosten („Concern About Cost of Delay“). (Folie 3 des Originalskripts)</figcaption>
+    </figure>
+    <p>Bei der Kalibrierung solcher Modelle kann Statistik helfen, die Beziehungen zwischen den Variablen zu quantifizieren – aber Vorsicht: Es gibt typischerweise viele indirekte Effekte, die im Diagramm nicht dargestellt sind.</p>
+
+    <h2 id="abschnitt-2">Arbeiten mit System-Dynamics-Modellen: Szenarien und Unsicherheit</h2>
+    <p>Wie nutzt man ein fertiges System-Dynamics-Modell? Der typische erste Schritt ist ein <strong>Basisszenario</strong> („Baseline“) – nur ein Bezugspunkt, kein privilegierter Fall. Darauf bauen auf:</p>
+    <ul>
+      <li><strong>Politik-Szenarioanalyse:</strong> „Policy-Parameter“ (z. B. Einstellungspolitik, Verhältnis von Spezifikationsänderungen zu Nacharbeit) werden variiert und die Ergebnisse verglichen.</li>
+      <li><strong>Robustheitsanalyse:</strong> Für verschiedene Politik-Parameter werden die Auswirkungen der wichtigsten Unsicherheiten untersucht.</li>
+      <li><strong>Sensitivitätsanalysen</strong> – für beides, und um die weitere Datenerhebung zu fokussieren.</li>
+      <li><strong>Analyse externer Rahmenbedingungen:</strong> Wie wirken unterschiedliche äußere Bedingungen auf das Projekt?</li>
+    </ul>
+    <p>Unsicherheit wird meist über Sensitivitätsanalysen adressiert – Ziel ist zu sehen, wie stark die eigenen Entscheidungen von der Unsicherheit abhängen. Eine gründliche Analyse erfordert <strong>Monte-Carlo-Läufe</strong>. Dabei sind zwei Arten von Unsicherheit zu unterscheiden:</p>
+    <dl class="begriffe">
+      <dt>Statische Unsicherheit</dt>
+      <dd>Unsicherheit über den Wert eines Modellparameters: Zu Beginn des Simulationslaufs wird eine Verteilung für die Modellvariable vorgegeben.</dd>
+      <dt>Dynamische Unsicherheit (stochastische Prozesse)</dt>
+      <dd>Während des gesamten Laufs wird immer wieder neu gezogen – im Kern die numerische Lösung einer stochastischen Differentialgleichung (z. B. ein zufällig schwankender Ölpreis über die Projektlaufzeit).</dd>
+    </dl>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k54-abb2.jpg" alt="Monte-Carlo-Ausgabe eines System-Dynamics-Modells: farbcodierte empirische Fraktilbänder einer Kostenkennzahl über der Zeit" loading="lazy">
+      <figcaption>Abb. 2: Monte-Carlo-Ausgabe („Monte Carlo Output“): Die empirischen Fraktile der Zielgröße – hier durchschnittliche variable Kosten je Kubikmeter über der Zeit – werden als farbcodierte Bänder (50 % bis 100 %) um den Basislauf („Baseline“) dargestellt. So wird sichtbar, in welchem Korridor die Ergebnisse mit welcher Wahrscheinlichkeit liegen. (Folie 14 des Originalskripts)</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-3">Das DPM-Modell: Dynamik von Planung und Bauausführung</h2>
+    <p>Wie verhalten sich System Dynamics und traditionelle Werkzeuge zueinander? Der übliche Weg ist eine (unbequeme) <strong>Koexistenz</strong>: System Dynamics erfasst die „dynamische“ Komplexität (Wechselwirkungen, Verzögerungen, Rückkopplungen), traditionelle Werkzeuge die „Detail“-Komplexität. Offene Fragen dabei: Wie werden die Ergebnisse zusammengeführt? Welchem Modell vertraut man? Am häufigsten dienen Kausaldiagramme der qualitativen Einsicht und traditionelle Werkzeuge den quantitativen Abwägungen. Der weitergehende Weg ist die <strong>Integration</strong> in einem Modell – das Beispiel der Vorlesung ist DPM:</p>
+    <dl class="begriffe">
+      <dt>DPM (Dynamic Planning and Control Methodology)</dt>
+      <dd>Ein bauspezifisches System-Dynamics-Modell von Park und Peña-Mora, das Komponenten netzplanbasierter Modelle einschließt und zur Analyse realer Projekte eingesetzt wurde. Besondere Merkmale: ein reicherer Satz von Abhängigkeiten (Verfeinerung interner/externer Verknüpfungen, Abhängigkeiten zwischen Planungs- und Bauvorgängen), die Unterscheidung von Spezifikationsänderung und Nacharbeit einschließlich Zyklen sowie die Charakterisierung von „Knock-on“-Effekten flussauf- und flussabwärts.</dd>
+    </dl>
+    <p>Die Abhängigkeiten zwischen Vorgängen bildet DPM nicht als starre Ende-Anfang-Beziehungen ab, sondern als <strong>Fortschrittsfunktionen</strong>: Wie viel Fortschritt des nachgelagerten Vorgangs ist bei gegebenem Fortschritt des vorgelagerten möglich?</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k54-abb3.jpg" alt="Zwei Diagramme des möglichen nachgelagerten Fortschritts über dem vorgelagerten Fortschritt: linear ansteigend ab einem Schwellenwert und stufenförmig" loading="lazy">
+      <figcaption>Abb. 3: Vorgangsübergreifende Abhängigkeiten („Inter-Activity Dependencies“, externe Abhängigkeiten nach Ford und Sterman 1997): Der mögliche Fortschritt des nachgelagerten Vorgangs („Downstream Progress“) als Funktion des vorgelagerten Fortschritts („Upstream Progress“). Graph A – ab einem Schwellenwert stetig ansteigend – entspricht z. B. Sanitär-/Elektro-Rohinstallation und Trockenbau; Graph B – sprunghaft, erst nach weitgehender Fertigstellung des Vorgängers – z. B. Betonieren einer Decke und Aufstellen der Rüstung für das nächste Geschoss. Analoge Funktionen beschreiben interne Abhängigkeiten innerhalb eines Vorgangs (z. B. aufeinanderfolgende Geschosse, gebäudeweiter Trockenbau). (Folie 17 des Originalskripts)</figcaption>
+    </figure>
+
+    <h2 id="abschnitt-4">Qualität, Nacharbeit und Spezifikationsänderungen</h2>
+    <p>DPM operationalisiert <strong>Qualität</strong> als den Anteil der Arbeit, der den Spezifikationen entspricht. Entscheidend: Qualitätsprobleme werden oft erst spät entdeckt – die Verkürzung der Zeit bis zur Entdeckung ist der Schlüssel! Statisch betrachtet führt höhere Qualität zu höheren Kosten und längerer Fertigstellungsdauer; dynamisch betrachtet ist Qualität aber der Treiber für Nacharbeit und Spezifikationsänderungen – und damit für einen großen Teil der Projektdynamik.</p>
+    <p>Weicht die gebaute Leistung von den Spezifikationen ab, gibt es zwei grundsätzliche Reaktionen:</p>
+    <dl class="begriffe">
+      <dt>Nacharbeit (Rework)</dt>
+      <dd>Die Arbeit wird an die Spezifikation angepasst. In anderen Branchen verbreitet (z. B. die Neigung, Software periodisch neu zu schreiben), im Bauwesen begrenzt: Nacharbeit gilt als exorbitant teuer, und späte Entdeckung der Qualitätsprobleme kann sie faktisch ausschließen.</dd>
+      <dt>Spezifikationsänderung (Specification Change)</dt>
+      <dd>Die Spezifikation wird an die gebaute Leistung angepasst. Oberflächlich attraktiv, weil sie Änderungen auf der Baustelle zu begrenzen scheint. Zwei Typen: <em>managementseitige</em> Änderungen (einschließlich vom Bauherrn gewünschter) und <em>unbeabsichtigte</em> Änderungen.</dd>
+    </dl>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k54-abb4.jpg" alt="Diagramm: Unbeabsichtigte Änderung entsteht aus verdeckter vorgelagerter Änderung, geringer Arbeitsqualität, schlechten Arbeitsbedingungen und externen Umfangsänderungen" loading="lazy">
+      <figcaption>Abb. 4: Quellen unbeabsichtigter Änderungen („Unintended Changes“): Eine unbeabsichtigte Änderung („Unintended Change“) entsteht aus einer verdeckten Änderung im vorgelagerten Gewerk („Upstream Hidden Change“) sowie aus geringer Arbeitsqualität („Low Work Quality“), schlechten Arbeitsbedingungen („Poor Work Conditions“) und externen Umfangsänderungen („External Scope Changes“). (Folie 23 des Originalskripts)</figcaption>
+    </figure>
+    <p>Die Abwägung zwischen beiden Reaktionen:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Reaktion</th><th>Kurzfristige Wirkung</th><th>Langfristige Wirkung</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Nacharbeit</strong></td><td>Mehr kurzfristige Arbeit – besonders, wenn die ursprüngliche Abweichung erst spät entdeckt wurde</td><td>Begrenzt das Ausmaß der Auswirkungen</td></tr>
+          <tr><td><strong>Spezifikationsänderung</strong></td><td>Weniger kurzfristige Arbeit</td><td>Kann viele „Nebenwirkungen“ auslösen, wenn sich die Änderung in andere Teile der Spezifikation fortpflanzt</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="abschnitt-5">Änderungsfortpflanzung und der Wert von Flexibilität</h2>
+    <p>Wie weit sich eine scheinbar lokale Änderung fortpflanzen kann, zeigt ein Beispiel aus der Praxis: Widersprüchliche Zeichnungen zur Führung von Lüftungskanälen erzwingen die Änderung eines Zeichnungssatzes, um die Kanäle aus einem anderen Lüftungsraum umzuleiten. In der Folge müssen Sanitär- und Elektroplanung ihre Trassen neu prüfen; die nun nötige größere Lüftungsanlage erfordert überarbeitete Werkstattzeichnungen, die Überprüfung des Elektrosystems auf die höhere Last, die Neubetrachtung der Rohrleitungen zur Anlage und die Prüfung der Tragwerkslasten des Gebäudes. Die Verzögerungen können Kundenbeziehungen belasten, Ressourcen leerlaufen lassen, andere Planungsleistungen stören und den Druck weiter erhöhen.</p>
+    <div class="note"><strong>Flexibilität</strong> ist der entscheidende Verbündete gegen das Änderungsrisiko: Man bezahlt für Flexibilität – aber für fehlende Flexibilität bezahlt man oft mehr.</div>
+
+    <h2 id="abschnitt-6">Fast-Tracking und seine Rückkopplungen</h2>
+    <p>Die Überlappung von Planung und Bauausführung (<strong>Fast-Tracking</strong>) sowie die Überlappung von Bauprozessen untereinander erzeugen ein dichtes Geflecht von Rückkopplungen, das DPM explizit abbildet:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k54-abb5.jpg" alt="Komplexes Kausaldiagramm der Rückkopplungen bei Überlappung von Planung und Bauausführung mit drei verstärkenden Schleifen R1, R2 und R3" loading="lazy">
+      <figcaption>Abb. 5: Rückkopplungen der Planungs-Überlappung („Design Overlap Feedbacks“): Die Überlappung von Planung und Bau („Overlapping between Design and Construction“) erhöht die Unsicherheiten („Uncertainties“) und erzwingt Annahmen in der Planung („Assumptions in Design“); zusammen mit Änderungswünschen des Bauherrn („Owner’s Requests on Changes“) entstehen Planänderungen („Design Changes“) mit Auswirkungen auf die Bauausführung („Potential Design Change Impact on Construction“). Drei verstärkende Schleifen treiben das System: R1 – Termindruck („Time Pressure“) und Personalaufstockung („Increase in Workforce“) senken die Produktivität („Productivity“) und erzeugen Verzug („Delay“), der die geschätzte Projektdauer („Estimated Project Duration“) und damit den Termindruck weiter erhöht; R2 – überlappende Bauprozesse („Construction Processes Overlapping“) führen zu Bauarbeiten vor Fertigstellung des Vorgängers („Construction Work Done before Upstream Completed“); R3 – daraus entstehen Bauänderungen („Construction Changes“), die Produktivität kosten und den Verzug vergrößern. Am Ende steigen Projektdauer („Project Duration“) und Projektkosten („Project Costs“, auch über Überdimensionierung/„Oversizing“). (Folie 27 des Originalskripts)</figcaption>
+    </figure>
+    <div class="note">Fast-Tracking steht unter „doppelter Gefährdung“ (Double Jeopardy): <strong>Risiko 1</strong> – größere <em>Wahrscheinlichkeit</em> von Nacharbeit und Änderungen, weil mit weniger Gewissheit über den Verlauf des vorangehenden Vorgangs (Planung oder Bau) begonnen wird. <strong>Risiko 2</strong> – größere <em>Empfindlichkeit</em> gegenüber Nacharbeit und Änderungen, weil das Projekt ohnehin in Eile ist, der Terminplan weniger Rutsch verträgt und mehr Vorgänge nahezu kritisch sind.</div>
+    <p>Hinzu kommen weitere Rückkopplungen des Änderungsgeschehens – etwa über die Wahl des Änderungswegs und über die Aufsicht:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k54-abb6.jpg" alt="Verstärkende Schleife: Termindruck fördert Fokus auf kurzfristige Produktivität und managementseitige Änderungen, deren Folgewirkungen neue Verzögerungen erzeugen" loading="lazy">
+      <figcaption>Abb. 6: Zusätzliche Rückkopplung 1 („Additional Feedbacks 1“): Termindruck („Schedule Pressure“) verstärkt den Fokus auf kurzfristige Produktivität („Focus on Short-Term Productivity“) und damit die Vorliebe für managementseitige Spezifikationsänderungen („Preference for Managerial Changes“) statt Nacharbeit; deren Folgewirkungen („Change Ripple-Through Effects“) erzeugen Verzögerungen („Delays“), die den Termindruck weiter erhöhen – eine durchgehend verstärkende Schleife. (Folie 30 des Originalskripts)</figcaption>
+    </figure>
+    <p>Eine verwandte Schleife läuft über die Bauleitung: Verzug erhöht die Arbeitslast der Aufsicht („Supervisor Work Level“) und deren Ermüdung; damit steigen die Wahrscheinlichkeit, eine Abweichung zwischen Spezifikation und Bauausführung zu übersehen, und die Zeit bis zu ihrer Entdeckung – was die Terminauswirkungen von Änderungen weiter verschärft.</p>
+
+    <h2 id="abschnitt-7">Der Änderungsprozess als Wirkungsschleife und Stock-and-Flow-Modell</h2>
+    <p>Den Kern von DPM bildet der <strong>Änderungsprozess</strong> zwischen einem vorgelagerten („Upstream“, UP) und einem nachgelagerten („Downstream“, DS) Gewerk. Die Vorlesung unterscheidet drei Varianten derselben Grundschleife:</p>
+    <ul>
+      <li><strong>Schleife 1:</strong> Eine Vorprüfung im nachgelagerten Gewerk entdeckt die Abweichung, bevor dort gearbeitet wird.</li>
+      <li><strong>Schleife 2:</strong> Die Abweichung wird erst während der Arbeit im nachgelagerten Gewerk entdeckt – zusätzlich zur Nachbearbeitung im vorgelagerten Gewerk fällt auch im nachgelagerten Nacharbeit an.</li>
+      <li><strong>Schleife 3:</strong> Statt Nachbearbeitung wird eine Spezifikationsänderung übernommen – der kurzfristige Aufwand sinkt, aber verdeckte Änderungen wandern weiter nach unten.</li>
+    </ul>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k54-abb7.jpg" alt="Wirkungsschleife R1 des Änderungsprozesses: Nachbearbeitungsanforderungen aus dem nachgelagerten Gewerk erzeugen Verzug, Termindruck und geringere Qualitätssicherung" loading="lazy">
+      <figcaption>Abb. 7: Änderungsprozess-Schleife 1 („Change Process Loop 1: DS Pre-check Identifies Divergence“): Entdeckt das nachgelagerte Gewerk vorab Abweichungen („Upstream Changes Discovered in Downstream“), stellt es Nachbearbeitungsanforderungen („Reprocess Requests From Downstream“); die Nachbearbeitung („Reprocess“) kostet Zeit („Time to Reprocess“), erzeugt Verzug („Delay“) und Termindruck („Schedule Pressure“). Der Termindruck senkt die Gründlichkeit der Qualitätssicherung („Quality Management Thoroughness“) – mehr verdeckte Änderungen gelangen ins nachgelagerte Gewerk („Hidden Changes Released to Downstream“), dessen Qualität („Downstream Quality“) sinkt und weitere Nachbearbeitung („Downstream Reprocess“) sowie Verzug nach sich zieht: eine verstärkende Schleife (R1). Zugleich erhöht Termindruck die Bereitschaft, managementseitige Änderungen zu übernehmen („Willingness to Adopt Managerial Change“). (Folie 32 des Originalskripts)</figcaption>
+    </figure>
+    <p>Für die Simulation wird diese Schleifenstruktur je Arbeitspaket in ein Stock-and-Flow-Modell übersetzt:</p>
+    <figure class="slide-fig">
+      <img src="bilder/kapitel/k54-abb8.jpg" alt="Stock-and-Flow-Diagramm eines DPM-Arbeitspakets mit Beständen für anstehende, laufende, auf Qualitätsprüfung wartende und freigegebene Arbeit" loading="lazy">
+      <figcaption>Abb. 8: Grundstruktur eines DPM-Arbeitspakets („Basic DPM Work Package Stock-and-Flow Structure“): Die Arbeit fließt durch die Bestände „Work to DO“ (zu erledigende Arbeit), „Work Awaiting Quality Management“ (auf Qualitätsprüfung wartend) und „Work Released“ (freigegeben). Die Arbeitsrate („Work Rate“) hängt von Ressourcen („Potential Work Rate from Resource“) und Mindestbearbeitungszeit („Min Work Time“) ab; die Verfügbarkeit („Work Available“) von interner und externer Parallelität („Internal Concurrency“ / „Total External Concurrence“). Rückflüsse entstehen durch Nachbearbeitungsanforderungen aus dem nachgelagerten Gewerk („RP Request from Downstream“), interne und externe managementseitige Änderungen sowie wartende Anfragen („Work Awaiting RFI Reply“ – Request for Information) und anstehende vorgelagerte Änderungen („Work Pending UP Change RP“). (Folie 35 des Originalskripts)</figcaption>
+    </figure>
+    <p>Die DPM-Studien münden in drei Kernbotschaften:</p>
+    <div class="note">
+      <strong>1.</strong> Qualität wirkt durchdringend auf Zeit und Kosten: Die indirekten Einsparungen hochwertiger Arbeit können die direkten Mehrkosten dieser Qualität deutlich überwiegen. <strong>2.</strong> Änderungen haben kaskadierende Wirkungen im Projekt – trotz der Vorabkosten ist Nacharbeit häufig die bessere Wahl als eine Spezifikationsänderung. <strong>3.</strong> Fast-Tracking unterliegt der „doppelten Gefährdung“: höhere Änderungswahrscheinlichkeit <em>und</em> höhere Terminempfindlichkeit gegenüber Änderungen.
+    </div>
+
+    <h2 id="abschnitt-8">System Dynamics und Prozesssimulation im Vergleich</h2>
+    <p>Zum Abschluss stellt die Vorlesung System Dynamics der ereignisorientierten <strong>Prozesssimulation</strong> gegenüber:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Prozesssimulation (ereignisorientiert)</th><th>System-Dynamics-Simulation</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Arbeitet „bottom-up“: detaillierte Simulation der Vorgangsprozesse</td><td>Arbeitet „top-down“: versucht, das Gesamtsystem der wichtigsten Faktoren zu erfassen; modelliert typischerweise keine einzelnen Vorgänge und Ressourcen</td></tr>
+          <tr><td>Ziel sind emergente Statistiken und Zeitverhalten</td><td>Ziel ist emergentes Zeitverhalten</td></tr>
+          <tr><td>Untersucht meist einzelne Wechselwirkungskomponenten (kann aber das Gesamtprojekt modellieren)</td><td>Bezieht „weiche“ Faktoren ein – notfalls mit groben Schätzungen</td></tr>
+          <tr><td>Basiert auf ereignisorientierter Simulation (Discrete Event Simulation)</td><td>Basiert auf gewöhnlichen/stochastischen Differentialgleichungen (ODE/SDE)</td></tr>
+          <tr><td>Bildet „weiche“ Faktoren (Arbeitsmoral, Ermüdung …) in der Regel nicht ab</td><td>Versucht, Entscheidungsregeln zu erfassen</td></tr>
+          <tr><td>Modelliert in der Regel keine Entscheidungsregeln</td><td>Strebt Transparenz an: Das Modell soll institutionelles Wissen für das Projektlernen festhalten</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Bei der Bewertung von Modellen helfen vier grundsätzliche Unterscheidungen:</p>
+    <ul>
+      <li><strong>Präzision vs. Genauigkeit</strong> – viele Nachkommastellen sind nicht dasselbe wie Nähe zur Wahrheit.</li>
+      <li><strong>Mächtigkeit der Modellierung vs. Aufwand</strong>, ein nützliches Modell zu erstellen.</li>
+      <li><strong>Allgemeine Modellierung vs. Modellierung für einen bestimmten Zweck.</strong></li>
+      <li><strong>Modellieren zur Vorhersage vs. Modellieren zum Verständnis.</strong></li>
+    </ul>
+  </section>
+
+  <nav class="prevnext">
+    <a href="kapitel-5-3.html">← Kapitel 5.3: Problemdiagnose und Einführung in die Projektdynamik</a>
+    <span class="spacer"></span>
+    <a href="kapitel-6-1.html">Kapitel 6.1: Risikomanagement II, Qualitätsüberwachung und -steuerung sowie Projektlernen →</a>
+  </nav>
+</main>
+
+<footer>
+  <div class="inner">
+    <p>Deutsche Übersetzung der Kursunterlagen von <a href="https://ocw.mit.edu/courses/1-040-project-management-spring-2004/" target="_blank" rel="noopener">MIT OpenCourseWare: 1.040 Project Management, Spring 2004</a> (Dr.&nbsp;Nathaniel Osgood).<br>
+    Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons BY-NC-SA 4.0</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
