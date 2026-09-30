@@ -67,6 +67,11 @@
       </ul>
     </div>
 
+    <div class="baufuehrung">
+      <span class="label">Relevanz für die Bauführung</span>
+      <p>Eine formale Monte-Carlo-Simulation wirst du auf Kleinbaustellen selten rechnen – die Denkweise dieses Kapitels brauchst du trotzdem jede Woche. Die Sammelknoten-Verzerrung erklärt ein Alltagsphänomen des Tiefbaus: Wenn der Belagseinbau davon abhängt, dass die eigene Schachtequipe, der Kabelzug des Elektrizitätswerks <em>und</em> die Lieferung der Randabschlüsse alle rechtzeitig fertig sind, ist der Termin fast immer später dran, als jede einzelne Zusage vermuten lässt – das Maximum mehrerer unsicherer Termine liegt im Mittel hinter jedem Einzeltermin. Der Kritikalitätsindex liefert die Prioritätenlogik für Bauprogramm und Wochenplanung: Nicht nur die heute kritischen Vorgänge verdienen Aufmerksamkeit, sondern alle, die bei normalem Schwanken von Wetter, Baugrund und Lieferfristen kritisch werden <em>können</em>. Und wo Terminzusagen teuer sind – Strassensperrungen, Umleitungen, Konventionalstrafen – argumentierst du mit Bandbreiten und Wahrscheinlichkeiten statt mit Punktterminen.</p>
+    </div>
+
     <h2 id="abschnitt-1">PERT im Rückblick: das Handwerkszeug aus Kapitel 4.2</h2>
     <p>Dieses Kapitel setzt die probabilistische Terminplanung fort. Die Grundlagen von PERT wurden in <a href="kapitel-4-2.html">Kapitel 4.2</a> eingeführt; hier die Eckpunkte in Kurzform, weil das Folgende unmittelbar darauf aufbaut:</p>
     <ul>
@@ -294,6 +299,9 @@
     </details>
     <details class="quiz"><summary>Frage 6: Was bedeutet die „inverse Wurzelbeziehung“ für die Wahl der Anzahl der Simulationsläufe?</summary>
       <div class="antwort">In allen Fehlerformeln steht die Läuferzahl n unter der Wurzel: Der Schätzfehler sinkt nur proportional zu 1/√n. Um den Fehler zu halbieren, muss man die Zahl der Läufe also vervierfachen – die Genauigkeit ist beliebig skalierbar, aber mit überproportionalem Aufwand. Empirisch reichen für den Kritikalitätsindex etwa 1.000 Läufe statt der ursprünglich angesetzten 10.000.</div>
+    </details>
+    <details class="quiz"><summary>Frage 7 (Szenario): Vor dem Belagseinbau in einer Quartierstrasse müssen drei Stränge fertig sein: deine Schachtequipe („sicher bis Donnerstag“), der Kabelzug des Elektrizitätswerks („voraussichtlich Mittwoch“) und die Lieferung der Randabschlüsse („Donnerstag zugesagt“). Du planst den Belag auf Freitag und meldest der Gemeinde die Strassenöffnung am Samstag. Warum ist dieser Termin wackliger, als die drei Zusagen klingen – und wie planst du besser?</summary>
+      <div class="antwort">Der Belagseinbau ist ein Sammelknoten: Er kann erst starten, wenn <em>alle drei</em> Vorgänger fertig sind – sein frühester Start ist das Maximum dreier unsicherer Termine. Selbst wenn jeder Strang für sich mit hoher Wahrscheinlichkeit rechtzeitig fertig wird, ist die Wahrscheinlichkeit, dass alle drei es gleichzeitig schaffen, deutlich kleiner; und weil die drei Beteiligten weitgehend unabhängig voneinander sind und ihre Termine dicht beieinander liegen, ist die Verzerrung hier maximal. Wer nur den „kritischen“ Strang anschaut, unterschätzt den Termin systematisch – genau der Fehler der reinen PERT-Betrachtung. Besser: für jeden Strang gedanklich eine Bandbreite statt einer Zusage ansetzen (beim Dritten und beim Lieferanten aktiv nachfassen und Rückfalltermine vereinbaren), einen Puffertag zwischen letzter Vorleistung und Belag einplanen und der Gemeinde die Öffnung mit Reserve zusagen – etwa „Anfang nächster Woche, Ziel Samstag“. Alle drei Stränge gehören bis zur Fertigmeldung auf deine Pendenzenliste, nicht nur der scheinbar kritischste.</div>
     </details>
   </section>
 

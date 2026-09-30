@@ -67,6 +67,11 @@
       </ul>
     </div>
 
+    <div class="baufuehrung">
+      <span class="label">Relevanz für die Bauführung</span>
+      <p>Die erweiterten Anordnungsbeziehungen dieses Kapitels sind im Tiefbau keine Theorie, sondern Alltag: Die Rohrverlegung folgt dem Grabenaushub gestaffelt (Start–Start bzw. Ende–Ende mit Lag – das Lehrbeispiel „Excavate Trench → Lay Pipe“ stammt direkt aus deinem Metier), und Ausschalfristen oder Aushärtezeiten von Beton sind klassische Ende–Start-Lags. Wer sein Bauprogramm in der Terminplanungssoftware mit den richtigen Beziehungen aufbaut, bekommt eine Wochenplanung, die den tatsächlichen Etappenablauf abbildet – wer nur Normalfolgen setzt, plant künstliche Wartezeiten ein oder übersieht Kollisionen der Equipen. Die PERT-Denkweise mit drei Zeitschätzungen passt auf die grossen Unsicherheiten des Tiefbaus: Wetter, Baugrund und Lieferfristen. Statt der Bauherrschaft einen Punkttermin zu versprechen, lernst du hier, in optimistisch/wahrscheinlich/pessimistisch zu denken und Termine als Bandbreite mit Wahrscheinlichkeit zu begründen.</p>
+    </div>
+
     <h2 id="abschnitt-1">CPM-Rechenbeispiel: das Dachprojekt in Vorwärts- und Rückwärtsrechnung</h2>
     <p>Zur Wiederholung aus <a href="kapitel-4-1.html">Kapitel 4.1</a>: In AON-Netzplänen (Vorgangsknotenmethode, PDM) sitzen die Vorgänge auf den Knoten, ein Vorwärts-/Rückwärtsdurchlauf in linearer Zeit O(n) bestimmt ES, EF, LS und LF, es gibt mehrere Beziehungstypen (FS, SS, FF, SF), und Scheinvorgänge sind nicht erforderlich. Das folgende Beispiel eines Dachaufbaus mit sieben Vorgängen macht die Rechnung konkret:</p>
     <div class="table-wrap"><table>
@@ -274,6 +279,12 @@
     </details>
     <details class="quiz"><summary>Frage 5: Warum summiert die PERT-Varianzrechnung nur die Varianzen der Vorgänge auf dem kritischen Pfad – und welches Problem entsteht daraus?</summary>
       <div class="antwort">PERT behandelt das Projekt so, als wäre seine Dauer allein die Dauer des (mit erwarteten Werten berechneten) kritischen Pfades; unter der Unabhängigkeitsannahme addieren sich dann die Varianzen entlang dieses einen Pfades. Damit werden alle anderen Pfade ignoriert, obwohl das Projekt erst endet, wenn <em>alle</em> Pfade fertig sind. Beinahe kritische Pfade mit großer Streuung können den Endtermin dominieren – PERT ist deshalb systematisch zu optimistisch (Sammelknoten-Verzerrung, Kapitel 4.3).</div>
+    </details>
+    <details class="quiz"><summary>Frage 6 (Szenario): Bei einer 400-m-Werkleitung soll die Rohrequipe dem Grabenaushub gestaffelt folgen, statt auf den fertigen Graben zu warten. Wie bildest du das im Bauprogramm ab – und worauf musst du bei der Modellierung achten?</summary>
+      <div class="antwort">Statt einer Normalfolge (Ende–Start) modellierst du die Überlappung mit einer Start–Start-Beziehung mit Lag: Die Rohrverlegung darf z.&nbsp;B. zwei Tage nach Beginn des Aushubs starten, sobald genügend Graben offen ist. Ergänzend sichert eine Ende–Ende-Beziehung mit Lag das hintere Ende ab – die Rohrverlegung kann frühestens einige Tage nach Abschluss des Aushubs fertig sein (genau das Lehrbeispiel FF&nbsp;=&nbsp;+3 dieses Kapitels). Achtgeben musst du auf dreierlei: Erstens steht die SS-Beziehung eigentlich für eine Abhängigkeit zwischen <em>Teilen</em> der Vorgänge – wird der Aushub langsamer als die Verlegung, holt die Rohrequipe den Graben ein, was die reine Netzplanlogik nicht verhindert; die Fortschrittsraten beider Equipen müssen also zusammenpassen. Zweitens brauchen beide Equipen gleichzeitig Platz und Geräte im Trassee. Drittens ist die Semantik von Lags softwareabhängig – prüfe, wie dein Programm rechnet, bevor du dich auf die Termine verlässt.</div>
+    </details>
+    <details class="quiz"><summary>Frage 7 (Szenario): Für den Belagseinbau Ende Oktober schätzt du wetterabhängig: optimistisch 2, wahrscheinlich 3, pessimistisch 8 Arbeitstage (Schlechtwetterunterbrüche). Die Gemeinde will wissen, wann die Strasse wieder offen ist. Was rechnest du, und was sagst du ihr?</summary>
+      <div class="antwort">Nach PERT beträgt die erwartete Dauer d̄ = (a + 4m + b)/6 = (2 + 12 + 8)/6 ≈ 3,7 Tage bei einer Standardabweichung s = (b − a)/6 = 1 Tag. Die erwartete Dauer liegt über dem wahrscheinlichsten Wert von 3 Tagen, weil die Verteilung rechtsschief ist: Gut laufen kann es nur wenig schneller, schlecht laufen dagegen deutlich länger – typisch für Wetterrisiken im Herbst. Der Gemeinde nennst du deshalb keinen knappen Punkttermin auf Basis des Bestfalls, sondern einen Termin mit Reserve: geplant rund 4 Arbeitstage, mit Schlechtwetterreserve bis etwa 6, im Extremfall 8. So kann sie Umleitung und Anwohnerinformation realistisch ansetzen, und du musst nicht nach dem ersten Regentag einen versprochenen Termin zurückziehen. Intern behältst du die pessimistische Schätzung im Auge und planst die Folgearbeiten nicht direkt auf den optimistischen Endtermin.</div>
     </details>
   </section>
 

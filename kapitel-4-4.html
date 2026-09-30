@@ -67,6 +67,11 @@
       </ul>
     </div>
 
+    <div class="baufuehrung">
+      <span class="label">Relevanz für die Bauführung</span>
+      <p>Ressourcenbasierte Terminplanung ist der Kern deiner Wochenplanung: Equipen, Bagger und Inventar sind über viele Kleinbaustellen verteilt knapp, und die CPM-Logik mit „unendlichen Ressourcen“ geht an der Realität vorbei – erst wenn du den Bedarf aller Baustellen übereinanderlegst, siehst du die Konflikte der nächsten Wochen. Die empirisch beste Prioritätsregel „minimaler Puffer zuerst“ ist dabei genau das, was ein guter Disponent intuitiv tut: Die knappe Ressource bekommt zuerst die Baustelle, die keinen Spielraum mehr hat. Die Unterscheidung statisch/dynamisch beschreibt dein Zusammenspiel mit den Polieren – das Bauprogramm legt den Rahmen fest, die tägliche Absprache vor Ort reagiert auf frühe Fertigstellungen, Wetter und Lieferverzug. Und die Line-of-Balance-Methode passt auf repetitive Tiefbauarbeiten wie Leitungs- und Strassenbau in Etappen: Graben-, Rohr- und Belagsequipe ziehen in abgestimmtem Tempo durchs Trassee, mit Zeit- und Wegpuffern dazwischen.</p>
+    </div>
+
     <h2 id="abschnitt-1">Statische vs. dynamische Terminplanung und die Frage der Granularität</h2>
     <p>Bevor es um Simulationswerkzeuge geht, lohnt eine Grundsatzfrage: Wie viel des Ablaufs legt man vorab fest, und wie viel entscheidet man erst auf der Baustelle?</p>
     <dl class="begriffe">
@@ -249,6 +254,12 @@
     </details>
     <details class="quiz"><summary>Frage 6: Für welche Projekte eignet sich die Line-of-Balance-Methode, und wozu dienen Zeit- und Wegpuffer?</summary>
       <div class="antwort">Die LOB eignet sich für repetitive Vorgänge, die dieselbe Kolonne in gleichbleibender Abfolge über viele Abschnitte ausführt – etwa Straßen-, Hochhaus- oder Wohnungsbau. Da sich die Fortschrittslinien zweier Gewerke nicht kreuzen dürfen (Vorgangsstörung), werden Mindestabstände definiert: ein Zeitpuffer (zeitlicher Mindestabstand) und ein Wegpuffer (räumlicher Mindestabstand). Erst wenn beide eingehalten sind, ist die Kollisionsfreiheit der Kolonnen gesichert.</div>
+    </details>
+    <details class="quiz"><summary>Frage 7 (Szenario): Zwei deiner Baustellen melden für nächste Woche gleichzeitig Bedarf am einzigen 25-Tonnen-Bagger: Baustelle A für den Grabenaushub einer Werkleitung, Baustelle B für eine Baugrube. Nach welchen Kriterien entscheidest du die Disposition?</summary>
+      <div class="antwort">Das ist ressourcenbeschränkte Einplanung im Kleinen: Zuerst prüfst du im Bauprogramm beider Baustellen den Gesamtpuffer der betroffenen Vorgänge. Nach der empirisch besten Prioritätsregel „minimaler Puffer zuerst“ erhält der Bagger die Baustelle, deren Aushub kritisch oder nahkritisch ist – etwa weil dort ein fixer Belagstermin oder eine bewilligte Sperrfrist dranhängt; die Baustelle mit Puffer wird innerhalb ihres Spielraums verschoben. Führt das Verschieben trotzdem zu einer Verlängerung, prüfst du Alternativen: Reihenfolge der Etappen tauschen, für die unkritischere Baustelle kurzfristig ein Gerät zumieten oder die Arbeiten splitten (den Bagger nach dem kritischen Abschnitt umdisponieren). Wichtig ist, die Entscheidung in der Wochenplanung mit beiden Polieren abzusprechen und festzuhalten – sonst arbeitet eine Equipe ausserhalb der geplanten Reihenfolge, nur um beschäftigt zu bleiben, und der Konflikt taucht nächste Woche wieder auf.</div>
+    </details>
+    <details class="quiz"><summary>Frage 8 (Szenario): Du planst 800 m Werkleitungsersatz in Etappen mit drei Equipen: Grabenaushub, Rohrverlegung, Hinterfüllung mit Belagsersatz. Warum eignet sich dafür die Line-of-Balance-Darstellung besser als ein reiner Netzplan – und was musst du beim Abstimmen der Equipen beachten?</summary>
+      <div class="antwort">Die Arbeit ist repetitiv: Dieselben Equipen durchlaufen in gleichbleibender Abfolge Abschnitt für Abschnitt – genau der Einsatzfall der LOB. Im Orts-Zeit-Diagramm wird jede Equipe eine Linie über dem Trassee (wie im Strassenbau-Beispiel des Kapitels), und die Steigung zeigt ihre Fortschrittsrate in Metern pro Tag. Entscheidend ist erstens das Abstimmen der Raten: Ist die Rohrequipe schneller als der Aushub, läuft ihre Linie auf die Aushublinie auf, und sie steht; ist sie langsamer, liegt der Graben unnötig lange offen – die Equipengrössen sind so zu dimensionieren, dass die Linien möglichst parallel verlaufen. Zweitens brauchst du Zeit- und Wegpuffer zwischen den Linien, damit sich die Equipen nie in die Quere kommen – genügend offene Grabenlänge vor der Rohrequipe, aber nicht mehr, als Grabensicherung und Verkehrsführung zulassen. Diskrete Einzelvorgänge wie eine Strassenquerung oder einen Schachtneubau führst du daneben weiter im Netzplan.</div>
     </details>
   </section>
 

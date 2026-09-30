@@ -295,3 +295,24 @@ td .kap-haken{color:#2e5d3a;font-weight:700;margin-left:6px;}
   details.quiz,details.abschnitt{page-break-inside:avoid;}
   details .antwort{display:block;}
 }
+
+/* ── Track Bauführung ──────────────────────────────────────────────────── */
+.baufuehrung{
+  background:#f7efe8;border:1px solid #e3cfbb;border-left:5px solid #b4501e;
+  border-radius:8px;padding:16px 22px;margin:20px 0;
+}
+.baufuehrung .label{
+  font-weight:700;color:#b4501e;text-transform:uppercase;
+  font-size:12.5px;letter-spacing:.06em;display:block;margin-bottom:6px;
+}
+.baufuehrung p{margin:0;font-size:15.5px;}
+.prio-kern,.prio-kontext,.prio-geplant{
+  display:inline-block;border-radius:5px;padding:2px 12px;font-size:12.5px;
+  font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;
+}
+.prio-kern{background:#f5e4d9;color:#b4501e;}
+.prio-kontext{background:#e2eaf0;color:#38617e;}
+.prio-geplant{background:#e8eae8;color:#5c6570;border:1px dashed #b7bcb7;}
+.unit.geplant{opacity:.88;}
+.unit.geplant .unit-head{background:linear-gradient(135deg,#4a545f,#3a434d);}
+.modul-map{font-size:14px;color:var(--muted);margin:4px 0 0;}

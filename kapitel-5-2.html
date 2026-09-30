@@ -67,6 +67,11 @@
       </ul>
     </div>
 
+    <div class="baufuehrung">
+      <span class="label">Relevanz für die Bauführung</span>
+      <p>Dieses Kapitel liefert das Rechenwerk hinter dem Baustellen-Cockpit: EVA-Kennzahlen und vor allem die EAC-Prognose beantworten die Frage, die der Bauführer der Geschäftsleitung schuldet – „Wo landet diese Baustelle am Ende?". Ob man die bisherige Abweichung als Ausrutscher behandelt (EAC = BAC − CV) oder die schlechte Kosteneffizienz auf die Restarbeit fortschreibt (EAC = BAC/CPI), macht bei der Hochrechnung der Endkosten einen grossen Unterschied – und die Grundlage dafür liefern wieder Tagesrapport und Ausmass. Die Steuerungshebel der zweiten Kapitelhälfte sind Bauführer-Alltag: Beschleunigen durch Überstunden, zweite Equipe oder grösseres Gerät hat immer Nebenwirkungen, und Crashing lohnt sich nur bei kritischen Vorgängen. Sind die Ziele nicht mehr haltbar, führt der Weg über die zielorientierte Steuerung – also das Gespräch mit der Bauherrschaft über Termin, Kosten und Leistungsumfang.</p>
+    </div>
+
     <h2 id="abschnitt-1">Die Earned-Value-Kennzahlen im Überblick</h2>
     <p>Die <strong>Earned-Value-Analyse</strong> (EVA, Fertigstellungswert-Analyse) – im US-Verteidigungsstandard auch <em>Cost/Schedule Control Systems Criteria</em> (C/SCSC) genannt – integriert Kosten, Termine und geleistete Arbeit, indem sie allen drei Größen Geldwerte zuordnet. <a href="kapitel-5-1.html">Kapitel 5.1</a> hat die Grundgrößen eingeführt; hier werden sie vertieft, auf ein durchgängiges Beispiel angewendet und zur Prognose fortgeschrieben. Die folgende Tabelle fasst alle Kennzahlen zusammen – in der klassischen C/SCSC-Notation der Vorlesung und mit den heute gebräuchlichen Bezeichnungen:</p>
 
@@ -286,6 +291,12 @@
     </details>
     <details class="quiz"><summary>Frage 6: Das Budget eines Zeitraums ist knapp. In welcher Reihenfolge verschieben Sie Vorgänge beim Slack Management – und warum?</summary>
       <div class="antwort">Zuerst Vorgänge mit freiem Puffer (FF), weil ihre Verschiebung keine Nachfolger beeinträchtigt; dann Vorgänge mit Gesamtpuffer (TF), deren Verschiebung zwar Nachfolger verschiebt, aber den Endtermin noch nicht; zuletzt – wenn unvermeidlich – kritische Vorgänge, deren Verschiebung das Projekt direkt verlängert. Dabei gilt: Gewonnene Liquidität wird mit zusätzlichen indirekten Kosten der Zeit erkauft.</div>
+    </details>
+    <details class="quiz"><summary>Frage 7 (Szenario): Nach der Hälfte einer Werkleitungsbaustelle zeigt dein Cockpit CPI = 0,85. Die Ursache: Fels statt des erwarteten Kieses im ersten Grabenabschnitt, der Rest der Trasse liegt laut Sondierungen im Lockergestein. Die Geschäftsleitung will eine Endkostenprognose – welchen EAC-Ansatz wählst du und warum?</summary>
+      <div class="antwort">Zuerst die Diagnose: Die Kostenüberschreitung hat eine klar identifizierte, abgegrenzte Ursache (Fels im ersten Abschnitt), die für die Restarbeit voraussichtlich nicht mehr gilt. Dann passt der Ansatz „ursprüngliche Schätzung": EAC = BAC − CV – die bisherige Abweichung bleibt als einmaliger Ausrutscher stehen, die Restarbeit wird zu Budgetpreisen bewertet. Der Ansatz „revidierte Schätzung" (EAC = BAC/CPI) wäre richtig, wenn die Ursache strukturell wäre und fortwirkt, etwa eine generell zu optimistische Kalkulation oder dauerhaft schwache Produktivität der Equipe. In der Praxis rechnest du beide Werte und meldest die Spannweite – und prüfst parallel, ob der Fels als abweichende Baugrundverhältnisse einen Nachtrag gegenüber der Bauherrschaft begründet, damit die Mehrkosten nicht beim Unternehmer hängen bleiben.</div>
+    </details>
+    <details class="quiz"><summary>Frage 8 (Szenario): Eine Belagseinbau-Etappe ist zwei Wochen im Rückstand, der Einbautermin mit dem Mischwerk ist fix. Der Polier schlägt vor, „einfach überall mehr Leute" einzusetzen. Wie gehst du stattdessen vor?</summary>
+      <div class="antwort">Pauschales Beschleunigen ist Geldverschwendung: Die Projektdauer bestimmt allein der kritische Weg, also identifizierst du zuerst, welche Vorgänge wirklich kritisch sind (z. B. Kofferung und Randabschlüsse vor dem Einbau). Dann beschleunigst du nach der Crashing-Logik nur diese – beginnend beim Vorgang mit den geringsten Mehrkosten je gewonnenem Tag, etwa verlängerte Arbeitstage bei der Kofferung statt einer zweiten Equipe überall. Dabei die Nebenwirkungen einrechnen: Zusätzliche Leute binden die erfahrensten Kräfte für die Einarbeitung, Überstunden erzeugen Ermüdung und Nacharbeit, und auf engem Trassee fehlt schlicht der Platz. Nach jeder Massnahme prüfst du, ob sich der kritische Weg verschoben hat, und steuerst über die Wochenplanung/Disposition nach. Reicht das nicht, sprichst du den Termin frühzeitig mit Mischwerk und Bauherrschaft neu ab, statt die Qualität zu opfern.</div>
     </details>
   </section>
 
