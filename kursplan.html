@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lernpfad Bauführung – Projektmanagement</title>
-<meta name="description" content="Der Lernpfad Bauführung: sechs Module aus 18 Kapiteln, priorisiert nach dem, was Baustelle und HFP wirklich verlangen.">
+<meta name="description" content="Der Lernpfad Bauführung als einfacher Schritt-für-Schritt-Weg: 18 Schritte in 6 Modulen, mit Fortschrittsbalken je Modul.">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
@@ -14,7 +14,7 @@
   <div class="inner">
     <p class="kicker">Professionelles Lernprogramm · Track Bauführung</p>
     <h1>Lernpfad Bauführung</h1>
-    <p class="sub">Die 18 Kapitel des Programms, neu geordnet für die Rolle Bauführer: vier Kernmodule mit dem täglichen Handwerkszeug, zwei Kontextmodule zum Verständnis von Bauherr und Vertrag – und der Ausblick auf die kommenden Bautechnik-Module.</p>
+    <p class="sub">Dein Weg in 18 Schritten: einfach der Reihe nach von Schritt 1 bis 18 – Modul für Modul, Balken für Balken. Nach jedem Kapitel unten den Haken setzen, dann zeigt dir der Pfad automatisch den nächsten Schritt.</p>
   </div>
 </header>
 
@@ -22,9 +22,6 @@
   <div class="inner">
     <a href="index.html">Startseite</a>
     <a href="kursplan.html" class="active">Lernpfad</a>
-    <a href="vorlesungen.html">Vorlesungsskripte</a>
-    <a href="projekt.html">Semesterprojekt</a>
-    <a href="literatur.html">Literatur</a>
     <a href="glossar.html">Glossar</a>
     <a href="suche.html">Suche</a>
   </div>
@@ -33,9 +30,8 @@
 <main>
 
   <section class="card">
-    <h2>So funktioniert der Track Bauführung</h2>
-    <p>Die Module sind nach <strong>Nutzen für die Bauführung</strong> geordnet, nicht nach der Vorlesungsreihenfolge des Originalkurses: Zuerst die vier <span class="prio-kern">Kern</span>-Module (Kalkulation, Terminplanung, Kostenkontrolle, Nachträge) – das ist das Handwerkszeug für Baustelle und HFP. Danach die <span class="prio-kontext">Kontext</span>-Module, mit denen Sie Verträge und die Bauherrenseite verstehen. Die Kapitelnummern bleiben die des Gesamtprogramms; jedes Kapitel nennt seine konkrete Relevanz für die Bauführung direkt unter den Lernzielen.</p>
-    <p>Empfohlenes Tempo unverändert: <strong>zwei Kapitel pro Woche</strong>, vor jedem Kapitel die <a href="literatur.html">Pflichtlektüre</a>. Haken setzen Sie unten auf den Kapitelseiten – der Balken zeigt Ihren Stand.</p>
+    <h2>Dein Fortschritt</h2>
+    <div id="weiter-lernen"></div>
     <div id="fortschritt"></div>
   </section>
 
@@ -43,29 +39,15 @@
     <div class="unit-head">
       <span class="le-badge">Modul B1</span>
       <h3>Kalkulation &amp; Offerte</h3>
-      <span class="le-meta"><span class="prio-kern">Kern</span> · 2 Kapitel · Woche 1</span>
+      <span class="le-meta"><span class="prio-kern">Kern</span></span>
     </div>
     <div class="unit-body">
-      <p class="unit-desc">Einheitspreise, Mengenermittlung, Zuschläge und detaillierte Kalkulation – die Grundlage jeder Offerte und jedes Ausmasses. Direkt anwendbar in der täglichen Offert- und NPK-Arbeit.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Kapitel</th><th>Thema</th><th>Skript</th></tr></thead>
-          <tbody>
-            <tr><td class="kap">3.1</td><td><a href="kapitel-3-1.html">Vergabeverfahren und Kostenschätzung I</a></td><td><a class="pdf-link" href="pdfs/vorlesung-07-vergabeverfahren-kostenschaetzung-1.pdf">PDF</a></td></tr>
-            <tr><td class="kap">3.2</td><td><a href="kapitel-3-2.html">Detaillierte Kostenschätzung und Überblick über das Pumpstationsprojekt</a></td><td><a class="pdf-link" href="pdfs/vorlesung-08-detaillierte-kostenschaetzung.pdf">PDF</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="unit-extra">
-        <div>
-          <span class="label">Pflichtlektüre</span>
-          „Estimating" · <cite>Construction Nightmares</cite>, Kap. 28 und 20 – <a href="literatur.html#pflichtlektuere">Details</a>
-        </div>
-        <div>
-          <span class="label">Praxisbezug</span>
-          Eigene Offerten mit den Kalkulationsschritten des Kapitels gegenprüfen (Menge × Leistungsansatz × Kostensatz + Zuschläge).
-        </div>
-      </div>
+      <p class="unit-desc">Einheitspreise, Mengenermittlung und detaillierte Kalkulation – die Grundlage jeder Offerte und jedes Ausmasses.</p>
+      <div class="modul-balken" data-modul="b1"></div>
+      <ol class="schritte">
+        <li class="schritt" data-kap="3-1"><span class="s-nr">1</span><a href="kapitel-3-1.html">Kapitel 3.1 · Vergabeverfahren und Kostenschätzung I</a><span class="s-status"></span></li>
+        <li class="schritt" data-kap="3-2"><span class="s-nr">2</span><a href="kapitel-3-2.html">Kapitel 3.2 · Detaillierte Kostenschätzung (Pumpstationsbeispiel)</a><span class="s-status"></span></li>
+      </ol>
     </div>
   </section>
 
@@ -73,31 +55,17 @@
     <div class="unit-head">
       <span class="le-badge">Modul B2</span>
       <h3>Terminplanung &amp; Ressourcen</h3>
-      <span class="le-meta"><span class="prio-kern">Kern</span> · 4 Kapitel · Wochen 2–3</span>
+      <span class="le-meta"><span class="prio-kern">Kern</span></span>
     </div>
     <div class="unit-body">
-      <p class="unit-desc">Vom Bauprogramm zum belastbaren Terminplan: Netzplantechnik und kritischer Pfad, Umgang mit Terminunsicherheit (PERT, Monte-Carlo) und Ressourcenplanung – die Grundlage jeder Wochenplanung und Disposition.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Kapitel</th><th>Thema</th><th>Skript</th></tr></thead>
-          <tbody>
-            <tr><td class="kap">4.1</td><td><a href="kapitel-4-1.html">Planung und deterministische Terminplanung</a></td><td><a class="pdf-link" href="pdfs/vorlesung-09-deterministische-terminplanung.pdf">PDF</a></td></tr>
-            <tr><td class="kap">4.2</td><td><a href="kapitel-4-2.html">Deterministische Planung II und probabilistische Planung I</a></td><td><a class="pdf-link" href="pdfs/vorlesung-10-deterministisch-2-probabilistisch-1.pdf">PDF</a></td></tr>
-            <tr><td class="kap">4.3</td><td><a href="kapitel-4-3.html">Probabilistische Planung II</a></td><td><a class="pdf-link" href="pdfs/vorlesung-11-probabilistische-planung-2.pdf">PDF</a></td></tr>
-            <tr><td class="kap">4.4</td><td><a href="kapitel-4-4.html">Simulation und ressourcenbasierte Terminplanung</a></td><td><a class="pdf-link" href="pdfs/vorlesung-12-simulation-ressourcenplanung.pdf">PDF</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="unit-extra">
-        <div>
-          <span class="label">Pflichtlektüre</span>
-          „Project Planning" · Hendrickson, Abschn. 8.6–8.7 und 3.11 · <cite>Construction Nightmares</cite>, Kap. 5, 19 – <a href="literatur.html#pflichtlektuere">Details</a>
-        </div>
-        <div>
-          <span class="label">Praxisbezug</span>
-          Ein laufendes Bauvorhaben als kleinen Netzplan aufziehen und den kritischen Pfad bestimmen – die wirkungsvollste Übung des ganzen Tracks.
-        </div>
-      </div>
+      <p class="unit-desc">Vom Bauprogramm zum belastbaren Terminplan: kritischer Pfad, Terminunsicherheit und Ressourcenplanung für Wochenplanung und Disposition.</p>
+      <div class="modul-balken" data-modul="b2"></div>
+      <ol class="schritte">
+        <li class="schritt" data-kap="4-1"><span class="s-nr">3</span><a href="kapitel-4-1.html">Kapitel 4.1 · Planung und deterministische Terminplanung</a><span class="s-status"></span></li>
+        <li class="schritt" data-kap="4-2"><span class="s-nr">4</span><a href="kapitel-4-2.html">Kapitel 4.2 · Deterministische Planung II und PERT</a><span class="s-status"></span></li>
+        <li class="schritt" data-kap="4-3"><span class="s-nr">5</span><a href="kapitel-4-3.html">Kapitel 4.3 · Probabilistische Planung II</a><span class="s-status"></span></li>
+        <li class="schritt" data-kap="4-4"><span class="s-nr">6</span><a href="kapitel-4-4.html">Kapitel 4.4 · Simulation und ressourcenbasierte Terminplanung</a><span class="s-status"></span></li>
+      </ol>
     </div>
   </section>
 
@@ -105,29 +73,15 @@
     <div class="unit-head">
       <span class="le-badge">Modul B3</span>
       <h3>Kosten- &amp; Leistungskontrolle</h3>
-      <span class="le-meta"><span class="prio-kern">Kern</span> · 2 Kapitel · Woche 4</span>
+      <span class="le-meta"><span class="prio-kern">Kern</span></span>
     </div>
     <div class="unit-body">
-      <p class="unit-desc">Soll-Ist-Vergleich richtig gemacht: Kosten- und Terminüberwachung, Earned-Value-Kennzahlen (CPI, SPI, Endkostenprognose) – exakt die Logik eines Baustellen-Cockpits im Kostencontrolling.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Kapitel</th><th>Thema</th><th>Skript</th></tr></thead>
-          <tbody>
-            <tr><td class="kap">5.1</td><td><a href="kapitel-5-1.html">Grundlagen der Kosten- und Terminüberwachung</a></td><td><a class="pdf-link" href="pdfs/vorlesung-13-kosten-terminueberwachung.pdf">PDF</a></td></tr>
-            <tr><td class="kap">5.2</td><td><a href="kapitel-5-2.html">Earned-Value-Analyse (C/SCSC) und Grundlagen der Projektsteuerung</a></td><td><a class="pdf-link" href="pdfs/vorlesung-14-earned-value-analyse-projektsteuerung.pdf">PDF</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="unit-extra">
-        <div>
-          <span class="label">Pflichtlektüre</span>
-          Hendrickson, Abschn. 8.9 · <cite>Construction Nightmares</cite>, Kap. 5, 14 – <a href="literatur.html#pflichtlektuere">Details</a>
-        </div>
-        <div>
-          <span class="label">Praxisbezug</span>
-          CV, SV, CPI und SPI einmal von Hand für eine echte Baustelle rechnen – danach liest sich jedes Kostencontrolling anders.
-        </div>
-      </div>
+      <p class="unit-desc">Soll-Ist-Vergleich richtig gemacht: Überwachung und Earned-Value-Kennzahlen – die Logik deines Baustellen-Cockpits.</p>
+      <div class="modul-balken" data-modul="b3"></div>
+      <ol class="schritte">
+        <li class="schritt" data-kap="5-1"><span class="s-nr">7</span><a href="kapitel-5-1.html">Kapitel 5.1 · Grundlagen der Kosten- und Terminüberwachung</a><span class="s-status"></span></li>
+        <li class="schritt" data-kap="5-2"><span class="s-nr">8</span><a href="kapitel-5-2.html">Kapitel 5.2 · Earned-Value-Analyse und Projektsteuerung</a><span class="s-status"></span></li>
+      </ol>
     </div>
   </section>
 
@@ -135,28 +89,14 @@
     <div class="unit-head">
       <span class="le-badge">Modul B4</span>
       <h3>Nachträge, Regie &amp; Streitfälle</h3>
-      <span class="le-meta"><span class="prio-kern">Kern</span> · 1 Kapitel · Woche 5</span>
+      <span class="le-meta"><span class="prio-kern">Kern</span></span>
     </div>
     <div class="unit-body">
-      <p class="unit-desc">Wo auf der Baustelle Geld liegen bleibt: Änderungsmanagement, Dokumentation und Beweissicherung, Reviews und Audits, Konfliktlösung von der Verhandlung bis zum Schiedsverfahren. Das Fundament für eine saubere Nachtragspipeline (erkannt → gemeldet → offeriert → genehmigt → verrechnet).</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Kapitel</th><th>Thema</th><th>Skript</th></tr></thead>
-          <tbody>
-            <tr><td class="kap">6.2</td><td><a href="kapitel-6-2.html">Reviews (Fortsetzung), Audits, Änderungen und Streitfälle</a></td><td><a class="pdf-link" href="pdfs/vorlesung-18-reviews-audits-streitfaelle.pdf">PDF</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="unit-extra">
-        <div>
-          <span class="label">Pflichtlektüre</span>
-          „Project Closeout" · <cite>Construction Nightmares</cite>, Kap. 3 – <a href="literatur.html#pflichtlektuere">Details</a>
-        </div>
-        <div>
-          <span class="label">Praxisbezug</span>
-          Fotodokumentation und Ereignisjournal konsequent führen – jedes Regie-Ereignis sofort erfassen, nie „später nachtragen".
-        </div>
-      </div>
+      <p class="unit-desc">Wo auf der Baustelle Geld liegen bleibt: Änderungen, Beweissicherung und Konfliktlösung – Grundlage jeder sauberen Nachtragspipeline.</p>
+      <div class="modul-balken" data-modul="b4"></div>
+      <ol class="schritte">
+        <li class="schritt" data-kap="6-2"><span class="s-nr">9</span><a href="kapitel-6-2.html">Kapitel 6.2 · Reviews, Audits, Änderungen und Streitfälle</a><span class="s-status"></span></li>
+      </ol>
     </div>
   </section>
 
@@ -164,32 +104,18 @@
     <div class="unit-head">
       <span class="le-badge">Modul B5</span>
       <h3>Projektorganisation &amp; Verträge kompakt</h3>
-      <span class="le-meta"><span class="prio-kontext">Kontext</span> · 5 Kapitel · Wochen 6–7</span>
+      <span class="le-meta"><span class="prio-kontext">Kontext</span></span>
     </div>
     <div class="unit-body">
-      <p class="unit-desc">Verstehen, wie Bauherr und Planer ticken: Projektbewertung und Finanzierung (warum Projekte überhaupt gebaut oder gestoppt werden), Abwicklungsmodelle, Vergütungs- und Vergabeverfahren – damit Sie Verträge und die Gegenseite richtig lesen.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Kapitel</th><th>Thema</th><th>Skript</th></tr></thead>
-          <tbody>
-            <tr><td class="kap">1.1</td><td><a href="kapitel-1-1.html">Einführung</a></td><td><a class="pdf-link" href="pdfs/vorlesung-01-einfuehrung.pdf">PDF</a></td></tr>
-            <tr><td class="kap">1.2</td><td><a href="kapitel-1-2.html">Projektfinanzierung und Projektbewertung</a></td><td><a class="pdf-link" href="pdfs/vorlesung-02-projektfinanzierung-und-bewertung.pdf">PDF</a></td></tr>
-            <tr><td class="kap">1.3</td><td><a href="kapitel-1-3.html">Instrumente zur Projektbewertung</a></td><td><a class="pdf-link" href="pdfs/vorlesung-03-instrumente-zur-projektbewertung.pdf">PDF</a></td></tr>
-            <tr><td class="kap">2.1</td><td><a href="kapitel-2-1.html">Projektorganisation</a></td><td><a class="pdf-link" href="pdfs/vorlesung-05-projektorganisation.pdf">PDF</a></td></tr>
-            <tr><td class="kap">2.2</td><td><a href="kapitel-2-2.html">Abwicklungsmodelle (Fortsetzung), Vergütungs- und Vergabeverfahren</a></td><td><a class="pdf-link" href="pdfs/vorlesung-06-abwicklungsmodelle-verguetung-vergabe.pdf">PDF</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="unit-extra">
-        <div>
-          <span class="label">Pflichtlektüre</span>
-          „Project Participants" · Hendrickson, Kap. 1 · <cite>Construction Nightmares</cite>, Kap. 8, 12, 16, 17, 20, 22, 27 – <a href="literatur.html#pflichtlektuere">Details</a>
-        </div>
-        <div>
-          <span class="label">Praxisbezug</span>
-          Den eigenen Werkvertrag einer laufenden Baustelle einordnen: Abwicklungsmodell, Vergütungsart, Risikoteilung.
-        </div>
-      </div>
+      <p class="unit-desc">Verstehen, wie Bauherrschaft und Planer ticken: Projektbewertung, Finanzierung, Abwicklungsmodelle und Vergabe – damit du Verträge richtig liest.</p>
+      <div class="modul-balken" data-modul="b5"></div>
+      <ol class="schritte">
+        <li class="schritt" data-kap="1-1"><span class="s-nr">10</span><a href="kapitel-1-1.html">Kapitel 1.1 · Einführung</a><span class="s-status"></span></li>
+        <li class="schritt" data-kap="1-2"><span class="s-nr">11</span><a href="kapitel-1-2.html">Kapitel 1.2 · Projektfinanzierung und Projektbewertung</a><span class="s-status"></span></li>
+        <li class="schritt" data-kap="1-3"><span class="s-nr">12</span><a href="kapitel-1-3.html">Kapitel 1.3 · Instrumente zur Projektbewertung</a><span class="s-status"></span></li>
+        <li class="schritt" data-kap="2-1"><span class="s-nr">13</span><a href="kapitel-2-1.html">Kapitel 2.1 · Projektorganisation</a><span class="s-status"></span></li>
+        <li class="schritt" data-kap="2-2"><span class="s-nr">14</span><a href="kapitel-2-2.html">Kapitel 2.2 · Abwicklungsmodelle, Vergütung und Vergabe</a><span class="s-status"></span></li>
+      </ol>
     </div>
   </section>
 
@@ -197,31 +123,17 @@
     <div class="unit-head">
       <span class="le-badge">Modul B6</span>
       <h3>Risiko, Qualität &amp; Projektdynamik</h3>
-      <span class="le-meta"><span class="prio-kontext">Kontext</span> · 4 Kapitel · Wochen 8–9</span>
+      <span class="le-meta"><span class="prio-kontext">Kontext</span></span>
     </div>
     <div class="unit-body">
-      <p class="unit-desc">Warum Projekte kippen und wie man es früh erkennt: Umgang mit Unsicherheit, Problemdiagnose, Teufelskreise aus Nacharbeit und Termindruck (System Dynamics) sowie Qualitätsüberwachung und Projektlernen.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Kapitel</th><th>Thema</th><th>Skript</th></tr></thead>
-          <tbody>
-            <tr><td class="kap">1.4</td><td><a href="kapitel-1-4.html">Umgang mit Unsicherheit: Konzepte und Instrumente</a></td><td><a class="pdf-link" href="pdfs/vorlesung-04-umgang-mit-unsicherheit.pdf">PDF</a></td></tr>
-            <tr><td class="kap">5.3</td><td><a href="kapitel-5-3.html">Problemdiagnose und Einführung in die Projektdynamik</a></td><td><a class="pdf-link" href="pdfs/vorlesung-15-problemdiagnose-projektdynamik.pdf">PDF</a></td></tr>
-            <tr><td class="kap">5.4</td><td><a href="kapitel-5-4.html">System- und Änderungsdynamik</a></td><td><a class="pdf-link" href="pdfs/vorlesung-16-system-aenderungsdynamik.pdf">PDF</a></td></tr>
-            <tr><td class="kap">6.1</td><td><a href="kapitel-6-1.html">Risikomanagement II, Qualitätsüberwachung und -steuerung sowie Projektlernen</a></td><td><a class="pdf-link" href="pdfs/vorlesung-17-risikomanagement-qualitaet-lernen.pdf">PDF</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="unit-extra">
-        <div>
-          <span class="label">Pflichtlektüre</span>
-          <cite>Construction Nightmares</cite>, Kap. 1, 10 · Sterman, <cite>System Dynamics Modeling for Project Management</cite> – <a href="literatur.html#pflichtlektuere">Details</a>
-        </div>
-        <div>
-          <span class="label">Praxisbezug</span>
-          Qualitäts- und Sicherheitskontrollen als Regelkreis begreifen: messen → abweichen → gegensteuern → lernen.
-        </div>
-      </div>
+      <p class="unit-desc">Warum Projekte kippen und wie man es früh erkennt: Unsicherheit, Problemdiagnose, Teufelskreise aus Nacharbeit und Termindruck, Qualität.</p>
+      <div class="modul-balken" data-modul="b6"></div>
+      <ol class="schritte">
+        <li class="schritt" data-kap="1-4"><span class="s-nr">15</span><a href="kapitel-1-4.html">Kapitel 1.4 · Umgang mit Unsicherheit</a><span class="s-status"></span></li>
+        <li class="schritt" data-kap="5-3"><span class="s-nr">16</span><a href="kapitel-5-3.html">Kapitel 5.3 · Problemdiagnose und Projektdynamik</a><span class="s-status"></span></li>
+        <li class="schritt" data-kap="5-4"><span class="s-nr">17</span><a href="kapitel-5-4.html">Kapitel 5.4 · System- und Änderungsdynamik</a><span class="s-status"></span></li>
+        <li class="schritt" data-kap="6-1"><span class="s-nr">18</span><a href="kapitel-6-1.html">Kapitel 6.1 · Risikomanagement II, Qualität und Projektlernen</a><span class="s-status"></span></li>
+      </ol>
     </div>
   </section>
 
@@ -232,20 +144,8 @@
       <span class="le-meta"><span class="prio-geplant">In Vorbereitung</span></span>
     </div>
     <div class="unit-body">
-      <p class="unit-desc">Die Bauführungs-Fachmodule folgen, sobald die Lerneinheiten der Schule vorliegen – prüfungsgenau statt generisch, als private Ergänzung zu diesem öffentlichen Track:</p>
-      <ul>
-        <li><strong>B7 · Bautechnik Hochbau:</strong> Baugrube und Baugrubensicherung, Rohbau Massivbau, Holz- und Stahlbau</li>
-        <li><strong>B8 · Bauphysik, Gebäudetechnik und Ausbau</strong></li>
-        <li><strong>B9 · Baustellenorganisation &amp; AVOR:</strong> Installation, Logistik, Personalführung</li>
-        <li><strong>B10 · Arbeitssicherheit &amp; Recht:</strong> SIA 118/OR-Grundlagen, Suva-Regelwerk</li>
-      </ul>
-      <p class="modul-map">Bis dahin gilt: Die Module B1–B4 sind die beste Vorbereitung, weil Kalkulation, Terminplanung, Kostenkontrolle und Nachtragswesen in jeder Bauführer-Prüfung und auf jeder Baustelle verlangt werden.</p>
+      <p class="unit-desc">Die Bauführungs-Fachmodule (Bautechnik Hochbau · Bauphysik/Gebäudetechnik/Ausbau · Baustellenorganisation &amp; AVOR · Arbeitssicherheit &amp; Recht) folgen, sobald die Lerneinheiten der Schule vorliegen – prüfungsgenau statt generisch.</p>
     </div>
-  </section>
-
-  <section class="card">
-    <h2>Kapitelzählung und Semesterprojekt</h2>
-    <p>Die Kapitelnummern (1.1–6.2) folgen weiterhin dem MIT-Originalkurs – so bleiben alle Querverweise, Skripte und das <a href="glossar.html">Glossar</a> stabil; nur die Lernreihenfolge ist neu. Das <a href="projekt.html">Semesterprojekt</a> lässt sich unverändert parallel bearbeiten: Phase 1 zu Beginn, Phase 2 während B1/B5, Phase 3 während B2/B3, Phase 4 zum Abschluss – als Fallprojekt eignet sich ideal eine Ihrer eigenen Baustellen.</p>
   </section>
 
 </main>
@@ -253,7 +153,7 @@
 <footer>
   <div class="inner">
     <p>Deutsche Übersetzung der Kursunterlagen von <a href="https://ocw.mit.edu/courses/1-040-project-management-spring-2004/" target="_blank" rel="noopener">MIT OpenCourseWare: 1.040 Project Management, Spring 2004</a> (Dr.&nbsp;Nathaniel Osgood).<br>
-    Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons BY-NC-SA 4.0</a>. Die verlinkten PDF-Skripte liegen im englischen Original vor.</p>
+    Lizenz: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons BY-NC-SA 4.0</a>.</p>
   </div>
 </footer>
 
