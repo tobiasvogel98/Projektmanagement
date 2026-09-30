@@ -6,6 +6,7 @@
 <title>Kapitel 4.2: Deterministische Planung II und probabilistische Planung I – Projektmanagement</title>
 <meta name="description" content="Kapitel 4.2 des Lernprogramms Projektmanagement: Deterministische Planung II und probabilistische Planung I – vollständig übersetzt und aufbereitet.">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
 
@@ -25,6 +26,8 @@
     <a href="vorlesungen.html">Vorlesungsskripte</a>
     <a href="projekt.html">Semesterprojekt</a>
     <a href="literatur.html">Literatur</a>
+    <a href="glossar.html">Glossar</a>
+    <a href="suche.html">Suche</a>
   </div>
 </nav>
 
@@ -47,7 +50,21 @@
         <li><a href="#abschnitt-6">Warum Unsicherheit einplanen? Motivation und Fallbeispiele</a></li>
         <li><a href="#abschnitt-7">PERT: Grundidee, Beta-Verteilung und Kennwertformeln</a></li>
         <li><a href="#abschnitt-8">PERT-Rechenbeispiel: Erwartungswert, Varianz und Fertigstellungswahrscheinlichkeiten</a></li>
+        <li><a href="#zusammenfassung">Das Wichtigste in Kürze</a></li>
+        <li><a href="#selbsttest">Selbsttest</a></li>
       </ol>
+    </div>
+
+    <div class="lernziele">
+      <span class="label">Lernziele</span>
+      <ul>
+        <li>Sie führen die Vorwärts- und Rückwärtsrechnung an einem konkreten AON-Netzplan vollständig durch und lesen Puffer und kritischen Pfad ab.</li>
+        <li>Sie erklären die vier Beziehungstypen FS, SS, FF und SF mit Lags und Leads und ordnen ihnen Praxisbeispiele zu.</li>
+        <li>Sie beschreiben die Fallstricke der Vorgangsknotenmethode – etwa kontraintuitive kritische Pfade – und erläutern, wie Aktivitätensplitting und Aktivitätsfenster helfen.</li>
+        <li>Sie begründen, warum Unsicherheit in der Terminplanung explizit berücksichtigt werden sollte.</li>
+        <li>Sie berechnen aus der Drei-Zeiten-Schätzung (a, m, b) die erwartete Dauer und die Varianz eines Vorgangs nach PERT.</li>
+        <li>Sie bestimmen über die Normalverteilungsannahme Wahrscheinlichkeiten für die termingerechte Fertigstellung eines Projekts.</li>
+      </ul>
     </div>
 
     <h2 id="abschnitt-1">CPM-Rechenbeispiel: das Dachprojekt in Vorwärts- und Rückwärtsrechnung</h2>
@@ -107,6 +124,7 @@
       <li>Ohne Splitting entstehen <strong>kontraintuitive Fälle</strong>: Eine <em>längere</em> Vorgangsdauer kann den kritischen Pfad <em>verkürzen</em> – das Projekt wäre schneller fertig. Ende–Ende-Beziehungen mit Vorläufen können sogar zu einem „verschwindenden“ kritischen Pfad führen, bei dem kein durchgehender kritischer Pfad mehr angezeigt wird.</li>
     </ul>
     <div class="note">Kernregel für das Modellieren: PDM-Beziehungen stehen oft für Abhängigkeiten zwischen <em>Teilen</em> von Vorgängen. Man frage sich stets, von welchem Teil eines Vorgangs der andere Vorgang tatsächlich abhängt – und wie sich die Abhängigkeit ändern würde, wenn sich die Dauer des Zielvorgangs ändert. Ist das unklar, hilft es, den Vorgang gedanklich (oder tatsächlich) in Teilvorgänge zu zerlegen.</div>
+    <div class="stand-heute"><strong>Stand heute:</strong> Die Vorgangsknotenmethode mit FS-, SS-, FF- und SF-Beziehungen ist heute der Standard in Terminplanungssoftware wie Microsoft Project und Oracle Primavera P6. Die Warnung der Vorlesung gilt dabei unverändert: Die genaue Semantik von Lags, Leads und der Anzeige des kritischen Pfades unterscheidet sich zwischen den Programmen – wer Ergebnisse interpretiert, muss die Rechenregeln des konkret eingesetzten Werkzeugs kennen.</div>
 
     <h2 id="abschnitt-4">Aktivitätensplitting und Aktivitätsfenster</h2>
     <p><strong>Splitting Teil 1 – nicht sequenzielle Teilung:</strong> Manche Algorithmen erlauben es, einen Vorgang in zwei zeitlich getrennte Stücke zu zerlegen. Das schafft Flexibilität bei Zeit- und Ressourcenbedarf, ermöglicht kürzere kritische Pfade, beseitigt die kontraintuitiven Fälle, in denen längere Vorgänge vorteilhaft wären, und erlaubt es Vorgängern (bei SF-/SS-Beziehungen) früher zu beginnen bzw. Nachfolgern (bei SF-/FF-Beziehungen) den Großteil ihrer Arbeit vorzuziehen und nur auf das letzte Ereignis zu warten.</p>
@@ -145,6 +163,7 @@
       <li><strong>Fall 2 – Kinderkrankenhaus Philadelphia:</strong> Zu berücksichtigen waren Einsätze des Rettungshubschraubers, der Betrieb der Patientenbereiche, enge Arbeitszeitfenster (2–4 Uhr nachts) und Eventualplanungen für die Verlegung der Telefonzentrale.</li>
     </ul>
     <p>Die informellen Umgangsweisen mit Unsicherheit sind verbreitet, aber unbefriedigend: am häufigsten schlicht <em>ignorieren</em> (mit erwarteten Dauern rechnen und hoffen, dass sich Fehler ausgleichen), pauschale Zuschlagsfaktoren anwenden oder „Was-wäre-wenn“-Szenarien für einen optimistischen, einen wahrscheinlichsten und einen pessimistischen Fall durchspielen.</p>
+    <div class="stand-heute"><strong>Stand heute:</strong> Die klassische PERT-Handrechnung ist in der Praxis weitgehend von der Monte-Carlo-Simulation (Kapitel 4.3) abgelöst worden, die heute in gängige Terminplanungswerkzeuge beziehungsweise deren Risikoanalyse-Erweiterungen integriert ist. Die Drei-Zeiten-Schätzung (a, m, b) lebt dort als übliches Eingabeformat für die Dauerverteilungen weiter.</div>
 
     <h2 id="abschnitt-7">PERT: Grundidee, Beta-Verteilung und Kennwertformeln</h2>
     <p>Die <strong>Program Evaluation and Review Technique (PERT, Ereignisknoten-gestützte Programmbewertungs- und -überprüfungstechnik)</strong> wurde 1958 von der US Navy gemeinsam mit Booz Allen Hamilton und Lockheed für das Polaris-Raketen-/U-Boot-Programm entwickelt. Sie erfasst probabilistische Vorgangsdauern und erlaubt eine analytische Lösung für Projektdauer und Terminvarianz. Die Grundannahmen:</p>
@@ -221,6 +240,43 @@
     <div class="note">Alle drei Rechnungen betrachten ausschließlich den kritischen Pfad. Warum das systematisch zu optimistisch ist – Stichwort Sammelknoten-Verzerrung (Merge Node Bias) – und wie PNet und die Monte-Carlo-Simulation Abhilfe schaffen, behandelt <a href="kapitel-4-3.html">Kapitel 4.3</a>.</div>
   </section>
 
+  <section class="card">
+    <h2 id="zusammenfassung">Das Wichtigste in Kürze</h2>
+    <ul>
+      <li>Das Dachbeispiel zeigt die CPM-Rechnung konkret: Vorwärtsrechnung liefert die frühesten, Rückwärtsrechnung die spätesten Termine; die Projektdauer beträgt 19 Tage, der Pfad 1–2–3–4–7 ist kritisch, die Vorgänge 5 und 6 haben je 2 Tage Puffer.</li>
+      <li>Die Vorgangsknotenmethode erweitert die Normalfolge (Ende–Start) um die Beziehungstypen SS, FF und SF sowie um Lags (positive Zeitabstände) und Leads (Vorläufe). Am klarsten denkt man sie als Verknüpfungen zwischen Start- und Endereignissen.</li>
+      <li>Die zusätzliche Ausdruckskraft hat ihren Preis: Start und Ende eines Vorgangs können unterschiedliche Puffer besitzen, die Wahl der Beziehung verändert den kritischen Pfad, und ohne Splitting kann eine längere Vorgangsdauer das Projekt paradoxerweise verkürzen.</li>
+      <li>Aktivitätensplitting (Teilung und Pipelining) und Aktivitätsfenster machen die Planung flexibler und beseitigen die kontraintuitiven Fälle; Fenster erlauben es, Meilensteintermine zu fixieren.</li>
+      <li>Mit Leads reichen zwei lineare Durchläufe unter Umständen nicht mehr aus – die verallgemeinerte Terminrechnung nutzt dann eine Dijkstra-basierte Rechnung auf explizit gemachten Start- und Endereignissen.</li>
+      <li>Reale Terminpläne sind unsicher; das bloße Ignorieren der Unsicherheit, pauschale Zuschläge oder wenige Szenarien sind unbefriedigende Behelfe.</li>
+      <li>PERT setzt betaverteilte Vorgangsdauern an und rechnet mit d̄ = (a + 4m + b)/6 und s = (b − a)/6; die Projektdauer wird als normalverteilt angenommen, ihre Varianz ist die Summe der Varianzen der Vorgänge auf dem kritischen Pfad.</li>
+      <li>Alle PERT-Wahrscheinlichkeitsaussagen betrachten nur den kritischen Pfad – warum das systematisch zu optimistisch ist, zeigt Kapitel 4.3.</li>
+    </ul>
+
+    <h2 id="selbsttest">Selbsttest</h2>
+    <p>Prüfen Sie Ihr Verständnis – die Antworten klappen per Klick auf.</p>
+    <details class="quiz"><summary>Frage 1: Nennen Sie je ein Praxisbeispiel für einen Lag und einen Lead – und erklären Sie den Unterschied.</summary>
+      <div class="antwort">Ein Lag ist ein positiver Zeitabstand: Die Deckenschalung darf erst 14 Tage nach dem Betonieren ausgebaut werden (FS = +14, Aushärtezeit). Ein Lead ist ein negativer Zeitabstand, also ein Vorlauf: Der Tankeinbau darf schon einen Tag vor Abschluss des Aushubs beginnen (FS = −1). Der Lag schiebt den Nachfolger nach hinten, der Lead erlaubt eine Überlappung mit dem Vorgänger.</div>
+    </details>
+    <details class="quiz"><summary>Frage 2: Wie kann es geschehen, dass eine <em>längere</em> Vorgangsdauer den kritischen Pfad <em>verkürzt</em>?</summary>
+      <div class="antwort">Bei Ende–Ende- oder Start–Ende-Beziehungen hängt der Nachfolger nur an einem einzelnen Ereignis des Vorgängers. Verlängert sich ein Vorgang, dessen <em>Start</em> die Restriktion bestimmt, kann er früher beginnen müssen – und das restringierende Ereignis rückt nach vorn, sodass das Projekt rechnerisch früher endet. Solche kontraintuitiven Fälle entstehen, weil der Vorgang als unteilbarer Block modelliert ist; erlaubt man Aktivitätensplitting, verschwinden sie.</div>
+    </details>
+    <details class="quiz"><summary>Frage 3 (Rechenaufgabe): Für einen Vorgang wurden a = 2, m = 5 und b = 14 Tage geschätzt. Berechnen Sie erwartete Dauer, Standardabweichung und Varianz nach PERT und interpretieren Sie die Lage des Modus.</summary>
+      <div class="antwort">
+        <div class="formel">
+          d̄ = (a + 4m + b) / 6 = (2 + 4·5 + 14) / 6 = 36 / 6 = <strong>6 Tage</strong><br>
+          s = (b − a) / 6 = (14 − 2) / 6 = <strong>2 Tage</strong> &nbsp;&nbsp;⇒&nbsp;&nbsp; v = s² = <strong>4</strong>
+        </div>
+        Die erwartete Dauer (6) liegt über dem wahrscheinlichsten Wert (5), weil die Verteilung rechtsschief ist: Der Modus m liegt nahe am optimistischen Wert a, der pessimistische Ausreißer b = 14 zieht den Mittelwert nach oben. Die Spannweite b − a wird dabei als ±3 Standardabweichungen gelesen.</div>
+    </details>
+    <details class="quiz"><summary>Frage 4: Warum darf die Projektdauer in PERT als normalverteilt angenommen werden – und was ist an dieser Annahme fraglich?</summary>
+      <div class="antwort">Die Projektdauer ist näherungsweise die Summe vieler zufälliger Vorgangsdauern entlang des kritischen Pfades; nach dem zentralen Grenzwertsatz tendiert eine solche Summe zur Normalverteilung. Fraglich ist die Annahme, weil der Satz unabhängige Summanden voraussetzt – reale Vorgangsdauern sind aber oft korreliert (gleiches Wetter, gleiche Kolonnen) – und weil die Projektdauer an Sammelknoten gar keine reine Summe ist, sondern Maxima enthält.</div>
+    </details>
+    <details class="quiz"><summary>Frage 5: Warum summiert die PERT-Varianzrechnung nur die Varianzen der Vorgänge auf dem kritischen Pfad – und welches Problem entsteht daraus?</summary>
+      <div class="antwort">PERT behandelt das Projekt so, als wäre seine Dauer allein die Dauer des (mit erwarteten Werten berechneten) kritischen Pfades; unter der Unabhängigkeitsannahme addieren sich dann die Varianzen entlang dieses einen Pfades. Damit werden alle anderen Pfade ignoriert, obwohl das Projekt erst endet, wenn <em>alle</em> Pfade fertig sind. Beinahe kritische Pfade mit großer Streuung können den Endtermin dominieren – PERT ist deshalb systematisch zu optimistisch (Sammelknoten-Verzerrung, Kapitel 4.3).</div>
+    </details>
+  </section>
+
   <nav class="prevnext">
     <a href="kapitel-4-1.html">← Kapitel 4.1: Planung und deterministische Terminplanung</a>
     <span class="spacer"></span>
@@ -235,5 +291,6 @@
   </div>
 </footer>
 
+<script src="app.js" defer></script>
 </body>
 </html>

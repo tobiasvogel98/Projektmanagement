@@ -6,6 +6,7 @@
 <title>Kapitel 5.2: Earned-Value-Analyse (C/SCSC) und Grundlagen der Projektsteuerung – Projektmanagement</title>
 <meta name="description" content="Kapitel 5.2 des Lernprogramms Projektmanagement: Earned-Value-Analyse (C/SCSC) und Grundlagen der Projektsteuerung – vollständig übersetzt und aufbereitet.">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
 
@@ -25,6 +26,8 @@
     <a href="vorlesungen.html">Vorlesungsskripte</a>
     <a href="projekt.html">Semesterprojekt</a>
     <a href="literatur.html">Literatur</a>
+    <a href="glossar.html">Glossar</a>
+    <a href="suche.html">Suche</a>
   </div>
 </nav>
 
@@ -47,7 +50,21 @@
         <li><a href="#abschnitt-6">Leistungsorientierte Steuerung: Hebel und Nebenwirkungen</a></li>
         <li><a href="#abschnitt-7">Zeit-Kosten-Ausgleich und Projektbeschleunigung („Crashing“)</a></li>
         <li><a href="#abschnitt-8">Kostensteuerung, Slack Management und zielorientierte Steuerung</a></li>
+        <li><a href="#zusammenfassung">Das Wichtigste in Kürze</a></li>
+        <li><a href="#selbsttest">Selbsttest</a></li>
       </ol>
+    </div>
+
+    <div class="lernziele">
+      <span class="label">Lernziele</span>
+      <ul>
+        <li>Sie erläutern die Earned-Value-Grundgrößen und ordnen die klassische C/SCSC-Notation (BCWS/BCWP/ACWP) den heutigen Bezeichnungen PV/EV/AC zu.</li>
+        <li>Sie berechnen aus gegebenen Grundgrößen die Abweichungen CV und SV, die Indizes CPI und SPI sowie das EAC nach ursprünglicher und revidierter Schätzung und interpretieren die Ergebnisse.</li>
+        <li>Sie erklären den Projektsteuerungsprozess als doppelten Regelkreis und unterscheiden leistungs- und zielorientierte Steuerung.</li>
+        <li>Sie beschreiben die Wechselwirkungen zwischen Kosten, Termin und Qualität und benennen typische Nebenwirkungen von Beschleunigungsmaßnahmen.</li>
+        <li>Sie wenden die Crashing-Heuristik von Kelley und Walker an und begründen, warum nur kritische Vorgänge beschleunigt werden sollten.</li>
+        <li>Sie erläutern Slack Management als Tausch von Zeit gegen Geld und die Reihenfolge, in der Vorgänge verschoben werden.</li>
+      </ul>
     </div>
 
     <h2 id="abschnitt-1">Die Earned-Value-Kennzahlen im Überblick</h2>
@@ -78,6 +95,8 @@
 
     <div class="formel">CV = BCWP − ACWP&nbsp;&nbsp;&nbsp;&nbsp;CI (CPI) = BCWP / ACWP&nbsp;&nbsp;&nbsp;&nbsp;SV = BCWP − BCWS&nbsp;&nbsp;&nbsp;&nbsp;SI (SPI) = BCWP / BCWS</div>
     <div class="formel">TV = STWP − ATWP&nbsp;&nbsp;&nbsp;&nbsp;TI = STWP / ATWP&nbsp;&nbsp;&nbsp;&nbsp;RV = BCWS − ACWP&nbsp;&nbsp;&nbsp;&nbsp;RI = BCWS / ACWP</div>
+
+    <div class="stand-heute"><strong>Stand heute:</strong> Die Methode firmiert heute meist unter dem Namen Earned Value Management (EVM); die C/SCSC des US-Verteidigungsministeriums wurden durch den Industriestandard ANSI/EIA-748 abgelöst, und Standardwerke wie der PMBOK Guide verwenden durchgängig die kurzen Bezeichnungen PV, EV und AC. Als jüngere Ergänzung hat sich die Earned-Schedule-Analyse etabliert: Sie drückt die Terminlage in Zeiteinheiten statt in Geld aus und behebt die bekannte Schwäche, dass SV und SPI gegen Projektende selbst bei verspäteten Projekten zwangsläufig gegen 0 bzw. 1 laufen.</div>
 
     <p>Zur Interpretation: Die Terminabweichung SV wird in Geld gemessen – selbst ein zeitlich kleiner Rückstand kann groß ausfallen, wenn gerade an einer teuren Projektkomponente gearbeitet wird. Alle drei Grundgrößen lassen sich in einem Diagramm über der Zeit auftragen – der klassischen EVA-Kurve:</p>
 
@@ -144,6 +163,8 @@
         </tbody>
       </table>
     </div>
+    <div class="stand-heute"><strong>Stand heute:</strong> EVA-Kennzahlen und Prognosen wie das EAC sind heute Standardfunktionen gängiger Projektmanagement-Software – etwa Oracle Primavera P6 (Nachfolger des seinerzeit verbreiteten Primavera P3) oder Microsoft Project. Das nimmt der Methode die Rechenarbeit, nicht aber die Interpretationsfragen: Welcher EAC-Ansatz der Lage angemessen ist, bleibt eine Managemententscheidung.</div>
+
     <div class="note">Vorsicht vor Verzögerungen im Berichtswesen: Finanz- und Zeitindikatoren sind notwendig, aber nicht hinreichend, um auf Probleme aufmerksam zu werden. Bei ernsten Problemen und „normalem“ Berichtsrhythmus ist das Problem oft schon gravierend, wenn es in den formalen Berichten sichtbar wird. Ein schnelles qualitatives Urteil ist häufig wirksamer als eine verspätete quantitative Auswertung.</div>
 
     <h2 id="abschnitt-5">Der Projektsteuerungsprozess als doppelter Regelkreis</h2>
@@ -229,6 +250,45 @@
     <p>Greifen die leistungsorientierten Maßnahmen nicht oder sind die Ziele nicht mehr realistisch, bleibt die <strong>zielorientierte Steuerung</strong> (Target-Driven Control, vgl. Abb. 2): die Anpassung der Projektziele selbst. Sie ist weniger ein technischer als ein politischer Prozess – Budgets, Termine und Leistungsumfang müssen mit Bauherr und Beteiligten neu verhandelt werden.</p>
   </section>
 
+  <section class="card">
+    <h2 id="zusammenfassung">Das Wichtigste in Kürze</h2>
+    <ul>
+      <li>Die Earned-Value-Analyse integriert Kosten, Termin und geleistete Arbeit über Geldwerte: CV = BCWP − ACWP und CI (CPI) = BCWP/ACWP für die Kostenlage, SV = BCWP − BCWS und SI (SPI) = BCWP/BCWS für die Terminlage.</li>
+      <li>Indizes unter 1 bedeuten Budgetüberschreitung bzw. Terminrückstand; im durchgängigen Beispiel liegt das Projekt mit CI = 0,83 und SI = 0,82 durchgehend über Budget und hinter Plan.</li>
+      <li>Leistungsprognosen erlauben Gegensteuern, bevor Probleme eintreten: Der Endtermin wird aus Restarbeit und erwarteter Arbeitsrate hochgerechnet, die Kosten über BAC, ETC und EAC.</li>
+      <li>Für das EAC gibt es zwei klassische Ansätze: EAC = BAC − CV behandelt die bisherige Abweichung als einmaligen Ausrutscher, EAC = BAC/CI schreibt die bisherige Kosteneffizienz auf die Restarbeit fort.</li>
+      <li>Die Steuerung wirkt in zwei Regelkreisen: Der leistungsorientierte verändert das Projekt, der zielorientierte verhandelt die Ziele neu – Letzteres ist eher ein politischer als ein technischer Prozess.</li>
+      <li>Kosten, Termin und Qualität sind eng verkoppelt; jede Beschleunigungsmaßnahme hat Nebenwirkungen (Ermüdung, Lernkurven, Koordinationsaufwand), und Überreaktion erzeugt kaskadierende Effekte.</li>
+      <li>Crashing lohnt nur bei kritischen Vorgängen – beginnend mit den geringsten Grenzkosten –, wobei sich der kritische Weg dabei verschieben kann und die indirekten Kosten der Projektdauer mitzurechnen sind.</li>
+    </ul>
+
+    <h2 id="selbsttest">Selbsttest</h2>
+    <p>Prüfen Sie Ihr Verständnis – die Antworten klappen per Klick auf.</p>
+    <details class="quiz"><summary>Frage 1: Zum Stichtag gilt: PV (BCWS) = 200.000 $, EV (BCWP) = 180.000 $, AC (ACWP) = 225.000 $; das Gesamtbudget beträgt BAC = 1.000.000 $. Berechnen Sie CV, SV, CPI, SPI und das EAC nach beiden Ansätzen.</summary>
+      <div class="antwort">
+        <div class="formel">CV = EV − AC = 180.000 − 225.000 = −45.000 $&nbsp;&nbsp;&nbsp;&nbsp;SV = EV − PV = 180.000 − 200.000 = −20.000 $</div>
+        <div class="formel">CPI = EV / AC = 180.000 / 225.000 = 0,80&nbsp;&nbsp;&nbsp;&nbsp;SPI = EV / PV = 180.000 / 200.000 = 0,90</div>
+        <div class="formel">EAC (ursprüngliche Schätzung) = BAC − CV = 1.000.000 + 45.000 = 1.045.000 $&nbsp;&nbsp;&nbsp;&nbsp;EAC (revidierte Schätzung) = BAC / CPI = 1.000.000 / 0,80 = 1.250.000 $</div>
+        <p>Das Projekt ist also über Budget (CV negativ, CPI &lt; 1) und im Terminrückstand (SV negativ, SPI &lt; 1). Gilt die bisherige Kostenabweichung als einmaliger Ausrutscher, sind 1.045.000 $ zu erwarten; schreibt man die bisherige Effizienz fort, 1.250.000 $.</p>
+      </div>
+    </details>
+    <details class="quiz"><summary>Frage 2: Warum liegen die beiden EAC-Ansätze oft so weit auseinander – und wann ist welcher plausibel?</summary>
+      <div class="antwort">Der Ansatz „ursprüngliche Schätzung“ (EAC = BAC − CV) bewertet die Restarbeit weiter zu Budgetpreisen: Die bisherige Abweichung bleibt als einmaliger Ausrutscher stehen. Der Ansatz „revidierte Schätzung“ (EAC = BAC/CI) schreibt die bisherige Kosteneffizienz auf die gesamte Restarbeit fort – wer bisher zu teuer war, bleibt es voraussichtlich. Je größer die Restarbeit und je schlechter der CI, desto weiter klaffen die Prognosen auseinander. Der erste Ansatz ist plausibel, wenn die Ursache der Abweichung erkannt und behoben ist; der zweite, wenn sie strukturell ist und fortwirkt.</div>
+    </details>
+    <details class="quiz"><summary>Frage 3: Worin unterscheiden sich leistungsorientierte und zielorientierte Steuerung?</summary>
+      <div class="antwort">Die leistungsorientierte Steuerung verändert das <em>Projekt</em>, um es wieder auf die Ziele zu bringen – etwa durch zusätzliche oder umverteilte Ressourcen, geänderte Randbedingungen oder Verfahren. Die zielorientierte Steuerung verändert die <em>Ziele</em> selbst: Budget, Termine und Leistungsumfang werden mit Bauherr und Beteiligten neu verhandelt. Sie kommt zum Zug, wenn leistungsorientierte Maßnahmen nicht greifen oder die Ziele nicht mehr realistisch sind, und ist weniger ein technischer als ein politischer Prozess.</div>
+    </details>
+    <details class="quiz"><summary>Frage 4: Warum ist es sinnlos, beim Crashing alle Vorgänge zu beschleunigen – und worauf ist dabei zu achten?</summary>
+      <div class="antwort">Die Projektdauer wird allein vom kritischen Weg bestimmt; die Beschleunigung unkritischer Vorgänge kostet Geld, ohne das Projekt zu verkürzen. Deshalb werden nur kritische Vorgänge beschleunigt – beginnend mit dem, der die geringsten Grenzkosten je eingesparter Zeiteinheit hat (Heuristik von Kelley und Walker). Zu beachten: Durch das Crashing kann sich der kritische Weg verschieben, sodass die Rechnung zu wiederholen ist, und die Zeit-Kosten-Kurven der Vorgänge erfassen nur die direkten Kosten – die indirekten Kosten der Projektdauer (Gemeinkosten, Vertragsstrafen) müssen auf Projektebene mitbetrachtet werden.</div>
+    </details>
+    <details class="quiz"><summary>Frage 5: Nennen Sie drei Beschleunigungsmaßnahmen und je eine typische Nebenwirkung.</summary>
+      <div class="antwort">Beispiele: Überstunden bzw. verlängerte Arbeitstage führen zu Ermüdung, sinkender Arbeitsmoral und Nacharbeit. Zusätzliche Arbeitskräfte erfordern Einarbeitung – die ausgerechnet die erfahrensten Kräfte bindet – und stoßen auf Platzmangel. Mehrschichtbetrieb erzeugt Koordinationsprobleme und Schwierigkeiten bei der Personalbeschaffung. Auch größeres Gerät (Lernkurve, Beschaffungszeit) oder ein Bereitschafts-Nachunternehmer (Reibung zwischen Teams) wären richtige Antworten – entscheidend ist die Einsicht, dass jede Maßnahme an begrenzende Faktoren stößt.</div>
+    </details>
+    <details class="quiz"><summary>Frage 6: Das Budget eines Zeitraums ist knapp. In welcher Reihenfolge verschieben Sie Vorgänge beim Slack Management – und warum?</summary>
+      <div class="antwort">Zuerst Vorgänge mit freiem Puffer (FF), weil ihre Verschiebung keine Nachfolger beeinträchtigt; dann Vorgänge mit Gesamtpuffer (TF), deren Verschiebung zwar Nachfolger verschiebt, aber den Endtermin noch nicht; zuletzt – wenn unvermeidlich – kritische Vorgänge, deren Verschiebung das Projekt direkt verlängert. Dabei gilt: Gewonnene Liquidität wird mit zusätzlichen indirekten Kosten der Zeit erkauft.</div>
+    </details>
+  </section>
+
   <nav class="prevnext">
     <a href="kapitel-5-1.html">← Kapitel 5.1: Grundlagen der Kosten- und Terminüberwachung</a>
     <span class="spacer"></span>
@@ -243,5 +303,6 @@
   </div>
 </footer>
 
+<script src="app.js" defer></script>
 </body>
 </html>

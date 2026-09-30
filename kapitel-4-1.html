@@ -6,6 +6,7 @@
 <title>Kapitel 4.1: Planung und deterministische Terminplanung – Projektmanagement</title>
 <meta name="description" content="Kapitel 4.1 des Lernprogramms Projektmanagement: Planung und deterministische Terminplanung – vollständig übersetzt und aufbereitet.">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
 
@@ -25,6 +26,8 @@
     <a href="vorlesungen.html">Vorlesungsskripte</a>
     <a href="projekt.html">Semesterprojekt</a>
     <a href="literatur.html">Literatur</a>
+    <a href="glossar.html">Glossar</a>
+    <a href="suche.html">Suche</a>
   </div>
 </nav>
 
@@ -47,7 +50,21 @@
         <li><a href="#abschnitt-6">Der CPM-Algorithmus: Vorwärts- und Rückwärtsrechnung</a></li>
         <li><a href="#abschnitt-7">Pufferzeiten (Float): Gesamtpuffer, freier und unabhängiger Puffer</a></li>
         <li><a href="#abschnitt-8">Kritischer Pfad und die Frage, wem der Puffer „gehört“</a></li>
+        <li><a href="#zusammenfassung">Das Wichtigste in Kürze</a></li>
+        <li><a href="#selbsttest">Selbsttest</a></li>
       </ol>
+    </div>
+
+    <div class="lernziele">
+      <span class="label">Lernziele</span>
+      <ul>
+        <li>Sie erklären Zweck und Zusammenspiel der Strukturpläne CBS, OBS und WBS und wissen, welche Steuerungssichten ihre Kombinationen liefern.</li>
+        <li>Sie begründen den Nutzen formaler Terminplanung – einschließlich ihrer rechtlichen Bedeutung als Beweismittel bei Verzögerungen.</li>
+        <li>Sie beurteilen Stärken und Grenzen des Gantt-Diagramms und unterscheiden die Netzplandarstellungen AON und AOA (einschließlich Scheinvorgängen).</li>
+        <li>Sie berechnen mit Vorwärts- und Rückwärtsrechnung die frühesten und spätesten Start- und Endtermine eines Netzplans.</li>
+        <li>Sie unterscheiden Gesamtpuffer, freien und unabhängigen Puffer und bestimmen den kritischen Pfad.</li>
+        <li>Sie erläutern den Interessenkonflikt zwischen Auftraggeber und Auftragnehmer um die Nutzung des Puffers.</li>
+      </ul>
     </div>
 
     <h2 id="abschnitt-1">Die Bausteine der Projektplanung: CBS, OBS und WBS</h2>
@@ -76,6 +93,7 @@
     <p>Der Terminplan ist im gesamten Projektverlauf allgegenwärtig: als vorläufiger Terminplan schon in der Planungsphase, zur Festlegung von Fertigstellungs- und Meilensteinterminen (Beschaffungszeiten, Präsenz der Nachunternehmer, Mieterbezug), als Kommunikationsinstrument zwischen den Beteiligten, als Rahmen für die Projektüberwachung, zur Bewertung von Änderungsauswirkungen (einschließlich des Nachweises indirekter Kosten), als Verknüpfung zu Ressourcen und Zahlungen sowie zur Erkennung von Risiken durch Überbelegung der Baustelle oder Witterung.</p>
     <div class="note">Terminpläne haben erhebliche rechtliche Bedeutung: In manchen Fällen ist ihre Erstellung gesetzlich vorgeschrieben. Netzpläne, die Abhängigkeiten explizit codieren, sind das zentrale Beweismittel für die Auswirkung von Änderungen und die Verantwortung für Verzögerungen. Im Fall <em>Mega Construction Co. v. United States</em> (1993) scheiterte der Kläger, weil sein Balkenplan die gegenseitigen Abhängigkeiten der Vorgänge auf dem kritischen Pfad nicht nachwies – ein bloßes Balkendiagramm ohne Anordnungsbeziehungen genügte dem Gericht nicht.</div>
     <p>Terminplanung und Kostenschätzung sind eng verzahnt: Erst der Terminplan macht den Cashflow über die Zeit verständlich, und wegen des Zeitwerts des Geldes ist er entscheidend für den Barwert der Kostenschätzung. Die Mengenermittlung (Quantity Takeoff) informiert beide. Zu den praktischen Risiken gehört ein unausgewogener Einsatz – der Plan wird anfangs intensiv genutzt und später verworfen – sowie die Gefahr, dass Termininformationen nur in der Zentrale bleiben und nicht zu den ausführenden Firmen und Polieren durchdringen. Gefragt ist ein gemeinsam getragener Terminplan. Die eigene Terminplanung der Bauunternehmen ist dagegen oft sehr einfach und kurzfristig (etwa ein wöchentliches Treffen zur Planung der nächsten zwei Wochen) und darauf ausgerichtet, die Kolonnen beschäftigt zu halten – erfüllt der Rahmenterminplan das nicht, wird unter Umständen außerhalb der geplanten Reihenfolge gearbeitet.</p>
+    <div class="stand-heute"><strong>Stand heute:</strong> Genau diese kurzzyklische, gemeinsame Planung der Ausführenden ist inzwischen methodisch formalisiert worden: Lean Construction und insbesondere das Last-Planner-System ergänzen heute die klassische Netzplantechnik um kollaborative, rollierende Planungsroutinen, in denen die ausführenden Gewerke ihre Zusagen für die nächsten Wochen selbst planen und abstimmen.</div>
 
     <h2 id="abschnitt-3">Praktische Einflussfaktoren: Beschaffung, Genehmigungen, Ressourcen</h2>
     <p>Wichtige Faktoren, die im Terminplan berücksichtigt werden müssen:</p>
@@ -117,6 +135,7 @@
       <dt>Activity on Arrow (AOA, Vorgangspfeil-Netzplan)</dt>
       <dd>Historisch am populärsten; im „Manhattan-Layout“ dem Gantt-Format sehr ähnlich. Vorgänge liegen auf den Pfeilen zwischen Ereignisknoten. Da ein Pfeil nur genau einen Anfangs- und einen Endknoten haben darf und zwischen zwei Knoten nur ein Pfeil verlaufen darf, sind <em>Scheinvorgänge</em> (Dummy-Pfeile) nötig – etwa wenn zwei Vorgänge gemeinsame Nachfolger, aber unterschiedliche Vorgängermengen haben.</dd>
     </dl>
+    <div class="stand-heute"><strong>Stand heute:</strong> Die AON-Darstellung hat sich in der Software vollständig durchgesetzt; AOA-Netzpläne mit Scheinvorgängen begegnen einem heute fast nur noch in Lehrbüchern und Prüfungen. Verbreitete Werkzeuge für CPM-Terminpläne sind unter anderem Oracle Primavera P6 (Nachfolger des früheren Primavera P3) und Microsoft Project.</div>
 
     <figure class="slide-fig">
       <img src="bilder/kapitel/k41-abb4.jpg" alt="AON-Netzplan (Bubble-Netzwerk) des Lagerhallenprojekts mit 24 nummerierten Vorgängen zwischen Start und Ende" loading="lazy">
@@ -195,6 +214,51 @@
     </ul>
   </section>
 
+  <section class="card">
+    <h2 id="zusammenfassung">Das Wichtigste in Kürze</h2>
+    <ul>
+      <li>CBS, OBS und WBS strukturieren Kosten, Organisation und Arbeitsumfang; erst ihre Kombinationen (etwa Terminplan + CBS für die Kostenüberwachung) machen das Projekt steuerbar. Beschaffungsvorgänge fehlen oft in der WBS, gehören aber zwingend in den Terminplan.</li>
+      <li>Ein formaler Terminplan senkt die Wahrscheinlichkeit von Verzögerungen, hilft bei der Erholung von eingetretenen Verzögerungen und klärt Verantwortlichkeiten – er hat erhebliche rechtliche Bedeutung als Beweismittel.</li>
+      <li>Das Gantt-Diagramm ist ein starkes Kommunikations- und Berichtsformat, erfasst aber keine Abhängigkeiten zwischen Vorgängen und taugt deshalb nicht als eigentliche Planungsrepräsentation.</li>
+      <li>Die Critical Path Method modelliert das Projekt als gerichteten azyklischen Graphen; AON-Netzpläne tragen die Vorgänge auf den Knoten, AOA-Netzpläne auf den Pfeilen und benötigen dafür Scheinvorgänge.</li>
+      <li>Die Vorwärtsrechnung bestimmt die frühesten Termine über das Maximum der Vorgänger-Endtermine, die Rückwärtsrechnung die spätesten Termine über das Minimum der Nachfolger-Starttermine – beides in linearer Zeit.</li>
+      <li>Der Puffer misst den Verschiebespielraum eines Vorgangs: Gesamtpuffer (ohne Projektverzögerung), freier Puffer (ohne Verzögerung eines Nachfolgers) und unabhängiger Puffer (auch bei spätestem eigenen Start). Für AON-Knoten gilt Puffer = LS − ES = LF − EF.</li>
+      <li>Der kritische Pfad ist der längste Pfad aus Vorgängen mit Gesamtpuffer null; er bestimmt die Mindestdauer des Projekts und verändert sich typischerweise im Projektverlauf.</li>
+      <li>Um die Nutzung des Puffers besteht ein echter Interessenkonflikt: Auftraggeber wollen straffe, frühe Abläufe, Auftragnehmer wollen Flexibilität – mit erheblichen vertraglichen und rechtlichen Folgen.</li>
+    </ul>
+
+    <h2 id="selbsttest">Selbsttest</h2>
+    <p>Prüfen Sie Ihr Verständnis – die Antworten klappen per Klick auf.</p>
+    <details class="quiz"><summary>Frage 1: Warum genügte dem Gericht im Fall <em>Mega Construction Co. v. United States</em> ein Balkenplan nicht als Nachweis?</summary>
+      <div class="antwort">Ein Gantt-Diagramm zeigt nur die zeitliche Lage der Vorgänge, nicht ihre Abhängigkeiten. Um die Auswirkung einer Verzögerung nachzuweisen, muss aber belegt werden, dass die betroffenen Vorgänge auf dem kritischen Pfad lagen und einander bedingten – das können nur Netzpläne, die Anordnungsbeziehungen explizit codieren. Genau dieser Nachweis fehlte im Balkenplan des Klägers.</div>
+    </details>
+    <details class="quiz"><summary>Frage 2: Worin unterscheiden sich AON- und AOA-Netzpläne, und warum braucht nur AOA Scheinvorgänge?</summary>
+      <div class="antwort">Bei AON (Vorgangsknotenmethode) sitzen die Vorgänge auf den Knoten und die Pfeile stellen Abhängigkeiten dar; bei AOA liegen die Vorgänge auf den Pfeilen zwischen Ereignisknoten. Da in AOA jeder Pfeil genau einen Anfangs- und einen Endknoten hat und zwischen zwei Knoten nur ein Pfeil verlaufen darf, lassen sich manche Abhängigkeitsmuster – etwa gemeinsame Nachfolger bei unterschiedlichen Vorgängermengen – nur über Scheinvorgänge ohne Dauer abbilden. AON kommt ohne sie aus und erlaubt zudem reichere Beziehungstypen.</div>
+    </details>
+    <details class="quiz"><summary>Frage 3: Warum wird in der Vorwärtsrechnung das Maximum, in der Rückwärtsrechnung das Minimum gebildet?</summary>
+      <div class="antwort">Ein Vorgang kann erst starten, wenn <em>alle</em> Vorgänger abgeschlossen sind – sein frühester Start ist daher das Maximum der frühesten Endtermine seiner Vorgänger. Umgekehrt muss ein Vorgang so rechtzeitig enden, dass <em>alle</em> Nachfolger noch pünktlich starten können – sein spätestes Ende ist daher das Minimum der spätesten Starttermine der Nachfolger.</div>
+    </details>
+    <details class="quiz"><summary>Frage 4 (Rechenaufgabe): Ein kleines Projekt besteht aus vier Vorgängen: A (3 Tage) ist Vorgänger von B (5 Tage) und C (2 Tage); D (2 Tage) folgt auf B <em>und</em> C. Berechnen Sie ES, EF, LS, LF, die Projektdauer, die Gesamtpuffer und den kritischen Pfad.</summary>
+      <div class="antwort">
+        <div class="formel">
+          <strong>Vorwärtsrechnung:</strong> A: ES = 0, EF = 3 · B: ES = 3, EF = 8 · C: ES = 3, EF = 5<br>
+          D: ES = max(8; 5) = 8, EF = 10 &nbsp;⇒&nbsp; Projektdauer = 10 Tage
+        </div>
+        <div class="formel">
+          <strong>Rückwärtsrechnung:</strong> D: LF = 10, LS = 8 · B: LF = 8, LS = 3 · C: LF = 8, LS = 6<br>
+          A: LF = min(3; 6) = 3, LS = 0
+        </div>
+        Die Gesamtpuffer (TF = LS − ES) betragen: A, B und D je 0 Tage, C hat 6 − 3 = 3 Tage Puffer. Kritischer Pfad ist also A–B–D; nur C könnte sich um bis zu 3 Tage verzögern, ohne das Projektende zu verschieben.
+      </div>
+    </details>
+    <details class="quiz"><summary>Frage 5: Was unterscheidet den Gesamtpuffer vom freien Puffer – und wer „spürt“ jeweils die Verzögerung?</summary>
+      <div class="antwort">Der Gesamtpuffer ist die maximale Verzögerung eines Vorgangs, ohne das <em>Projektende</em> zu verschieben; der freie Puffer ist die maximale Verzögerung, ohne den frühesten Start eines <em>Nachfolgers</em> anzutasten. Wer Gesamtpuffer verbraucht, kann also nachfolgende Vorgänge verschieben und ihnen Spielraum nehmen, ohne dass das Projekt später endet – erst der freie Puffer garantiert, dass die Nachfolger davon gar nichts merken.</div>
+    </details>
+    <details class="quiz"><summary>Frage 6: Mit welchen Taktiken versuchen Auftragnehmer, sich Puffer zu sichern – und wie reagieren Auftraggeber vertraglich darauf?</summary>
+      <div class="antwort">Auftragnehmer blähen mitunter Dauern bewusst auf (Beschleunigung nur gegen Vergütung), fügen künstliche Anordnungsbeziehungen als „bevorzugte Arbeitsweise“ ein und erzeugen so mehrere (nah-)kritische Pfade. Auftraggeber sichern sich dagegen eigene Rechte an der Puffernutzung, Widerspruchsrechte gegen unangemessene Dauern, das Recht zur Streichung künstlicher Beziehungen und die Pflicht zur Neuberechnung des kritischen Pfades bei Verzug – der Puffer ist damit auch ein vertragliches Verhandlungsobjekt.</div>
+    </details>
+  </section>
+
   <nav class="prevnext">
     <a href="kapitel-3-2.html">← Kapitel 3.2: Detaillierte Kostenschätzung und Überblick über das Pumpstationsprojekt</a>
     <span class="spacer"></span>
@@ -209,5 +273,6 @@
   </div>
 </footer>
 
+<script src="app.js" defer></script>
 </body>
 </html>

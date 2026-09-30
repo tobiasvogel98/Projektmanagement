@@ -6,6 +6,7 @@
 <title>Kapitel 5.4: System- und Änderungsdynamik – Projektmanagement</title>
 <meta name="description" content="Kapitel 5.4 des Lernprogramms Projektmanagement: System- und Änderungsdynamik – vollständig übersetzt und aufbereitet.">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
 
@@ -25,6 +26,8 @@
     <a href="vorlesungen.html">Vorlesungsskripte</a>
     <a href="projekt.html">Semesterprojekt</a>
     <a href="literatur.html">Literatur</a>
+    <a href="glossar.html">Glossar</a>
+    <a href="suche.html">Suche</a>
   </div>
 </nav>
 
@@ -47,7 +50,21 @@
         <li><a href="#abschnitt-6">Fast-Tracking und seine Rückkopplungen</a></li>
         <li><a href="#abschnitt-7">Der Änderungsprozess als Wirkungsschleife und Stock-and-Flow-Modell</a></li>
         <li><a href="#abschnitt-8">System Dynamics und Prozesssimulation im Vergleich</a></li>
+        <li><a href="#zusammenfassung">Das Wichtigste in Kürze</a></li>
+        <li><a href="#selbsttest">Selbsttest</a></li>
       </ol>
+    </div>
+
+    <div class="lernziele">
+      <span class="label">Lernziele</span>
+      <ul>
+        <li>Sie erklären, wie Kausaldiagramme evolutionär entwickelt werden, und erweitern ein einfaches Diagramm um zusätzliche Variablen und Schleifen.</li>
+        <li>Sie unterscheiden statische und dynamische Unsicherheit und erläutern den Einsatz von Szenario-, Sensitivitäts- und Monte-Carlo-Analysen bei der Arbeit mit System-Dynamics-Modellen.</li>
+        <li>Sie beschreiben die Besonderheiten des DPM-Modells: Fortschrittsfunktionen statt starrer Anordnungsbeziehungen, Trennung von Nacharbeit und Spezifikationsänderung, Knock-on-Effekte.</li>
+        <li>Sie wägen Nacharbeit und Spezifikationsänderung als Reaktionen auf Qualitätsabweichungen kurz- und langfristig gegeneinander ab.</li>
+        <li>Sie erklären die „doppelte Gefährdung“ des Fast-Tracking und die verstärkenden Schleifen, die Termindruck, Qualitätssicherung und Nacharbeit koppeln.</li>
+        <li>Sie grenzen System Dynamics und ereignisorientierte Prozesssimulation nach Ansatz, Zielen und Grenzen voneinander ab.</li>
+      </ul>
     </div>
 
     <h2 id="abschnitt-1">Vom einfachen zum aussagekräftigen Kausaldiagramm</h2>
@@ -67,6 +84,7 @@
       <li><strong>Analyse externer Rahmenbedingungen:</strong> Wie wirken unterschiedliche äußere Bedingungen auf das Projekt?</li>
     </ul>
     <p>Unsicherheit wird meist über Sensitivitätsanalysen adressiert – Ziel ist zu sehen, wie stark die eigenen Entscheidungen von der Unsicherheit abhängen. Eine gründliche Analyse erfordert <strong>Monte-Carlo-Läufe</strong>. Dabei sind zwei Arten von Unsicherheit zu unterscheiden:</p>
+    <div class="stand-heute"><strong>Stand heute:</strong> Monte-Carlo-Analysen erfordern längst keine Spezialumgebung mehr: Sie sind in gängige Projektmanagement- und Risikoanalyse-Werkzeuge bzw. deren Add-ins integriert und gehören zum üblichen Instrumentarium der quantitativen Termin- und Kostenrisikoanalyse.</div>
     <dl class="begriffe">
       <dt>Statische Unsicherheit</dt>
       <dd>Unsicherheit über den Wert eines Modellparameters: Zu Beginn des Simulationslaufs wird eine Verteilung für die Modellvariable vorgegeben.</dd>
@@ -119,6 +137,7 @@
     <h2 id="abschnitt-5">Änderungsfortpflanzung und der Wert von Flexibilität</h2>
     <p>Wie weit sich eine scheinbar lokale Änderung fortpflanzen kann, zeigt ein Beispiel aus der Praxis: Widersprüchliche Zeichnungen zur Führung von Lüftungskanälen erzwingen die Änderung eines Zeichnungssatzes, um die Kanäle aus einem anderen Lüftungsraum umzuleiten. In der Folge müssen Sanitär- und Elektroplanung ihre Trassen neu prüfen; die nun nötige größere Lüftungsanlage erfordert überarbeitete Werkstattzeichnungen, die Überprüfung des Elektrosystems auf die höhere Last, die Neubetrachtung der Rohrleitungen zur Anlage und die Prüfung der Tragwerkslasten des Gebäudes. Die Verzögerungen können Kundenbeziehungen belasten, Ressourcen leerlaufen lassen, andere Planungsleistungen stören und den Druck weiter erhöhen.</p>
     <div class="note"><strong>Flexibilität</strong> ist der entscheidende Verbündete gegen das Änderungsrisiko: Man bezahlt für Flexibilität – aber für fehlende Flexibilität bezahlt man oft mehr.</div>
+    <div class="stand-heute"><strong>Stand heute:</strong> Genau solche Koordinationskonflikte zwischen Lüftungs-, Sanitär- und Elektrotrassen werden heute typischerweise in einem koordinierten BIM-Modell (Building Information Modeling) sichtbar gemacht, bevor gebaut wird – die Kollisionsprüfung im Modell ist ein Standardschritt der Planungskoordination. Als Antwort auf die beschriebenen Schnittstellen- und Änderungsrisiken haben sich zudem neuere Abwicklungsmodelle wie Integrated Project Delivery (IPD) und Allianzverträge entwickelt, die Planer und Ausführende früh gemeinsam in die Verantwortung nehmen. Die Grundaussage bleibt gültig: Änderungen pflanzen sich fort, und Flexibilität hat ihren Preis – und ihren Wert.</div>
 
     <h2 id="abschnitt-6">Fast-Tracking und seine Rückkopplungen</h2>
     <p>Die Überlappung von Planung und Bauausführung (<strong>Fast-Tracking</strong>) sowie die Überlappung von Bauprozessen untereinander erzeugen ein dichtes Geflecht von Rückkopplungen, das DPM explizit abbildet:</p>
@@ -181,6 +200,40 @@
     </ul>
   </section>
 
+  <section class="card">
+    <h2 id="zusammenfassung">Das Wichtigste in Kürze</h2>
+    <ul>
+      <li>Kausaldiagramme entstehen evolutionär: Sie werden schrittweise um Variablen und Schleifen erweitert, bis sie die beobachtete Dynamik erklären.</li>
+      <li>System-Dynamics-Modelle werden über ein Basisszenario sowie Politik-, Robustheits- und Sensitivitätsanalysen genutzt; Unsicherheit tritt statisch (unsichere Parameter) und dynamisch (stochastische Prozesse) auf und wird mit Monte-Carlo-Läufen untersucht.</li>
+      <li>DPM integriert System Dynamics mit netzplanbasierten Konzepten: Abhängigkeiten werden als Fortschrittsfunktionen statt starrer Ende-Anfang-Beziehungen abgebildet, Nacharbeit und Spezifikationsänderung werden unterschieden, Knock-on-Effekte flussauf- und flussabwärts charakterisiert.</li>
+      <li>Qualität ist der Treiber der Projektdynamik – entscheidend ist, die Zeit bis zur Entdeckung von Abweichungen zu verkürzen; die indirekten Einsparungen hochwertiger Arbeit können deren direkte Mehrkosten deutlich überwiegen.</li>
+      <li>Nacharbeit kostet kurzfristig, begrenzt aber das Ausmaß der Auswirkungen; Spezifikationsänderungen wirken kurzfristig billiger, können sich aber in andere Teile der Spezifikation fortpflanzen – trotz der Vorabkosten ist Nacharbeit häufig die bessere Wahl.</li>
+      <li>Fast-Tracking unterliegt der „doppelten Gefährdung“: höhere Wahrscheinlichkeit von Nacharbeit und Änderungen und zugleich höhere Empfindlichkeit gegenüber ihnen.</li>
+      <li>Verstärkende Schleifen über Termindruck, nachlassende Qualitätssicherung und verdeckte Änderungen erklären, warum Projekte kippen können; Flexibilität ist der wichtigste Schutz gegen das Änderungsrisiko.</li>
+    </ul>
+
+    <h2 id="selbsttest">Selbsttest</h2>
+    <p>Prüfen Sie Ihr Verständnis – die Antworten klappen per Klick auf.</p>
+    <details class="quiz"><summary>Frage 1: Was besagt die „doppelte Gefährdung“ (Double Jeopardy) des Fast-Tracking?</summary>
+      <div class="antwort">Erstens steigt die <em>Wahrscheinlichkeit</em> von Nacharbeit und Änderungen, weil mit weniger Gewissheit über den Verlauf des vorangehenden Vorgangs – der Planung oder eines vorgelagerten Bauprozesses – begonnen wird. Zweitens steigt die <em>Empfindlichkeit</em> gegenüber solchen Änderungen, weil das Projekt ohnehin in Eile ist: Der Terminplan verträgt weniger Rutsch, und mehr Vorgänge sind nahezu kritisch. Beide Risiken verstärken sich also gegenseitig.</div>
+    </details>
+    <details class="quiz"><summary>Frage 2: Erklären Sie anhand der Änderungsprozess-Schleife 1, warum Termindruck zu noch mehr Nacharbeit führen kann. Warum ist die Schleife verstärkend?</summary>
+      <div class="antwort">Entdeckt das nachgelagerte Gewerk Abweichungen, stellt es Nachbearbeitungsanforderungen; die Nachbearbeitung kostet Zeit und erzeugt Verzug und damit Termindruck. Der Termindruck senkt die Gründlichkeit der Qualitätssicherung, sodass mehr verdeckte Änderungen ins nachgelagerte Gewerk gelangen – dessen Qualität sinkt, was weitere Nachbearbeitung und weiteren Verzug nach sich zieht. Die ursprüngliche Störung wird also über die Kette wieder vergrößert statt gedämpft: Das ist der Rework-Zyklus als verstärkende Schleife (R1).</div>
+    </details>
+    <details class="quiz"><summary>Frage 3: Nacharbeit oder Spezifikationsänderung – wie fällt die Abwägung aus?</summary>
+      <div class="antwort">Nacharbeit bedeutet mehr kurzfristige Arbeit – besonders bei spät entdeckten Abweichungen –, begrenzt aber langfristig das Ausmaß der Auswirkungen. Die Spezifikationsänderung wirkt kurzfristig billiger, kann aber viele Nebenwirkungen auslösen, wenn sie sich in andere Teile der Spezifikation fortpflanzt; zudem verleitet Termindruck systematisch zu managementseitigen Änderungen (Abb. 6). Die DPM-Studien kommen deshalb zu dem Schluss, dass Nacharbeit trotz der Vorabkosten häufig die bessere Wahl ist.</div>
+    </details>
+    <details class="quiz"><summary>Frage 4: Worin unterscheiden sich statische und dynamische Unsicherheit in einem Monte-Carlo-Lauf?</summary>
+      <div class="antwort">Bei statischer Unsicherheit ist der <em>Wert eines Modellparameters</em> unsicher: Zu Beginn jedes Simulationslaufs wird einmal aus einer vorgegebenen Verteilung gezogen. Bei dynamischer Unsicherheit wird dagegen <em>während des gesamten Laufs</em> immer wieder neu gezogen – im Kern die numerische Lösung einer stochastischen Differentialgleichung, etwa ein zufällig schwankender Ölpreis über die Projektlaufzeit.</div>
+    </details>
+    <details class="quiz"><summary>Frage 5: Warum bildet DPM Abhängigkeiten zwischen Vorgängen als Fortschrittsfunktionen ab statt als starre Ende-Anfang-Beziehungen?</summary>
+      <div class="antwort">Weil reale Abhängigkeiten selten „alles oder nichts“ sind: Die Fortschrittsfunktion beschreibt, wie viel Fortschritt des nachgelagerten Vorgangs bei gegebenem Fortschritt des vorgelagerten möglich ist. Das kann ab einem Schwellenwert stetig ansteigen (etwa Rohinstallation und Trockenbau) oder sprunghaft erst nach weitgehender Fertigstellung des Vorgängers einsetzen (etwa Betonieren einer Decke und Rüstung des nächsten Geschosses). So lassen sich Überlappungen – und damit die Dynamik des Fast-Tracking – realistisch modellieren.</div>
+    </details>
+    <details class="quiz"><summary>Frage 6: Nennen Sie drei Unterschiede zwischen ereignisorientierter Prozesssimulation und System Dynamics.</summary>
+      <div class="antwort">Die Prozesssimulation arbeitet „bottom-up“ mit detaillierter Simulation einzelner Vorgangsprozesse, System Dynamics „top-down“ am Gesamtsystem der wichtigsten Faktoren, typischerweise ohne einzelne Vorgänge und Ressourcen. Die Prozesssimulation basiert auf ereignisorientierter (diskreter) Simulation, System Dynamics auf gewöhnlichen bzw. stochastischen Differentialgleichungen. Und „weiche“ Faktoren wie Arbeitsmoral oder Ermüdung bildet die Prozesssimulation in der Regel nicht ab, während System Dynamics sie – notfalls mit groben Schätzungen – einbezieht und dabei auch Entscheidungsregeln und institutionelles Wissen festzuhalten versucht.</div>
+    </details>
+  </section>
+
   <nav class="prevnext">
     <a href="kapitel-5-3.html">← Kapitel 5.3: Problemdiagnose und Einführung in die Projektdynamik</a>
     <span class="spacer"></span>
@@ -195,5 +248,6 @@
   </div>
 </footer>
 
+<script src="app.js" defer></script>
 </body>
 </html>

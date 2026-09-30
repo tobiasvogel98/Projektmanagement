@@ -6,6 +6,7 @@
 <title>Kapitel 4.4: Simulation und ressourcenbasierte Terminplanung – Projektmanagement</title>
 <meta name="description" content="Kapitel 4.4 des Lernprogramms Projektmanagement: Simulation und ressourcenbasierte Terminplanung – vollständig übersetzt und aufbereitet.">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
 
@@ -25,6 +26,8 @@
     <a href="vorlesungen.html">Vorlesungsskripte</a>
     <a href="projekt.html">Semesterprojekt</a>
     <a href="literatur.html">Literatur</a>
+    <a href="glossar.html">Glossar</a>
+    <a href="suche.html">Suche</a>
   </div>
 </nav>
 
@@ -47,7 +50,21 @@
         <li><a href="#abschnitt-6">Optimale Verfahren und die kombinatorische Explosion</a></li>
         <li><a href="#abschnitt-7">Heuristische Verfahren: Prioritätsregeln, Burgess und SPAR</a></li>
         <li><a href="#abschnitt-8">Die Line-of-Balance-Methode für repetitive Projekte</a></li>
+        <li><a href="#zusammenfassung">Das Wichtigste in Kürze</a></li>
+        <li><a href="#selbsttest">Selbsttest</a></li>
       </ol>
+    </div>
+
+    <div class="lernziele">
+      <span class="label">Lernziele</span>
+      <ul>
+        <li>Sie unterscheiden statische und dynamische Terminplanung und diskutieren, welche Planungsgranularität sinnvoll ist.</li>
+        <li>Sie erklären, was GERT gegenüber CPM/PERT zusätzlich abbildet: probabilistische Verzweigungen, Schleifen (Nacharbeitszyklen) und Ressourcen.</li>
+        <li>Sie lesen Aktivitätszyklusdiagramme und beschreiben die Modellbausteine von CYCLONE am Maurer-Beispiel.</li>
+        <li>Sie unterscheiden Ressourcenglättung und ressourcenbeschränkte Einplanung – einschließlich ihrer Wirkung auf die Projektdauer.</li>
+        <li>Sie begründen, warum die optimale Ressourceneinplanung kombinatorisch explodiert, und wenden heuristische Prioritätsregeln an.</li>
+        <li>Sie erläutern Einsatzbereich, Stärken und Grenzen der Line-of-Balance-Methode für repetitive Projekte.</li>
+      </ul>
     </div>
 
     <h2 id="abschnitt-1">Statische vs. dynamische Terminplanung und die Frage der Granularität</h2>
@@ -123,6 +140,7 @@
       <dd>Die Vorgänge werden so eingeplant, dass die Kapazitätsgrenzen eingehalten werden – bei möglichst geringer Verlängerung der Projektdauer.</dd>
     </dl>
     <div class="note">Beiden Verfahren liegt dieselbe Kernannahme zugrunde: Die Ressourcenzuordnung und die Dauer jedes einzelnen Vorgangs bleiben konstant – verschoben wird nur die zeitliche Lage.</div>
+    <div class="stand-heute"><strong>Stand heute:</strong> Resource Loading, Ressourcenglättung und ressourcenbeschränkte Einplanung sind heute Standardfunktionen von Terminplanungssoftware wie Microsoft Project und Oracle Primavera P6. Auch diese Werkzeuge arbeiten intern mit Heuristiken – das Grundproblem bleibt NP-vollständig, und automatisch geglättete Pläne sollten weiterhin fachlich geprüft werden.</div>
 
     <h2 id="abschnitt-6">Optimale Verfahren und die kombinatorische Explosion</h2>
     <p>Ressourcenglättung und -einplanung optimal zu lösen ist ein kombinatorisches Problem und rechnerisch extrem teuer (NP-vollständig): Im Prinzip müsste man alle möglichen Reihenfolgen konkurrierender Vorgänge vergleichen. Die Intuition dahinter: Innerhalb der Randbedingungen gibt es sehr viele mögliche Start- und Endzeitpunkte – typischerweise zu viele, um sie aufzuzählen – und die <em>lokal</em> beste Entscheidung ist nicht unbedingt <em>global</em> die beste. Als exakte Ansätze kommen lineare Programmierung, vollständige Enumeration und „Branch and Bound“ (beschränkte Suche) infrage.</p>
@@ -181,12 +199,57 @@
       <img src="bilder/kapitel/k44-abb7.jpg" alt="Orts-Zeit-Diagramm mit zwei Fortschrittslinien, zwischen denen ein Zeitpuffer von 5 Tagen und ein Wegpuffer von 10 Metern eingezeichnet sind" loading="lazy">
       <figcaption>Abb. 7: Aktivitätspuffer im LSM-Plan: Zwischen den Fortschrittslinien zweier aufeinanderfolgender Gewerke liegen ein <strong>Zeitpuffer</strong> („Time Buffer“, hier mindestens 5 Tage) und ein <strong>Wegpuffer</strong> („Distance Buffer“, hier mindestens 10 m) – erst wenn beide eingehalten sind, ist die Kollisionsfreiheit der Kolonnen gesichert (Folie 57 des Originalskripts).</figcaption>
     </figure>
+    <div class="stand-heute"><strong>Stand heute:</strong> Der Grundgedanke der LOB – Gewerke ziehen in stabiler Folge und abgestimmtem Tempo durch die Abschnitte – hat in der Taktplanung der Lean Construction eine Renaissance erlebt. Allgemein ergänzen heute Lean-Construction-Methoden, insbesondere das Last-Planner-System mit seiner kollaborativen, rollierenden Planung, die klassische zentrale Netzplan- und Ressourcenplanung.</div>
     <p>Stärken und Schwächen im Überblick:</p>
     <ul>
       <li><strong>Vorteile:</strong> einfacher aufzustellen als Netzpläne und informativer als Gantt-Diagramme; grafisch ablesbar sind Fortschrittsrate, Vorgangsdauern, Ressourcenzuordnungen, Kalendertermine und das Konfliktrisiko zwischen Kolonnen. Die LOB ergänzt die Netzplantechnik bei Projekten mit repetitiven und diskreten Anteilen; aus ihr lassen sich Personalhistogramme (Resource-Loading-Diagramme) ableiten, Ressourcen ausbalancieren und Erlöskurven entwickeln.</li>
       <li><strong>Nachteile:</strong> weniger wirksam, wenn die Arbeit regelmäßig unterbrochen wird oder die Vorgänge nicht an allen Orten derselben Reihenfolge folgen; Mindestabstände und Puffer sind schwer zu bestimmen; horizontaler und vertikaler Baufortschritt lassen sich schlecht gleichzeitig darstellen.</li>
     </ul>
     <div class="note">Damit ist die Projektplanung abgeschlossen: Kostenschätzung (Lerneinheit 3) und Terminplanung (Lerneinheit 4) liefern die Soll-Werte, an denen das laufende Projekt gemessen wird. Wie man Kosten und Termine während der Ausführung überwacht, zeigt <a href="kapitel-5-1.html">Kapitel 5.1</a>.</div>
+  </section>
+
+  <section class="card">
+    <h2 id="zusammenfassung">Das Wichtigste in Kürze</h2>
+    <ul>
+      <li>Statische Terminplanung legt Termine im Voraus fest und erleichtert die Koordination; dynamische Planung („Wait and See“) entscheidet situativ und nutzt frühe Fertigstellungen. In der Praxis wird beides kombiniert, und nicht sinnvoll vorplanbare Faktoren bleiben der dynamischen Steuerung überlassen.</li>
+      <li>GERT/Q-GERT erweitert Pfeil-Netzpläne um Transaktionen, Ressourcen, probabilistische Verzweigungen und Schleifen (Nacharbeitszyklen) – Konstrukte, die klassisches CPM/PERT nicht abbilden kann.</li>
+      <li>Aktivitätszyklusdiagramme (Rechtecke = Aktivitäten, Kreise = Warteschlangen) sind die gemeinsame Darstellung ereignisdiskreter Baumodelle; die Werkzeuge zerfallen in Process-Interaction-Sprachen (SLAM, GPSS) und Activity-Scanning-Sprachen (CYCLONE, STROBOSCOPE).</li>
+      <li>CYCLONE modelliert mit COMBI-, NORMAL-, QUEUE-, FUNCTION- und ACCUMULATOR-Elementen; das Maurer-Beispiel zeigt, wie Kolonnen, Palettenplätze und Nachschub als Kreisläufe abgebildet werden.</li>
+      <li>Die CPM-Rechnung unterstellt implizit unendliche Ressourcen; erst das Resource Loading (Belastungshistogramm) zeigt, ob der Plan die Kapazitäten sprengt.</li>
+      <li>Ressourcenglättung verschiebt Vorgänge nur innerhalb ihrer Puffer und lässt die Projektdauer unverändert; die ressourcenbeschränkte Einplanung hält Kapazitätsgrenzen ein und nimmt dafür eine möglichst geringe Verlängerung in Kauf.</li>
+      <li>Die optimale Lösung ist NP-vollständig; praktisch arbeitet man mit Heuristiken. Empirisch am wirksamsten sind die Prioritätsregeln „minimaler Puffer“ und „minimaler spätester Endtermin“ – selbst die besten Regeln verfehlen das Optimum aber in 60 % der Fälle.</li>
+      <li>Die Line-of-Balance-Methode stellt repetitive Vorgänge als Fortschrittslinien im Orts-Zeit-Diagramm dar; Zeit- und Wegpuffer zwischen den Gewerke-Kolonnen sichern die Kollisionsfreiheit.</li>
+    </ul>
+
+    <h2 id="selbsttest">Selbsttest</h2>
+    <p>Prüfen Sie Ihr Verständnis – die Antworten klappen per Klick auf.</p>
+    <details class="quiz"><summary>Frage 1: Worin unterscheiden sich statische und dynamische Terminplanung, und warum setzt die Praxis beides ein?</summary>
+      <div class="antwort">Bei der statischen Planung stehen die Termine im Voraus fest – das erleichtert die Koordination mit Beteiligten und Nachunternehmern, verschenkt aber frühe Fertigstellungen und Anlieferungen. Die dynamische Planung entscheidet situativ und vermeidet unnötiges Warten, erzeugt dafür aber Abstimmungsaufwand und Warteschlangen. Da beide Stärken gebraucht werden, kombiniert die Praxis sie: Was sich statisch nicht sinnvoll durchplanen lässt, wird der dynamischen Steuerung vor Ort überlassen.</div>
+    </details>
+    <details class="quiz"><summary>Frage 2: Welche Konstrukte kann GERT abbilden, die im klassischen CPM/PERT-Netzplan nicht darstellbar sind?</summary>
+      <div class="antwort">GERT erlaubt probabilistische Verzweigungen (etwa „Projekt abbrechen“ vs. zwei alternative Entwicklungspfade) und Schleifen, insbesondere den Nacharbeitszyklus – die Zeit läuft im Diagramm also nicht mehr zwangsläufig linear nach rechts. Außerdem fließen Transaktionen durch das Modell, die sich Ressourcen sichern müssen und gegebenenfalls warten. Überführt man ein solches Netz in eine aggregierte CPM-Darstellung, gehen gerade Schleifen und Wahrscheinlichkeiten verloren.</div>
+    </details>
+    <details class="quiz"><summary>Frage 3: Was unterscheidet die Ressourcenglättung von der ressourcenbeschränkten Einplanung – und welche Annahme teilen beide?</summary>
+      <div class="antwort">Die Glättung (Resource Leveling) verschiebt Vorgänge nur innerhalb ihrer Puffer, um Schwankungen des Ressourceneinsatzes zu minimieren – die Projektdauer bleibt unverändert, aber es gibt keine Garantie, dass der geglättete Bedarf in die verfügbare Kapazität passt. Die ressourcenbeschränkte Einplanung hält die Kapazitätsgrenzen zwingend ein und akzeptiert dafür eine möglichst geringe Verlängerung der Projektdauer. Beide unterstellen, dass Ressourcenzuordnung und Dauer jedes Vorgangs konstant bleiben und nur die zeitliche Lage verschoben wird.</div>
+    </details>
+    <details class="quiz"><summary>Frage 4 (Rechenaufgabe): Ein Projekt dauert 4 Tage und umfasst: A (Tage 1–2, 4 Arbeitskräfte, kritisch), B (Tage 1–4, 2 AK, kritisch) und C (Dauer 2 Tage, 3 AK, frühester Start Tag 1, Gesamtpuffer 2 Tage). Erstellen Sie das Belastungshistogramm für C in frühester Lage und nach Glättung (C auf Tage 3–4) und vergleichen Sie Spitzenbedarf und Burgess-Quadratsumme.</summary>
+      <div class="antwort">
+        <div class="formel">
+          <strong>C in frühester Lage (Tage 1–2):</strong> Bedarf je Tag = [4+2+3; 4+2+3; 2; 2] = [9; 9; 2; 2]<br>
+          Spitze = 9 AK · Quadratsumme = 81 + 81 + 4 + 4 = 170
+        </div>
+        <div class="formel">
+          <strong>C geglättet (Tage 3–4):</strong> Bedarf je Tag = [4+2; 4+2; 2+3; 2+3] = [6; 6; 5; 5]<br>
+          Spitze = 6 AK · Quadratsumme = 36 + 36 + 25 + 25 = 122
+        </div>
+        Durch das Verschieben von C innerhalb seines Puffers sinkt der Spitzenbedarf von 9 auf 6 Arbeitskräfte, und die Quadratsumme des Ressourceneinsatzes fällt von 170 auf 122 – genau das Kriterium, das die Burgess-Heuristik minimiert. Die Projektdauer bleibt bei 4 Tagen, denn verschoben wurde nur innerhalb des Puffers.</div>
+    </details>
+    <details class="quiz"><summary>Frage 5: Was zeigte die Vergleichsstudie von Patterson und Davis (1975) über heuristische Prioritätsregeln?</summary>
+      <div class="antwort">Am wirksamsten waren die Regeln „minimaler Puffer“ (gleichbedeutend mit minimalem spätestem Start) und „minimaler spätester Endtermin“. Ernüchternd ist jedoch: Selbst die besten Regeln verfehlten das Optimum in 60 % der Fälle, und die Wahl zwischen seriellem und parallelem Verfahren kann wichtiger sein als die Prioritätsregel selbst. Heuristiken liefern also gute, aber typischerweise nur lokal optimale Lösungen.</div>
+    </details>
+    <details class="quiz"><summary>Frage 6: Für welche Projekte eignet sich die Line-of-Balance-Methode, und wozu dienen Zeit- und Wegpuffer?</summary>
+      <div class="antwort">Die LOB eignet sich für repetitive Vorgänge, die dieselbe Kolonne in gleichbleibender Abfolge über viele Abschnitte ausführt – etwa Straßen-, Hochhaus- oder Wohnungsbau. Da sich die Fortschrittslinien zweier Gewerke nicht kreuzen dürfen (Vorgangsstörung), werden Mindestabstände definiert: ein Zeitpuffer (zeitlicher Mindestabstand) und ein Wegpuffer (räumlicher Mindestabstand). Erst wenn beide eingehalten sind, ist die Kollisionsfreiheit der Kolonnen gesichert.</div>
+    </details>
   </section>
 
   <nav class="prevnext">
@@ -203,5 +266,6 @@
   </div>
 </footer>
 
+<script src="app.js" defer></script>
 </body>
 </html>

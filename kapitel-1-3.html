@@ -6,6 +6,7 @@
 <title>Kapitel 1.3: Instrumente zur Projektbewertung – Projektmanagement</title>
 <meta name="description" content="Kapitel 1.3 des Lernprogramms Projektmanagement: Instrumente zur Projektbewertung – vollständig übersetzt und aufbereitet.">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
 
@@ -25,6 +26,8 @@
     <a href="vorlesungen.html">Vorlesungsskripte</a>
     <a href="projekt.html">Semesterprojekt</a>
     <a href="literatur.html">Literatur</a>
+    <a href="glossar.html">Glossar</a>
+    <a href="suche.html">Suche</a>
   </div>
 </nav>
 
@@ -47,7 +50,21 @@
         <li><a href="#abschnitt-6">Der interne Zinsfuß (IRR)</a></li>
         <li><a href="#abschnitt-7">Weitere Bewertungsverfahren</a></li>
         <li><a href="#abschnitt-8">Was die Verfahren stillschweigend voraussetzen</a></li>
+        <li><a href="#zusammenfassung">Das Wichtigste in Kürze</a></li>
+        <li><a href="#selbsttest">Selbsttest</a></li>
       </ol>
+    </div>
+
+    <div class="lernziele">
+      <span class="label">Lernziele</span>
+      <ul>
+        <li>Sie erklären Zinseszins und Zeitwert des Geldes und rechnen Zahlungen mit den vier Grundumrechnungen kostenneutral entlang der Zeitachse um.</li>
+        <li>Sie berechnen den Kapitalwert (NPV) eines Zahlungsstroms und deuten ihn als Gewinn relativ zur besten Alternative.</li>
+        <li>Sie wenden die NPV-Entscheidungsregel an und unterscheiden Diskontsatz und MARR.</li>
+        <li>Sie nutzen die sechs Standard-Zinsfaktoren (F/P, P/F, F/A, A/F, P/A, A/P), um Einmalzahlungen, Endwerte und Annuitäten ineinander umzurechnen.</li>
+        <li>Sie bestimmen den internen Zinsfuß (IRR), wenden seine Entscheidungsregel an und benennen seine Schwächen gegenüber dem NPV.</li>
+        <li>Sie beurteilen weitere Verfahren (Nutzen-Kosten-Verhältnis, Kostenwirksamkeit, Amortisationsdauer) und benennen die stillen Annahmen aller Bewertungsinstrumente.</li>
+      </ul>
     </div>
 
     <h2 id="abschnitt-1">Zinseszins und Zeitwert des Geldes</h2>
@@ -134,6 +151,7 @@
       </table>
     </div>
     <p>Die Faktoren sind paarweise Kehrwerte voneinander: (P/F) = 1/(F/P), (A/F) = 1/(F/A), (A/P) = 1/(P/A). (Quelle: Peña-Mora 2003.)</p>
+    <div class="stand-heute"><strong>Stand heute:</strong> Die Zinsfaktoren wurden 2004 noch häufig aus gedruckten Zinstabellen abgelesen. Heute berechnet man Barwerte, Annuitäten und den internen Zinsfuß üblicherweise direkt mit Tabellenkalkulationen oder Finanzsoftware, die entsprechende Funktionen mitbringen. An den Formeln, ihrer Herleitung und den Entscheidungsregeln hat sich nichts geändert – NPV und IRR sind unverändert die Standardmaße der Investitionsrechnung.</div>
     <h3>Anmerkung zur stetigen Verzinsung</h3>
     <p>Bisher wurde jährlich verzinst. Wird der Jahreszins i auf n Zinsperioden pro Jahr verteilt, beträgt der Effektivzins für das ganze Jahr (1 + i/n)<sup>n</sup>. Lässt man n gegen unendlich gehen, erreicht man die <strong>stetige Verzinsung</strong>:</p>
     <div class="formel">(1 + i/n)<sup>n</sup> → e<sup>i</sup> für n → ∞ &nbsp;&nbsp;&nbsp;&nbsp; über t Jahre: Aufzinsung mit e<sup>i·t</sup></div>
@@ -200,6 +218,44 @@
     <div class="note">Genau hier setzt <a href="kapitel-1-4.html">Kapitel 1.4</a> an: Es liefert mit Wahrscheinlichkeiten, Entscheidungsbäumen und Sensitivitätsanalysen das Handwerkszeug, um Unsicherheit systematisch in die Projektbewertung einzubeziehen.</div>
   </section>
 
+  <section class="card">
+    <h2 id="zusammenfassung">Das Wichtigste in Kürze</h2>
+    <ul>
+      <li>Zinseszins lässt Anlagen exponentiell wachsen: Aus x werden nach n Jahren x × (1 + i)<sup>n</sup>; deshalb ist Geld heute mehr wert als derselbe Betrag in der Zukunft.</li>
+      <li>Mit einer verlässlichen Anlagequelle lässt sich jede Zahlung kostenneutral verschieben: Abzinsen mit 1 / (1 + i)<sup>t</sup> holt künftige Zahlungen in die Gegenwart, Aufzinsen mit (1 + i)<sup>t</sup> schiebt heutige in die Zukunft.</li>
+      <li>Der NPV ist die Summe der Barwerte aller Zahlungen und misst den Gewinn relativ zur besten Alternative – das Matratzen-Beispiel zeigt: Auch nominale „Verlustfreiheit" kann realen Wert vernichten.</li>
+      <li>Entscheidungsregel: NPV &gt; 0 annehmen, NPV &lt; 0 ablehnen; bei sich ausschließenden Projekten den NPV maximieren. Der Diskontsatz (Zeitwert plus Risikozuschlag) muss dabei mindestens die MARR erreichen.</li>
+      <li>Die sechs Standard-Zinsfaktoren rechnen Einmalzahlungen, Endwerte und Annuitäten ineinander um und machen Investitionen mit unterschiedlichen Laufzeiten und Restwerten vergleichbar.</li>
+      <li>Der IRR ist der Diskontsatz, der den NPV auf null setzt; angenommen wird ein Projekt, dessen IRR über dem Diskontsatz liegt.</li>
+      <li>Der IRR betrachtet nur die Rate, nicht die Größe des Gewinns, und ist nicht immer eindeutig – im Zweifel gilt der NPV, denn nur er garantiert die Maximierung des Vermögens.</li>
+      <li>Alle Verfahren setzen stillschweigend voraus: nur bezifferbare Geldgrößen, sichere Zahlungsströme, gleicher Leih- und Anlagezins – gesellschaftlicher, immaterieller und strategischer Nutzen sowie Unsicherheit bleiben außen vor.</li>
+    </ul>
+
+    <h2 id="selbsttest">Selbsttest</h2>
+    <p>Prüfen Sie Ihr Verständnis – die Antworten klappen per Klick auf.</p>
+    <details class="quiz"><summary>Frage 1: Warum hat das „Geld in der Matratze" einen negativen NPV, obwohl nominal kein Cent verloren geht?</summary>
+      <div class="antwort">Der NPV misst den Gewinn relativ zur besten Alternative, nicht den nominalen Überschuss. Wer 100&nbsp;$ ein Jahr in der Matratze lässt, verzichtet auf die Bankzinsen von 10&nbsp;$; der Barwert der zurückgeholten 100&nbsp;$ beträgt nur 100&nbsp;/&nbsp;1,10 ≈ 90,91&nbsp;$, der NPV also rund −9,09&nbsp;$. Die Matratze vernichtet damit etwa 9&nbsp;$ an heutigem Wert – die entgangene Opportunität.</div>
+    </details>
+    <details class="quiz"><summary>Frage 2 (Rechenaufgabe): Vergleichen Sie bei einem Diskontsatz von 10&nbsp;% die Projekte A (heute −1.000&nbsp;$, Jahr 1: +600&nbsp;$, Jahr 2: +600&nbsp;$) und B (heute −1.000&nbsp;$, Jahr 2: +1.250&nbsp;$). Welches ist vorzuziehen?</summary>
+      <div class="antwort">Beide Zahlungsreihen werden mit 1&nbsp;/&nbsp;(1 + 0,10)<sup>t</sup> abgezinst:
+        <div class="formel">NPV<sub>A</sub> = −1.000 + 600 / 1,10 + 600 / 1,10<sup>2</sup> = −1.000 + 545,45 + 495,87 ≈ +41,32&nbsp;$<br>
+        NPV<sub>B</sub> = −1.000 + 1.250 / 1,10<sup>2</sup> = −1.000 + 1.033,06 ≈ +33,06&nbsp;$</div>
+        Beide Projekte sind vorteilhaft (NPV &gt; 0), aber A ist vorzuziehen – obwohl B nominal mehr zurückzahlt (1.250&nbsp;$ gegenüber 1.200&nbsp;$). Grund: Die früheren Rückflüsse von A lassen sich bereits ab Jahr 1 wieder verzinslich anlegen, was die Diskontierung honoriert.</div>
+    </details>
+    <details class="quiz"><summary>Frage 3: Worin unterscheiden sich Diskontsatz und MARR?</summary>
+      <div class="antwort">Der Diskontsatz ist der Abzinsungssatz der Bewertung: Zeitwert des Geldes plus Risikozuschlag; seine Wahl ist eine eigene Entscheidung und beeinflusst das Ergebnis maßgeblich. Die MARR (Minimum Attractive Rate of Return) ist die Mindestverzinsung – der niedrigste Diskontsatz, den der Markt entsprechend den Projektrisiken akzeptiert, also die Latte, die ein Projekt mindestens überspringen muss. Öffentliche Bauherren setzen sie oft standardisiert um 10&nbsp;% an, private Firmen unternehmensspezifisch höher.</div>
+    </details>
+    <details class="quiz"><summary>Frage 4: Wie ist der IRR definiert, und in welchen Fällen ist er dem NPV unterlegen?</summary>
+      <div class="antwort">Der IRR ist der Diskontsatz, bei dem der NPV eines Zahlungsstroms genau null wird; angenommen wird ein Projekt, dessen IRR über dem Diskontsatz liegt. Seine Schwächen: Er misst nur die Rate des Gewinns, nicht dessen absolute Größe, er ignoriert die Wiederanlage, und bei Zahlungsströmen mit mehrfach wechselnden Vorzeichen kann es mehrere Nullstellen – also keinen eindeutigen IRR – geben. Im Zweifel gilt daher der NPV, denn nur er garantiert die Maximierung des Vermögens.</div>
+    </details>
+    <details class="quiz"><summary>Frage 5: Warum ist die Amortisationsdauer nur als Zweitkriterium brauchbar?</summary>
+      <div class="antwort">Die Amortisationsdauer nennt lediglich die Mindestzeit, bis die Erträge die Kosten zurückgezahlt haben. Sie ignoriert alles, was nach dem Amortisationszeitpunkt geschieht – ein Projekt mit langen, hohen Spätgewinnen schneidet also systematisch zu schlecht ab – und berücksichtigt in der Grundform keine Diskontierung. Sie taugt daher allenfalls als ergänzender Liquiditätsindikator neben NPV oder IRR; die diskontierte Variante heißt Capital Recovery Period.</div>
+    </details>
+    <details class="quiz"><summary>Frage 6: Welche drei stillen Annahmen liegen allen vorgestellten Bewertungsverfahren zugrunde?</summary>
+      <div class="antwort">Erstens zählen nur bezifferbare Geldgrößen – gesellschaftlicher, immaterieller und strategischer Nutzen fallen unter den Tisch. Zweitens gelten die künftigen Zahlungsströme als sicher bekannt, obwohl Einnahmen wie Kosten in Bauprojekten hochgradig unsicher sind. Drittens wird unterstellt, dass Leihen und Anlegen zum gleichen Zinssatz möglich ist. Den Umgang mit der Unsicherheit liefert Kapitel 1.4 nach.</div>
+    </details>
+  </section>
+
   <nav class="prevnext">
     <a href="kapitel-1-2.html">← Kapitel 1.2: Projektfinanzierung und Projektbewertung</a>
     <span class="spacer"></span>
@@ -214,5 +270,6 @@
   </div>
 </footer>
 
+<script src="app.js" defer></script>
 </body>
 </html>

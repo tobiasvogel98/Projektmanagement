@@ -6,6 +6,7 @@
 <title>Kapitel 1.4: Umgang mit Unsicherheit: Konzepte und Instrumente – Projektmanagement</title>
 <meta name="description" content="Kapitel 1.4 des Lernprogramms Projektmanagement: Umgang mit Unsicherheit – Entscheidungsbäume, Risikopräferenzen, Sensitivitätsanalysen und Realoptionen, vollständig übersetzt und aufbereitet.">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
 
@@ -25,6 +26,8 @@
     <a href="vorlesungen.html">Vorlesungsskripte</a>
     <a href="projekt.html">Semesterprojekt</a>
     <a href="literatur.html">Literatur</a>
+    <a href="glossar.html">Glossar</a>
+    <a href="suche.html">Suche</a>
   </div>
 </nav>
 
@@ -46,7 +49,21 @@
         <li><a href="#abschnitt-5">Mehrere Zielgrößen und Pareto-Optimalität</a></li>
         <li><a href="#abschnitt-6">Analyse mit Entscheidungsbäumen und Sensitivitätsanalyse</a></li>
         <li><a href="#abschnitt-7">Flexibilität und Realoptionen</a></li>
+        <li><a href="#zusammenfassung">Das Wichtigste in Kürze</a></li>
+        <li><a href="#selbsttest">Selbsttest</a></li>
       </ol>
+    </div>
+
+    <div class="lernziele">
+      <span class="label">Lernziele</span>
+      <ul>
+        <li>Sie erklären die drei Knotentypen eines Entscheidungsbaums (Entscheidungs-, Ereignis-, Endknoten) und stellen eine Bauentscheidung als Baum dar.</li>
+        <li>Sie berechnen den Erwartungswert einer Handlungsoption und wählen am Entscheidungsknoten die Option mit dem besten Erwartungswert.</li>
+        <li>Sie unterscheiden die Risikoeinstellungen risikoscheu, risikoneutral und risikofreudig und erläutern ihre Darstellung als Präferenzfunktion.</li>
+        <li>Sie berechnen Sicherheitsäquivalent und Risikoprämie und begründen, warum Risikotransfers für beide Seiten vorteilhaft sein können.</li>
+        <li>Sie erklären Pareto-Optimalität bei mehreren Zielgrößen sowie den Zweck ein- und mehrdimensionaler Sensitivitätsanalysen.</li>
+        <li>Sie beschreiben den Wert von Flexibilität und die Grundidee der Realoptionstheorie samt ihrer Grenzen gegenüber dem klassischen NPV.</li>
+      </ul>
     </div>
 
     <h2 id="abschnitt-1">Entscheiden unter Risiko: Überblick</h2>
@@ -117,6 +134,7 @@
 
     <h2 id="abschnitt-6">Analyse mit Entscheidungsbäumen und Sensitivitätsanalyse</h2>
     <p>Entscheidungsbäume sind ein mächtiges Analysewerkzeug – erst recht, wenn man sie um symbolische Größen (Variablen statt fester Zahlen) erweitert. Typische Auswertungen sind die <strong>Strategiewahl</strong>, <strong>ein- und mehrdimensionale Sensitivitätsanalysen</strong> und der <strong>Wert von Information</strong>.</p>
+    <div class="stand-heute"><strong>Stand heute:</strong> Der Originalkurs setzte für solche Analysen spezialisierte Software wie TreeAge ein. Heute sind Monte-Carlo-Simulation und Sensitivitätsanalysen in gängige Planungs- und Tabellenkalkulationswerkzeuge bzw. Add-ins integriert; die Methodik der Entscheidungsanalyse – Bäume, Erwartungswerte, Präferenzfunktionen, Sensitivitäten – ist unverändert gültig und bildet weiterhin deren Grundlage.</div>
     <p>Am Bieterbaum zeigen die Folien exemplarisch, wie die Analyse abläuft: Für jede Angebotshöhe wird die Verteilung des Geldwerts berechnet (etwa für das 6,75-Mio.- und das 7-Mio.-Gebot), einmal rein monetär und einmal unter Einbeziehung der Risikopräferenzen. Anschließend wird untersucht, wie sich größere Kostenunsicherheiten auswirken – mit dem Ergebnis, dass die optimale Strategie kippen kann: Was für einen Risikoneutralen optimal ist, muss es für einen Risikoscheuen nicht sein.</p>
     <figure class="slide-fig">
       <img src="bilder/kapitel/k14-abb4.jpg" alt="Balkendiagramm einer Monte-Carlo-Simulation: Anteil der Simulationsläufe, in denen jede Option optimal ist – nicht bieten etwa 32 Prozent, die Gebote 6,75 bis 7,5 Millionen Dollar je 15 bis 19 Prozent" loading="lazy">
@@ -156,6 +174,43 @@
     <div class="note"><strong>Abwägungen:</strong> Flexibilität konkurriert kurzfristig mit Tempo und Kosten – die Überlappung von Planung und Ausführung (Fast-Track) schränkt spätere Änderungen ein; Value Engineering und die Wahl des billigsten Bieters „optimieren" Flexibilität oft weg; späte Entscheidungen können teurer werden. <em>Aber:</em> Budget wie Terminplan können mit mehr Flexibilität am Ende trotzdem besser dastehen – und Nachrüsten kostet häufig mehr als von vornherein eingeplante Reserven.</div>
   </section>
 
+  <section class="card">
+    <h2 id="zusammenfassung">Das Wichtigste in Kürze</h2>
+    <ul>
+      <li>Entscheidungsbäume bilden Zeitverlauf, Entscheidungen, Unsicherheiten und Konsequenzen ab – mit Entscheidungsknoten (Quadrat), Ereignisknoten (Kreis, Wahrscheinlichkeiten summieren sich zu 1) und Endknoten (Dreieck).</li>
+      <li>Zur Auswertung dient zunächst der Erwartungswert E[c] = Σ p<sub>k</sub> × c<sub>k</sub>: Am Entscheidungsknoten wählt man die Option mit dem besten Erwartungswert.</li>
+      <li>Menschen sind gegenüber Unsicherheit nicht indifferent – man unterscheidet risikoscheue, risikoneutrale und risikofreudige Einstellungen, formal erfasst durch eine Präferenzfunktion (konkav, linear, konvex).</li>
+      <li>Das Sicherheitsäquivalent CE = f<sup>−1</sup>(E[f(c)]) ist der sichere Betrag, der dieselbe Zufriedenheit stiftet wie die unsichere Aussicht; für Risikoscheue liegt es unter dem Erwartungswert.</li>
+      <li>Die Lücke E[c] − CE ist die Risikoprämie – sie macht Risikotransfers wie Versicherungen, Garantien und Festpreisverträge für beide Seiten vorteilhaft.</li>
+      <li>Bei mehreren Zielgrößen hilft Pareto-Optimalität: Dominierte Entscheidungen (in allen Attributen schlechter) scheiden sicher aus, auch wenn die beste Entscheidung offenbleibt.</li>
+      <li>Sensitivitätsanalysen prüfen die Robustheit einer Strategie: Sie variieren Eingangsgrößen und zeigen, ab welchen Werten die optimale Entscheidung kippt – die optimale Strategie hängt auch von der Risikoeinstellung ab.</li>
+      <li>Flexibilität hat Wert, weil sie die Folgen von Unsicherheit abmildert, aber auch Kosten; adaptive Strategien verschieben Entscheidungen bewusst in die Zukunft, und die Realoptionstheorie schätzt den finanziellen Wert solcher Optionen, wo der klassische NPV versagt.</li>
+    </ul>
+
+    <h2 id="selbsttest">Selbsttest</h2>
+    <p>Prüfen Sie Ihr Verständnis – die Antworten klappen per Klick auf.</p>
+    <details class="quiz"><summary>Frage 1: Welche drei Knotentypen hat ein Entscheidungsbaum, und worin unterscheiden sie sich?</summary>
+      <div class="antwort">Am Entscheidungsknoten (Quadrat) wählt der Entscheider selbst zwischen Handlungsoptionen. Am Ereignisknoten (Kreis) entscheidet der Zufall: Jeder Ast trägt eine Eintrittswahrscheinlichkeit, und die Wahrscheinlichkeiten aller Äste summieren sich zu 1. Der Endknoten (Dreieck) schließt einen Pfad ab und trägt dessen Konsequenz, etwa Gewinn oder Kosten. Die Zeit läuft dabei von links nach rechts.</div>
+    </details>
+    <details class="quiz"><summary>Frage 2 (Rechenaufgabe): Ein Bauunternehmer erwägt ein Angebot. Die Kalkulation kostet 20.000&nbsp;$. Mit Wahrscheinlichkeit 0,4 erhält er den Zuschlag und erzielt 120.000&nbsp;$ Gewinn vor Kalkulationskosten; mit 0,6 geht er leer aus. Soll er nach dem Erwartungswertkriterium bieten?</summary>
+      <div class="antwort">Der Erwartungswert der Option „bieten" gewichtet beide Ausgänge mit ihren Wahrscheinlichkeiten:
+        <div class="formel">E[bieten] = 0,4 × (120.000 − 20.000) + 0,6 × (−20.000) = 0,4 × 100.000 − 12.000 = 40.000 − 12.000 = +28.000&nbsp;$</div>
+        Die Option „nicht bieten" hat den Erwartungswert 0&nbsp;$. Da 28.000&nbsp;$ &gt; 0&nbsp;$, sollte ein risikoneutraler Entscheider bieten. Ein stark risikoscheuer Unternehmer könnte dennoch verzichten – sein Sicherheitsäquivalent der unsicheren Aussicht kann unter null liegen.</div>
+    </details>
+    <details class="quiz"><summary>Frage 3: Was ist das Sicherheitsäquivalent, und wie ergibt sich daraus die Risikoprämie?</summary>
+      <div class="antwort">Das Sicherheitsäquivalent CE = f<sup>−1</sup>(E[f(c)]) ist der sichere Betrag, der einer Person dieselbe mittlere Zufriedenheit stiftet wie die unsichere Aussicht c. Im Beispiel des Kapitels entspricht eine 50/50-Chance auf 20.000&nbsp;$ oder 0&nbsp;$ (Erwartungswert 10.000&nbsp;$) für die risikoscheue Person nur einem sicheren Betrag von 5.000&nbsp;$. Die Differenz E[c] − CE = 5.000&nbsp;$ ist die maximale Risikoprämie: So viel würde sie dafür zahlen, dass eine weniger risikoscheue Partei ihr den Erwartungswert garantiert – ein Geschäft, von dem beide profitieren.</div>
+    </details>
+    <details class="quiz"><summary>Frage 4: Wann heißt eine Entscheidung Pareto-optimal, und was leistet dieses Konzept bei mehreren Zielgrößen?</summary>
+      <div class="antwort">Eine Entscheidung wird von einer anderen dominiert, wenn ihre Konsequenzen in allen Attributen (z.&nbsp;B. Kosten, Zeit, Qualität) schlechter sind. Pareto-optimal ist eine Entscheidung, die von keiner anderen dominiert wird. Das Konzept liefert zwar nicht die eine beste Entscheidung, erlaubt aber, offensichtlich schlechte – dominierte – Optionen sicher auszuschließen, ohne die Attribute gegeneinander verrechnen zu müssen.</div>
+    </details>
+    <details class="quiz"><summary>Frage 5: Wozu dient eine Sensitivitätsanalyse an einem Entscheidungsbaum?</summary>
+      <div class="antwort">Sie prüft, wie robust die gewählte Strategie gegenüber unsicheren Eingangswerten ist: Eine Größe (eindimensional) oder Kombinationen mehrerer Größen (mehrdimensional) werden über eine Bandbreite variiert, und man beobachtet, ab welchen Werten die optimale Entscheidung wechselt. So zeigt etwa das Aufzugsbeispiel, bei welchen Ausfallkosten und -wahrscheinlichkeiten ein, zwei oder drei Aufzüge optimal sind – die Grenzlinien markieren, wo die Entscheidung kippt.</div>
+    </details>
+    <details class="quiz"><summary>Frage 6: Warum hat Flexibilität einen Wert, und weshalb stößt der klassische NPV bei ihrer Bewertung an Grenzen?</summary>
+      <div class="antwort">Flexibilität stellt zusätzliche Wahlmöglichkeiten bereit und mildert so die negativen Folgen von Unsicherheit – etwa durch Grundstücksreserven, größere Fundamente oder abschnittsweises Bauen; dem stehen Kosten wie verzögerte Entscheidungen und der Preis der Reserve gegenüber. Der klassische NPV unterstellt feste Zahlungsströme und kann den Wert von Handlungsoptionen – etwa eine Investition abzubrechen oder ein Gebäude zu erweitern – kaum abbilden. Die Realoptionstheorie schließt diese Lücke, indem sie Unsicherheit stochastisch modelliert und den Optionswert schätzt.</div>
+    </details>
+  </section>
+
   <nav class="prevnext">
     <a href="kapitel-1-3.html">← Kapitel 1.3: Instrumente zur Projektbewertung</a>
     <span class="spacer"></span>
@@ -170,5 +225,6 @@
   </div>
 </footer>
 
+<script src="app.js" defer></script>
 </body>
 </html>

@@ -6,6 +6,7 @@
 <title>Kapitel 5.1: Grundlagen der Kosten- und Terminüberwachung – Projektmanagement</title>
 <meta name="description" content="Kapitel 5.1 des Lernprogramms Projektmanagement: Grundlagen der Kosten- und Terminüberwachung – vollständig übersetzt und aufbereitet.">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
 
@@ -25,6 +26,8 @@
     <a href="vorlesungen.html">Vorlesungsskripte</a>
     <a href="projekt.html">Semesterprojekt</a>
     <a href="literatur.html">Literatur</a>
+    <a href="glossar.html">Glossar</a>
+    <a href="suche.html">Suche</a>
   </div>
 </nav>
 
@@ -47,7 +50,21 @@
         <li><a href="#abschnitt-6">Leistungskennzahlen</a></li>
         <li><a href="#abschnitt-7">Der Earned-Value-Ansatz: Kennzahlen und Abweichungen</a></li>
         <li><a href="#abschnitt-8">Durchgerechnetes Beispiel</a></li>
+        <li><a href="#zusammenfassung">Das Wichtigste in Kürze</a></li>
+        <li><a href="#selbsttest">Selbsttest</a></li>
       </ol>
+    </div>
+
+    <div class="lernziele">
+      <span class="label">Lernziele</span>
+      <ul>
+        <li>Sie erklären, warum Projektüberwachung und -steuerung einen Regelkreis bilden und warum frühes Gegensteuern am wirksamsten ist.</li>
+        <li>Sie unterscheiden input- und outputorientierte Fortschrittsmessung und ordnen die Verfahren zur Fortschrittsmessung innerhalb eines Vorgangs nach ihrer Objektivität.</li>
+        <li>Sie beschreiben Aufbau und Zweck eines Kostenkontenrahmens und beurteilen den Zielkonflikt zwischen feiner und grober Kostengliederung.</li>
+        <li>Sie erläutern die Earned-Value-Grundgrößen BCWS (PV), BCWP (EV) und ACWP (AC).</li>
+        <li>Sie berechnen die Abweichungen CV und SV sowie die Indizes CI (CPI) und SI (SPI) und interpretieren Vorzeichen und Werte.</li>
+        <li>Sie begründen, warum aggregierte Kennzahlen bei Terminen mit mehr Vorsicht zu interpretieren sind als bei Kosten.</li>
+      </ul>
     </div>
 
     <h2 id="abschnitt-1">Überwachung und Steuerung als Regelkreis</h2>
@@ -116,6 +133,7 @@
       <li>Verbindliche Zusagen einholen</li>
       <li>Messbarkeit sicherstellen</li>
     </ul>
+    <div class="stand-heute"><strong>Stand heute:</strong> Genau diese Grundsätze – Einbeziehung der Ausführenden, verbindliche Zusagen, Messbarkeit – greift heute die Lean Construction auf: Das Last-Planner-System arbeitet mit kurzzyklischen, verbindlichen Zusagen der ausführenden Gewerke und misst deren Einhaltung fortlaufend. Solche Ansätze ergänzen die klassische Termin- und Kostenüberwachung, ersetzen sie aber nicht.</div>
     <p>Auch die <strong>Kostenschätzung</strong> ist Bezugsgröße der Überwachung: Sie macht die Kostenwirkung der Vorgänge verständlich (oft direkt in den Terminplan integriert) und dient häufig als Grundlage des Anfangsbudgets. Zwei typische Probleme dabei: Die Schätzung hat oft eine andere Detailtiefe als die Überwachung, und sie ist häufig auf die Berichterstattung nach außen ausgerichtet statt auf die interne Steuerung.</p>
 
     <h2 id="abschnitt-3">Fortschritt messen: Meilensteine und Messbarkeit</h2>
@@ -211,6 +229,7 @@
     </figure>
 
     <p>Für die explorative Auswertung („Exploratory Breakdown“) wird Business-Intelligence-Software mit dynamischer Aufgliederung nach Kategorien genutzt – bei Führungskräften beliebt; gängige Excel-Beispiele sind PivotTable und PivotChart.</p>
+    <div class="stand-heute"><strong>Stand heute:</strong> Papier-Stundenzettel sind inzwischen vielfach mobilen, digitalen Erfassungssystemen gewichen, und für die explorative Auswertung sind interaktive Dashboards gängiger Business-Intelligence-Werkzeuge verbreitet; im Bauwesen unterstützt zudem BIM (Building Information Modeling) die Verknüpfung von Modell-, Termin- und Kostendaten. Am Grundproblem ändert die Technik nichts: Verzögerte oder unehrliche Berichte schwächen den Regelkreis.</div>
     <div class="note">Termin- und Kostenüberwachung unterscheiden sich grundsätzlich: Bei <strong>Terminen</strong> sind aggregierte Maße mit Vorsicht zu genießen – manche Vorgänge sind viel wichtiger als andere, und Rückstände bei unkritischen Vorgängen können den kritischen Weg verschieben. Bei <strong>Kosten</strong> dagegen kann jede Kostenquelle zur Überschreitung führen, und eine absolute Überschreitung wirkt bei jedem Vorgang ähnlich.</div>
 
     <h2 id="abschnitt-6">Leistungskennzahlen</h2>
@@ -316,6 +335,42 @@
     </figure>
   </section>
 
+  <section class="card">
+    <h2 id="zusammenfassung">Das Wichtigste in Kürze</h2>
+    <ul>
+      <li>Überwachung erkennt Abweichungen, Steuerung korrigiert sie – zusammen bilden sie einen Regelkreis, der unverzichtbar ist, weil Abweichungen vom Plan der Normalfall sind.</li>
+      <li>Die Einflussmöglichkeit ist zu Projektbeginn am größten und sinkt, während die kumulierten Ausgaben steigen – frühes Gegensteuern ist deshalb am wirksamsten.</li>
+      <li>Terminplan und Kostenschätzung liefern den Soll-Maßstab der Überwachung; ein nicht aktualisierter Terminplan wird kaum genutzt – und ist gefährlich, wenn doch.</li>
+      <li>Wirksame Fortschrittsmessung setzt an den Projekt-Outputs an, nicht am Ressourcenverbrauch; das objektivste Maß sind fertiggestellte Einheiten, das schwächste das Input-Maß.</li>
+      <li>Der Kostenkontenrahmen verknüpft Vorgänge und Kostenkonten; die gewählte Granularität begrenzt, welche Analysen später noch möglich sind.</li>
+      <li>Der Earned-Value-Ansatz macht Kosten- und Terminlage in Geld vergleichbar: CV = BCWP − ACWP und SV = BCWP − BCWS, als Indizes CI = BCWP/ACWP und SI = BCWP/BCWS.</li>
+      <li>Aggregierte Terminkennzahlen sind mit Vorsicht zu interpretieren, weil der kritische Weg einzelne Vorgänge viel wichtiger macht als andere; Kostenüberschreitungen wirken dagegen bei jedem Vorgang ähnlich.</li>
+    </ul>
+
+    <h2 id="selbsttest">Selbsttest</h2>
+    <p>Prüfen Sie Ihr Verständnis – die Antworten klappen per Klick auf.</p>
+    <details class="quiz"><summary>Frage 1: Worin unterscheidet sich die Projektsteuerung von der Projektplanung?</summary>
+      <div class="antwort">In zwei Punkten: Die Steuerung liefert eine <em>Menge</em> von Entwürfen, Entscheidungen und Maßnahmen, während die Planung einen einzelnen Entwurf liefert. Und sie ist ein Echtzeitprozess <em>während</em> der Ausführung, nicht davor. Ihre Aufgabe ist die Korrektur erkannter Abweichungen – idealerweise der Leistung, in der Praxis häufig der Pläne.</div>
+    </details>
+    <details class="quiz"><summary>Frage 2: Warum ist der Ressourcenverbrauch (Zeit, Geld) ein schlechtes Fortschrittsmaß – und was ist besser?</summary>
+      <div class="antwort">Verbrauchte Inputs sagen nichts darüber aus, wie viel Ergebnis tatsächlich entstanden ist: Ein Vorgang kann die Hälfte des Budgets verbraucht, aber erst ein Viertel der Arbeit geschafft haben. Besser ist die Messung an den Outputs, also am Fortschritt in Richtung Fertigstellung – am objektivsten über fertiggestellte Einheiten (z. B. Kubikmeter Erdaushub) oder inkrementelle Teilmeilensteine. Dazu sollten Vorgänge in Stufen unterteilt und eindeutige Meilensteine definiert werden.</div>
+    </details>
+    <details class="quiz"><summary>Frage 3: Ein Vorgang hat ein Budget von 8.000 $ bei 4 Wochen Plandauer (gleichmäßiger Verlauf). Nach 3 Wochen ist er zu 50 % fertig, ausgegeben wurden 4.500 $. Berechnen Sie CV, SV, CI und SI.</summary>
+      <div class="antwort">
+        <p>Zuerst die Grundgrößen: Planmäßig wären nach 3 von 4 Wochen 75 % des Budgets an Wert entstanden, also BCWS = 6.000 $. Tatsächlich fertig sind 50 %, also BCWP = 0,5 × 8.000 = 4.000 $; ausgegeben wurden ACWP = 4.500 $.</p>
+        <div class="formel">CV = BCWP − ACWP = 4.000 − 4.500 = −500 $&nbsp;&nbsp;&nbsp;&nbsp;SV = BCWP − BCWS = 4.000 − 6.000 = −2.000 $</div>
+        <div class="formel">CI = 4.000 / 4.500 ≈ 0,89&nbsp;&nbsp;&nbsp;&nbsp;SI = 4.000 / 6.000 ≈ 0,67</div>
+        <p>Der Vorgang liegt also leicht über Budget (CV negativ, CI &lt; 1) und deutlich hinter dem Terminplan (SV negativ, SI &lt; 1) – das Terminproblem ist hier das gravierendere.</p>
+      </div>
+    </details>
+    <details class="quiz"><summary>Frage 4: Warum wird die Terminabweichung SV in Geld gemessen – und welche Verzerrung kann das erzeugen?</summary>
+      <div class="antwort">SV vergleicht den Wert der geleisteten mit dem Wert der geplanten Arbeit (BCWP − BCWS); Geld dient dabei als gemeinsame Einheit, die Termin- und Kostenlage vergleichbar macht. Die Verzerrung: Ein zeitlich kleiner Rückstand kann als große Abweichung erscheinen, wenn gerade an einer sehr teuren Projektkomponente gearbeitet wird – und umgekehrt. Für die reine Zeitbetrachtung gibt es deshalb ergänzend die Zeitabweichung TV = STWP − ATWP in Zeiteinheiten.</div>
+    </details>
+    <details class="quiz"><summary>Frage 5: Die Mittelabfluss-Abweichung RV eines Projekts ist null. Ist das ein gutes Zeichen?</summary>
+      <div class="antwort">Nicht unbedingt. RV = BCWS − ACWP vergleicht nur geplante mit tatsächlichen Ausgaben des Zeitraums – unabhängig davon, wie viel Arbeit dafür geleistet wurde. RV = 0 kann auch bedeuten, dass schneller, aber teurer je Einheit gearbeitet wurde – oder langsamer, aber billiger. Über „gut“ oder „schlecht“ entscheiden erst CV und SV, die die Ausgaben bzw. den Plan mit der tatsächlich geleisteten Arbeit in Beziehung setzen.</div>
+    </details>
+  </section>
+
   <nav class="prevnext">
     <a href="kapitel-4-4.html">← Kapitel 4.4: Simulation und ressourcenbasierte Terminplanung</a>
     <span class="spacer"></span>
@@ -330,5 +385,6 @@
   </div>
 </footer>
 
+<script src="app.js" defer></script>
 </body>
 </html>

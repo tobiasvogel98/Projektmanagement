@@ -6,6 +6,7 @@
 <title>Kapitel 3.1: Vergabeverfahren und Kostenschätzung I – Projektmanagement</title>
 <meta name="description" content="Kapitel 3.1 des Lernprogramms Projektmanagement: Vergabeverfahren und Kostenschätzung I – vollständig übersetzt und aufbereitet.">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
 
@@ -25,6 +26,8 @@
     <a href="vorlesungen.html">Vorlesungsskripte</a>
     <a href="projekt.html">Semesterprojekt</a>
     <a href="literatur.html">Literatur</a>
+    <a href="glossar.html">Glossar</a>
+    <a href="suche.html">Suche</a>
   </div>
 </nav>
 
@@ -47,7 +50,21 @@
         <li><a href="#abschnitt-6">Kosten-Kapazitäts-Faktoren</a></li>
         <li><a href="#abschnitt-7">Komponentenverhältnisse (Component Ratios)</a></li>
         <li><a href="#abschnitt-8">Parameterkosten</a></li>
+        <li><a href="#zusammenfassung">Das Wichtigste in Kürze</a></li>
+        <li><a href="#selbsttest">Selbsttest</a></li>
       </ol>
+    </div>
+
+    <div class="lernziele">
+      <span class="label">Lernziele</span>
+      <ul>
+        <li>Sie können die drei Bürgschaftsarten Bietungs-, Erfüllungs- und Zahlungsbürgschaft unterscheiden und ihren Zweck sowie die üblichen Höhen benennen.</li>
+        <li>Sie erklären das Prinzip der Lebenszykluskostenrechnung und begründen, warum frühe Entscheidungen die Lebenszykluskosten am stärksten beeinflussen, während der Schätzfehler erst spät klein wird.</li>
+        <li>Sie ordnen die sechs Schätzklassen (Größenordnung bis Angebotsniveau) der jeweiligen Projektphase zu und benennen typische Contingency-Spannen und Planungsfertigstellungsgrade.</li>
+        <li>Sie berechnen mit Kostenindizes historische Baukosten auf ein anderes Jahr um und erläutern den Unterschied zwischen Input- und Output-Kostenindizes.</li>
+        <li>Sie wenden die Kosten-Kapazitäts-Formel C₂ = C₁ × (Q₂/Q₁)ˣ an – auch in Kombination mit einer Index-Umrechnung.</li>
+        <li>Sie erklären, wie Komponentenverhältnisse und Parameterkosten funktionieren, und schätzen die Genauigkeit der vier konzeptionellen Schätzverfahren gegeneinander ab.</li>
+      </ul>
     </div>
 
     <h2 id="abschnitt-1">1. Rückblick: Vergabeverfahren – Ausschreibung und Verhandlung</h2>
@@ -126,6 +143,7 @@
       <li>Beispiele: Teppichböden, Heizungs-/Lüftungs-/Klimatechnik (HVAC), Elektroanlagen, Ausbau und Oberflächen, Parkflächen, Dachabdichtung.</li>
       <li><strong>Wechselwirkungen sind entscheidend:</strong> HVAC und Wärmedämmung müssen z.&nbsp;B. gemeinsam betrachtet werden – eine bessere Dämmung erlaubt eine kleinere Anlage.</li>
     </ul>
+    <div class="stand-heute"><strong>Stand heute:</strong> Die Lebenszyklusbetrachtung hat seit 2004 stark an Bedeutung gewonnen: Sie ist heute fester Bestandteil der Nachhaltigkeitsbewertung von Gebäuden und einschlägiger Zertifizierungssysteme, und Energie- und Klimaanforderungen machen Betriebskosten zu einem zentralen Entwurfskriterium. Das Grundprinzip – frühe Entscheidungen bestimmen den Großteil der Lebenszykluskosten – gilt unverändert.</div>
     <figure class="slide-fig">
       <img src="bilder/kapitel/k31-abb4.jpg" alt="Balkendiagramm: Anteil der Lebenszykluskosten je Phase für zwei Systeme A und B. System A: 20 Prozent Konzeptphase, 30 Prozent Detailplanung, 30 Prozent Erstellung, 16 Prozent Betrieb, 6 Prozent Verwertung. System B: 10, 20, 50, 16 und 6 Prozent." loading="lazy">
       <figcaption>Abb. 3: Kostenklassifikation nach Lebenszyklusphase (Folie 29). Zwei Systeme im Vergleich: System&nbsp;A investiert mehr in Konzept und Planung (20&nbsp;% bzw. 30&nbsp;% der Lebenszykluskosten), System&nbsp;B verlagert die Kosten in die Erstellungsphase (50&nbsp;%). Betriebs- und Verwertungsphase sind hier gleich – oft zahlt sich Mehraufwand in frühen Phasen aber gerade dort aus.</figcaption>
@@ -311,6 +329,7 @@
     <div class="note"><strong>Beispiel Lagerhalle:</strong> Eine vergleichbare Lagerhalle wurde 1978 für 4.200.000&nbsp;$ gebaut; der ENR-Index für 1978 betrug 1654&nbsp;% (Basis 1913). Für einen Neubau im Jahr 2002 gilt:</div>
     <div class="formel">Kosten<sub>neu</sub> = (3802&nbsp;% / 1654&nbsp;%) × 4.200.000&nbsp;$ = 9.654.413,54&nbsp;$ ≈ 9.650.000&nbsp;$</div>
     <p><strong>Genauigkeit und Aufwand:</strong> Kostenindizes erreichen etwa 20–30&nbsp;% Genauigkeit bei vernachlässigbarem Zeit- und Arbeitsaufwand – wertvoll für die frühe Grobplanung.</p>
+    <div class="stand-heute"><strong>Stand heute:</strong> Die im Beispiel verwendeten Indexstände geben den Stand von Anfang 2004 wieder. Der ENR Building Cost Index und vergleichbare Baupreisindizes (in Deutschland etwa die des Statistischen Bundesamts) werden weiterhin laufend veröffentlicht und liegen heute deutlich höher – für eigene Umrechnungen sind stets die aktuellen Indexwerte heranzuziehen. Die Methode selbst ist unverändert gültig.</div>
 
     <h2 id="abschnitt-6">6. Kosten-Kapazitäts-Faktoren</h2>
     <p><strong>Kosten-Kapazitäts-Faktoren (Cost-Capacity Factors)</strong> übertragen bekannte Kosten auf Projekte gleichen Typs, aber anderer Größe, anderen Umfangs oder anderer Kapazität. Sie bilden den <em>nichtlinearen</em> Zusammenhang zwischen Größe und Kosten ab (Skaleneffekte, Lernkurven):</p>
@@ -390,6 +409,42 @@
     <div class="note"><strong>Ausblick:</strong> Die detaillierte Kostenschätzung – Mengenermittlung (Quantity Takeoff), Arbeitskostenschätzung und probabilistische Verfahren – folgt in <a href="kapitel-3-2.html">Kapitel 3.2</a>, zusammen mit dem Fallbeispiel Pumpstation.</div>
   </section>
 
+  <section class="card">
+    <h2 id="zusammenfassung">Das Wichtigste in Kürze</h2>
+    <ul>
+      <li>Bürgschaften sichern den Bauherrn gegen den Ausfall von Bietern und Auftragnehmern ab: Die Bietungsbürgschaft sichert den Vertragsschluss, die Erfüllungsbürgschaft (100 %) die Fertigstellung, die Zahlungsbürgschaft die Rechnungen gegenüber Nachunternehmern und Lieferanten – in den USA seit dem Miller Act von 1935 für öffentliche Bundesbauprojekte vorgeschrieben.</li>
+      <li>Die Lebenszykluskostenrechnung betrachtet alle fünf Phasen vom Konzept bis zum Rückbau; in der Konzeptphase sind nahezu 100 % der Lebenszykluskosten noch beeinflussbar – früh entscheiden heißt Kosten wirksam gestalten.</li>
+      <li>Spiegelbildlich dazu sinkt der Fehler von Kostenschätzungen im Projektverlauf von fast 50 % gegen null: Je später geschätzt wird, desto genauer – aber desto weniger lässt sich noch beeinflussen.</li>
+      <li>Die sechs Schätzklassen von „Größenordnung“ bis „Angebotsniveau“ verlangen wachsenden Informationsstand; die typische Contingency fällt dabei von 100–200 % auf etwa 5 %.</li>
+      <li>Kostenindizes rechnen historische Kosten über das Verhältnis der Indexstände auf ein anderes Jahr um (Genauigkeit etwa 20–30 %); Input-Indizes verfolgen einen Warenkorb von Einsatzgütern, Output-Indizes die Kosten fertiger Vergleichsprojekte.</li>
+      <li>Kosten-Kapazitäts-Faktoren übertragen Kosten nichtlinear auf andere Anlagengrößen: C₂ = C₁ × (Q₂/Q₁)ˣ, mit empirisch ermitteltem Exponenten x (Genauigkeit bis 15–20 %).</li>
+      <li>Komponentenverhältnisse rechnen vom Kaufpreis der Großausrüstung über Installations- bzw. Anlagenkostenfaktoren auf die Gesamtkosten hoch; Parameterkosten beziehen alle Kosten auf wenige physische Kenngrößen wie die Bruttogeschossfläche.</li>
+    </ul>
+
+    <h2 id="selbsttest">Selbsttest</h2>
+    <p>Prüfen Sie Ihr Verständnis – die Antworten klappen per Klick auf.</p>
+    <details class="quiz"><summary>Frage 1: Welche drei Bürgschaftsarten sichern den Bauherrn ab, und was deckt jede von ihnen?</summary>
+      <div class="antwort">Die Bietungsbürgschaft (Bid Bond, öffentlich ca. 20 % der Angebotssumme) sichert ab, dass der Bieter im Zuschlagsfall den Vertrag auch eingeht. Die Erfüllungsbürgschaft (Performance Bond, 100 %) garantiert die vollständige Fertigstellung zum Angebotspreis. Die Zahlungsbürgschaft (Payment Bond, gestaffelt nach Auftragssumme) deckt unbezahlte Rechnungen des Auftragnehmers gegenüber Nachunternehmern und Lieferanten. Gestellt werden sie von Bürgschaftsversicherern; der Miller Act von 1935 schreibt sie für öffentliche US-Bundesbauprojekte vor.</div>
+    </details>
+    <details class="quiz"><summary>Frage 2: Warum sollte man Kostenentscheidungen möglichst früh im Projekt treffen, obwohl frühe Kostenschätzungen am ungenauesten sind?</summary>
+      <div class="antwort">Weil beide Kurven gegenläufig verlaufen: In der Konzeptphase sind noch nahezu 100 % der Lebenszykluskosten durch Entscheidungen beeinflussbar – dieser Anteil sinkt mit jeder weiteren Phase rapide. Der Schätzfehler ist früh zwar mit bis zu 50 % am größten, doch wer wartet, bis genau geschätzt werden kann, hat kaum noch Gestaltungsspielraum. Deshalb arbeitet man früh bewusst mit groben Verfahren und hohen Rückstellungen, statt Entscheidungen aufzuschieben.</div>
+    </details>
+    <details class="quiz"><summary>Frage 3: Wie verändern sich Planungsfertigstellungsgrad und Contingency über die sechs Schätzklassen hinweg?</summary>
+      <div class="antwort">Sie verlaufen gegenläufig: Die Größenordnungsschätzung (Klasse 1) entsteht bei unter 1 % fertiger Planung mit 100–200 % Contingency, die konzeptionelle Schätzung bei 2–5 % Planung mit 30–50 %, die vorläufige bei 15–30 % mit 15–40 %, die definitive bei 50–75 % mit 10–20 %, die Planer-/Bauherrenschätzung bei etwa 90 % mit 5–10 % und die Angebotsschätzung bei 100 % Planung mit rund 5 %. Mit historischen Vergleichsdaten liegt die Contingency durchweg niedriger.</div>
+    </details>
+    <details class="quiz"><summary>Frage 4: Worin unterscheiden sich Input- und Output-Kostenindizes, und welche Schwächen haben Input-Indizes?</summary>
+      <div class="antwort">Input-Indizes verfolgen die Preisentwicklung eines festen „Warenkorbs“ von Einsatzgütern (wie der ENR Building Cost Index aus Schnittholz, Baustahl, Zement und Facharbeiterstunden) – analog zum Verbraucherpreisindex. Output-Indizes basieren dagegen auf den historischen Kosten ähnlicher fertiger Projekte. Input-Indizes sind sehr allgemein: Sie spiegeln die konkreten Einsatzgüter des eigenen Projekts womöglich nicht wider und ignorieren Produktivitätsfortschritte, Technologiewandel und die Wettbewerbsintensität der Unternehmer. Output-Indizes sind eng definiert – dafür findet sich für das konkrete Bauwerk unter Umständen kein passendes Gegenstück.</div>
+    </details>
+    <details class="quiz"><summary>Frage 5 (Rechenaufgabe): Eine Lagerhalle mit 100.000 Quadratfuß wurde für 5.000.000 $ gebaut; der Kostenindex betrug damals 2000 %, heute 3000 % (Basisjahr 100 %). Was kostet eine Halle mit 160.000 Quadratfuß heute, wenn der Kosten-Kapazitäts-Faktor x = 0,8 beträgt?</summary>
+      <div class="antwort">Zuerst die Zeitanpassung über das Indexverhältnis, dann die Größenanpassung über den Kapazitätsfaktor:
+      <div class="formel">C<sub>2</sub> = 5.000.000 $ × (3000 / 2000) × (160.000 / 100.000)<sup>0,8</sup> = 7.500.000 $ × 1,6<sup>0,8</sup> ≈ 7.500.000 $ × 1,456 ≈ 10.920.000 $</div>
+      Die neue Halle kostet also rund 10,9 Mio. $. Der Exponent 0,8 &lt; 1 bildet den Skaleneffekt ab: Die 60 % größere Halle kostet nur etwa 46 % mehr als die indexbereinigte alte.</div>
+    </details>
+    <details class="quiz"><summary>Frage 6: Wie funktioniert die Schätzung über Anlagenkostenfaktoren, und was ist darin alles enthalten?</summary>
+      <div class="antwort">Ausgangspunkt sind Lieferanten-Preisangebote für die Großausrüstung (Kompressoren, Pumpen, Öfen usw.). Jeder Kaufpreis wird mit einem empirischen Faktor multipliziert (z. B. Wärmetauscher 4,8; Elektromotoren 8,5; Kolonnen 4,0), der die vollständigen installierten Kosten liefert – einschließlich Baustellenerschließung, Gebäuden, Fundamenten, Rohrleitungen, Montage, Planung, Gemeinkosten und Bauüberwachung. Die Summe über alle Positionen ergibt die geschätzten Anlagenkosten; im Folienbeispiel werden so aus 685.000 $ Kaufpreis 2.639.000 $ Anlagenkosten.</div>
+    </details>
+  </section>
+
   <nav class="prevnext">
     <a href="kapitel-2-2.html">← Kapitel 2.2: Abwicklungsmodelle (Forts.), Vergütungs- und Vergabeverfahren</a>
     <span class="spacer"></span>
@@ -404,5 +459,6 @@
   </div>
 </footer>
 
+<script src="app.js" defer></script>
 </body>
 </html>

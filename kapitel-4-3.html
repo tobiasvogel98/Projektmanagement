@@ -6,6 +6,7 @@
 <title>Kapitel 4.3: Probabilistische Planung II – Projektmanagement</title>
 <meta name="description" content="Kapitel 4.3 des Lernprogramms Projektmanagement: Probabilistische Planung II – vollständig übersetzt und aufbereitet.">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
 
@@ -25,6 +26,8 @@
     <a href="vorlesungen.html">Vorlesungsskripte</a>
     <a href="projekt.html">Semesterprojekt</a>
     <a href="literatur.html">Literatur</a>
+    <a href="glossar.html">Glossar</a>
+    <a href="suche.html">Suche</a>
   </div>
 </nav>
 
@@ -47,7 +50,21 @@
         <li><a href="#abschnitt-6">Der Kritikalitätsindex</a></li>
         <li><a href="#abschnitt-7">Wie viele Simulationsläufe braucht man?</a></li>
         <li><a href="#abschnitt-8">Ausblick: dynamische Prozesssimulation</a></li>
+        <li><a href="#zusammenfassung">Das Wichtigste in Kürze</a></li>
+        <li><a href="#selbsttest">Selbsttest</a></li>
       </ol>
+    </div>
+
+    <div class="lernziele">
+      <span class="label">Lernziele</span>
+      <ul>
+        <li>Sie erklären die Sammelknoten-Verzerrung (Merge Node Bias) und benennen die drei Faktoren, die sie verstärken.</li>
+        <li>Sie begründen, warum die klassische PERT-Rechnung Projektdauer und Varianz systematisch zu optimistisch ausweist.</li>
+        <li>Sie beschreiben den naiven Mehrpfad-Ansatz und das PNet-Verfahren – einschließlich der Grenzen beider Korrekturen.</li>
+        <li>Sie erläutern Ablauf und Auswertung einer Monte-Carlo-Simulation der Projektdauer.</li>
+        <li>Sie berechnen und interpretieren den Kritikalitätsindex als Instrument zur Priorisierung der Terminüberwachung.</li>
+        <li>Sie schätzen mit den Faustformeln ab, wie viele Simulationsläufe für eine gewünschte Genauigkeit erforderlich sind.</li>
+      </ul>
     </div>
 
     <h2 id="abschnitt-1">PERT im Rückblick: das Handwerkszeug aus Kapitel 4.2</h2>
@@ -142,6 +159,7 @@
 
     <h2 id="abschnitt-5">Monte-Carlo-Simulation: Prinzip, Ablauf und Beispiel</h2>
     <p>Die <strong>Monte-Carlo-Simulation</strong> ersetzt die analytische Lösung durch rohe Rechenleistung: Man muss das Modell nicht mehr vereinfachen, um es geschlossen lösen zu können, und es sind keinerlei Annahmen über die funktionale Form der Vorgangs- oder Projektdauerverteilungen nötig. Für die Terminplanung wurde der Ansatz von Van Slyke (1963) eingeführt, gezielt zur Lösung des Sammelknoten-Problems in PERT. Als Nebenprodukt liefert die Simulation den <strong>Kritikalitätsindex</strong> jedes Vorgangs (Abschnitt 6). Erforderlich sind Hunderte bis Tausende von Simulationsläufen.</p>
+    <div class="stand-heute"><strong>Stand heute:</strong> Der 2004 noch spürbare Rechenaufwand ist praktisch kein Hindernis mehr – Tausende Simulationsläufe dauern auf heutiger Hardware nur Sekunden. Monte-Carlo-Terminrisikoanalysen sind inzwischen in gängige Planungsumgebungen integriert beziehungsweise als Erweiterungen zu Werkzeugen wie Oracle Primavera P6 und Microsoft Project verfügbar und gehören bei großen Projekten zum Standardrepertoire der Risikoanalyse.</div>
     <p>Der Ablauf:</p>
     <ul>
       <li><strong>Verteilungen festlegen:</strong> für jede Vorgangsdauer eine Verteilung wählen – ohne Formvorgabe; auch gemeinsame Verteilungen mehrerer Vorgänge (zur Abbildung von Abhängigkeiten) sind möglich.</li>
@@ -235,6 +253,50 @@
     <div class="note">Diese naive Minimum-Rechnung ignoriert Warteschlangen und Wechselwirkungen zwischen den Geräten – genau dort setzen die ereignisdiskreten Simulationsverfahren (GERT, CYCLONE &amp; Co.) an, die <a href="kapitel-4-4.html">Kapitel 4.4</a> zusammen mit der ressourcenbasierten Terminplanung behandelt.</div>
   </section>
 
+  <section class="card">
+    <h2 id="zusammenfassung">Das Wichtigste in Kürze</h2>
+    <ul>
+      <li>Der früheste Start eines Knotens ist das <em>Maximum</em> der Termine aller Vorgänger – PERT berücksichtigt aber nur den kritischen Vorgänger. Diese Sammelknoten-Verzerrung macht PERT systematisch zu optimistisch.</li>
+      <li>Die Verzerrung ist umso stärker, je mehr Vorgänger zusammenlaufen, je ähnlicher deren Termine liegen und je unabhängiger sie voneinander sind.</li>
+      <li>Unterschätzt wird nicht nur die erwartete Projektdauer; die ausgewiesene Varianz ist sogar noch stärker verzerrt. Schon ein beinahe kritischer Pfad mit großer Streuung kann den Endtermin dominieren.</li>
+      <li>Der naive Mehrpfad-Ansatz multipliziert die Unterschreitungswahrscheinlichkeiten aller Pfade – er scheitert, sobald sich Pfade Vorgänge teilen, weil die Pfaddauern dann nicht unabhängig sind.</li>
+      <li>PNet verfeinert den Ansatz, indem stark korrelierte Pfade (Korrelationskoeffizient über 0,5 mit einem bereits aufgenommenen Pfad) aussortiert werden.</li>
+      <li>Die Monte-Carlo-Simulation zieht je Lauf zufällige Dauern, rechnet den gewöhnlichen CPM-Algorithmus und liefert die empirische Verteilung der Projektdauer – ganz ohne Annahmen über Verteilungsformen.</li>
+      <li>Der Kritikalitätsindex – der Anteil der Läufe, in denen ein Vorgang kritisch war – priorisiert Terminüberwachung und Projektsteuerung feiner als die binäre CPM-Aussage „kritisch/nicht kritisch“.</li>
+      <li>Die Genauigkeit aller Schätzer folgt der inversen Wurzelbeziehung: Wer den Fehler halbieren will, muss die Zahl der Läufe vervierfachen; rund 1.000 Läufe genügen meist.</li>
+    </ul>
+
+    <h2 id="selbsttest">Selbsttest</h2>
+    <p>Prüfen Sie Ihr Verständnis – die Antworten klappen per Klick auf.</p>
+    <details class="quiz"><summary>Frage 1: Was besagt die Sammelknoten-Verzerrung, und unter welchen drei Bedingungen fällt sie besonders stark aus?</summary>
+      <div class="antwort">Der früheste Start eines Sammelknotens ist das Maximum der End- bzw. Starttermine <em>aller</em> Vorgänger – als Maximum mehrerer Zufallsvariablen liegt er im Mittel später und streut anders, als die Betrachtung nur des kritischen Vorgängers suggeriert. Die Verzerrung wächst, je mehr Vorgänger im Knoten zusammenlaufen, je näher deren Termine beieinanderliegen und je unabhängiger die Vorgänger voneinander sind.</div>
+    </details>
+    <details class="quiz"><summary>Frage 2: Der naive Mehrpfad-Ansatz berücksichtigt doch alle Pfade – warum liefert auch er kein korrektes Ergebnis?</summary>
+      <div class="antwort">Die Produktformel P(T ≤ τ) = ∏ P(Pfad ≤ τ) setzt voraus, dass die Pfaddauern unabhängig sind. Sobald sich Pfade Vorgänge teilen – im Beispiel aus Kapitel 4.2 hängt Vorgang G in allen drei Pfaden –, sind ihre Dauern korreliert, und das Produkt unterschätzt oder verzerrt die gemeinsame Wahrscheinlichkeit. Genau hier setzt PNet an, das stark korrelierte Pfade aus der Rechnung entfernt.</div>
+    </details>
+    <details class="quiz"><summary>Frage 3: Beschreiben Sie die vier Schritte des PNet-Verfahrens.</summary>
+      <div class="antwort">Erstens werden alle Pfade aufgezählt, deren Dauer einen Mindestanteil α der kritischen Pfaddauer erreicht. Zweitens werden sie nach absteigender Dauer geordnet (bei Gleichstand nach absteigender Varianz). Drittens werden die linearen Korrelationskoeffizienten zwischen den Pfaden berechnet. Viertens werden die Pfade der Reihe nach aufgenommen, wobei jeder Pfad gestrichen wird, dessen Korrelation mit einem bereits aufgenommenen Pfad größer als 0,5 ist; über die verbleibenden, annähernd unabhängigen Pfade wird dann die Produktformel angewendet.</div>
+    </details>
+    <details class="quiz"><summary>Frage 4 (Rechenaufgabe): In einer Simulation mit n = 1.000 Läufen war Vorgang X in 400 Läufen kritisch, und in 130 Läufen war das Projekt nach höchstens 18 Wochen fertig. Bestimmen Sie den Kritikalitätsindex von X samt 95-%-Konfidenzintervall (z<sub>α/2</sub> = 1,96) sowie die geschätzte Wahrscheinlichkeit P(T ≤ 18).</summary>
+      <div class="antwort">
+        <div class="formel">
+          Kritikalitätsindex: &nbsp;p̂ = 400 / 1.000 = <strong>0,40</strong><br>
+          Konfidenzintervall: &nbsp;p̂ ± z<sub>α/2</sub> · √( p̂(1 − p̂)/n ) = 0,40 ± 1,96 · √( 0,4 · 0,6 / 1.000 )<br>
+          = 0,40 ± 1,96 · 0,0155 = 0,40 ± 0,030 &nbsp;⇒&nbsp; <strong>(0,37 ; 0,43)</strong>
+        </div>
+        <div class="formel">
+          P(T ≤ 18) = 130 / 1.000 = <strong>13 %</strong>
+        </div>
+        Der wahre Kritikalitätsindex liegt also mit 95 % Sicherheit zwischen 37 % und 43 % – Vorgang X verdient erhebliche Überwachungsaufmerksamkeit, obwohl er im deterministischen Plan Puffer besitzen mag. Die Fertigstellungswahrscheinlichkeit liest man direkt als relative Häufigkeit der Läufe ab.</div>
+    </details>
+    <details class="quiz"><summary>Frage 5: Warum ist der Kritikalitätsindex informativer als die Aussage von CPM oder PERT, ein Vorgang sei „kritisch“ oder „nicht kritisch“?</summary>
+      <div class="antwort">CPM und PERT kennen nur die binäre Einstufung 100 % oder 0 %, die auf einer einzigen (deterministischen bzw. erwarteten) Dauerkombination beruht. In der Simulation wechselt der kritische Pfad aber von Lauf zu Lauf; der Kritikalitätsindex misst, in welchem Anteil der Läufe ein Vorgang tatsächlich kritisch war. Ein Vorgang mit 80 % Kritikalität verdient deutlich mehr Steuerungsaufwand als einer mit 5 % – selbst wenn beide im deterministischen Plan Puffer haben.</div>
+    </details>
+    <details class="quiz"><summary>Frage 6: Was bedeutet die „inverse Wurzelbeziehung“ für die Wahl der Anzahl der Simulationsläufe?</summary>
+      <div class="antwort">In allen Fehlerformeln steht die Läuferzahl n unter der Wurzel: Der Schätzfehler sinkt nur proportional zu 1/√n. Um den Fehler zu halbieren, muss man die Zahl der Läufe also vervierfachen – die Genauigkeit ist beliebig skalierbar, aber mit überproportionalem Aufwand. Empirisch reichen für den Kritikalitätsindex etwa 1.000 Läufe statt der ursprünglich angesetzten 10.000.</div>
+    </details>
+  </section>
+
   <nav class="prevnext">
     <a href="kapitel-4-2.html">← Kapitel 4.2: Deterministische Planung II und probabilistische Planung I</a>
     <span class="spacer"></span>
@@ -249,5 +311,6 @@
   </div>
 </footer>
 
+<script src="app.js" defer></script>
 </body>
 </html>

@@ -6,6 +6,7 @@
 <title>Kapitel 5.3: Problemdiagnose und Einführung in die Projektdynamik – Projektmanagement</title>
 <meta name="description" content="Kapitel 5.3 des Lernprogramms Projektmanagement: Problemdiagnose und Einführung in die Projektdynamik – vollständig übersetzt und aufbereitet.">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
 
@@ -25,6 +26,8 @@
     <a href="vorlesungen.html">Vorlesungsskripte</a>
     <a href="projekt.html">Semesterprojekt</a>
     <a href="literatur.html">Literatur</a>
+    <a href="glossar.html">Glossar</a>
+    <a href="suche.html">Suche</a>
   </div>
 </nav>
 
@@ -47,7 +50,21 @@
         <li><a href="#abschnitt-6">Kausaldiagramme: Wirkungslinks und Polarität</a></li>
         <li><a href="#abschnitt-7">Feedback-Loops und ihr dynamisches Verhalten</a></li>
         <li><a href="#abschnitt-8">System Dynamics: Vom Kausaldiagramm zum Simulationsmodell</a></li>
+        <li><a href="#zusammenfassung">Das Wichtigste in Kürze</a></li>
+        <li><a href="#selbsttest">Selbsttest</a></li>
       </ol>
+    </div>
+
+    <div class="lernziele">
+      <span class="label">Lernziele</span>
+      <ul>
+        <li>Sie wählen für eine gegebene Diagnosefrage das passende Werkzeug – Pareto-Analyse, Fishbone-Diagramm, Streudiagramm oder Kausaldiagramm – und begründen die Wahl.</li>
+        <li>Sie erklären das Prinzip der Pareto-Analyse und die Einteilung der Komponenten in die Gruppen A, B und C.</li>
+        <li>Sie begründen, warum Korrelation keine Kausalität belegt, und nennen die möglichen Erklärungen eines beobachteten Zusammenhangs.</li>
+        <li>Sie bestimmen die Polarität einzelner Wirkungspfeile und klassifizieren Schleifen anhand des Vorzeichenprodukts als verstärkend oder ausgleichend.</li>
+        <li>Sie ordnen Schleifentypen ihr dynamisches Verhalten zu (exponentielles Wachstum, Zielannäherung, Oszillation) und erklären, wie aus gekoppelten Schleifen eine S-Kurve entsteht.</li>
+        <li>Sie beschreiben, wie aus einem Kausaldiagramm ein System-Dynamics-Modell mit Beständen, Flüssen und Hilfsgrößen entsteht.</li>
+      </ul>
     </div>
 
     <h2 id="abschnitt-1">Werkzeuge der Problemdiagnose</h2>
@@ -98,6 +115,7 @@
       <figcaption>Abb. 2: Typische Erscheinungsformen der Korrelation im Streudiagramm: keine Korrelation („No Correlation“), positive Korrelation („Positive Correlation“) und negative Korrelation („Negative Correlation“). (Folie 11 des Originalskripts)</figcaption>
     </figure>
     <div class="note">Die zentrale Schwäche des Streudiagramms: <strong>Korrelation belegt keinen kausalen Zusammenhang.</strong> Ist A mit B korreliert, kommen viele Kausalrichtungen infrage: A verursacht B, B verursacht A, beide beeinflussen sich wechselseitig – oder eine dritte Größe C verursacht sowohl A als auch B.</div>
+    <div class="stand-heute"><strong>Stand heute:</strong> Pareto-Analyse, Ursache-Wirkungs-Diagramm und Streudiagramm haben nichts von ihrer Aktualität verloren – sie zählen zu den klassischen „sieben Qualitätswerkzeugen“ und gehören heute vor allem im Lean- und Six-Sigma-Umfeld zum Standardrepertoire der Problemdiagnose.</div>
 
     <h2 id="abschnitt-5">Systemdenken im Projektmanagement</h2>
     <p><strong>Systemdenken</strong> (Systems Thinking) bedeutet, Probleme in einem breiteren Kontext zu begreifen: Es betont die Wechselwirkungen statt reduktionistischer Einzelbetrachtung, richtet den Blick auf interne statt externe Faktoren und betrachtet die <strong>Rückkopplungsstruktur</strong> des Systems als Hauptursache seines Verhaltens. Es tritt in zwei Ausprägungen auf: qualitativ als Kausaldiagramme, quantitativ als System Dynamics.</p>
@@ -145,6 +163,7 @@
       <img src="bilder/kapitel/k53-abb4.jpg" alt="Fünf einfache Kausalschleifen aus dem Projektalltag: Änderungswünsche und Projektdauer, wahrgenommener Puffer und Produktivität, Job Rhythm und Terminplanänderungen, Führungsstil und Informationsfluss, Designumfang und Zielbudget" loading="lazy">
       <figcaption>Abb. 4: Einfache Kausalschleifen aus dem Projektalltag („Simple Causal Loops“): (1) Verstärkend: Änderungswünsche („Change Requests“) erhöhen die Restarbeit („Remaining Work“) und die Projektdauer („Project Duration“) – was weitere Änderungswünsche begünstigt. (2) Ausgleichend: Ein späterer Zieltermin („Target Completion Date“) erhöht den wahrgenommenen Puffer („Perceived Slack“), senkt damit die Produktivität („Worker Productivity“) und schiebt den wahrgenommenen Endtermin („Perceived Completion Date“) wieder hinaus. (3) Ausgleichend: Terminplanänderungen („Changes to Schedule“) stören den Arbeitsrhythmus („Job Rhythm“) und senken die Gesamtproduktivität („Aggregate Productivity“). (4) Verstärkend: Ein übergriffiger Führungsstil des Projektleiters („Overbearing PM Management Style“) senkt die Bereitschaft der Beteiligten, Informationen zu teilen („Willingness to share info with PM“), was das Misstrauen („PM Suspicion“) weiter erhöht. (5) Ausgleichend: Überschreiten die geschätzten Planungskosten das Zielbudget („Estimated Design Costs beyond Target Budget“), wird der Designumfang („Design Scope“) reduziert. (Folie 22 des Originalskripts)</figcaption>
     </figure>
+    <div class="stand-heute"><strong>Stand heute:</strong> Die hier beschriebene Rückkopplungslogik hat Eingang in die heutige Methodenlandschaft gefunden: Agile und hybride Vorgehensweisen institutionalisieren kurze Regelkreise durch iteratives Arbeiten und regelmäßige Retrospektiven, und die Lean Construction stabilisiert mit dem Last-Planner-System gezielt den Arbeitsfluss – eine direkte Antwort auf die ausgleichende Schleife, in der Terminplanänderungen den „Job Rhythm“ stören.</div>
     <p>Wie mächtig – und tückisch – solche Rückkopplungen im Projektalltag sind, zeigt das Beispiel der Termin- und Meilensteinsteuerung: Terminverzug löst Gegenmaßnahmen aus, die ihrerseits neue Probleme erzeugen.</p>
     <figure class="slide-fig">
       <img src="bilder/kapitel/k53-abb5.jpg" alt="Kausaldiagramm der Termin- und Meilensteinsteuerung mit Schleifen über Überstunden, Ressourcenaufstockung, Termindruck, Abkürzungen und Mängel" loading="lazy">
@@ -188,6 +207,40 @@
     </figure>
   </section>
 
+  <section class="card">
+    <h2 id="zusammenfassung">Das Wichtigste in Kürze</h2>
+    <ul>
+      <li>Am Anfang jeder Steuerungsmaßnahme steht die Problemdiagnose; vier Werkzeuge mit unterschiedlichem Fokus und unterschiedlicher Ausdruckskraft stehen dafür bereit.</li>
+      <li>Die Pareto-Analyse lenkt die Aufmerksamkeit auf die wenigen Komponenten (Gruppe A), die den Großteil des Problems verursachen – wer sie adressiert, gewinnt Kontrolle über den Rest.</li>
+      <li>Das Fishbone-Diagramm ordnet mögliche Ursachen eines definierten Problems in Kategorien und verfeinert sie hierarchisch als Unterursachen.</li>
+      <li>Das Streudiagramm macht Korrelationen sichtbar – doch Korrelation belegt keine Kausalität: A kann B verursachen, B kann A verursachen, beide können sich wechselseitig beeinflussen, oder eine dritte Größe C verursacht beide.</li>
+      <li>Kausaldiagramme dürfen Zyklen enthalten und erfassen so Rückkopplung; jeder Wirkungspfeil trägt eine Polarität (+/−), und mehrdeutige Links werden in getrennte Wirkungspfade disaggregiert.</li>
+      <li>Das Vorzeichenprodukt entlang einer Schleife entscheidet: positiv = verstärkend (die Änderung schaukelt sich auf), negativ = ausgleichend (das System strebt einem Ziel zu); ausgleichende Schleifen mit Verzögerung oszillieren.</li>
+      <li>System Dynamics macht Kausaldiagramme quantitativ: Bestände, Flüsse und Hilfsgrößen bilden ein numerisch integriertes Differentialgleichungssystem, das an historischen Daten kalibriert und für Szenarien genutzt wird.</li>
+    </ul>
+
+    <h2 id="selbsttest">Selbsttest</h2>
+    <p>Prüfen Sie Ihr Verständnis – die Antworten klappen per Klick auf.</p>
+    <details class="quiz"><summary>Frage 1: Sie wollen wissen, welche wenigen Gewerke die meisten Qualitätsprobleme verursachen. Welches Werkzeug wählen Sie, und wie gehen Sie vor?</summary>
+      <div class="antwort">Die Pareto-Analyse: Die Komponenten werden nach ihrem Beitrag zur betrachteten Leistungsdimension sortiert und in drei Gruppen eingeteilt – Gruppe A (wenige große Treiber mit erheblichem Anteil), Gruppe C (viele kleine Komponenten mit unbedeutendem Anteil) und Gruppe B (der Rest dazwischen). Im Beispiel des Kapitels stehen Zimmerer/Schaler und Betonbauer für die meisten Vorkommnisse – auf sie konzentriert sich die Steuerung zuerst.</div>
+    </details>
+    <details class="quiz"><summary>Frage 2: Im Streudiagramm zeigt sich eine deutliche positive Korrelation zwischen A und B. Warum dürfen Sie daraus nicht schließen, dass A die Ursache von B ist?</summary>
+      <div class="antwort">Weil die Korrelation nur den statistischen Zusammenhang zeigt, nicht seine Richtung oder seinen Mechanismus. Vier Erklärungen kommen infrage: A verursacht B, B verursacht A, beide beeinflussen sich wechselseitig – oder eine dritte Größe C verursacht sowohl A als auch B. Für Kausalaussagen braucht es deshalb kausalitätsorientierte Werkzeuge wie das Fishbone- oder das Kausaldiagramm.</div>
+    </details>
+    <details class="quiz"><summary>Frage 3: Eine Schleife besteht aus den Links Termindruck →<sup>+</sup> „Abkürzen“ →<sup>+</sup> Mängel →<sup>+</sup> Restarbeit →<sup>+</sup> Termindruck. Ist sie verstärkend oder ausgleichend – und was bedeutet das dynamisch?</summary>
+      <div class="antwort">Das Produkt der Vorzeichen entlang der Schleife ist (+)·(+)·(+)·(+) = +, die Schleife ist also <strong>verstärkend</strong>: Steigender Termindruck verleitet zum Abkürzen, das erzeugt Mängel, die Restarbeit wächst – und der Termindruck steigt weiter. Ohne Eingriff oder begrenzende Gegenschleife schaukelt sich die Änderung auf; genau diese Dynamik zeigt das Kapitel am Beispiel der Termin- und Meilensteinsteuerung (Abb. 5).</div>
+    </details>
+    <details class="quiz"><summary>Frage 4: Was ist ein mehrdeutiger Link – und wie geht man damit um?</summary>
+      <div class="antwort">Ein Link X → Y ist mehrdeutig, wenn die Frage „Wenn X stiege – würde Y steigen oder fallen?“ keine eindeutige Antwort hat oder die Antwort vom Wert von X abhängt. Die Lösung ist die Disaggregation in getrennte Wirkungspfade: Im Beispiel des Kapitels wirkt „Überstunden → Produktivität“ einerseits positiv über die längere Arbeitszeit, andererseits negativ über die wachsende Ermüdung – erst die getrennte Darstellung beider Pfade macht das Diagramm aussagekräftig.</div>
+    </details>
+    <details class="quiz"><summary>Frage 5: Warum erzeugt eine ausgleichende Schleife mit Verzögerung Oszillation statt einer ruhigen Annäherung an das Ziel?</summary>
+      <div class="antwort">Weil die Korrektur verzögert wirkt: Das System reagiert auf die Lücke zwischen Soll und Ist, doch bis die Maßnahme greift (etwa die verzögerte Fertigstellung gestarteter Produktion), hat sich die Lage bereits weiterentwickelt – das System schießt über das Ziel hinaus, korrigiert erneut in die Gegenrichtung und pendelt dauerhaft um den Zielwert. Ohne Verzögerung nähert sich eine ausgleichende Schleife dem Ziel dagegen asymptotisch (Goal Seeking).</div>
+    </details>
+    <details class="quiz"><summary>Frage 6: Welche Schritte führen vom Kausaldiagramm zum lauffähigen System-Dynamics-Modell?</summary>
+      <div class="antwort">Erstens wird das System als Kausaldiagramm konzipiert. Zweitens wird es in eine Stock-and-Flow-Struktur übersetzt: Zustandsgrößen (Akkumulationen) werden Bestände, ihre Änderungen laufen über Flüsse, Zwischenrechnungen werden Hilfsgrößen – jede Schleife enthält mindestens einen Bestand. Drittens werden Gleichungen für die Beziehungen zwischen den Variablen ergänzt, viertens wird das Modell an historischen Daten kalibriert, und fünftens werden Szenarien gerechnet, um Wirkungen zu erkennen und robuste Politiken zu identifizieren.</div>
+    </details>
+  </section>
+
   <nav class="prevnext">
     <a href="kapitel-5-2.html">← Kapitel 5.2: Earned-Value-Analyse (C/SCSC) und Grundlagen der Projektsteuerung</a>
     <span class="spacer"></span>
@@ -202,5 +255,6 @@
   </div>
 </footer>
 
+<script src="app.js" defer></script>
 </body>
 </html>
