@@ -354,3 +354,20 @@ ol.schritte{list-style:none;margin:0;padding:0;border-left:3px solid var(--line)
   background:#eef4ee;border:1px solid #cfdccf;border-radius:8px;
   padding:14px 18px;font-weight:600;color:#2e5d3a;
 }
+
+/* SBA-Umbau: Entwurf, Schweizer Praxis, Archiv, Stand Schule */
+.entwurf,.schweiz,.archiv-hinweis{border-radius:10px;padding:14px 18px;margin:0 0 22px;}
+.entwurf{background:#fbf3df;border:1px dashed #c9a24a;}
+.schweiz{background:#eef3ee;border-left:4px solid #2e5d3a;margin:18px 0 22px;}
+.archiv-hinweis{background:#eceeef;border:1px solid #c9ced3;}
+.entwurf .label,.schweiz .label,.archiv-hinweis .label{display:block;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+.entwurf .label{color:#8a6414;}
+.schweiz .label{color:#2e5d3a;}
+.archiv-hinweis .label{color:#5c6570;}
+.entwurf p,.schweiz p,.archiv-hinweis p{margin:0;font-size:15.5px;}
+.stand-schule label{display:block;font-weight:600;margin-bottom:8px;}
+.stand-schule textarea{width:100%;box-sizing:border-box;font:inherit;font-size:15.5px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;resize:vertical;}
+.stand-schule textarea:focus{outline:none;border-color:var(--accent);}
+.stand-schule .hinweis{font-size:13.5px;color:var(--muted);margin:6px 0 0;}
+.prio-repetition{display:inline-block;border-radius:5px;padding:2px 12px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;background:#e4efe6;color:#2e5d3a;}
+.neu-chip{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:#fbf3df;color:#8a6414;border:1px solid #e3cf9a;border-radius:999px;padding:1px 8px;margin-left:8px;}

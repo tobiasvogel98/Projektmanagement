@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vermessung und Absteckung – Lernprogramm Bauführung</title>
+<meta name="description" content="Fixpunkte, Nivellement, Höhenübertragung, Absteckung, Gefälle, Profile, Toleranzen und Ausmass, mit Rechenbeispielen.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <p class="kicker">Lernpfad Bauführung SBA · Modul 5 · Bautechnik</p>
+    <h1>Vermessung und Absteckung</h1>
+    <p class="sub">Du rechnest ein Nivellement sicher durch, steckst Bauwerke ab und berechnest Gefälle von Leitungen und Strassen. Ausserdem lernst du die Grundsätze für Profile, Toleranzen und das Ausmass.</p>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <a href="index.html">Startseite</a>
+    <a href="kursplan.html" class="active">Lernpfad</a>
+    <a href="glossar.html">Glossar</a>
+    <a href="suche.html">Suche</a>
+  </div>
+</nav>
+
+<main>
+  <p class="breadcrumb"><a href="kursplan.html">Lernpfad</a> › <a href="kursplan.html#m5">Modul 5</a> › Vermessung und Absteckung</p>
+  <div class="kapitel-meta">
+    <span><strong>Schritt 13 von 20</strong> im Lernpfad Bauführung SBA</span>
+    <span>Eigener Inhalt, Entwurf</span>
+  </div>
+
+  <section class="card">
+    <div class="entwurf">
+      <span class="label">Entwurf</span>
+      <p>Diese Seite ist aus allgemeinem Fachwissen geschrieben und noch nicht mit den SBA-Unterlagen abgeglichen. Zahlen sind Beispielwerte. Massgebend sind Schulunterlagen, Normen und Gesetzestexte.</p>
+    </div>
+
+    <div class="toc">
+      <span class="label">Inhalt dieser Seite</span>
+      <ol>
+        <li><a href="#fixpunkte">Fixpunkte und Bezugssysteme</a></li>
+        <li><a href="#nivellement">Nivellement und Höhenübertragung</a></li>
+        <li><a href="#absteckung">Absteckung</a></li>
+        <li><a href="#gefaelle">Gefälle und Neigung</a></li>
+        <li><a href="#profile">Profile, Massketten und Toleranzen</a></li>
+        <li><a href="#ausmass">Ausmass und Messvorschriften</a></li>
+        <li><a href="#zusammenfassung">Das Wichtigste in Kürze</a></li>
+        <li><a href="#selbsttest">Selbsttest</a></li>
+      </ol>
+    </div>
+
+    <div class="lernziele">
+      <span class="label">Lernziele</span>
+      <ul>
+        <li>Du kennst LV95 und den Unterschied zwischen Lage- und Höhenbezug.</li>
+        <li>Du kannst ein Nivellement mit Rück- und Vorblick rechnen und mit einer Schleife kontrollieren.</li>
+        <li>Du kannst ein Schnurgerüst erstellen lassen und die Polarabsteckung erklären.</li>
+        <li>Du rechnest Gefälle in Prozent und Promille sicher um und bestimmst Sohlenhöhen.</li>
+        <li>Du weisst, nach welchen Grundsätzen ausgemessen wird.</li>
+      </ul>
+    </div>
+
+    <div class="baufuehrung">
+      <span class="label">Relevanz für die Bauführung</span>
+      <p>Auf deinen Baustellen kontrollierst du täglich Höhen: Grabensohle, Rohrsohle, Planie, Randabschlüsse, Schachtdeckel. Ein falsches Gefälle in einer Kanalisation oder ein Belag mit Wasserpfützen ist ein teurer Mangel. Als Bauführer stellst du sicher, dass Fixpunkte gesichert sind, die Absteckung kontrolliert wird und das Ausmass vertragskonform ist, denn danach wird abgerechnet.</p>
+    </div>
+
+    <h2 id="fixpunkte">1. Fixpunkte und Bezugssysteme</h2>
+    <dl class="begriffe">
+      <dt>LV95</dt><dd>Landesvermessung 1995, das Schweizer Lagebezugssystem. Koordinaten Ost (E) und Nord (N), siebenstellig vor dem Komma (E beginnt mit 2, N mit 1, z. B. E 2'6xx'xxx / N 1'2xx'xxx). Vorgänger LV03 mit sechsstelligen Koordinaten.</dd>
+      <dt>Höhen</dt><dd>Angegeben in Meter über Meer (m ü. M.). Im Alltag wird meist mit dem Gebrauchshöhensystem LN02 gearbeitet. LHN95 ist das wissenschaftlich strenge Landeshöhennetz; die Höhen weichen leicht von LN02 ab. Wichtig: Auf einer Baustelle nie zwei Höhensysteme mischen.</dd>
+      <dt>Fixpunkte</dt><dd>Lagefixpunkte (LFP) und Höhenfixpunkte (HFP) der amtlichen Vermessung, dazu eigene Baustellenfixpunkte (Polygonpunkte, Bolzen, Höhenmarken an Gebäuden).</dd>
+    </dl>
+    <ul>
+      <li>Vor Baubeginn: Fixpunkte vom Geometer übernehmen, Lage und Höhe protokollieren.</li>
+      <li>Fixpunkte ausserhalb des Baubereichs anlegen, schützen, markieren und regelmässig kontrollieren.</li>
+      <li>Amtliche Vermessungspunkte dürfen nicht beschädigt oder entfernt werden; drohende Beschädigung vorher dem Geometer melden.</li>
+    </ul>
+
+    <h2 id="nivellement">2. Nivellement und Höhenübertragung</h2>
+    <p>Mit dem Nivelliergerät wird eine horizontale Ziellinie erzeugt. Abgelesen wird an der Messlatte.</p>
+    <ul>
+      <li><strong>Rückblick (R)</strong>: Ablesung auf einen Punkt mit bekannter Höhe.</li>
+      <li><strong>Vorblick (V)</strong>: Ablesung auf einen Punkt, dessen Höhe gesucht ist.</li>
+      <li><strong>Instrumentenhorizont (IH)</strong>: Höhe der Ziellinie.</li>
+    </ul>
+    <div class="formel">IH = bekannte Höhe + R &nbsp;&nbsp;|&nbsp;&nbsp; gesuchte Höhe = IH − V &nbsp;&nbsp;|&nbsp;&nbsp; Δh = R − V</div>
+    <h3>Rechenbeispiel Nivellement</h3>
+    <p>Vom HFP (412,350 m ü. M.) über Wechselpunkt A zum Punkt B (Grabensohle).</p>
+    <div class="table-wrap"><table>
+      <tr><th>Punkt</th><th>Rückblick R</th><th>Vorblick V</th><th>IH</th><th>Höhe</th></tr>
+      <tr><td>HFP</td><td>1,523</td><td></td><td>413,873</td><td>412,350</td></tr>
+      <tr><td>A (Wechselpunkt)</td><td>1,204</td><td>0,987</td><td>414,090</td><td>412,886</td></tr>
+      <tr><td>B</td><td></td><td>2,315</td><td></td><td>411,775</td></tr>
+      <tr><td><strong>Summe</strong></td><td>2,727</td><td>3,302</td><td></td><td></td></tr>
+    </table></div>
+    <p><strong>Rechenweg:</strong> IH1 = 412,350 + 1,523 = 413,873. A = 413,873 − 0,987 = 412,886. IH2 = 412,886 + 1,204 = 414,090. B = 414,090 − 2,315 = 411,775.</p>
+    <p><strong>Rechenkontrolle:</strong> ΣR − ΣV = 2,727 − 3,302 = −0,575. Höhe B − Höhe HFP = 411,775 − 412,350 = −0,575. Stimmt.</p>
+    <h3>Kontrolle über eine Schleife</h3>
+    <p>Die Rechenkontrolle findet nur Rechenfehler, keine Ablesefehler. Darum misst man zurück zum Ausgangspunkt (Schleife) oder auf einen zweiten bekannten Fixpunkt. Der <strong>Schlussfehler</strong> ist die Differenz zwischen gemessener und bekannter Endhöhe. Beispiel: Schleife zurück zum HFP ergibt 412,354, Schlussfehler = +4 mm. Ob das genügt, entscheidet die zulässige Toleranz (projektabhängig; ein Beispielwert im Baustellenbereich liegt bei wenigen Millimetern). Kleine Fehler werden auf die Stationen verteilt, grosse Fehler heissen: neu messen.</p>
+    <div class="note">Fehlerquellen: Latte nicht lotrecht, Latte auf losem Untergrund, ungleiche Zielweiten (Rück- und Vorblick möglichst gleich lang), Ablesefehler im Dezimeter, Gerät nicht horizontiert.</div>
+    <h3>Höhenübertragung</h3>
+    <ul>
+      <li>Auf die Baustelle: Meterriss an Schalung oder Wand (z. B. Fertig Boden + 1,00 m), Höhenpflöcke, Schnurgerüst.</li>
+      <li>In die Tiefe (Baugrube, Schacht): Messband frei hängend oder Latte, mit zwei Nivellieraufstellungen oben und unten ablesen.</li>
+      <li>Im Alltag: Rotationslaser mit Empfänger, eingestellt auf einen bekannten Höhenpunkt. Gefällelaser im Rohr für Kanalisationen.</li>
+    </ul>
+
+    <h2 id="absteckung">3. Absteckung</h2>
+    <ul>
+      <li><strong>Schnurgerüst</strong>: Pfähle mit Brettern rund um die Baugrube, ausserhalb des Arbeitsbereichs. Achsen werden mit Nägeln markiert, Schnüre gespannt, Höhe auf die Bretter übertragen. Der Geometer steckt die Hauptpunkte ab, der Unternehmer überträgt sie.</li>
+      <li><strong>Achsen</strong>: Gebäude- oder Strassenachsen sind die Referenz, von der aus alle Masse gemessen werden. Achsen verpflockt oder versichert, damit sie nach dem Aushub wiederhergestellt werden können.</li>
+      <li><strong>Polarabsteckung mit Tachymeter</strong>: Gerät steht auf bekanntem Punkt (oder freie Stationierung über mehrere Fixpunkte). Jeder Punkt wird über Richtung (Winkel) und Distanz abgesteckt. Heute meist mit Koordinaten direkt aus dem Plan.</li>
+      <li><strong>GNSS</strong> (Satellitenvermessung, z. B. mit Korrekturdiensten wie swipos): schnell, keine Sichtverbindung zwischen Punkten nötig, aber freie Sicht zum Himmel. Höhengenauigkeit schlechter als Lage. Grundlage auch für Maschinensteuerung von Bagger und Grader.</li>
+      <li>Grundsatz: Jede Absteckung wird kontrolliert (Kontrollmasse, Diagonalen, unabhängige Messung).</li>
+    </ul>
+
+    <h2 id="gefaelle">4. Gefälle und Neigung</h2>
+    <div class="formel">Gefälle [%] = Δh / L × 100 &nbsp;&nbsp;|&nbsp;&nbsp; Gefälle [‰] = Δh / L × 1000 &nbsp;&nbsp;|&nbsp;&nbsp; Δh = L × Gefälle</div>
+    <p>1 % = 10 ‰ = 1 cm pro Meter. Steile Neigungen (Böschungen) werden als Verhältnis angegeben, z. B. 2:3 (Höhe : Länge) oder als Winkel.</p>
+    <h3>Rechenbeispiel Kanalisation</h3>
+    <p>Sohle Schacht 1 = 405,20 m ü. M., Sohle Schacht 2 = 404,83 m ü. M., Haltungslänge 37,00 m.</p>
+    <p>Δh = 405,20 − 404,83 = 0,37 m. Gefälle = 0,37 / 37,00 × 100 = <strong>1,00 %</strong> = 10 ‰.</p>
+    <h3>Rechenbeispiel Leitung mit gegebenem Gefälle</h3>
+    <p>Sohle oben 401,25 m ü. M., Länge 60,00 m, Gefälle 1,5 %. Δh = 60,00 × 0,015 = 0,90 m. Sohle unten = 401,25 − 0,90 = <strong>400,35 m ü. M.</strong> Zwischenpunkt bei 20 m: 401,25 − 20 × 0,015 = 400,95.</p>
+    <h3>Rechenbeispiel Strasse</h3>
+    <p>Fahrbahnbreite 6,00 m mit Dachprofil, Quergefälle 3 % (Beispielwert). Pro Fahrstreifen 3,00 m: Δh = 3,00 × 0,03 = 0,09 m. Der Rand liegt 9 cm tiefer als die Achse.</p>
+    <p><strong>Vergleich mit der Praxis:</strong> Mindest- und Maximalgefälle für Kanalisationen und Strassen stehen in den Projektvorgaben und Normen (SN 592 000 für Liegenschaftsentwässerung, VSS-Normen für Strassen). Nimm sie aus den Plänen, nicht aus dem Gedächtnis.</p>
+
+    <h2 id="profile">5. Profile, Massketten und Toleranzen</h2>
+    <ul>
+      <li><strong>Längenprofil</strong>: Schnitt entlang der Achse. Zeigt Terrain, Projekthöhen (Strasse, Rohrsohle), Gefälle, Schächte, Stationierung (z. B. km 0+120,00). Höhenmassstab meist überhöht.</li>
+      <li><strong>Querprofil (Normalprofil)</strong>: Schnitt quer zur Achse an bestimmten Stationen. Zeigt Schichtaufbau, Breiten, Quergefälle, Böschungen. Basis für Aushub- und Kubaturberechnung.</li>
+      <li><strong>Massketten</strong>: Teilmasse sollen sich auf ein Gesamtmass und eine Achse beziehen. Kontrolle: Summe der Teilmasse = Gesamtmass. Immer von der Achse aus messen, nicht von Bauteil zu Bauteil weiter (sonst summieren sich Fehler).</li>
+      <li><strong>Toleranzen</strong>: zulässige Abweichung vom Sollmass. Im Hochbau SIA 414/2, im Strassenbau gemäss VSS-Normen und Werkvertrag (z. B. Ebenheit unter der 4-m-Latte, Höhenabweichung Planie). Toleranzen vor der Ausführung klären, nicht erst bei der Abnahme.</li>
+    </ul>
+
+    <h2 id="ausmass">6. Ausmass und Messvorschriften</h2>
+    <ul>
+      <li>Grundsatz: Ausgemessen wird <strong>gemäss Werkvertrag</strong>. Massgebend sind die Rangfolge der Vertragsbestandteile, die <strong>Ausmassregeln im NPK</strong> (Vorbemerkungen der jeweiligen Kapitel) und die <strong>SIA 118</strong>.</li>
+      <li>Theoretisches Ausmass nach Plan oder effektives Ausmass nach Aufnahme, je nach Vertrag und Position.</li>
+      <li>Gemeinsames Ausmass mit der Bauleitung, möglichst laufend und vor dem Eindecken (Gräben, Leitungen, Armierung). Was zugedeckt ist, lässt sich kaum mehr belegen.</li>
+      <li>Aufnahmen dokumentieren: Skizze, Messwerte, Fotos, Datum, Unterschrift beider Parteien.</li>
+      <li>Kubaturen: Aushub mit Querprofilen (mittlere Fläche × Abstand), Flächen mit Polygonen oder digitalen Aufnahmen.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2 id="zusammenfassung">Das Wichtigste in Kürze</h2>
+    <ul>
+      <li>LV95 für die Lage (E 2'xxx'xxx, N 1'xxx'xxx); Höhen in m ü. M., nie Systeme mischen.</li>
+      <li>IH = Höhe + R, neue Höhe = IH − V, Kontrolle ΣR − ΣV = Höhendifferenz.</li>
+      <li>Schleife oder zweiter Fixpunkt deckt Messfehler auf (Schlussfehler).</li>
+      <li>Absteckung über Schnurgerüst, Polarabsteckung oder GNSS, immer kontrollieren.</li>
+      <li>1 % = 10 ‰ = 1 cm/m. Δh = L × Gefälle.</li>
+      <li>Längenprofil entlang, Querprofil quer zur Achse. Masse auf Achsen beziehen.</li>
+      <li>Ausmass gemäss Vertrag, NPK-Ausmassregeln und SIA 118, gemeinsam und vor dem Eindecken.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2 id="selbsttest">Selbsttest</h2>
+    <details class="quiz"><summary>Frage 1 (Rechnung): HFP = 398,412 m ü. M. Rückblick auf HFP 1,256, Vorblick auf die Rohrsohle 2,874. Wie hoch liegt die Rohrsohle?</summary>
+      <div class="antwort">IH = 398,412 + 1,256 = 399,668. Rohrsohle = 399,668 − 2,874 = <strong>396,794 m ü. M.</strong> Kontrolle: Δh = R − V = 1,256 − 2,874 = −1,618; 398,412 − 1,618 = 396,794.</div>
+    </details>
+    <details class="quiz"><summary>Frage 2 (Rechnung): Eine Kanalisationsleitung ist 48,00 m lang. Sohle oben 412,60, Sohle unten 412,24. Wie gross ist das Gefälle in % und ‰?</summary>
+      <div class="antwort">Δh = 412,60 − 412,24 = 0,36 m. Gefälle = 0,36 / 48,00 × 100 = <strong>0,75 %</strong> = 0,36 / 48,00 × 1000 = <strong>7,5 ‰</strong>.</div>
+    </details>
+    <details class="quiz"><summary>Frage 3 (Rechnung): Ein Trottoir 2,00 m breit soll mit 2 % Quergefälle zur Strasse hin entwässern. Die Hinterkante liegt auf 425,48. Wie hoch muss die Vorderkante (beim Randstein) liegen?</summary>
+      <div class="antwort">Δh = 2,00 × 0,02 = 0,04 m. Vorderkante = 425,48 − 0,04 = <strong>425,44 m ü. M.</strong></div>
+    </details>
+    <details class="quiz"><summary>Frage 4: Warum genügt die Rechenkontrolle ΣR − ΣV nicht, und was machst du stattdessen?</summary>
+      <div class="antwort">Sie prüft nur, ob richtig gerechnet wurde. Ein falsch abgelesener Wert (z. B. 1 dm verlesen) bleibt unentdeckt, weil er in Rechnung und Summe gleich eingeht. Darum misst man in einer Schleife zurück zum Ausgangspunkt oder auf einen zweiten bekannten Fixpunkt und vergleicht den Schlussfehler mit der zulässigen Toleranz.</div>
+    </details>
+    <details class="quiz"><summary>Frage 5: Was ist ein Schnurgerüst und warum steht es ausserhalb der Baugrube?</summary>
+      <div class="antwort">Eine Konstruktion aus Pfählen und Brettern rund um das Bauwerk, auf der Achsen (Nägel, Kerben) und Höhen markiert sind. Mit gespannten Schnüren werden Achsen jederzeit wiederhergestellt. Es steht ausserhalb, damit es beim Aushub und durch Maschinen nicht verschoben oder zerstört wird.</div>
+    </details>
+    <details class="quiz"><summary>Frage 6: Erkläre die Polarabsteckung und nenne einen Vorteil von GNSS.</summary>
+      <div class="antwort">Der Tachymeter steht auf einem bekannten Punkt (oder wird frei stationiert). Er wird auf einen zweiten bekannten Punkt orientiert. Jeder abzusteckende Punkt ergibt sich aus Richtung (Winkel) und Distanz, heute meist direkt aus den Plankoordinaten. GNSS braucht keine Sichtverbindung zwischen Stand- und Zielpunkt und keinen zweiten Mann, dafür freie Sicht zum Himmel; die Höhengenauigkeit ist geringer.</div>
+    </details>
+    <details class="quiz"><summary>Frage 7: Unterschied Längenprofil und Querprofil? Wozu brauchst du sie im Leitungsbau?</summary>
+      <div class="antwort">Längenprofil: Schnitt entlang der Achse mit Terrain, Sohlenhöhen, Gefällen, Schächten und Stationierung. Daraus liest du Sohlenhöhen und Gefälle für den Rohrleger. Querprofil: Schnitt quer zur Achse mit Grabenbreite, Bettung, Umhüllung, Verfüllung und Oberbau. Daraus bestimmst du Aushubtiefe, Grabenform und Kubaturen.</div>
+    </details>
+    <details class="quiz"><summary>Frage 8: Die Bauleitung will einen Graben nach Plan abrechnen, du hast aber wegen eines Hindernisses breiter ausgehoben. Wie gehst du vor?</summary>
+      <div class="antwort">Grundsätzlich gilt das Ausmass gemäss Werkvertrag, NPK-Ausmassregeln und SIA 118. Ist eine theoretische Grabenbreite vereinbart, wird diese vergütet. Der Mehraushub wegen eines Hindernisses ist eine Änderung bzw. Erschwernis: sofort melden (bevor zugedeckt wird), gemeinsam aufnehmen (Masse, Fotos, Skizze, Unterschrift) und als Nachtrag oder Regie geltend machen. Ohne rechtzeitige Meldung und Aufnahme ist der Anspruch schwer durchzusetzen.</div>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2 id="stand-schule">Stand Schule</h2>
+    <div class="stand-schule" data-modul="s-vermessung"></div>
+  </section>
+
+  <nav class="prevnext">
+    <a href="modul-erdbau.html">← Schritt 12 · Grund- und Erdbau, Baugrube und Spriessung</a>
+    <span class="spacer"></span>
+    <a href="modul-sicherheit.html">Schritt 14 · Arbeitssicherheit und Gesundheitsschutz →</a>
+  </nav>
+</main>
+
+<footer>
+  <div class="inner">
+    <p>Eigener Lerninhalt (Entwurf) für den Lehrgang Bauführer:in Hoch-/Tiefbau SBA. Ersetzt weder Schulunterlagen noch Normen und Gesetzestexte.</p>
+  </div>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>

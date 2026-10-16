@@ -1,38 +1,14 @@
-/* Lernprogramm Projektmanagement – Track Bauführung: Fortschritt, Suche, Komfort */
+/* Lernprogramm Bauführung SBA: Fortschritt, Suche, Komfort */
 (function () {
   "use strict";
 
-  var MODULE = [
-    { id: "b1", name: "Modul B1 · Kalkulation & Offerte", kaps: ["3-1", "3-2"] },
-    { id: "b2", name: "Modul B2 · Terminplanung & Ressourcen", kaps: ["4-1", "4-2", "4-3", "4-4"] },
-    { id: "b3", name: "Modul B3 · Kosten- & Leistungskontrolle", kaps: ["5-1", "5-2"] },
-    { id: "b4", name: "Modul B4 · Nachträge, Regie & Streitfälle", kaps: ["6-2"] },
-    { id: "b5", name: "Modul B5 · Organisation & Verträge", kaps: ["1-1", "1-2", "1-3", "2-1", "2-2"] },
-    { id: "b6", name: "Modul B6 · Risiko, Qualität & Dynamik", kaps: ["1-4", "5-3", "5-4", "6-1"] }
-  ];
+  /* LERNPFAD-START (generiert von werkzeug/lernpfad.py) */
+  var LERNPFAD = {"module": [{"id": "m1", "name": "Modul 1 · Kalkulation & Offerte", "kaps": ["s-kalkulation", "3-1"]}, {"id": "m2", "name": "Modul 2 · Vertrag, Recht & Nachträge", "kaps": ["s-vertrag", "2-2", "6-2"]}, {"id": "m3", "name": "Modul 3 · Bauprogramm & Ressourcen", "kaps": ["4-1", "4-2"]}, {"id": "m4", "name": "Modul 4 · Kosten, Controlling & Rechnungswesen", "kaps": ["5-1", "5-2", "s-rechnungswesen"]}, {"id": "m5", "name": "Modul 5 · Bautechnik", "kaps": ["s-hochbau", "s-erdbau", "s-vermessung"]}, {"id": "m6", "name": "Modul 6 · Arbeitssicherheit & Führung", "kaps": ["s-sicherheit", "s-fuehrung"]}, {"id": "m7", "name": "Modul 7 · Organisation, Risiko & Qualität", "kaps": ["1-1", "2-1", "1-4", "6-1"]}, {"id": "m8", "name": "Modul 8 · Praxis-Repetition Tiefbau", "kaps": ["s-repetition"]}], "seiten": {"s-kalkulation": {"f": "modul-kalkulation.html", "t": "Kalkulation nach Schweizer Art"}, "3-1": {"f": "kapitel-3-1.html", "t": "Submission, Vergabe und Richtpreisschätzung"}, "s-vertrag": {"f": "modul-vertrag.html", "t": "SIA 118 und Werkvertrag"}, "2-2": {"f": "kapitel-2-2.html", "t": "Abwicklungsmodelle: GU, TU und Einzelleistungsträger"}, "6-2": {"f": "kapitel-6-2.html", "t": "Änderungen, Nachträge und Streitfälle"}, "4-1": {"f": "kapitel-4-1.html", "t": "Bauprogramm und Terminplanung"}, "4-2": {"f": "kapitel-4-2.html", "t": "Netzplan und kritischer Weg"}, "5-1": {"f": "kapitel-5-1.html", "t": "Soll-Ist-Vergleich: Kosten und Termine überwachen"}, "5-2": {"f": "kapitel-5-2.html", "t": "Leistungsermittlung und Projektsteuerung"}, "s-rechnungswesen": {"f": "modul-rechnungswesen.html", "t": "Buchhaltung und Kostenrechnung"}, "s-hochbau": {"f": "modul-hochbau.html", "t": "Hochbau und Baustoffe"}, "s-erdbau": {"f": "modul-erdbau.html", "t": "Grund- und Erdbau, Baugrube und Spriessung"}, "s-vermessung": {"f": "modul-vermessung.html", "t": "Vermessung und Absteckung"}, "s-sicherheit": {"f": "modul-sicherheit.html", "t": "Arbeitssicherheit und Gesundheitsschutz"}, "s-fuehrung": {"f": "modul-fuehrung.html", "t": "Führung und Personal"}, "1-1": {"f": "kapitel-1-1.html", "t": "Einführung: Projektmanagement am Bau"}, "2-1": {"f": "kapitel-2-1.html", "t": "Projektorganisation"}, "1-4": {"f": "kapitel-1-4.html", "t": "Risiken auf der Baustelle"}, "6-1": {"f": "kapitel-6-1.html", "t": "Risikomanagement, Qualität und Erfahrungssicherung"}, "s-repetition": {"f": "modul-repetition.html", "t": "Praxis-Repetition Tiefbau"}}};
+  /* LERNPFAD-ENDE */
+  var MODULE = LERNPFAD.module;
   var TRACK = [];
   MODULE.forEach(function (m) { m.kaps.forEach(function (k) { TRACK.push(k); }); });
-
-  var TITEL = {
-    "3-1": "Vergabeverfahren und Kostenschätzung I",
-    "3-2": "Detaillierte Kostenschätzung",
-    "4-1": "Planung und deterministische Terminplanung",
-    "4-2": "Deterministische Planung II und PERT",
-    "4-3": "Probabilistische Planung II",
-    "4-4": "Simulation und Ressourcenplanung",
-    "5-1": "Kosten- und Terminüberwachung",
-    "5-2": "Earned-Value-Analyse",
-    "6-2": "Reviews, Audits, Änderungen und Streitfälle",
-    "1-1": "Einführung",
-    "1-2": "Projektfinanzierung und -bewertung",
-    "1-3": "Instrumente zur Projektbewertung",
-    "2-1": "Projektorganisation",
-    "2-2": "Abwicklungsmodelle, Vergütung und Vergabe",
-    "1-4": "Umgang mit Unsicherheit",
-    "5-3": "Problemdiagnose und Projektdynamik",
-    "5-4": "System- und Änderungsdynamik",
-    "6-1": "Risikomanagement II, Qualität und Projektlernen"
-  };
+  var SEITEN = LERNPFAD.seiten;
 
   function ladeFortschritt() {
     try { return JSON.parse(localStorage.getItem("pm-fortschritt") || "{}"); }
@@ -42,8 +18,9 @@
     try { localStorage.setItem("pm-fortschritt", JSON.stringify(p)); } catch (e) {}
   }
   function aktuellesKapitel() {
-    var m = location.pathname.match(/kapitel-(\d-\d)\.html$/);
-    return m ? m[1] : null;
+    var datei = location.pathname.split("/").pop() || "index.html";
+    for (var k in SEITEN) { if (SEITEN[k].f === datei) return k; }
+    return null;
   }
   function naechsterSchritt(p) {
     for (var i = 0; i < TRACK.length; i++) {
@@ -126,13 +103,30 @@
     var p = ladeFortschritt();
     var i = naechsterSchritt(p);
     if (i < 0) {
-      ziel.innerHTML = '<p class="weiter-fertig">🎉 Alle 18 Schritte abgeschlossen – stark! Wiederhole bei Bedarf einzelne Selbsttests.</p>';
+      ziel.innerHTML = '<p class="weiter-fertig">Alle ' + TRACK.length + ' Schritte abgeschlossen. Wiederhole bei Bedarf einzelne Selbsttests.</p>';
       return;
     }
     var kap = TRACK[i];
     ziel.innerHTML =
-      '<a class="weiter-knopf" href="kapitel-' + kap + '.html">▶ Weiter mit Schritt ' + (i + 1) +
-      ": Kapitel " + kap.replace("-", ".") + " – " + TITEL[kap] + "</a>";
+      '<a class="weiter-knopf" href="' + SEITEN[kap].f + '">▶ Weiter mit Schritt ' + (i + 1) +
+      ": " + SEITEN[kap].t + "</a>";
+  }
+
+  /* Notizfeld „Stand Schule“ auf den neuen Modulseiten (gespeichert in diesem Browser) */
+  function initStandSchule() {
+    document.querySelectorAll(".stand-schule").forEach(function (box) {
+      var key = "pm-schule-" + box.getAttribute("data-modul");
+      var id = "notiz-" + box.getAttribute("data-modul");
+      box.innerHTML =
+        '<label for="' + id + '">Was wurde an der Schule behandelt, was ist anders als hier, was fehlt?</label>' +
+        '<textarea id="' + id + '" rows="6" placeholder="z.B. 21.10.: Mittellohn behandelt, SBA rechnet Zuschläge auf den Lohn statt auf die direkten Kosten."></textarea>' +
+        '<p class="hinweis">Wird automatisch in diesem Browser gespeichert. Auf einem anderen Gerät ist das Feld leer.</p>';
+      var feld = box.querySelector("textarea");
+      try { feld.value = localStorage.getItem(key) || ""; } catch (e) {}
+      feld.addEventListener("input", function () {
+        try { localStorage.setItem(key, feld.value); } catch (e) {}
+      });
+    });
   }
 
   /* „Nach oben“-Knopf */
@@ -207,6 +201,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     initGelerntKnopf();
+    initStandSchule();
     initLernpfad();
     initWeiterLernen();
     initNachOben();

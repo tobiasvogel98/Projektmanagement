@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalkulation nach Schweizer Art – Lernprogramm Bauführung</title>
+<meta name="description" content="Kalkulationsschema, Mittellohn, Maschinenansätze und Zuschläge bis zum Einheitspreis, mit durchgerechnetem Beispiel aus dem Tiefbau.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <p class="kicker">Lernpfad Bauführung SBA · Modul 1 · Kalkulation &amp; Offerte</p>
+    <h1>Kalkulation nach Schweizer Art</h1>
+    <p class="sub">Du lernst, wie aus Lohn, Inventar, Material und Fremdleistungen über die Zuschläge ein Einheitspreis entsteht. Und du lernst, warum Vor-, Arbeits- und Nachkalkulation zusammengehören.</p>
+  </div>
+</header>
+
+<nav class="mainnav">
+  <div class="inner">
+    <a href="index.html">Startseite</a>
+    <a href="kursplan.html" class="active">Lernpfad</a>
+    <a href="glossar.html">Glossar</a>
+    <a href="suche.html">Suche</a>
+  </div>
+</nav>
+
+<main>
+  <p class="breadcrumb"><a href="kursplan.html">Lernpfad</a> › <a href="kursplan.html#m1">Modul 1</a> › Kalkulation nach Schweizer Art</p>
+  <div class="kapitel-meta">
+    <span><strong>Schritt 1 von 20</strong> im Lernpfad Bauführung SBA</span>
+    <span>Eigener Inhalt, Entwurf</span>
+  </div>
+
+  <section class="card">
+    <div class="entwurf">
+      <span class="label">Entwurf</span>
+      <p>Diese Seite ist aus allgemeinem Fachwissen geschrieben und noch nicht mit den SBA-Unterlagen abgeglichen. Zahlen sind Beispielwerte. Massgebend sind Schulunterlagen, Normen und Gesetzestexte.</p>
+    </div>
+
+    <div class="toc">
+      <span class="label">Inhalt dieser Seite</span>
+      <ol>
+        <li><a href="#abschnitt-1">Das Kalkulationsschema</a></li>
+        <li><a href="#abschnitt-2">Grundlohn und Mittellohn</a></li>
+        <li><a href="#abschnitt-3">Leistungswerte, Aufwandwerte und Maschinenansätze</a></li>
+        <li><a href="#abschnitt-4">Beispiel: Einheitspreis Grabenaushub</a></li>
+        <li><a href="#abschnitt-5">Einheitspreis, Pauschale, Regie</a></li>
+        <li><a href="#abschnitt-6">Vor-, Arbeits- und Nachkalkulation, Grundlagen</a></li>
+        <li><a href="#zusammenfassung">Das Wichtigste in Kürze</a></li>
+        <li><a href="#selbsttest">Selbsttest</a></li>
+      </ol>
+    </div>
+
+    <div class="lernziele">
+      <span class="label">Lernziele</span>
+      <ul>
+        <li>Du kannst das Kalkulationsschema von den direkten Kosten bis zum Einheitspreis aufzählen und erklären.</li>
+        <li>Du kannst erklären, was im Mittellohn steckt und warum er viel höher ist als der Grundlohn.</li>
+        <li>Du kannst Leistungswerte in Aufwandwerte umrechnen und daraus Lohnkosten pro Einheit bestimmen.</li>
+        <li>Du kannst einen Maschinenansatz pro Stunde grob herleiten.</li>
+        <li>Du kannst einen Einheitspreis mit Zuschlagskalkulation selbst durchrechnen.</li>
+        <li>Du kannst Einheitspreis, Pauschale und Regie sowie Vor-, Arbeits- und Nachkalkulation unterscheiden.</li>
+      </ul>
+    </div>
+
+    <div class="baufuehrung">
+      <span class="label">Relevanz für die Bauführung</span>
+      <p>Auf Kleinbaustellen (Hausanschluss Wasser, Kanalisationsreparatur, Belagsflick) entscheidet der Aufwandwert über Gewinn oder Verlust: Wenn deine Equipe für einen Graben 0,25&nbsp;h/m³ statt der kalkulierten 0,17&nbsp;h/m³ braucht, sind die Lohnkosten der Position um fast 50&nbsp;% überschritten. Als Bauführer offerierst du solche Arbeiten oft selbst, rechnest Nachträge auf Basis der Offertkalkulation und lieferst mit sauberen Rapporten die Zahlen für die Nachkalkulation. Wer das Schema beherrscht, erkennt auch, ob ein Regieansatz oder ein Nachtragspreis überhaupt kostendeckend ist.</p>
+    </div>
+
+    <h2 id="abschnitt-1">1. Das Kalkulationsschema</h2>
+    <p>Die Kalkulation baut den Preis stufenweise auf. Begriffe und Gliederung variieren je nach Betrieb und Lehrmittel, das Prinzip ist aber überall gleich.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Stufe</th><th>Inhalt</th></tr></thead>
+      <tbody>
+        <tr><td>Lohnkosten</td><td>Aufwandwert (h/Einheit) × Mittellohn (CHF/h)</td></tr>
+        <tr><td>+ Inventar/Maschinen</td><td>Einsatzzeit × Maschinenansatz, Kleingeräte, Werkzeug</td></tr>
+        <tr><td>+ Material</td><td>Menge × Einkaufspreis inkl. Transport, Verlust, Verschnitt</td></tr>
+        <tr><td>+ Fremdleistungen</td><td>Subunternehmer, Transporte Dritter, Deponiegebühren, Mietgeräte</td></tr>
+        <tr><td><strong>= Direkte Kosten</strong></td><td>der Position direkt zurechenbar</td></tr>
+        <tr><td>+ Baustellengemeinkosten (BGK)</td><td>Installation, Bauführung/Polier anteilig, Baracken, Signalisation, Vermessung, Baustrom/-wasser</td></tr>
+        <tr><td><strong>= Herstellkosten</strong></td><td>alle Kosten der Baustelle</td></tr>
+        <tr><td>+ Geschäftsgemeinkosten (GGK)</td><td>Verwaltung, Geschäftsleitung, Büro, Werkhof, Offertwesen, IT, Versicherungen der Firma</td></tr>
+        <tr><td><strong>= Selbstkosten</strong></td><td>Preisuntergrenze auf Vollkostenbasis</td></tr>
+        <tr><td>+ Risiko und Gewinn (R+G)</td><td>Unternehmerrisiko, Eigenkapitalverzinsung, Gewinn</td></tr>
+        <tr><td><strong>= Einheitspreis (netto)</strong></td><td>exkl. MWST; Rabatt und Skonto werden je nach Vertrag separat berücksichtigt</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><strong>Zuschlagskalkulation:</strong> BGK, GGK und R+G werden meist als Prozentzuschläge verrechnet. Varianten: ein Gesamtzuschlag auf die direkten Kosten, oder differenzierte Zuschläge je Kostenart (z.B. höherer Zuschlag auf Lohn, tieferer auf Material und Fremdleistungen, weil diese wenig Verwaltungsaufwand verursachen). Grössere BGK (Installation, Signalisation) werden oft als eigene Positionen im Leistungsverzeichnis offeriert statt als Zuschlag. Die Zuschlagssätze kommen aus der Betriebsbuchhaltung des eigenen Unternehmens.</div>
+
+    <h2 id="abschnitt-2">2. Grundlohn und Mittellohn</h2>
+    <dl class="begriffe">
+      <dt>Grundlohn</dt>
+      <dd>Der vertraglich vereinbarte Stundenlohn des Mitarbeiters (im Bauhauptgewerbe gelten Mindestlöhne gemäss Landesmantelvertrag LMV je Lohnklasse).</dd>
+      <dt>Mittellohn</dt>
+      <dd>Durchschnittlicher Kostensatz pro produktiver Arbeitsstunde einer Equipe, inklusive aller lohnabhängigen Kosten. Mit diesem Satz wird kalkuliert.</dd>
+    </dl>
+    <p>Was im Mittellohn steckt:</p>
+    <ul>
+      <li>Durchschnittlicher Grundlohn der Equipe (Mischung Vorarbeiter, Facharbeiter, Bauarbeiter)</li>
+      <li>Ferien- und Feiertagsentschädigung</li>
+      <li>13. Monatslohn</li>
+      <li>Sozialversicherungen Arbeitgeberanteil (AHV/IV/EO, ALV, FAK, BVG), Unfall- und Krankentaggeldversicherung</li>
+      <li>Beiträge an Frühpensionierung (FAR) und paritätische Fonds</li>
+      <li>Lohnfortzahlung bei Krankheit, Unfall, Militär, Schlechtwetter, bezahlte Absenzen</li>
+      <li>Spesen (Mittagsentschädigung, Reisezeit, Fahrkosten)</li>
+      <li>je nach Betrieb: Anteil Polier/Vorarbeiter (sonst in den BGK)</li>
+    </ul>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Bestandteil (alles Beispielwerte)</th><th>Basis</th><th>CHF/h</th></tr></thead>
+      <tbody>
+        <tr><td>Grundlohn Durchschnitt Equipe</td><td></td><td>33.00</td></tr>
+        <tr><td>Ferien und Feiertage</td><td>13&nbsp;% von 33.00</td><td>4.29</td></tr>
+        <tr><td>13. Monatslohn</td><td>8,33&nbsp;% von 37.29</td><td>3.11</td></tr>
+        <tr><td><em>Bruttolohn</em></td><td></td><td><em>40.40</em></td></tr>
+        <tr><td>Sozialversicherungen, Versicherungen, FAR, Fonds</td><td>18&nbsp;% von 40.40</td><td>7.27</td></tr>
+        <tr><td>Lohnfortzahlung, Schlechtwetter, Absenzen</td><td>6&nbsp;% von 40.40</td><td>2.42</td></tr>
+        <tr><td>Spesen</td><td>pauschal</td><td>3.50</td></tr>
+        <tr><td>Anteil Polier/Vorarbeiter</td><td>pauschal</td><td>8.41</td></tr>
+        <tr><td><strong>Mittellohn</strong></td><td></td><td><strong>62.00</strong></td></tr>
+      </tbody>
+    </table></div>
+    <p>Merke: Der Mittellohn liegt typischerweise deutlich über dem Grundlohn, oft beim 1,6- bis 2-fachen (grober Erfahrungswert, abhängig vom Betrieb und davon, was einbezogen wird).</p>
+
+    <h2 id="abschnitt-3">3. Leistungswerte, Aufwandwerte und Maschinenansätze</h2>
+    <dl class="begriffe">
+      <dt>Leistungswert</dt>
+      <dd>Menge pro Zeiteinheit, z.B. 12&nbsp;m³/h Aushub oder 24&nbsp;m Rohr pro Tag.</dd>
+      <dt>Aufwandwert</dt>
+      <dd>Stunden pro Einheit, z.B. 0,17&nbsp;h/m³. Bezogen auf Mannstunden (Lohn) oder Maschinenstunden (Inventar).</dd>
+    </dl>
+    <div class="formel">Aufwandwert [h/E] = Anzahl Personen × Arbeitszeit [h] ÷ erbrachte Menge [E]</div>
+    <div class="formel">Lohnkosten [CHF/E] = Aufwandwert [h/E] × Mittellohn [CHF/h]</div>
+    <p>Einflüsse auf den Leistungswert: Bodenklasse, Grabentiefe und Spriessung, querende Werkleitungen, Platzverhältnisse, Verkehr, Witterung, Equipengrösse, Einarbeitung.</p>
+    <p><strong>Maschinenansatz pro Stunde</strong> setzt sich zusammen aus:</p>
+    <ul>
+      <li>Abschreibung (Anschaffungswert ÷ Nutzungsdauer)</li>
+      <li>Verzinsung des gebundenen Kapitals (meist auf den halben Anschaffungswert)</li>
+      <li>Reparaturen und Unterhalt</li>
+      <li>Versicherung, Verkehrsabgaben, allgemeine Kosten</li>
+      <li>Betriebsstoffe (Diesel, Schmiermittel) und Verschleissteile</li>
+      <li>Der Maschinist ist <em>nicht</em> im Ansatz, er läuft über die Lohnkosten (ausser bei Mietpreisen «mit Maschinist»).</li>
+    </ul>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Raupenbagger 14&nbsp;t (alles Beispielwerte)</th><th>Rechnung</th><th>CHF/h</th></tr></thead>
+      <tbody>
+        <tr><td>Anschaffung 280'000, Nutzungsdauer 8 Jahre, 1'000 h/Jahr</td><td></td><td></td></tr>
+        <tr><td>Abschreibung</td><td>280'000 ÷ 8 ÷ 1'000</td><td>35.00</td></tr>
+        <tr><td>Verzinsung 3&nbsp;% auf halben Wert</td><td>140'000 × 0,03 ÷ 1'000</td><td>4.20</td></tr>
+        <tr><td>Reparaturen, Unterhalt</td><td>24'500 ÷ 1'000</td><td>24.50</td></tr>
+        <tr><td>Versicherung, Abgaben, Allgemeines</td><td>3'300 ÷ 1'000</td><td>3.30</td></tr>
+        <tr><td>Diesel</td><td>12 l/h × 2.00</td><td>24.00</td></tr>
+        <tr><td>Schmiermittel, Verschleiss (Zähne, Ketten)</td><td></td><td>4.00</td></tr>
+        <tr><td><strong>Ansatz ohne Maschinist</strong></td><td></td><td><strong>95.00</strong></td></tr>
+      </tbody>
+    </table></div>
+
+    <h2 id="abschnitt-4">4. Beispiel: Einheitspreis Grabenaushub</h2>
+    <p><strong>Position:</strong> Grabenaushub maschinell für Werkleitung, Tiefe bis 1,5&nbsp;m, Material seitlich lagern. Einheit m³ (fest). Alle Zahlen sind Beispielwerte.</p>
+    <p><strong>Annahmen:</strong> Equipe 2 Mann (Maschinist, Bauarbeiter für Handarbeit und Kontrolle), Raupenbagger 14&nbsp;t, Leistung 12&nbsp;m³/h, Mittellohn CHF 62.00/h, Maschinenansatz CHF 95.00/h, Kleinmaterial CHF 0.50/m³, keine Fremdleistung (Abtransport ist eine eigene Position). Zuschläge: BGK 8&nbsp;% auf direkte Kosten, GGK 12&nbsp;% auf Herstellkosten, R+G 4&nbsp;% auf Selbstkosten.</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Schritt</th><th>Rechnung</th><th>CHF/m³</th></tr></thead>
+      <tbody>
+        <tr><td>Aufwandwert Lohn</td><td>2 Mann × 1 h ÷ 12 m³ = 0,1667 h/m³</td><td></td></tr>
+        <tr><td>Lohnkosten</td><td>0,1667 × 62.00</td><td>10.33</td></tr>
+        <tr><td>Inventar/Maschinen</td><td>1 h ÷ 12 m³ × 95.00</td><td>7.92</td></tr>
+        <tr><td>Material</td><td>Kleinmaterial</td><td>0.50</td></tr>
+        <tr><td>Fremdleistungen</td><td>keine</td><td>0.00</td></tr>
+        <tr><td><strong>Direkte Kosten</strong></td><td>10.33 + 7.92 + 0.50</td><td><strong>18.75</strong></td></tr>
+        <tr><td>BGK 8&nbsp;%</td><td>18.75 × 0,08</td><td>1.50</td></tr>
+        <tr><td><strong>Herstellkosten</strong></td><td></td><td><strong>20.25</strong></td></tr>
+        <tr><td>GGK 12&nbsp;%</td><td>20.25 × 0,12</td><td>2.43</td></tr>
+        <tr><td><strong>Selbstkosten</strong></td><td></td><td><strong>22.68</strong></td></tr>
+        <tr><td>R+G 4&nbsp;%</td><td>22.68 × 0,04</td><td>0.91</td></tr>
+        <tr><td><strong>Einheitspreis</strong></td><td>gerundet</td><td><strong>23.60</strong></td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><strong>Kontrolle:</strong> Gesamtfaktor auf die direkten Kosten = 1,08 × 1,12 × 1,04 = 1,258. 18.75 × 1,258 = 23.59. Mehrwertsteuer kommt auf der Rechnung dazu. Sinkt die Leistung auf 8&nbsp;m³/h, steigen Lohn und Maschine auf 15.50 + 11.88; direkte Kosten 27.88, Einheitspreis 27.88 × 1,258 = rund CHF 35.07.</div>
+
+    <h2 id="abschnitt-5">5. Einheitspreis, Pauschale, Regie</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Art</th><th>Abrechnung</th><th>Mengenrisiko</th><th>Typischer Einsatz</th></tr></thead>
+      <tbody>
+        <tr><td>Einheitspreis</td><td>effektives Ausmass × Einheitspreis</td><td>Bauherrschaft</td><td>Standard im Tiefbau: Aushub m³, Rohr m, Belag m² oder t</td></tr>
+        <tr><td>Pauschal-/Globalpreis</td><td>fester Betrag für definierte Leistung</td><td>Unternehmer</td><td>Installation, klar definierte Teilleistungen, Kleinaufträge</td></tr>
+        <tr><td>Regie</td><td>effektiver Aufwand (Stunden, Maschinen, Material) × Regieansätze</td><td>Bauherrschaft</td><td>nicht beschreibbare oder unvorhergesehene Arbeiten, Leitungssuche, Notfälle</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li>Regieansätze enthalten bereits BGK, GGK und R+G. Prüfe deshalb, ob der Ansatz kostendeckend ist (Mittellohn plus Zuschläge).</li>
+      <li>Bei Pauschalen wird das Mengenrisiko eingepreist. Unklare Mengen sind ein Grund, nicht pauschal zu offerieren.</li>
+      <li>Vertragliche Details (Teuerung, Unterschied Global- und Pauschalpreis) siehe Modul SIA 118 und Werkvertrag.</li>
+    </ul>
+
+    <h2 id="abschnitt-6">6. Vor-, Arbeits- und Nachkalkulation, Grundlagen</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Kalkulation</th><th>Zeitpunkt</th><th>Zweck</th></tr></thead>
+      <tbody>
+        <tr><td>Vorkalkulation (Offertkalkulation)</td><td>Submission, vor Vertragsabschluss</td><td>Preis bilden, Offerte einreichen. Sie ist später die Basis für Nachtragspreise.</td></tr>
+        <tr><td>Arbeitskalkulation</td><td>nach Auftragserteilung, vor Baubeginn</td><td>Soll-Werte für die Ausführung: gewähltes Bauverfahren, Equipen, Inventar, Arbeitsbudget der Baustelle</td></tr>
+        <tr><td>Nachkalkulation</td><td>laufend und nach Abschluss</td><td>Ist-Kosten und Ist-Leistungswerte erfassen, Soll/Ist vergleichen, Erfahrungswerte in die Kalkulationsdaten zurückführen</td></tr>
+      </tbody>
+    </table></div>
+    <p><strong>Grundlagen in der Schweiz:</strong></p>
+    <ul>
+      <li><strong>NPK</strong> (Normpositionen-Katalog von CRB): standardisierte Leistungsbeschreibungen, nach Kapiteln gegliedert (z.B. Baustelleneinrichtung, Werkleitungen, Baugruben und Erdbau, Kanalisationen und Entwässerungen). Öffentliche Ausschreibungen im Tiefbau basieren fast immer auf NPK-Leistungsverzeichnissen.</li>
+      <li><strong>Schweizerischer Baumeisterverband (SBV):</strong> stellt Kalkulationshilfsmittel und Grundlagen zur Verfügung (u.a. für Mittellohnberechnung, Inventar- und Maschinenansätze, Regie). Welche Ausgaben aktuell sind, erfährst du im Kurs.</li>
+      <li>Eigene Betriebsbuchhaltung: liefert die Zuschlagssätze und die Erfahrungswerte aus der Nachkalkulation.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2 id="zusammenfassung">Das Wichtigste in Kürze</h2>
+    <ul>
+      <li>Schema: Lohn + Inventar + Material + Fremdleistungen = direkte Kosten; + BGK = Herstellkosten; + GGK = Selbstkosten; + R+G = Einheitspreis.</li>
+      <li>Kalkuliert wird mit dem Mittellohn, nicht mit dem Grundlohn. Er enthält Ferien, 13. Monatslohn, Sozialversicherungen, Lohnfortzahlung, Spesen.</li>
+      <li>Aufwandwert = Personen × Stunden ÷ Menge. Lohnkosten = Aufwandwert × Mittellohn.</li>
+      <li>Maschinenansatz = Abschreibung + Zins + Reparaturen + Versicherung + Betriebsstoffe, ohne Maschinist.</li>
+      <li>Einheitspreis: Mengenrisiko bei der Bauherrschaft. Pauschale: beim Unternehmer. Regie: Aufwand mit Ansätzen inkl. Zuschlägen.</li>
+      <li>Vorkalkulation bildet den Preis, Arbeitskalkulation setzt die Soll-Werte, Nachkalkulation liefert die Erfahrung zurück.</li>
+      <li>Alle Zuschlagssätze und Ansätze sind betriebsspezifisch.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2 id="selbsttest">Selbsttest</h2>
+    <details class="quiz"><summary>Frage 1: Nenne die vier Kostenarten der direkten Kosten und die drei Zuschlagsstufen bis zum Einheitspreis.</summary>
+      <div class="antwort">Direkte Kosten: Lohn, Inventar/Maschinen, Material, Fremdleistungen. Zuschläge: Baustellengemeinkosten (ergibt Herstellkosten), Geschäftsgemeinkosten (ergibt Selbstkosten), Risiko und Gewinn (ergibt Einheitspreis).</div>
+    </details>
+    <details class="quiz"><summary>Frage 2: Warum darfst du nicht mit dem Grundlohn kalkulieren? Nenne fünf Bestandteile des Mittellohns.</summary>
+      <div class="antwort">Der Grundlohn deckt nur einen Teil der Lohnkosten. Der Arbeitgeber zahlt zusätzlich unter anderem: Ferien- und Feiertagsentschädigung, 13. Monatslohn, Arbeitgeberbeiträge an Sozialversicherungen (AHV/IV/EO, ALV, BVG, FAK), Unfall- und Krankentaggeldversicherung, FAR und Fonds, Lohnfortzahlung bei Krankheit und Schlechtwetter, Spesen. Mit dem Grundlohn wären die Lohnkosten um einen grossen Teil zu tief kalkuliert.</div>
+    </details>
+    <details class="quiz"><summary>Frage 3 (Rechnen): Eine Equipe von 3 Mann verlegt in 8 Stunden 24 m Kanalisationsrohr PP DN 200. Mittellohn CHF 60.00/h (Beispielwert). Wie gross sind Aufwandwert und Lohnkosten pro Meter?</summary>
+      <div class="antwort">Aufwandwert = 3 Mann × 8 h ÷ 24 m = 24 h ÷ 24 m = <strong>1,0 h/m</strong>.<br>Lohnkosten = 1,0 h/m × CHF 60.00/h = <strong>CHF 60.00/m</strong>.<br>(Leistungswert zum Vergleich: 24 m ÷ 8 h = 3 m/h für die ganze Equipe.)</div>
+    </details>
+    <details class="quiz"><summary>Frage 4 (Rechnen): Direkte Kosten einer Position CHF 40.00/m². Zuschläge (Beispielwerte): BGK 10 % auf direkte Kosten, GGK 12 % auf Herstellkosten, R+G 5 % auf Selbstkosten. Wie hoch ist der Einheitspreis?</summary>
+      <div class="antwort">Herstellkosten = 40.00 × 1,10 = 44.00<br>Selbstkosten = 44.00 × 1,12 = 49.28<br>Einheitspreis = 49.28 × 1,05 = 51.744, gerundet <strong>CHF 51.75/m²</strong>.<br>Achtung: Die Zuschläge werden nacheinander auf die jeweilige Basis gerechnet, nicht addiert (40.00 × 1,27 = 50.80 wäre falsch).</div>
+    </details>
+    <details class="quiz"><summary>Frage 5: Was gehört in den Maschinenansatz pro Stunde, und was nicht?</summary>
+      <div class="antwort">Hinein gehören Abschreibung, Verzinsung des Kapitals, Reparaturen und Unterhalt, Versicherung und Abgaben, Betriebsstoffe und Verschleissteile. Nicht hinein gehört der Maschinist: Er wird über Lohnkosten mit dem Mittellohn verrechnet. Ausnahme: Mietansätze «mit Maschinist» von Dritten, die als Fremdleistung erfasst werden.</div>
+    </details>
+    <details class="quiz"><summary>Frage 6: Für eine Hausanschlussleitung ist die Lage bestehender Leitungen unklar. Würdest du den Aushub pauschal, nach Einheitspreis oder in Regie offerieren?</summary>
+      <div class="antwort">Eine Pauschale wäre riskant, weil du das Mengen- und Erschwernisrisiko trägst. Einheitspreis nach Ausmass ist üblich, wenn die Arbeit beschreibbar ist (eventuell mit Zuschlagsposition für Handaushub bei Leitungskreuzungen). Für die eigentliche Leitungssuche oder Sondierschlitze ist Regie sinnvoll, weil der Aufwand nicht vorhersehbar ist. Wichtig: Regie nur mit sauberem Rapport und Visum der Bauleitung.</div>
+    </details>
+    <details class="quiz"><summary>Frage 7: Was ist der Unterschied zwischen Vorkalkulation und Arbeitskalkulation, und wozu brauchst du die Nachkalkulation?</summary>
+      <div class="antwort">Die Vorkalkulation bildet den Offertpreis vor Vertragsabschluss. Die Arbeitskalkulation entsteht nach dem Zuschlag und legt das tatsächlich geplante Bauverfahren, die Equipen und das Budget als Soll-Werte für die Baustelle fest. Die Nachkalkulation vergleicht Ist mit Soll, zeigt Abweichungen (z.B. schlechtere Leistungswerte) und liefert realistische Erfahrungswerte für künftige Offerten.</div>
+    </details>
+    <details class="quiz"><summary>Frage 8: Die Bauherrschaft verlangt einen Nachtragspreis für zusätzlichen Grabenaushub in felsigem Material. Worauf stützt du die Preisbildung?</summary>
+      <div class="antwort">Auf die Offertkalkulation (Vorkalkulation): gleicher Mittellohn, gleiche Maschinenansätze, gleiche Zuschlagssätze, aber angepasster Aufwandwert und eventuell anderes Inventar (z.B. Abbauhammer). So ist der Nachtrag nachvollziehbar und auf dem Preisniveau des Vertrags. Die Mehrkosten kündigst du vor der Ausführung an.</div>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2 id="stand-schule">Stand Schule</h2>
+    <div class="stand-schule" data-modul="s-kalkulation"></div>
+  </section>
+
+  <nav class="prevnext">
+    <a href="kursplan.html">← Zum Lernpfad</a>
+    <span class="spacer"></span>
+    <a href="kapitel-3-1.html">Schritt 2 · Submission, Vergabe und Richtpreisschätzung →</a>
+  </nav>
+</main>
+
+<footer>
+  <div class="inner">
+    <p>Eigener Lerninhalt (Entwurf) für den Lehrgang Bauführer:in Hoch-/Tiefbau SBA. Ersetzt weder Schulunterlagen noch Normen und Gesetzestexte.</p>
+  </div>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>
